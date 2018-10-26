@@ -5,3 +5,6 @@ authors = ["clia"]
 edition = "2018"
 
 [dependencies]
+
+[build-dependencies]
+bindgen = "0.43.0"
