@@ -6777,7 +6777,7 @@ pub const IPPORT_EFSSERVER: _bindgen_ty_7 = 520;
 pub const IPPORT_BIFFUDP: _bindgen_ty_7 = 512;
 pub const IPPORT_WHOSERVER: _bindgen_ty_7 = 513;
 pub const IPPORT_ROUTESERVER: _bindgen_ty_7 = 520;
-pub const IPPORT_RESERVED: _bindgen_ty_7 = 1024;
+//pub const IPPORT_RESERVED: _bindgen_ty_7 = 1024;
 pub const IPPORT_USERRESERVED: _bindgen_ty_7 = 5000;
 pub type _bindgen_ty_7 = u32;
 #[repr(C)]
