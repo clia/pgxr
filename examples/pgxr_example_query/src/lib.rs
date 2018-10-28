@@ -35,7 +35,7 @@ pub extern "C" fn pg_finfo_pgxr_example_query() -> *const Pg_finfo_record
 pub extern "C" fn pgxr_example_query(fcinfo: FunctionCallInfo) -> Datum
 {
     let mut result: Datum = 0;
-    //unsafe {
+    unsafe {
         SPI_connect();
         let sql = "select 2";
         let null_terminated = CString::new(sql).unwrap();
@@ -51,7 +51,7 @@ pub extern "C" fn pgxr_example_query(fcinfo: FunctionCallInfo) -> Datum
             }
         }
         SPI_finish();
-    //}
+    }
     result
 }
 
