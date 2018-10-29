@@ -2,7 +2,6 @@
 name = "pgxr_example_query"
 version = "0.1.0"
 authors = ["clia <clia@163.com>"]
-edition = "2018"
 
 [lib]
 name = "pgxr_example_query"
