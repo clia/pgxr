@@ -56,6 +56,15 @@ CREATE FUNCTION pgxr_example_one(integer) RETURNS integer
 select pgxr_example_one(1);
 ```
 
+## bindgen
+
+The included `bindings.rs` is for PostgreSQL 10 on the Linux X86-64 arch.
+You can `bindgen` your platform's `bindings.rs`, using:
+
+```bash
+bindgen wrapper.h -o src/bindings.rs -- -I /usr/include/postgresql/10/server
+```
+
 That is.
 
 Have fun!
