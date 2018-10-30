@@ -65,6 +65,6 @@ You can `bindgen` your platform's `bindings.rs`, using:
 bindgen wrapper.h -o src/bindings.rs -- -I /usr/include/postgresql/10/server
 ```
 
-That is.
+That is it.
 
 Have fun!
