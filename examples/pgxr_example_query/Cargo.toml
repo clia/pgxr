@@ -7,7 +7,5 @@ authors = ["clia <clia@163.com>"]
 name = "pgxr_example_query"
 crate-type = ["cdylib"]
 
-[dependencies]
-
 [dependencies.pgxr]
 path = "../../"
