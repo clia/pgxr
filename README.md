@@ -1,5 +1,5 @@
 # pgxr
-Write PostgreSQL extension functions using Rust.
+Write PostgreSQL extension functions (as stored procedures) using Rust.
 
 ![](https://benchmarksgame-team.pages.debian.net/benchmarksgame/download/fast-programs-different-programming-languages.svg)
 
