@@ -13,7 +13,7 @@ PG_FUNCTION_INFO_V1!(pg_finfo_pgxr_example_query);
 pub extern "C" fn pgxr_example_query(_fcinfo: FunctionCallInfo) -> Datum
 {
     let mut result: Datum = 0;
-    unsafe { SPI_connect(); }
+    unsafe { SPI_connect() };
     let sql = "select 2";
     let null_terminated = CString::new(sql).unwrap();
     let ret = unsafe { SPI_execute(null_terminated.as_ptr(), true as bool_, 0) };
@@ -27,6 +27,6 @@ pub extern "C" fn pgxr_example_query(_fcinfo: FunctionCallInfo) -> Datum
             result = unsafe { SPI_getbinval(spi_tuple, spi_tupdesc, 1, &mut (false as bool_)) };
         }
     }
-    unsafe { SPI_finish(); }
+    unsafe { SPI_finish() };
     result
 }
