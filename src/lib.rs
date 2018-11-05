@@ -73,16 +73,16 @@ pub fn PG_GETARG_STRING(fcinfo: FunctionCallInfo, n: usize) -> String {
 }
 
 pub fn PG_RETURN_CSTRING(result: CString) -> Datum {
-    result.as_ptr() as Datum
+    result.into_raw() as Datum
 }
 
 pub fn PG_RETURN_STRING(result: String) -> Datum {
-    let cs = CString::new(result).unwrap();
+    let cs = CString::new(result).expect("CString::new failed");
     PG_RETURN_CSTRING(cs)
 }
 
 pub fn PG_RETURN_STR(result: &str) -> Datum {
-    let cs = CString::new(result).unwrap();
+    let cs = CString::new(result).expect("CString::new failed");
     PG_RETURN_CSTRING(cs)
 }
 
