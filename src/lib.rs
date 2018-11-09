@@ -4,7 +4,7 @@ pub mod bindings;
 pub mod macros;
 
 use bindings::*;
-use std::ffi::CString;
+use std::ffi::{ CString, CStr };
 use std::os::raw::c_char;
 
 pub fn PG_GETARG_DATUM(fcinfo: FunctionCallInfo, n: usize) -> Datum {
@@ -62,14 +62,16 @@ pub fn PG_GETARG_U64(fcinfo: FunctionCallInfo, n: usize) -> u64 {
     val as u64
 }
 
-pub fn PG_GETARG_CSTRING(fcinfo: FunctionCallInfo, n: usize) -> CString {
-    let c = unsafe { (&*fcinfo).arg[n] as *mut c_char };
-    let cs = unsafe { CString::from_raw(c).clone() };
-    cs
-}
+// pub fn PG_GETARG_CSTRING(fcinfo: FunctionCallInfo, n: usize) -> CString {
+//     let c = unsafe { (&*fcinfo).arg[n] as *mut c_char };
+//     let cs = unsafe { CStr::from_ptr(c).into_c_string() };
+//     cs
+// }
 
 pub fn PG_GETARG_STRING(fcinfo: FunctionCallInfo, n: usize) -> String {
-    PG_GETARG_CSTRING(fcinfo, n).into_string().unwrap()
+    let c = unsafe { (&*fcinfo).arg[n] as *mut c_char };
+    let s = unsafe { CStr::from_ptr(c).to_string_lossy().into_owned() };
+    s
 }
 
 pub fn PG_RETURN_CSTRING(result: CString) -> Datum {
