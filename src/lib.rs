@@ -64,7 +64,7 @@ pub fn PG_GETARG_U64(fcinfo: FunctionCallInfo, n: usize) -> u64 {
 
 pub fn PG_GETARG_CSTRING(fcinfo: FunctionCallInfo, n: usize) -> CString {
     let c = unsafe { (&*fcinfo).arg[n] as *mut c_char };
-    let cs = unsafe { CString::from_raw(c) };
+    let cs = unsafe { CString::from_raw(c).clone() };
     cs
 }
 
