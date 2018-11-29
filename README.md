@@ -78,6 +78,8 @@ There are individual repos for each platform, listed below:
 - [pgxr_lin_x64_95](https://github.com/clia/pgxr_lin_x64_95) - PostgreSQL 9.5 on Linux on X86-64
 - [pgxr_lin_x64_96](https://github.com/clia/pgxr_lin_x64_96) - PostgreSQL 9.6 on Linux on X86-64
 
+You can simply change the crate path in your `Cargo.toml` (No change the crate name `pgxr`) to develop for your target platform.
+
 That is it.
 
 Have fun!
