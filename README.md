@@ -65,6 +65,19 @@ You can `bindgen` your platform's `bindings.rs`, using:
 bindgen wrapper.h -o src/bindings.rs -- -I /usr/include/postgresql/10/server
 ```
 
+## Other platforms
+
+This repo is for PostgreSQL 10 on the Linux platform on X86-64 arch.
+
+There are individual repos for each platform, listed below:
+
+- [pgxr_lin_x64_10](https://github.com/clia/pgxr_lin_x64_10) - PostgreSQL 10 on Linux on X86-64
+- [pgxr_lin_x64_11](https://github.com/clia/pgxr_lin_x64_11) - PostgreSQL 11 on Linux on X86-64
+- [pgxr_lin_x64_93](https://github.com/clia/pgxr_lin_x64_93) - PostgreSQL 9.3 on Linux on X86-64
+- [pgxr_lin_x64_94](https://github.com/clia/pgxr_lin_x64_94) - PostgreSQL 9.4 on Linux on X86-64
+- [pgxr_lin_x64_95](https://github.com/clia/pgxr_lin_x64_95) - PostgreSQL 9.5 on Linux on X86-64
+- [pgxr_lin_x64_96](https://github.com/clia/pgxr_lin_x64_96) - PostgreSQL 9.6 on Linux on X86-64
+
 That is it.
 
 Have fun!
