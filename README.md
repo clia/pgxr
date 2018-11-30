@@ -20,7 +20,7 @@ PG_FUNCTION_INFO_V1!(pg_finfo_pgxr_example_one);
 #[no_mangle]
 pub extern "C" fn pgxr_example_one(_fcinfo: FunctionCallInfo) -> Datum
 {
-    1
+    PG_RETURN_I32(1)
 }
 
 ```
@@ -47,13 +47,13 @@ psql
 ```
 
 ```sql
-CREATE FUNCTION pgxr_example_one(integer) RETURNS integer
+CREATE FUNCTION pgxr_example_one() RETURNS integer
      AS 'libpgxr_example_one.so', 'pgxr_example_one'
      LANGUAGE C STRICT;
 ```
 
 ```sql
-select pgxr_example_one(1);
+select pgxr_example_one();
 ```
 
 ## bindgen
