@@ -218,10 +218,16 @@ pub const HAVE_CRYPT: u32 = 1;
 pub const HAVE_CRYPT_H: u32 = 1;
 pub const HAVE_DECL_FDATASYNC: u32 = 1;
 pub const HAVE_DECL_F_FULLFSYNC: u32 = 0;
+pub const HAVE_DECL_LLVMCREATEGDBREGISTRATIONLISTENER: u32 = 0;
+pub const HAVE_DECL_LLVMCREATEPERFJITEVENTLISTENER: u32 = 0;
+pub const HAVE_DECL_LLVMGETHOSTCPUFEATURES: u32 = 0;
+pub const HAVE_DECL_LLVMGETHOSTCPUNAME: u32 = 0;
+pub const HAVE_DECL_LLVMORCGETSYMBOLADDRESSIN: u32 = 0;
 pub const HAVE_DECL_POSIX_FADVISE: u32 = 1;
 pub const HAVE_DECL_SNPRINTF: u32 = 1;
 pub const HAVE_DECL_STRLCAT: u32 = 0;
 pub const HAVE_DECL_STRLCPY: u32 = 0;
+pub const HAVE_DECL_STRNLEN: u32 = 1;
 pub const HAVE_DECL_STRTOLL: u32 = 1;
 pub const HAVE_DECL_STRTOULL: u32 = 1;
 pub const HAVE_DECL_SYS_SIGLIST: u32 = 1;
@@ -259,6 +265,7 @@ pub const HAVE_IPV6: u32 = 1;
 pub const HAVE_ISINF: u32 = 1;
 pub const HAVE_LANGINFO_H: u32 = 1;
 pub const HAVE_LDAP_H: u32 = 1;
+pub const HAVE_LDAP_INITIALIZE: u32 = 1;
 pub const HAVE_LIBCRYPTO: u32 = 1;
 pub const HAVE_LIBLDAP: u32 = 1;
 pub const HAVE_LIBLDAP_R: u32 = 1;
@@ -297,13 +304,16 @@ pub const HAVE_SHM_OPEN: u32 = 1;
 pub const HAVE_SNPRINTF: u32 = 1;
 pub const HAVE_SPINLOCKS: u32 = 1;
 pub const HAVE_SRANDOM: u32 = 1;
+pub const HAVE_SSL_CLEAR_OPTIONS: u32 = 1;
 pub const HAVE_SSL_GET_CURRENT_COMPRESSION: u32 = 1;
+pub const HAVE_STDBOOL_H: u32 = 1;
 pub const HAVE_STDINT_H: u32 = 1;
 pub const HAVE_STDLIB_H: u32 = 1;
 pub const HAVE_STRERROR: u32 = 1;
 pub const HAVE_STRERROR_R: u32 = 1;
 pub const HAVE_STRINGS_H: u32 = 1;
 pub const HAVE_STRING_H: u32 = 1;
+pub const HAVE_STRNLEN: u32 = 1;
 pub const HAVE_STRONG_RANDOM: u32 = 1;
 pub const HAVE_STRTOLL: u32 = 1;
 pub const HAVE_STRTOULL: u32 = 1;
@@ -326,7 +336,6 @@ pub const HAVE_SYS_TYPES_H: u32 = 1;
 pub const HAVE_SYS_UN_H: u32 = 1;
 pub const HAVE_TERMIOS_H: u32 = 1;
 pub const HAVE_TM_ZONE: u32 = 1;
-pub const HAVE_TOWLOWER: u32 = 1;
 pub const HAVE_TYPEOF: u32 = 1;
 pub const HAVE_TZNAME: u32 = 1;
 pub const HAVE_UINTPTR_T: u32 = 1;
@@ -341,11 +350,14 @@ pub const HAVE_UUID_E2FS: u32 = 1;
 pub const HAVE_UUID_UUID_H: u32 = 1;
 pub const HAVE_VSNPRINTF: u32 = 1;
 pub const HAVE_WCHAR_H: u32 = 1;
-pub const HAVE_WCSTOMBS: u32 = 1;
 pub const HAVE_WCTYPE_H: u32 = 1;
+pub const HAVE_X509_GET_SIGNATURE_NID: u32 = 1;
+pub const HAVE__BOOL: u32 = 1;
+pub const HAVE__BUILTIN_BSWAP16: u32 = 1;
 pub const HAVE__BUILTIN_BSWAP32: u32 = 1;
 pub const HAVE__BUILTIN_BSWAP64: u32 = 1;
 pub const HAVE__BUILTIN_CONSTANT_P: u32 = 1;
+pub const HAVE__BUILTIN_OP_OVERFLOW: u32 = 1;
 pub const HAVE__BUILTIN_TYPES_COMPATIBLE_P: u32 = 1;
 pub const HAVE__BUILTIN_UNREACHABLE: u32 = 1;
 pub const HAVE__GET_CPUID: u32 = 1;
@@ -356,16 +368,17 @@ pub const MAXIMUM_ALIGNOF: u32 = 8;
 pub const MEMSET_LOOP_LIMIT: u32 = 1024;
 pub const PACKAGE_BUGREPORT: &'static [u8; 26usize] = b"pgsql-bugs@postgresql.org\0";
 pub const PACKAGE_NAME: &'static [u8; 11usize] = b"PostgreSQL\0";
-pub const PACKAGE_STRING: &'static [u8; 16usize] = b"PostgreSQL 10.5\0";
+pub const PACKAGE_STRING: &'static [u8; 16usize] = b"PostgreSQL 11.1\0";
 pub const PACKAGE_TARNAME: &'static [u8; 11usize] = b"postgresql\0";
 pub const PACKAGE_URL: &'static [u8; 1usize] = b"\0";
-pub const PACKAGE_VERSION: &'static [u8; 5usize] = b"10.5\0";
+pub const PACKAGE_VERSION: &'static [u8; 5usize] = b"11.1\0";
 pub const PG_KRB_SRVNAM: &'static [u8; 9usize] = b"postgres\0";
-pub const PG_MAJORVERSION: &'static [u8; 3usize] = b"10\0";
-pub const PG_VERSION: &'static [u8; 33usize] = b"10.5 (Ubuntu 10.5-2.pgdg18.04+1)\0";
-pub const PG_VERSION_NUM: u32 = 100005;
-pub const PG_VERSION_STR : & 'static [ u8 ; 129usize ] = b"PostgreSQL 10.5 (Ubuntu 10.5-2.pgdg18.04+1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 7.3.0-27ubuntu1~18.04) 7.3.0, 64-bit\0" ;
+pub const PG_MAJORVERSION: &'static [u8; 3usize] = b"11\0";
+pub const PG_VERSION: &'static [u8; 33usize] = b"11.1 (Ubuntu 11.1-1.pgdg18.04+1)\0";
+pub const PG_VERSION_NUM: u32 = 110001;
+pub const PG_VERSION_STR : & 'static [ u8 ; 129usize ] = b"PostgreSQL 11.1 (Ubuntu 11.1-1.pgdg18.04+1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 7.3.0-27ubuntu1~18.04) 7.3.0, 64-bit\0" ;
 pub const RELSEG_SIZE: u32 = 131072;
+pub const SIZEOF_BOOL: u32 = 1;
 pub const SIZEOF_LONG: u32 = 8;
 pub const SIZEOF_OFF_T: u32 = 8;
 pub const SIZEOF_SIZE_T: u32 = 8;
@@ -377,6 +390,7 @@ pub const USE_ICU: u32 = 1;
 pub const USE_LDAP: u32 = 1;
 pub const USE_LIBXML: u32 = 1;
 pub const USE_LIBXSLT: u32 = 1;
+pub const USE_LLVM: u32 = 1;
 pub const USE_OPENSSL: u32 = 1;
 pub const USE_OPENSSL_RANDOM: u32 = 1;
 pub const USE_PAM: u32 = 1;
@@ -385,7 +399,7 @@ pub const USE_SYSTEMD: u32 = 1;
 pub const USE_SYSV_SHARED_MEMORY: u32 = 1;
 pub const USE_UNNAMED_POSIX_SEMAPHORES: u32 = 1;
 pub const XLOG_BLCKSZ: u32 = 8192;
-pub const XLOG_SEG_SIZE: u32 = 16777216;
+pub const DEFAULT_XLOG_SEG_SIZE: u32 = 16777216;
 pub const NAMEDATALEN: u32 = 64;
 pub const FUNC_MAX_ARGS: u32 = 100;
 pub const INDEX_MAX_KEYS: u32 = 32;
@@ -827,8 +841,10 @@ pub const LC_ALL_MASK: u32 = 8127;
 pub const _LIBINTL_H: u32 = 1;
 pub const __USE_GNU_GETTEXT: u32 = 1;
 pub const HAVE_PG_ATTRIBUTE_NORETURN: u32 = 1;
-pub const TRUE: u32 = 1;
-pub const FALSE: u32 = 0;
+pub const true_: u32 = 1;
+pub const false_: u32 = 0;
+pub const __bool_true_false_are_defined: u32 = 1;
+pub const USE_STDBOOL: u32 = 1;
 pub const INT64_FORMAT: &'static [u8; 4usize] = b"%ld\0";
 pub const UINT64_FORMAT: &'static [u8; 4usize] = b"%lu\0";
 pub const HAVE_INT128: u32 = 1;
@@ -1236,10 +1252,40 @@ pub const _PWD_H: u32 = 1;
 pub const NSS_BUFLEN_PASSWD: u32 = 1024;
 pub const PGINVALID_SOCKET: i32 = -1;
 pub const PG_BACKEND_VERSIONSTR: &'static [u8; 56usize] =
-    b"postgres (PostgreSQL) 10.5 (Ubuntu 10.5-2.pgdg18.04+1)\n\0";
+    b"postgres (PostgreSQL) 11.1 (Ubuntu 11.1-1.pgdg18.04+1)\n\0";
 pub const EXE: &'static [u8; 1usize] = b"\0";
 pub const DEVNULL: &'static [u8; 10usize] = b"/dev/null\0";
 pub const PG_IOLBF: u32 = 1;
+pub const _MATH_H: u32 = 1;
+pub const _BITS_LIBM_SIMD_DECL_STUBS_H: u32 = 1;
+pub const __FP_LOGB0_IS_MIN: u32 = 1;
+pub const __FP_LOGBNAN_IS_MIN: u32 = 1;
+pub const FP_ILOGB0: i32 = -2147483648;
+pub const FP_ILOGBNAN: i32 = -2147483648;
+pub const __MATH_DECLARING_DOUBLE: u32 = 1;
+pub const __MATH_DECLARING_FLOATN: u32 = 0;
+pub const __MATH_DECLARE_LDOUBLE: u32 = 1;
+pub const FP_NAN: u32 = 0;
+pub const FP_INFINITE: u32 = 1;
+pub const FP_ZERO: u32 = 2;
+pub const FP_SUBNORMAL: u32 = 3;
+pub const FP_NORMAL: u32 = 4;
+pub const MATH_ERRNO: u32 = 1;
+pub const MATH_ERREXCEPT: u32 = 2;
+pub const math_errhandling: u32 = 3;
+pub const M_E: f64 = 2.718281828459045;
+pub const M_LOG2E: f64 = 1.4426950408889634;
+pub const M_LOG10E: f64 = 0.4342944819032518;
+pub const M_LN2: f64 = 0.6931471805599453;
+pub const M_LN10: f64 = 2.302585092994046;
+pub const M_PI: f64 = 3.141592653589793;
+pub const M_PI_2: f64 = 1.5707963267948966;
+pub const M_PI_4: f64 = 0.7853981633974483;
+pub const M_1_PI: f64 = 0.3183098861837907;
+pub const M_2_PI: f64 = 0.6366197723675814;
+pub const M_2_SQRTPI: f64 = 1.1283791670955126;
+pub const M_SQRT2: f64 = 1.4142135623730951;
+pub const M_SQRT1_2: f64 = 0.7071067811865476;
 pub const _SETJMP_H: u32 = 1;
 pub const _BITS_SETJMP_H: u32 = 1;
 pub const DEBUG5: u32 = 10;
@@ -1265,6 +1311,9 @@ pub const MCXT_ALLOC_NO_OOM: u32 = 2;
 pub const MCXT_ALLOC_ZERO: u32 = 4;
 pub const VARATT_SHORT_MAX: u32 = 127;
 pub const SIZEOF_DATUM: u32 = 8;
+pub const FIELDNO_FUNCTIONCALLINFODATA_ISNULL: u32 = 4;
+pub const FIELDNO_FUNCTIONCALLINFODATA_ARG: u32 = 6;
+pub const FIELDNO_FUNCTIONCALLINFODATA_ARGNULL: u32 = 7;
 pub const PG_MAGIC_FUNCTION_NAME_STRING: &'static [u8; 14usize] = b"Pg_magic_func\0";
 pub const AGG_CONTEXT_AGGREGATE: u32 = 1;
 pub const AGG_CONTEXT_WINDOW: u32 = 2;
@@ -1286,6 +1335,9 @@ pub const LP_NORMAL: u32 = 1;
 pub const LP_REDIRECT: u32 = 2;
 pub const LP_DEAD: u32 = 3;
 pub const OffsetNumberMask: u32 = 65535;
+pub const SpecTokenOffsetNumber: u32 = 65534;
+pub const MovedPartitionsOffsetNumber: u32 = 65533;
+pub const FIELDNO_HEAPTUPLEDATA_DATA: u32 = 3;
 pub const BITS_PER_BITMAPWORD: u32 = 32;
 pub const InvalidAttrNumber: u32 = 0;
 pub const MaxAttrNumber: u32 = 32767;
@@ -1312,20 +1364,26 @@ pub const ACL_SELECT_FOR_UPDATE: u32 = 4;
 pub const FRAMEOPTION_NONDEFAULT: u32 = 1;
 pub const FRAMEOPTION_RANGE: u32 = 2;
 pub const FRAMEOPTION_ROWS: u32 = 4;
-pub const FRAMEOPTION_BETWEEN: u32 = 8;
-pub const FRAMEOPTION_START_UNBOUNDED_PRECEDING: u32 = 16;
-pub const FRAMEOPTION_END_UNBOUNDED_PRECEDING: u32 = 32;
-pub const FRAMEOPTION_START_UNBOUNDED_FOLLOWING: u32 = 64;
-pub const FRAMEOPTION_END_UNBOUNDED_FOLLOWING: u32 = 128;
-pub const FRAMEOPTION_START_CURRENT_ROW: u32 = 256;
-pub const FRAMEOPTION_END_CURRENT_ROW: u32 = 512;
-pub const FRAMEOPTION_START_VALUE_PRECEDING: u32 = 1024;
-pub const FRAMEOPTION_END_VALUE_PRECEDING: u32 = 2048;
-pub const FRAMEOPTION_START_VALUE_FOLLOWING: u32 = 4096;
-pub const FRAMEOPTION_END_VALUE_FOLLOWING: u32 = 8192;
-pub const FRAMEOPTION_START_VALUE: u32 = 5120;
-pub const FRAMEOPTION_END_VALUE: u32 = 10240;
-pub const FRAMEOPTION_DEFAULTS: u32 = 530;
+pub const FRAMEOPTION_GROUPS: u32 = 8;
+pub const FRAMEOPTION_BETWEEN: u32 = 16;
+pub const FRAMEOPTION_START_UNBOUNDED_PRECEDING: u32 = 32;
+pub const FRAMEOPTION_END_UNBOUNDED_PRECEDING: u32 = 64;
+pub const FRAMEOPTION_START_UNBOUNDED_FOLLOWING: u32 = 128;
+pub const FRAMEOPTION_END_UNBOUNDED_FOLLOWING: u32 = 256;
+pub const FRAMEOPTION_START_CURRENT_ROW: u32 = 512;
+pub const FRAMEOPTION_END_CURRENT_ROW: u32 = 1024;
+pub const FRAMEOPTION_START_OFFSET_PRECEDING: u32 = 2048;
+pub const FRAMEOPTION_END_OFFSET_PRECEDING: u32 = 4096;
+pub const FRAMEOPTION_START_OFFSET_FOLLOWING: u32 = 8192;
+pub const FRAMEOPTION_END_OFFSET_FOLLOWING: u32 = 16384;
+pub const FRAMEOPTION_EXCLUDE_CURRENT_ROW: u32 = 32768;
+pub const FRAMEOPTION_EXCLUDE_GROUP: u32 = 65536;
+pub const FRAMEOPTION_EXCLUDE_TIES: u32 = 131072;
+pub const FRAMEOPTION_START_OFFSET: u32 = 10240;
+pub const FRAMEOPTION_END_OFFSET: u32 = 20480;
+pub const FRAMEOPTION_EXCLUSION: u32 = 229376;
+pub const FRAMEOPTION_DEFAULTS: u32 = 1058;
+pub const PARTITION_STRATEGY_HASH: u8 = 104u8;
 pub const PARTITION_STRATEGY_LIST: u8 = 108u8;
 pub const PARTITION_STRATEGY_RANGE: u8 = 114u8;
 pub const FKCONSTR_ACTION_NOACTION: u8 = 97u8;
@@ -1351,7 +1409,6 @@ pub const CURSOR_OPT_PARALLEL_OK: u32 = 256;
 pub const REINDEXOPT_VERBOSE: u32 = 1;
 pub const AttributeRelationId: u32 = 1249;
 pub const AttributeRelation_Rowtype_Id: u32 = 75;
-pub const Natts_pg_attribute: u32 = 22;
 pub const Anum_pg_attribute_attrelid: u32 = 1;
 pub const Anum_pg_attribute_attname: u32 = 2;
 pub const Anum_pg_attribute_atttypid: u32 = 3;
@@ -1366,16 +1423,20 @@ pub const Anum_pg_attribute_attstorage: u32 = 11;
 pub const Anum_pg_attribute_attalign: u32 = 12;
 pub const Anum_pg_attribute_attnotnull: u32 = 13;
 pub const Anum_pg_attribute_atthasdef: u32 = 14;
-pub const Anum_pg_attribute_attidentity: u32 = 15;
-pub const Anum_pg_attribute_attisdropped: u32 = 16;
-pub const Anum_pg_attribute_attislocal: u32 = 17;
-pub const Anum_pg_attribute_attinhcount: u32 = 18;
-pub const Anum_pg_attribute_attcollation: u32 = 19;
-pub const Anum_pg_attribute_attacl: u32 = 20;
-pub const Anum_pg_attribute_attoptions: u32 = 21;
-pub const Anum_pg_attribute_attfdwoptions: u32 = 22;
+pub const Anum_pg_attribute_atthasmissing: u32 = 15;
+pub const Anum_pg_attribute_attidentity: u32 = 16;
+pub const Anum_pg_attribute_attisdropped: u32 = 17;
+pub const Anum_pg_attribute_attislocal: u32 = 18;
+pub const Anum_pg_attribute_attinhcount: u32 = 19;
+pub const Anum_pg_attribute_attcollation: u32 = 20;
+pub const Anum_pg_attribute_attacl: u32 = 21;
+pub const Anum_pg_attribute_attoptions: u32 = 22;
+pub const Anum_pg_attribute_attfdwoptions: u32 = 23;
+pub const Anum_pg_attribute_attmissingval: u32 = 24;
+pub const Natts_pg_attribute: u32 = 24;
 pub const ATTRIBUTE_IDENTITY_ALWAYS: u8 = 97u8;
 pub const ATTRIBUTE_IDENTITY_BY_DEFAULT: u8 = 100u8;
+pub const RELCACHE_INIT_FILENAME: &'static [u8; 17usize] = b"pg_internal.init\0";
 pub const EOH_HEADER_MAGIC: i32 = -1;
 pub const EA_MAGIC: u32 = 689375833;
 pub const _FCNTL_H: u32 = 1;
@@ -1563,7 +1624,7 @@ pub const ACL_ALL_RIGHTS_FOREIGN_SERVER: u32 = 256;
 pub const ACL_ALL_RIGHTS_FUNCTION: u32 = 128;
 pub const ACL_ALL_RIGHTS_LANGUAGE: u32 = 256;
 pub const ACL_ALL_RIGHTS_LARGEOBJECT: u32 = 6;
-pub const ACL_ALL_RIGHTS_NAMESPACE: u32 = 768;
+pub const ACL_ALL_RIGHTS_SCHEMA: u32 = 768;
 pub const ACL_ALL_RIGHTS_TABLESPACE: u32 = 512;
 pub const ACL_ALL_RIGHTS_TYPE: u32 = 256;
 pub const BTLessStrategyNumber: u32 = 1;
@@ -1599,7 +1660,8 @@ pub const RTSubStrategyNumber: u32 = 24;
 pub const RTSubEqualStrategyNumber: u32 = 25;
 pub const RTSuperStrategyNumber: u32 = 26;
 pub const RTSuperEqualStrategyNumber: u32 = 27;
-pub const RTMaxStrategyNumber: u32 = 27;
+pub const RTPrefixStrategyNumber: u32 = 28;
+pub const RTMaxStrategyNumber: u32 = 28;
 pub const SK_ISNULL: u32 = 1;
 pub const SK_UNARY: u32 = 2;
 pub const SK_ROW_HEADER: u32 = 4;
@@ -1714,6 +1776,7 @@ pub const HEAP_INSERT_SKIP_WAL: u32 = 1;
 pub const HEAP_INSERT_SKIP_FSM: u32 = 2;
 pub const HEAP_INSERT_FROZEN: u32 = 4;
 pub const HEAP_INSERT_SPECULATIVE: u32 = 8;
+pub const HEAP_INSERT_NO_LOGICAL: u32 = 16;
 pub const _TIME_H: u32 = 1;
 pub const _BITS_TIME_H: u32 = 1;
 pub const CLOCK_REALTIME: u32 = 0;
@@ -1748,11 +1811,41 @@ pub const HASH_SHARED_MEM: u32 = 2048;
 pub const HASH_ATTACH: u32 = 4096;
 pub const HASH_FIXED_SIZE: u32 = 8192;
 pub const NO_MAX_DSIZE: i32 = -1;
+pub const _DIRENT_H: u32 = 1;
+pub const _DIRENT_MATCHES_DIRENT64: u32 = 1;
+pub const MAXNAMLEN: u32 = 255;
+pub const PG_TEMP_FILES_DIR: &'static [u8; 10usize] = b"pgsql_tmp\0";
+pub const PG_TEMP_FILE_PREFIX: &'static [u8; 10usize] = b"pgsql_tmp\0";
+pub const DEFAULT_SPINS_PER_DELAY: u32 = 100;
+pub const SHARED_TUPLESTORE_SINGLE_PASS: u32 = 1;
+pub const FIELDNO_TUPLETABLESLOT_SLOW: u32 = 4;
+pub const FIELDNO_TUPLETABLESLOT_TUPLE: u32 = 5;
+pub const FIELDNO_TUPLETABLESLOT_TUPLEDESCRIPTOR: u32 = 6;
+pub const FIELDNO_TUPLETABLESLOT_NVALID: u32 = 9;
+pub const FIELDNO_TUPLETABLESLOT_VALUES: u32 = 10;
+pub const FIELDNO_TUPLETABLESLOT_ISNULL: u32 = 11;
+pub const FIELDNO_TUPLETABLESLOT_OFF: u32 = 14;
 pub const INDEX_SIZE_MASK: u32 = 8191;
+pub const INDEX_AM_RESERVED_BIT: u32 = 8192;
 pub const INDEX_VAR_MASK: u32 = 16384;
 pub const INDEX_NULL_MASK: u32 = 32768;
-pub const DEFAULT_SPINS_PER_DELAY: u32 = 100;
 pub const EEO_FLAG_IS_QUAL: u32 = 1;
+pub const FIELDNO_EXPRSTATE_RESNULL: u32 = 2;
+pub const FIELDNO_EXPRSTATE_RESVALUE: u32 = 3;
+pub const FIELDNO_EXPRSTATE_RESULTSLOT: u32 = 4;
+pub const FIELDNO_EXPRCONTEXT_SCANTUPLE: u32 = 1;
+pub const FIELDNO_EXPRCONTEXT_INNERTUPLE: u32 = 2;
+pub const FIELDNO_EXPRCONTEXT_OUTERTUPLE: u32 = 3;
+pub const FIELDNO_EXPRCONTEXT_AGGVALUES: u32 = 8;
+pub const FIELDNO_EXPRCONTEXT_AGGNULLS: u32 = 9;
+pub const FIELDNO_EXPRCONTEXT_CASEDATUM: u32 = 10;
+pub const FIELDNO_EXPRCONTEXT_CASENULL: u32 = 11;
+pub const FIELDNO_EXPRCONTEXT_DOMAINDATUM: u32 = 12;
+pub const FIELDNO_EXPRCONTEXT_DOMAINNULL: u32 = 13;
+pub const FIELDNO_AGGSTATE_CURAGGCONTEXT: u32 = 14;
+pub const FIELDNO_AGGSTATE_CURPERTRANS: u32 = 16;
+pub const FIELDNO_AGGSTATE_CURRENT_SET: u32 = 20;
+pub const FIELDNO_AGGSTATE_ALL_PERGROUPS: u32 = 34;
 pub const TRIGGER_EVENT_INSERT: u32 = 0;
 pub const TRIGGER_EVENT_DELETE: u32 = 1;
 pub const TRIGGER_EVENT_UPDATE: u32 = 2;
@@ -1808,6 +1901,7 @@ pub const SPI_OK_REWRITTEN: u32 = 14;
 pub const SPI_OK_REL_REGISTER: u32 = 15;
 pub const SPI_OK_REL_UNREGISTER: u32 = 16;
 pub const SPI_OK_TD_REGISTER: u32 = 17;
+pub const SPI_OPT_NONATOMIC: u32 = 1;
 pub type Oid = ::std::os::raw::c_uint;
 pub type pg_int64 = ::std::os::raw::c_long;
 pub type __u_char = ::std::os::raw::c_uchar;
@@ -4796,8 +4890,10 @@ extern "C" {
     ) -> *mut ::std::os::raw::c_char;
 }
 pub type __compar_fn_t = ::std::option::Option<
-    unsafe extern "C" fn(arg1: *const ::std::os::raw::c_void, arg2: *const ::std::os::raw::c_void)
-        -> ::std::os::raw::c_int,
+    unsafe extern "C" fn(
+        arg1: *const ::std::os::raw::c_void,
+        arg2: *const ::std::os::raw::c_void,
+    ) -> ::std::os::raw::c_int,
 >;
 extern "C" {
     pub fn bsearch(
@@ -5766,8 +5862,6 @@ extern "C" {
         __codeset: *const ::std::os::raw::c_char,
     ) -> *mut ::std::os::raw::c_char;
 }
-pub type bool_ = ::std::os::raw::c_char;
-pub type BoolPtr = *mut bool_;
 pub type Pointer = *mut ::std::os::raw::c_char;
 pub type int8 = ::std::os::raw::c_schar;
 pub type int16 = ::std::os::raw::c_short;
@@ -5924,6 +6018,120 @@ fn bindgen_test_layout_nameData() {
 }
 pub type NameData = nameData;
 pub type Name = *mut NameData;
+extern "C" {
+    pub fn ExceptionalCondition(
+        conditionName: *const ::std::os::raw::c_char,
+        errorType: *const ::std::os::raw::c_char,
+        fileName: *const ::std::os::raw::c_char,
+        lineNumber: ::std::os::raw::c_int,
+    );
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union PGAlignedBlock {
+    pub data: [::std::os::raw::c_char; 8192usize],
+    pub force_align_d: f64,
+    pub force_align_i64: int64,
+    _bindgen_union_align: [u64; 1024usize],
+}
+#[test]
+fn bindgen_test_layout_PGAlignedBlock() {
+    assert_eq!(
+        ::std::mem::size_of::<PGAlignedBlock>(),
+        8192usize,
+        concat!("Size of: ", stringify!(PGAlignedBlock))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<PGAlignedBlock>(),
+        8usize,
+        concat!("Alignment of ", stringify!(PGAlignedBlock))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<PGAlignedBlock>())).data as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(PGAlignedBlock),
+            "::",
+            stringify!(data)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<PGAlignedBlock>())).force_align_d as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(PGAlignedBlock),
+            "::",
+            stringify!(force_align_d)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<PGAlignedBlock>())).force_align_i64 as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(PGAlignedBlock),
+            "::",
+            stringify!(force_align_i64)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union PGAlignedXLogBlock {
+    pub data: [::std::os::raw::c_char; 8192usize],
+    pub force_align_d: f64,
+    pub force_align_i64: int64,
+    _bindgen_union_align: [u64; 1024usize],
+}
+#[test]
+fn bindgen_test_layout_PGAlignedXLogBlock() {
+    assert_eq!(
+        ::std::mem::size_of::<PGAlignedXLogBlock>(),
+        8192usize,
+        concat!("Size of: ", stringify!(PGAlignedXLogBlock))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<PGAlignedXLogBlock>(),
+        8usize,
+        concat!("Alignment of ", stringify!(PGAlignedXLogBlock))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<PGAlignedXLogBlock>())).data as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(PGAlignedXLogBlock),
+            "::",
+            stringify!(data)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<PGAlignedXLogBlock>())).force_align_d as *const _ as usize
+        },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(PGAlignedXLogBlock),
+            "::",
+            stringify!(force_align_d)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<PGAlignedXLogBlock>())).force_align_i64 as *const _ as usize
+        },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(PGAlignedXLogBlock),
+            "::",
+            stringify!(force_align_i64)
+        )
+    );
+}
 pub const _ISupper: _bindgen_ty_1 = 256;
 pub const _ISlower: _bindgen_ty_1 = 512;
 pub const _ISalpha: _bindgen_ty_1 = 1024;
@@ -8334,13 +8542,13 @@ extern "C" {
 }
 pub type pgsocket = ::std::os::raw::c_int;
 extern "C" {
-    pub fn pg_set_noblock(sock: pgsocket) -> bool_;
+    pub fn pg_set_noblock(sock: pgsocket) -> bool;
 }
 extern "C" {
-    pub fn pg_set_block(sock: pgsocket) -> bool_;
+    pub fn pg_set_block(sock: pgsocket) -> bool;
 }
 extern "C" {
-    pub fn has_drive_prefix(filename: *const ::std::os::raw::c_char) -> bool_;
+    pub fn has_drive_prefix(filename: *const ::std::os::raw::c_char) -> bool;
 }
 extern "C" {
     pub fn first_dir_separator(
@@ -8374,16 +8582,16 @@ extern "C" {
     pub fn cleanup_path(path: *mut ::std::os::raw::c_char);
 }
 extern "C" {
-    pub fn path_contains_parent_reference(path: *const ::std::os::raw::c_char) -> bool_;
+    pub fn path_contains_parent_reference(path: *const ::std::os::raw::c_char) -> bool;
 }
 extern "C" {
-    pub fn path_is_relative_and_below_cwd(path: *const ::std::os::raw::c_char) -> bool_;
+    pub fn path_is_relative_and_below_cwd(path: *const ::std::os::raw::c_char) -> bool;
 }
 extern "C" {
     pub fn path_is_prefix_of_path(
         path1: *const ::std::os::raw::c_char,
         path2: *const ::std::os::raw::c_char,
-    ) -> bool_;
+    ) -> bool;
 }
 extern "C" {
     pub fn make_absolute_path(path: *const ::std::os::raw::c_char) -> *mut ::std::os::raw::c_char;
@@ -8458,7 +8666,7 @@ extern "C" {
     );
 }
 extern "C" {
-    pub fn get_home_path(ret_path: *mut ::std::os::raw::c_char) -> bool_;
+    pub fn get_home_path(ret_path: *mut ::std::os::raw::c_char) -> bool;
 }
 extern "C" {
     pub fn get_parent_directory(path: *mut ::std::os::raw::c_char);
@@ -8522,14 +8730,14 @@ extern "C" {
         prompt: *const ::std::os::raw::c_char,
         destination: *mut ::std::os::raw::c_char,
         destlen: usize,
-        echo: bool_,
+        echo: bool,
     );
 }
 extern "C" {
     pub fn pclose_check(stream: *mut FILE) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    pub fn rmtree(path: *const ::std::os::raw::c_char, rmtopdir: bool_) -> bool_;
+    pub fn rmtree(path: *const ::std::os::raw::c_char, rmtopdir: bool) -> bool;
 }
 extern "C" {
     pub fn pg_erand48(xseed: *mut ::std::os::raw::c_ushort) -> f64;
@@ -8553,6 +8761,1332 @@ extern "C" {
         gid: *mut gid_t,
     ) -> ::std::os::raw::c_int;
 }
+pub type float_t = f32;
+pub type double_t = f64;
+extern "C" {
+    pub fn __fpclassify(__value: f64) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn __signbit(__value: f64) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn __isinf(__value: f64) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn __finite(__value: f64) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn __isnan(__value: f64) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn __iseqsig(__x: f64, __y: f64) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn __issignaling(__value: f64) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn acos(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __acos(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn asin(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __asin(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn atan(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __atan(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn atan2(__y: f64, __x: f64) -> f64;
+}
+extern "C" {
+    pub fn __atan2(__y: f64, __x: f64) -> f64;
+}
+extern "C" {
+    pub fn cos(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __cos(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn sin(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __sin(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn tan(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __tan(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn cosh(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __cosh(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn sinh(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __sinh(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn tanh(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __tanh(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn acosh(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __acosh(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn asinh(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __asinh(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn atanh(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __atanh(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn exp(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __exp(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn frexp(__x: f64, __exponent: *mut ::std::os::raw::c_int) -> f64;
+}
+extern "C" {
+    pub fn __frexp(__x: f64, __exponent: *mut ::std::os::raw::c_int) -> f64;
+}
+extern "C" {
+    pub fn ldexp(__x: f64, __exponent: ::std::os::raw::c_int) -> f64;
+}
+extern "C" {
+    pub fn __ldexp(__x: f64, __exponent: ::std::os::raw::c_int) -> f64;
+}
+extern "C" {
+    pub fn log(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __log(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn log10(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __log10(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn modf(__x: f64, __iptr: *mut f64) -> f64;
+}
+extern "C" {
+    pub fn __modf(__x: f64, __iptr: *mut f64) -> f64;
+}
+extern "C" {
+    pub fn expm1(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __expm1(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn log1p(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __log1p(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn logb(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __logb(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn exp2(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __exp2(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn log2(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __log2(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn pow(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn __pow(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn sqrt(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __sqrt(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn hypot(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn __hypot(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn cbrt(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __cbrt(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn ceil(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __ceil(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn fabs(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __fabs(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn floor(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __floor(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn fmod(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn __fmod(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn isinf(__value: f64) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn finite(__value: f64) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn drem(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn __drem(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn significand(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __significand(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn copysign(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn __copysign(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn nan(__tagb: *const ::std::os::raw::c_char) -> f64;
+}
+extern "C" {
+    pub fn __nan(__tagb: *const ::std::os::raw::c_char) -> f64;
+}
+extern "C" {
+    pub fn isnan(__value: f64) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn j0(arg1: f64) -> f64;
+}
+extern "C" {
+    pub fn __j0(arg1: f64) -> f64;
+}
+extern "C" {
+    pub fn j1(arg1: f64) -> f64;
+}
+extern "C" {
+    pub fn __j1(arg1: f64) -> f64;
+}
+extern "C" {
+    pub fn jn(arg1: ::std::os::raw::c_int, arg2: f64) -> f64;
+}
+extern "C" {
+    pub fn __jn(arg1: ::std::os::raw::c_int, arg2: f64) -> f64;
+}
+extern "C" {
+    pub fn y0(arg1: f64) -> f64;
+}
+extern "C" {
+    pub fn __y0(arg1: f64) -> f64;
+}
+extern "C" {
+    pub fn y1(arg1: f64) -> f64;
+}
+extern "C" {
+    pub fn __y1(arg1: f64) -> f64;
+}
+extern "C" {
+    pub fn yn(arg1: ::std::os::raw::c_int, arg2: f64) -> f64;
+}
+extern "C" {
+    pub fn __yn(arg1: ::std::os::raw::c_int, arg2: f64) -> f64;
+}
+extern "C" {
+    pub fn erf(arg1: f64) -> f64;
+}
+extern "C" {
+    pub fn __erf(arg1: f64) -> f64;
+}
+extern "C" {
+    pub fn erfc(arg1: f64) -> f64;
+}
+extern "C" {
+    pub fn __erfc(arg1: f64) -> f64;
+}
+extern "C" {
+    pub fn lgamma(arg1: f64) -> f64;
+}
+extern "C" {
+    pub fn __lgamma(arg1: f64) -> f64;
+}
+extern "C" {
+    pub fn tgamma(arg1: f64) -> f64;
+}
+extern "C" {
+    pub fn __tgamma(arg1: f64) -> f64;
+}
+extern "C" {
+    pub fn gamma(arg1: f64) -> f64;
+}
+extern "C" {
+    pub fn __gamma(arg1: f64) -> f64;
+}
+extern "C" {
+    pub fn lgamma_r(arg1: f64, __signgamp: *mut ::std::os::raw::c_int) -> f64;
+}
+extern "C" {
+    pub fn __lgamma_r(arg1: f64, __signgamp: *mut ::std::os::raw::c_int) -> f64;
+}
+extern "C" {
+    pub fn rint(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __rint(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn nextafter(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn __nextafter(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn nexttoward(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn __nexttoward(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn remainder(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn __remainder(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn scalbn(__x: f64, __n: ::std::os::raw::c_int) -> f64;
+}
+extern "C" {
+    pub fn __scalbn(__x: f64, __n: ::std::os::raw::c_int) -> f64;
+}
+extern "C" {
+    pub fn ilogb(__x: f64) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn __ilogb(__x: f64) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn scalbln(__x: f64, __n: ::std::os::raw::c_long) -> f64;
+}
+extern "C" {
+    pub fn __scalbln(__x: f64, __n: ::std::os::raw::c_long) -> f64;
+}
+extern "C" {
+    pub fn nearbyint(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __nearbyint(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn round(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __round(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn trunc(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __trunc(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn remquo(__x: f64, __y: f64, __quo: *mut ::std::os::raw::c_int) -> f64;
+}
+extern "C" {
+    pub fn __remquo(__x: f64, __y: f64, __quo: *mut ::std::os::raw::c_int) -> f64;
+}
+extern "C" {
+    pub fn lrint(__x: f64) -> ::std::os::raw::c_long;
+}
+extern "C" {
+    pub fn __lrint(__x: f64) -> ::std::os::raw::c_long;
+}
+extern "C" {
+    pub fn llrint(__x: f64) -> ::std::os::raw::c_longlong;
+}
+extern "C" {
+    pub fn __llrint(__x: f64) -> ::std::os::raw::c_longlong;
+}
+extern "C" {
+    pub fn lround(__x: f64) -> ::std::os::raw::c_long;
+}
+extern "C" {
+    pub fn __lround(__x: f64) -> ::std::os::raw::c_long;
+}
+extern "C" {
+    pub fn llround(__x: f64) -> ::std::os::raw::c_longlong;
+}
+extern "C" {
+    pub fn __llround(__x: f64) -> ::std::os::raw::c_longlong;
+}
+extern "C" {
+    pub fn fdim(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn __fdim(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn fmax(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn __fmax(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn fmin(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn __fmin(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn fma(__x: f64, __y: f64, __z: f64) -> f64;
+}
+extern "C" {
+    pub fn __fma(__x: f64, __y: f64, __z: f64) -> f64;
+}
+extern "C" {
+    pub fn scalb(__x: f64, __n: f64) -> f64;
+}
+extern "C" {
+    pub fn __scalb(__x: f64, __n: f64) -> f64;
+}
+extern "C" {
+    pub fn __fpclassifyf(__value: f32) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn __signbitf(__value: f32) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn __isinff(__value: f32) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn __finitef(__value: f32) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn __isnanf(__value: f32) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn __iseqsigf(__x: f32, __y: f32) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn __issignalingf(__value: f32) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn acosf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn __acosf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn asinf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn __asinf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn atanf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn __atanf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn atan2f(__y: f32, __x: f32) -> f32;
+}
+extern "C" {
+    pub fn __atan2f(__y: f32, __x: f32) -> f32;
+}
+extern "C" {
+    pub fn cosf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn __cosf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn sinf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn __sinf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn tanf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn __tanf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn coshf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn __coshf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn sinhf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn __sinhf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn tanhf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn __tanhf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn acoshf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn __acoshf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn asinhf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn __asinhf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn atanhf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn __atanhf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn expf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn __expf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn frexpf(__x: f32, __exponent: *mut ::std::os::raw::c_int) -> f32;
+}
+extern "C" {
+    pub fn __frexpf(__x: f32, __exponent: *mut ::std::os::raw::c_int) -> f32;
+}
+extern "C" {
+    pub fn ldexpf(__x: f32, __exponent: ::std::os::raw::c_int) -> f32;
+}
+extern "C" {
+    pub fn __ldexpf(__x: f32, __exponent: ::std::os::raw::c_int) -> f32;
+}
+extern "C" {
+    pub fn logf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn __logf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn log10f(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn __log10f(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn modff(__x: f32, __iptr: *mut f32) -> f32;
+}
+extern "C" {
+    pub fn __modff(__x: f32, __iptr: *mut f32) -> f32;
+}
+extern "C" {
+    pub fn expm1f(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn __expm1f(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn log1pf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn __log1pf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn logbf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn __logbf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn exp2f(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn __exp2f(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn log2f(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn __log2f(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn powf(__x: f32, __y: f32) -> f32;
+}
+extern "C" {
+    pub fn __powf(__x: f32, __y: f32) -> f32;
+}
+extern "C" {
+    pub fn sqrtf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn __sqrtf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn hypotf(__x: f32, __y: f32) -> f32;
+}
+extern "C" {
+    pub fn __hypotf(__x: f32, __y: f32) -> f32;
+}
+extern "C" {
+    pub fn cbrtf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn __cbrtf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn ceilf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn __ceilf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn fabsf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn __fabsf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn floorf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn __floorf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn fmodf(__x: f32, __y: f32) -> f32;
+}
+extern "C" {
+    pub fn __fmodf(__x: f32, __y: f32) -> f32;
+}
+extern "C" {
+    pub fn isinff(__value: f32) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn finitef(__value: f32) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn dremf(__x: f32, __y: f32) -> f32;
+}
+extern "C" {
+    pub fn __dremf(__x: f32, __y: f32) -> f32;
+}
+extern "C" {
+    pub fn significandf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn __significandf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn copysignf(__x: f32, __y: f32) -> f32;
+}
+extern "C" {
+    pub fn __copysignf(__x: f32, __y: f32) -> f32;
+}
+extern "C" {
+    pub fn nanf(__tagb: *const ::std::os::raw::c_char) -> f32;
+}
+extern "C" {
+    pub fn __nanf(__tagb: *const ::std::os::raw::c_char) -> f32;
+}
+extern "C" {
+    pub fn isnanf(__value: f32) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn j0f(arg1: f32) -> f32;
+}
+extern "C" {
+    pub fn __j0f(arg1: f32) -> f32;
+}
+extern "C" {
+    pub fn j1f(arg1: f32) -> f32;
+}
+extern "C" {
+    pub fn __j1f(arg1: f32) -> f32;
+}
+extern "C" {
+    pub fn jnf(arg1: ::std::os::raw::c_int, arg2: f32) -> f32;
+}
+extern "C" {
+    pub fn __jnf(arg1: ::std::os::raw::c_int, arg2: f32) -> f32;
+}
+extern "C" {
+    pub fn y0f(arg1: f32) -> f32;
+}
+extern "C" {
+    pub fn __y0f(arg1: f32) -> f32;
+}
+extern "C" {
+    pub fn y1f(arg1: f32) -> f32;
+}
+extern "C" {
+    pub fn __y1f(arg1: f32) -> f32;
+}
+extern "C" {
+    pub fn ynf(arg1: ::std::os::raw::c_int, arg2: f32) -> f32;
+}
+extern "C" {
+    pub fn __ynf(arg1: ::std::os::raw::c_int, arg2: f32) -> f32;
+}
+extern "C" {
+    pub fn erff(arg1: f32) -> f32;
+}
+extern "C" {
+    pub fn __erff(arg1: f32) -> f32;
+}
+extern "C" {
+    pub fn erfcf(arg1: f32) -> f32;
+}
+extern "C" {
+    pub fn __erfcf(arg1: f32) -> f32;
+}
+extern "C" {
+    pub fn lgammaf(arg1: f32) -> f32;
+}
+extern "C" {
+    pub fn __lgammaf(arg1: f32) -> f32;
+}
+extern "C" {
+    pub fn tgammaf(arg1: f32) -> f32;
+}
+extern "C" {
+    pub fn __tgammaf(arg1: f32) -> f32;
+}
+extern "C" {
+    pub fn gammaf(arg1: f32) -> f32;
+}
+extern "C" {
+    pub fn __gammaf(arg1: f32) -> f32;
+}
+extern "C" {
+    pub fn lgammaf_r(arg1: f32, __signgamp: *mut ::std::os::raw::c_int) -> f32;
+}
+extern "C" {
+    pub fn __lgammaf_r(arg1: f32, __signgamp: *mut ::std::os::raw::c_int) -> f32;
+}
+extern "C" {
+    pub fn rintf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn __rintf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn nextafterf(__x: f32, __y: f32) -> f32;
+}
+extern "C" {
+    pub fn __nextafterf(__x: f32, __y: f32) -> f32;
+}
+extern "C" {
+    pub fn nexttowardf(__x: f32, __y: f64) -> f32;
+}
+extern "C" {
+    pub fn __nexttowardf(__x: f32, __y: f64) -> f32;
+}
+extern "C" {
+    pub fn remainderf(__x: f32, __y: f32) -> f32;
+}
+extern "C" {
+    pub fn __remainderf(__x: f32, __y: f32) -> f32;
+}
+extern "C" {
+    pub fn scalbnf(__x: f32, __n: ::std::os::raw::c_int) -> f32;
+}
+extern "C" {
+    pub fn __scalbnf(__x: f32, __n: ::std::os::raw::c_int) -> f32;
+}
+extern "C" {
+    pub fn ilogbf(__x: f32) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn __ilogbf(__x: f32) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn scalblnf(__x: f32, __n: ::std::os::raw::c_long) -> f32;
+}
+extern "C" {
+    pub fn __scalblnf(__x: f32, __n: ::std::os::raw::c_long) -> f32;
+}
+extern "C" {
+    pub fn nearbyintf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn __nearbyintf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn roundf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn __roundf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn truncf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn __truncf(__x: f32) -> f32;
+}
+extern "C" {
+    pub fn remquof(__x: f32, __y: f32, __quo: *mut ::std::os::raw::c_int) -> f32;
+}
+extern "C" {
+    pub fn __remquof(__x: f32, __y: f32, __quo: *mut ::std::os::raw::c_int) -> f32;
+}
+extern "C" {
+    pub fn lrintf(__x: f32) -> ::std::os::raw::c_long;
+}
+extern "C" {
+    pub fn __lrintf(__x: f32) -> ::std::os::raw::c_long;
+}
+extern "C" {
+    pub fn llrintf(__x: f32) -> ::std::os::raw::c_longlong;
+}
+extern "C" {
+    pub fn __llrintf(__x: f32) -> ::std::os::raw::c_longlong;
+}
+extern "C" {
+    pub fn lroundf(__x: f32) -> ::std::os::raw::c_long;
+}
+extern "C" {
+    pub fn __lroundf(__x: f32) -> ::std::os::raw::c_long;
+}
+extern "C" {
+    pub fn llroundf(__x: f32) -> ::std::os::raw::c_longlong;
+}
+extern "C" {
+    pub fn __llroundf(__x: f32) -> ::std::os::raw::c_longlong;
+}
+extern "C" {
+    pub fn fdimf(__x: f32, __y: f32) -> f32;
+}
+extern "C" {
+    pub fn __fdimf(__x: f32, __y: f32) -> f32;
+}
+extern "C" {
+    pub fn fmaxf(__x: f32, __y: f32) -> f32;
+}
+extern "C" {
+    pub fn __fmaxf(__x: f32, __y: f32) -> f32;
+}
+extern "C" {
+    pub fn fminf(__x: f32, __y: f32) -> f32;
+}
+extern "C" {
+    pub fn __fminf(__x: f32, __y: f32) -> f32;
+}
+extern "C" {
+    pub fn fmaf(__x: f32, __y: f32, __z: f32) -> f32;
+}
+extern "C" {
+    pub fn __fmaf(__x: f32, __y: f32, __z: f32) -> f32;
+}
+extern "C" {
+    pub fn scalbf(__x: f32, __n: f32) -> f32;
+}
+extern "C" {
+    pub fn __scalbf(__x: f32, __n: f32) -> f32;
+}
+extern "C" {
+    pub fn __fpclassifyl(__value: f64) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn __signbitl(__value: f64) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn __isinfl(__value: f64) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn __finitel(__value: f64) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn __isnanl(__value: f64) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn __iseqsigl(__x: f64, __y: f64) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn __issignalingl(__value: f64) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn acosl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __acosl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn asinl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __asinl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn atanl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __atanl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn atan2l(__y: f64, __x: f64) -> f64;
+}
+extern "C" {
+    pub fn __atan2l(__y: f64, __x: f64) -> f64;
+}
+extern "C" {
+    pub fn cosl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __cosl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn sinl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __sinl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn tanl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __tanl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn coshl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __coshl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn sinhl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __sinhl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn tanhl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __tanhl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn acoshl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __acoshl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn asinhl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __asinhl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn atanhl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __atanhl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn expl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __expl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn frexpl(__x: f64, __exponent: *mut ::std::os::raw::c_int) -> f64;
+}
+extern "C" {
+    pub fn __frexpl(__x: f64, __exponent: *mut ::std::os::raw::c_int) -> f64;
+}
+extern "C" {
+    pub fn ldexpl(__x: f64, __exponent: ::std::os::raw::c_int) -> f64;
+}
+extern "C" {
+    pub fn __ldexpl(__x: f64, __exponent: ::std::os::raw::c_int) -> f64;
+}
+extern "C" {
+    pub fn logl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __logl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn log10l(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __log10l(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn modfl(__x: f64, __iptr: *mut f64) -> f64;
+}
+extern "C" {
+    pub fn __modfl(__x: f64, __iptr: *mut f64) -> f64;
+}
+extern "C" {
+    pub fn expm1l(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __expm1l(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn log1pl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __log1pl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn logbl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __logbl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn exp2l(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __exp2l(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn log2l(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __log2l(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn powl(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn __powl(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn sqrtl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __sqrtl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn hypotl(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn __hypotl(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn cbrtl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __cbrtl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn ceill(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __ceill(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn fabsl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __fabsl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn floorl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __floorl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn fmodl(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn __fmodl(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn isinfl(__value: f64) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn finitel(__value: f64) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn dreml(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn __dreml(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn significandl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __significandl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn copysignl(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn __copysignl(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn nanl(__tagb: *const ::std::os::raw::c_char) -> f64;
+}
+extern "C" {
+    pub fn __nanl(__tagb: *const ::std::os::raw::c_char) -> f64;
+}
+extern "C" {
+    pub fn isnanl(__value: f64) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn j0l(arg1: f64) -> f64;
+}
+extern "C" {
+    pub fn __j0l(arg1: f64) -> f64;
+}
+extern "C" {
+    pub fn j1l(arg1: f64) -> f64;
+}
+extern "C" {
+    pub fn __j1l(arg1: f64) -> f64;
+}
+extern "C" {
+    pub fn jnl(arg1: ::std::os::raw::c_int, arg2: f64) -> f64;
+}
+extern "C" {
+    pub fn __jnl(arg1: ::std::os::raw::c_int, arg2: f64) -> f64;
+}
+extern "C" {
+    pub fn y0l(arg1: f64) -> f64;
+}
+extern "C" {
+    pub fn __y0l(arg1: f64) -> f64;
+}
+extern "C" {
+    pub fn y1l(arg1: f64) -> f64;
+}
+extern "C" {
+    pub fn __y1l(arg1: f64) -> f64;
+}
+extern "C" {
+    pub fn ynl(arg1: ::std::os::raw::c_int, arg2: f64) -> f64;
+}
+extern "C" {
+    pub fn __ynl(arg1: ::std::os::raw::c_int, arg2: f64) -> f64;
+}
+extern "C" {
+    pub fn erfl(arg1: f64) -> f64;
+}
+extern "C" {
+    pub fn __erfl(arg1: f64) -> f64;
+}
+extern "C" {
+    pub fn erfcl(arg1: f64) -> f64;
+}
+extern "C" {
+    pub fn __erfcl(arg1: f64) -> f64;
+}
+extern "C" {
+    pub fn lgammal(arg1: f64) -> f64;
+}
+extern "C" {
+    pub fn __lgammal(arg1: f64) -> f64;
+}
+extern "C" {
+    pub fn tgammal(arg1: f64) -> f64;
+}
+extern "C" {
+    pub fn __tgammal(arg1: f64) -> f64;
+}
+extern "C" {
+    pub fn gammal(arg1: f64) -> f64;
+}
+extern "C" {
+    pub fn __gammal(arg1: f64) -> f64;
+}
+extern "C" {
+    pub fn lgammal_r(arg1: f64, __signgamp: *mut ::std::os::raw::c_int) -> f64;
+}
+extern "C" {
+    pub fn __lgammal_r(arg1: f64, __signgamp: *mut ::std::os::raw::c_int) -> f64;
+}
+extern "C" {
+    pub fn rintl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __rintl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn nextafterl(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn __nextafterl(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn nexttowardl(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn __nexttowardl(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn remainderl(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn __remainderl(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn scalbnl(__x: f64, __n: ::std::os::raw::c_int) -> f64;
+}
+extern "C" {
+    pub fn __scalbnl(__x: f64, __n: ::std::os::raw::c_int) -> f64;
+}
+extern "C" {
+    pub fn ilogbl(__x: f64) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn __ilogbl(__x: f64) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn scalblnl(__x: f64, __n: ::std::os::raw::c_long) -> f64;
+}
+extern "C" {
+    pub fn __scalblnl(__x: f64, __n: ::std::os::raw::c_long) -> f64;
+}
+extern "C" {
+    pub fn nearbyintl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __nearbyintl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn roundl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __roundl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn truncl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn __truncl(__x: f64) -> f64;
+}
+extern "C" {
+    pub fn remquol(__x: f64, __y: f64, __quo: *mut ::std::os::raw::c_int) -> f64;
+}
+extern "C" {
+    pub fn __remquol(__x: f64, __y: f64, __quo: *mut ::std::os::raw::c_int) -> f64;
+}
+extern "C" {
+    pub fn lrintl(__x: f64) -> ::std::os::raw::c_long;
+}
+extern "C" {
+    pub fn __lrintl(__x: f64) -> ::std::os::raw::c_long;
+}
+extern "C" {
+    pub fn llrintl(__x: f64) -> ::std::os::raw::c_longlong;
+}
+extern "C" {
+    pub fn __llrintl(__x: f64) -> ::std::os::raw::c_longlong;
+}
+extern "C" {
+    pub fn lroundl(__x: f64) -> ::std::os::raw::c_long;
+}
+extern "C" {
+    pub fn __lroundl(__x: f64) -> ::std::os::raw::c_long;
+}
+extern "C" {
+    pub fn llroundl(__x: f64) -> ::std::os::raw::c_longlong;
+}
+extern "C" {
+    pub fn __llroundl(__x: f64) -> ::std::os::raw::c_longlong;
+}
+extern "C" {
+    pub fn fdiml(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn __fdiml(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn fmaxl(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn __fmaxl(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn fminl(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn __fminl(__x: f64, __y: f64) -> f64;
+}
+extern "C" {
+    pub fn fmal(__x: f64, __y: f64, __z: f64) -> f64;
+}
+extern "C" {
+    pub fn __fmal(__x: f64, __y: f64, __z: f64) -> f64;
+}
+extern "C" {
+    pub fn scalbl(__x: f64, __n: f64) -> f64;
+}
+extern "C" {
+    pub fn __scalbl(__x: f64, __n: f64) -> f64;
+}
+extern "C" {
+    #[link_name = "\u{1}signgam"]
+    pub static mut signgam: ::std::os::raw::c_int;
+}
+//pub const FP_NAN: _bindgen_ty_8 = 0;
+//pub const FP_INFINITE: _bindgen_ty_8 = 1;
+//pub const FP_ZERO: _bindgen_ty_8 = 2;
+//pub const FP_SUBNORMAL: _bindgen_ty_8 = 3;
+//pub const FP_NORMAL: _bindgen_ty_8 = 4;
+pub type _bindgen_ty_8 = u32;
 extern "C" {
     pub fn strlcat(
         dst: *mut ::std::os::raw::c_char,
@@ -8631,7 +10165,7 @@ extern "C" {
 extern "C" {
     pub fn pg_get_encoding_from_locale(
         ctype: *const ::std::os::raw::c_char,
-        write_message: bool_,
+        write_message: bool,
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
@@ -8644,7 +10178,7 @@ extern "C" {
     ) -> *mut ::std::os::raw::c_char;
 }
 extern "C" {
-    pub fn pg_strong_random(buf: *mut ::std::os::raw::c_void, len: usize) -> bool_;
+    pub fn pg_strong_random(buf: *mut ::std::os::raw::c_void, len: usize) -> bool;
 }
 extern "C" {
     pub fn pg_check_dir(dir: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
@@ -8751,7 +10285,7 @@ extern "C" {
         lineno: ::std::os::raw::c_int,
         funcname: *const ::std::os::raw::c_char,
         domain: *const ::std::os::raw::c_char,
-    ) -> bool_;
+    ) -> bool;
 }
 extern "C" {
     pub fn errfinish(dummy: ::std::os::raw::c_int, ...);
@@ -8814,10 +10348,10 @@ extern "C" {
     pub fn errcontext_msg(fmt: *const ::std::os::raw::c_char, ...) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    pub fn errhidestmt(hide_stmt: bool_) -> ::std::os::raw::c_int;
+    pub fn errhidestmt(hide_stmt: bool) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    pub fn errhidecontext(hide_ctx: bool_) -> ::std::os::raw::c_int;
+    pub fn errhidecontext(hide_ctx: bool) -> ::std::os::raw::c_int;
 }
 extern "C" {
     pub fn errfunction(funcname: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
@@ -8930,11 +10464,11 @@ extern "C" {
 #[derive(Debug, Copy, Clone)]
 pub struct ErrorData {
     pub elevel: ::std::os::raw::c_int,
-    pub output_to_server: bool_,
-    pub output_to_client: bool_,
-    pub show_funcname: bool_,
-    pub hide_stmt: bool_,
-    pub hide_ctx: bool_,
+    pub output_to_server: bool,
+    pub output_to_client: bool,
+    pub show_funcname: bool,
+    pub hide_stmt: bool,
+    pub hide_ctx: bool,
     pub filename: *const ::std::os::raw::c_char,
     pub lineno: ::std::os::raw::c_int,
     pub funcname: *const ::std::os::raw::c_char,
@@ -9302,11 +10836,11 @@ extern "C" {
 }
 extern "C" {
     #[link_name = "\u{1}syslog_sequence_numbers"]
-    pub static mut syslog_sequence_numbers: bool_;
+    pub static mut syslog_sequence_numbers: bool;
 }
 extern "C" {
     #[link_name = "\u{1}syslog_split_messages"]
-    pub static mut syslog_split_messages: bool_;
+    pub static mut syslog_split_messages: bool;
 }
 extern "C" {
     pub fn DebugFileOpen();
@@ -9315,7 +10849,7 @@ extern "C" {
     pub fn unpack_sql_state(sql_state: ::std::os::raw::c_int) -> *mut ::std::os::raw::c_char;
 }
 extern "C" {
-    pub fn in_error_recursion_trouble() -> bool_;
+    pub fn in_error_recursion_trouble() -> bool;
 }
 extern "C" {
     pub fn set_syslog_parameters(
@@ -9688,15 +11222,6 @@ fn bindgen_test_layout_varattrib_1b_e() {
     );
 }
 pub type Datum = usize;
-pub type DatumPtr = *mut Datum;
-extern "C" {
-    pub fn ExceptionalCondition(
-        conditionName: *const ::std::os::raw::c_char,
-        errorType: *const ::std::os::raw::c_char,
-        fileName: *const ::std::os::raw::c_char,
-        lineNumber: ::std::os::raw::c_int,
-    );
-}
 pub type fmNodePtr = *mut Node;
 pub type fmAggrefPtr = *mut Aggref;
 pub type fmExprContextCallbackFunction = ::std::option::Option<unsafe extern "C" fn(arg: Datum)>;
@@ -9710,8 +11235,8 @@ pub struct FmgrInfo {
     pub fn_addr: PGFunction,
     pub fn_oid: Oid,
     pub fn_nargs: ::std::os::raw::c_short,
-    pub fn_strict: bool_,
-    pub fn_retset: bool_,
+    pub fn_strict: bool,
+    pub fn_retset: bool,
     pub fn_stats: ::std::os::raw::c_uchar,
     pub fn_extra: *mut ::std::os::raw::c_void,
     pub fn_mcxt: MemoryContext,
@@ -9827,10 +11352,10 @@ pub struct FunctionCallInfoData {
     pub context: fmNodePtr,
     pub resultinfo: fmNodePtr,
     pub fncollation: Oid,
-    pub isnull: bool_,
+    pub isnull: bool,
     pub nargs: ::std::os::raw::c_short,
     pub arg: [Datum; 100usize],
-    pub argnull: [bool_; 100usize],
+    pub argnull: [bool; 100usize],
 }
 #[test]
 fn bindgen_test_layout_FunctionCallInfoData() {
@@ -9935,6 +11460,13 @@ extern "C" {
 }
 extern "C" {
     pub fn fmgr_info_copy(dstinfo: *mut FmgrInfo, srcinfo: *mut FmgrInfo, destcxt: MemoryContext);
+}
+extern "C" {
+    pub fn fmgr_symbol(
+        functionId: Oid,
+        mod_: *mut *mut ::std::os::raw::c_char,
+        fn_: *mut *mut ::std::os::raw::c_char,
+    );
 }
 extern "C" {
     pub fn pg_detoast_datum(datum: *mut varlena) -> *mut varlena;
@@ -10440,16 +11972,16 @@ extern "C" {
     pub fn get_call_expr_argtype(expr: fmNodePtr, argnum: ::std::os::raw::c_int) -> Oid;
 }
 extern "C" {
-    pub fn get_fn_expr_arg_stable(flinfo: *mut FmgrInfo, argnum: ::std::os::raw::c_int) -> bool_;
+    pub fn get_fn_expr_arg_stable(flinfo: *mut FmgrInfo, argnum: ::std::os::raw::c_int) -> bool;
 }
 extern "C" {
-    pub fn get_call_expr_arg_stable(expr: fmNodePtr, argnum: ::std::os::raw::c_int) -> bool_;
+    pub fn get_call_expr_arg_stable(expr: fmNodePtr, argnum: ::std::os::raw::c_int) -> bool;
 }
 extern "C" {
-    pub fn get_fn_expr_variadic(flinfo: *mut FmgrInfo) -> bool_;
+    pub fn get_fn_expr_variadic(flinfo: *mut FmgrInfo) -> bool;
 }
 extern "C" {
-    pub fn CheckFunctionValidatorAccess(validatorOid: Oid, functionOid: Oid) -> bool_;
+    pub fn CheckFunctionValidatorAccess(validatorOid: Oid, functionOid: Oid) -> bool;
 }
 extern "C" {
     #[link_name = "\u{1}Dynamic_library_path"]
@@ -10459,7 +11991,7 @@ extern "C" {
     pub fn load_external_function(
         filename: *const ::std::os::raw::c_char,
         funcname: *const ::std::os::raw::c_char,
-        signalNotFound: bool_,
+        signalNotFound: bool,
         filehandle: *mut *mut ::std::os::raw::c_void,
     ) -> PGFunction;
 }
@@ -10470,7 +12002,7 @@ extern "C" {
     ) -> PGFunction;
 }
 extern "C" {
-    pub fn load_file(filename: *const ::std::os::raw::c_char, restricted: bool_);
+    pub fn load_file(filename: *const ::std::os::raw::c_char, restricted: bool);
 }
 extern "C" {
     pub fn find_rendezvous_variable(
@@ -10499,6 +12031,9 @@ extern "C" {
     pub fn AggGetTempMemoryContext(fcinfo: FunctionCallInfo) -> MemoryContext;
 }
 extern "C" {
+    pub fn AggStateIsShared(fcinfo: FunctionCallInfo) -> bool;
+}
+extern "C" {
     pub fn AggRegisterCallback(
         fcinfo: FunctionCallInfo,
         func: fmExprContextCallbackFunction,
@@ -10509,7 +12044,7 @@ pub const FmgrHookEventType_FHET_START: FmgrHookEventType = 0;
 pub const FmgrHookEventType_FHET_END: FmgrHookEventType = 1;
 pub const FmgrHookEventType_FHET_ABORT: FmgrHookEventType = 2;
 pub type FmgrHookEventType = u32;
-pub type needs_fmgr_hook_type = ::std::option::Option<unsafe extern "C" fn(fn_oid: Oid) -> bool_>;
+pub type needs_fmgr_hook_type = ::std::option::Option<unsafe extern "C" fn(fn_oid: Oid) -> bool>;
 pub type fmgr_hook_type = ::std::option::Option<
     unsafe extern "C" fn(event: FmgrHookEventType, flinfo: *mut FmgrInfo, arg: *mut Datum),
 >;
@@ -10521,411 +12056,416 @@ extern "C" {
     #[link_name = "\u{1}fmgr_hook"]
     pub static mut fmgr_hook: fmgr_hook_type;
 }
-extern "C" {
-    pub fn fmgr(procedureId: Oid, ...) -> *mut ::std::os::raw::c_char;
-}
 pub const NodeTag_T_Invalid: NodeTag = 0;
 pub const NodeTag_T_IndexInfo: NodeTag = 1;
 pub const NodeTag_T_ExprContext: NodeTag = 2;
 pub const NodeTag_T_ProjectionInfo: NodeTag = 3;
 pub const NodeTag_T_JunkFilter: NodeTag = 4;
-pub const NodeTag_T_ResultRelInfo: NodeTag = 5;
-pub const NodeTag_T_EState: NodeTag = 6;
-pub const NodeTag_T_TupleTableSlot: NodeTag = 7;
-pub const NodeTag_T_Plan: NodeTag = 8;
-pub const NodeTag_T_Result: NodeTag = 9;
-pub const NodeTag_T_ProjectSet: NodeTag = 10;
-pub const NodeTag_T_ModifyTable: NodeTag = 11;
-pub const NodeTag_T_Append: NodeTag = 12;
-pub const NodeTag_T_MergeAppend: NodeTag = 13;
-pub const NodeTag_T_RecursiveUnion: NodeTag = 14;
-pub const NodeTag_T_BitmapAnd: NodeTag = 15;
-pub const NodeTag_T_BitmapOr: NodeTag = 16;
-pub const NodeTag_T_Scan: NodeTag = 17;
-pub const NodeTag_T_SeqScan: NodeTag = 18;
-pub const NodeTag_T_SampleScan: NodeTag = 19;
-pub const NodeTag_T_IndexScan: NodeTag = 20;
-pub const NodeTag_T_IndexOnlyScan: NodeTag = 21;
-pub const NodeTag_T_BitmapIndexScan: NodeTag = 22;
-pub const NodeTag_T_BitmapHeapScan: NodeTag = 23;
-pub const NodeTag_T_TidScan: NodeTag = 24;
-pub const NodeTag_T_SubqueryScan: NodeTag = 25;
-pub const NodeTag_T_FunctionScan: NodeTag = 26;
-pub const NodeTag_T_ValuesScan: NodeTag = 27;
-pub const NodeTag_T_TableFuncScan: NodeTag = 28;
-pub const NodeTag_T_CteScan: NodeTag = 29;
-pub const NodeTag_T_NamedTuplestoreScan: NodeTag = 30;
-pub const NodeTag_T_WorkTableScan: NodeTag = 31;
-pub const NodeTag_T_ForeignScan: NodeTag = 32;
-pub const NodeTag_T_CustomScan: NodeTag = 33;
-pub const NodeTag_T_Join: NodeTag = 34;
-pub const NodeTag_T_NestLoop: NodeTag = 35;
-pub const NodeTag_T_MergeJoin: NodeTag = 36;
-pub const NodeTag_T_HashJoin: NodeTag = 37;
-pub const NodeTag_T_Material: NodeTag = 38;
-pub const NodeTag_T_Sort: NodeTag = 39;
-pub const NodeTag_T_Group: NodeTag = 40;
-pub const NodeTag_T_Agg: NodeTag = 41;
-pub const NodeTag_T_WindowAgg: NodeTag = 42;
-pub const NodeTag_T_Unique: NodeTag = 43;
-pub const NodeTag_T_Gather: NodeTag = 44;
-pub const NodeTag_T_GatherMerge: NodeTag = 45;
-pub const NodeTag_T_Hash: NodeTag = 46;
-pub const NodeTag_T_SetOp: NodeTag = 47;
-pub const NodeTag_T_LockRows: NodeTag = 48;
-pub const NodeTag_T_Limit: NodeTag = 49;
-pub const NodeTag_T_NestLoopParam: NodeTag = 50;
-pub const NodeTag_T_PlanRowMark: NodeTag = 51;
-pub const NodeTag_T_PlanInvalItem: NodeTag = 52;
-pub const NodeTag_T_PlanState: NodeTag = 53;
-pub const NodeTag_T_ResultState: NodeTag = 54;
-pub const NodeTag_T_ProjectSetState: NodeTag = 55;
-pub const NodeTag_T_ModifyTableState: NodeTag = 56;
-pub const NodeTag_T_AppendState: NodeTag = 57;
-pub const NodeTag_T_MergeAppendState: NodeTag = 58;
-pub const NodeTag_T_RecursiveUnionState: NodeTag = 59;
-pub const NodeTag_T_BitmapAndState: NodeTag = 60;
-pub const NodeTag_T_BitmapOrState: NodeTag = 61;
-pub const NodeTag_T_ScanState: NodeTag = 62;
-pub const NodeTag_T_SeqScanState: NodeTag = 63;
-pub const NodeTag_T_SampleScanState: NodeTag = 64;
-pub const NodeTag_T_IndexScanState: NodeTag = 65;
-pub const NodeTag_T_IndexOnlyScanState: NodeTag = 66;
-pub const NodeTag_T_BitmapIndexScanState: NodeTag = 67;
-pub const NodeTag_T_BitmapHeapScanState: NodeTag = 68;
-pub const NodeTag_T_TidScanState: NodeTag = 69;
-pub const NodeTag_T_SubqueryScanState: NodeTag = 70;
-pub const NodeTag_T_FunctionScanState: NodeTag = 71;
-pub const NodeTag_T_TableFuncScanState: NodeTag = 72;
-pub const NodeTag_T_ValuesScanState: NodeTag = 73;
-pub const NodeTag_T_CteScanState: NodeTag = 74;
-pub const NodeTag_T_NamedTuplestoreScanState: NodeTag = 75;
-pub const NodeTag_T_WorkTableScanState: NodeTag = 76;
-pub const NodeTag_T_ForeignScanState: NodeTag = 77;
-pub const NodeTag_T_CustomScanState: NodeTag = 78;
-pub const NodeTag_T_JoinState: NodeTag = 79;
-pub const NodeTag_T_NestLoopState: NodeTag = 80;
-pub const NodeTag_T_MergeJoinState: NodeTag = 81;
-pub const NodeTag_T_HashJoinState: NodeTag = 82;
-pub const NodeTag_T_MaterialState: NodeTag = 83;
-pub const NodeTag_T_SortState: NodeTag = 84;
-pub const NodeTag_T_GroupState: NodeTag = 85;
-pub const NodeTag_T_AggState: NodeTag = 86;
-pub const NodeTag_T_WindowAggState: NodeTag = 87;
-pub const NodeTag_T_UniqueState: NodeTag = 88;
-pub const NodeTag_T_GatherState: NodeTag = 89;
-pub const NodeTag_T_GatherMergeState: NodeTag = 90;
-pub const NodeTag_T_HashState: NodeTag = 91;
-pub const NodeTag_T_SetOpState: NodeTag = 92;
-pub const NodeTag_T_LockRowsState: NodeTag = 93;
-pub const NodeTag_T_LimitState: NodeTag = 94;
-pub const NodeTag_T_Alias: NodeTag = 95;
-pub const NodeTag_T_RangeVar: NodeTag = 96;
-pub const NodeTag_T_TableFunc: NodeTag = 97;
-pub const NodeTag_T_Expr: NodeTag = 98;
-pub const NodeTag_T_Var: NodeTag = 99;
-pub const NodeTag_T_Const: NodeTag = 100;
-pub const NodeTag_T_Param: NodeTag = 101;
-pub const NodeTag_T_Aggref: NodeTag = 102;
-pub const NodeTag_T_GroupingFunc: NodeTag = 103;
-pub const NodeTag_T_WindowFunc: NodeTag = 104;
-pub const NodeTag_T_ArrayRef: NodeTag = 105;
-pub const NodeTag_T_FuncExpr: NodeTag = 106;
-pub const NodeTag_T_NamedArgExpr: NodeTag = 107;
-pub const NodeTag_T_OpExpr: NodeTag = 108;
-pub const NodeTag_T_DistinctExpr: NodeTag = 109;
-pub const NodeTag_T_NullIfExpr: NodeTag = 110;
-pub const NodeTag_T_ScalarArrayOpExpr: NodeTag = 111;
-pub const NodeTag_T_BoolExpr: NodeTag = 112;
-pub const NodeTag_T_SubLink: NodeTag = 113;
-pub const NodeTag_T_SubPlan: NodeTag = 114;
-pub const NodeTag_T_AlternativeSubPlan: NodeTag = 115;
-pub const NodeTag_T_FieldSelect: NodeTag = 116;
-pub const NodeTag_T_FieldStore: NodeTag = 117;
-pub const NodeTag_T_RelabelType: NodeTag = 118;
-pub const NodeTag_T_CoerceViaIO: NodeTag = 119;
-pub const NodeTag_T_ArrayCoerceExpr: NodeTag = 120;
-pub const NodeTag_T_ConvertRowtypeExpr: NodeTag = 121;
-pub const NodeTag_T_CollateExpr: NodeTag = 122;
-pub const NodeTag_T_CaseExpr: NodeTag = 123;
-pub const NodeTag_T_CaseWhen: NodeTag = 124;
-pub const NodeTag_T_CaseTestExpr: NodeTag = 125;
-pub const NodeTag_T_ArrayExpr: NodeTag = 126;
-pub const NodeTag_T_RowExpr: NodeTag = 127;
-pub const NodeTag_T_RowCompareExpr: NodeTag = 128;
-pub const NodeTag_T_CoalesceExpr: NodeTag = 129;
-pub const NodeTag_T_MinMaxExpr: NodeTag = 130;
-pub const NodeTag_T_SQLValueFunction: NodeTag = 131;
-pub const NodeTag_T_XmlExpr: NodeTag = 132;
-pub const NodeTag_T_NullTest: NodeTag = 133;
-pub const NodeTag_T_BooleanTest: NodeTag = 134;
-pub const NodeTag_T_CoerceToDomain: NodeTag = 135;
-pub const NodeTag_T_CoerceToDomainValue: NodeTag = 136;
-pub const NodeTag_T_SetToDefault: NodeTag = 137;
-pub const NodeTag_T_CurrentOfExpr: NodeTag = 138;
-pub const NodeTag_T_NextValueExpr: NodeTag = 139;
-pub const NodeTag_T_InferenceElem: NodeTag = 140;
-pub const NodeTag_T_TargetEntry: NodeTag = 141;
-pub const NodeTag_T_RangeTblRef: NodeTag = 142;
-pub const NodeTag_T_JoinExpr: NodeTag = 143;
-pub const NodeTag_T_FromExpr: NodeTag = 144;
-pub const NodeTag_T_OnConflictExpr: NodeTag = 145;
-pub const NodeTag_T_IntoClause: NodeTag = 146;
-pub const NodeTag_T_ExprState: NodeTag = 147;
-pub const NodeTag_T_AggrefExprState: NodeTag = 148;
-pub const NodeTag_T_WindowFuncExprState: NodeTag = 149;
-pub const NodeTag_T_SetExprState: NodeTag = 150;
-pub const NodeTag_T_SubPlanState: NodeTag = 151;
-pub const NodeTag_T_AlternativeSubPlanState: NodeTag = 152;
-pub const NodeTag_T_DomainConstraintState: NodeTag = 153;
-pub const NodeTag_T_PlannerInfo: NodeTag = 154;
-pub const NodeTag_T_PlannerGlobal: NodeTag = 155;
-pub const NodeTag_T_RelOptInfo: NodeTag = 156;
-pub const NodeTag_T_IndexOptInfo: NodeTag = 157;
-pub const NodeTag_T_ForeignKeyOptInfo: NodeTag = 158;
-pub const NodeTag_T_ParamPathInfo: NodeTag = 159;
-pub const NodeTag_T_Path: NodeTag = 160;
-pub const NodeTag_T_IndexPath: NodeTag = 161;
-pub const NodeTag_T_BitmapHeapPath: NodeTag = 162;
-pub const NodeTag_T_BitmapAndPath: NodeTag = 163;
-pub const NodeTag_T_BitmapOrPath: NodeTag = 164;
-pub const NodeTag_T_TidPath: NodeTag = 165;
-pub const NodeTag_T_SubqueryScanPath: NodeTag = 166;
-pub const NodeTag_T_ForeignPath: NodeTag = 167;
-pub const NodeTag_T_CustomPath: NodeTag = 168;
-pub const NodeTag_T_NestPath: NodeTag = 169;
-pub const NodeTag_T_MergePath: NodeTag = 170;
-pub const NodeTag_T_HashPath: NodeTag = 171;
-pub const NodeTag_T_AppendPath: NodeTag = 172;
-pub const NodeTag_T_MergeAppendPath: NodeTag = 173;
-pub const NodeTag_T_ResultPath: NodeTag = 174;
-pub const NodeTag_T_MaterialPath: NodeTag = 175;
-pub const NodeTag_T_UniquePath: NodeTag = 176;
-pub const NodeTag_T_GatherPath: NodeTag = 177;
-pub const NodeTag_T_GatherMergePath: NodeTag = 178;
-pub const NodeTag_T_ProjectionPath: NodeTag = 179;
-pub const NodeTag_T_ProjectSetPath: NodeTag = 180;
-pub const NodeTag_T_SortPath: NodeTag = 181;
-pub const NodeTag_T_GroupPath: NodeTag = 182;
-pub const NodeTag_T_UpperUniquePath: NodeTag = 183;
-pub const NodeTag_T_AggPath: NodeTag = 184;
-pub const NodeTag_T_GroupingSetsPath: NodeTag = 185;
-pub const NodeTag_T_MinMaxAggPath: NodeTag = 186;
-pub const NodeTag_T_WindowAggPath: NodeTag = 187;
-pub const NodeTag_T_SetOpPath: NodeTag = 188;
-pub const NodeTag_T_RecursiveUnionPath: NodeTag = 189;
-pub const NodeTag_T_LockRowsPath: NodeTag = 190;
-pub const NodeTag_T_ModifyTablePath: NodeTag = 191;
-pub const NodeTag_T_LimitPath: NodeTag = 192;
-pub const NodeTag_T_EquivalenceClass: NodeTag = 193;
-pub const NodeTag_T_EquivalenceMember: NodeTag = 194;
-pub const NodeTag_T_PathKey: NodeTag = 195;
-pub const NodeTag_T_PathTarget: NodeTag = 196;
-pub const NodeTag_T_RestrictInfo: NodeTag = 197;
-pub const NodeTag_T_PlaceHolderVar: NodeTag = 198;
-pub const NodeTag_T_SpecialJoinInfo: NodeTag = 199;
-pub const NodeTag_T_AppendRelInfo: NodeTag = 200;
-pub const NodeTag_T_PartitionedChildRelInfo: NodeTag = 201;
-pub const NodeTag_T_PlaceHolderInfo: NodeTag = 202;
-pub const NodeTag_T_MinMaxAggInfo: NodeTag = 203;
-pub const NodeTag_T_PlannerParamItem: NodeTag = 204;
-pub const NodeTag_T_RollupData: NodeTag = 205;
-pub const NodeTag_T_GroupingSetData: NodeTag = 206;
-pub const NodeTag_T_StatisticExtInfo: NodeTag = 207;
-pub const NodeTag_T_MemoryContext: NodeTag = 208;
-pub const NodeTag_T_AllocSetContext: NodeTag = 209;
-pub const NodeTag_T_SlabContext: NodeTag = 210;
-pub const NodeTag_T_Value: NodeTag = 211;
-pub const NodeTag_T_Integer: NodeTag = 212;
-pub const NodeTag_T_Float: NodeTag = 213;
-pub const NodeTag_T_String: NodeTag = 214;
-pub const NodeTag_T_BitString: NodeTag = 215;
-pub const NodeTag_T_Null: NodeTag = 216;
-pub const NodeTag_T_List: NodeTag = 217;
-pub const NodeTag_T_IntList: NodeTag = 218;
-pub const NodeTag_T_OidList: NodeTag = 219;
-pub const NodeTag_T_ExtensibleNode: NodeTag = 220;
-pub const NodeTag_T_RawStmt: NodeTag = 221;
-pub const NodeTag_T_Query: NodeTag = 222;
-pub const NodeTag_T_PlannedStmt: NodeTag = 223;
-pub const NodeTag_T_InsertStmt: NodeTag = 224;
-pub const NodeTag_T_DeleteStmt: NodeTag = 225;
-pub const NodeTag_T_UpdateStmt: NodeTag = 226;
-pub const NodeTag_T_SelectStmt: NodeTag = 227;
-pub const NodeTag_T_AlterTableStmt: NodeTag = 228;
-pub const NodeTag_T_AlterTableCmd: NodeTag = 229;
-pub const NodeTag_T_AlterDomainStmt: NodeTag = 230;
-pub const NodeTag_T_SetOperationStmt: NodeTag = 231;
-pub const NodeTag_T_GrantStmt: NodeTag = 232;
-pub const NodeTag_T_GrantRoleStmt: NodeTag = 233;
-pub const NodeTag_T_AlterDefaultPrivilegesStmt: NodeTag = 234;
-pub const NodeTag_T_ClosePortalStmt: NodeTag = 235;
-pub const NodeTag_T_ClusterStmt: NodeTag = 236;
-pub const NodeTag_T_CopyStmt: NodeTag = 237;
-pub const NodeTag_T_CreateStmt: NodeTag = 238;
-pub const NodeTag_T_DefineStmt: NodeTag = 239;
-pub const NodeTag_T_DropStmt: NodeTag = 240;
-pub const NodeTag_T_TruncateStmt: NodeTag = 241;
-pub const NodeTag_T_CommentStmt: NodeTag = 242;
-pub const NodeTag_T_FetchStmt: NodeTag = 243;
-pub const NodeTag_T_IndexStmt: NodeTag = 244;
-pub const NodeTag_T_CreateFunctionStmt: NodeTag = 245;
-pub const NodeTag_T_AlterFunctionStmt: NodeTag = 246;
-pub const NodeTag_T_DoStmt: NodeTag = 247;
-pub const NodeTag_T_RenameStmt: NodeTag = 248;
-pub const NodeTag_T_RuleStmt: NodeTag = 249;
-pub const NodeTag_T_NotifyStmt: NodeTag = 250;
-pub const NodeTag_T_ListenStmt: NodeTag = 251;
-pub const NodeTag_T_UnlistenStmt: NodeTag = 252;
-pub const NodeTag_T_TransactionStmt: NodeTag = 253;
-pub const NodeTag_T_ViewStmt: NodeTag = 254;
-pub const NodeTag_T_LoadStmt: NodeTag = 255;
-pub const NodeTag_T_CreateDomainStmt: NodeTag = 256;
-pub const NodeTag_T_CreatedbStmt: NodeTag = 257;
-pub const NodeTag_T_DropdbStmt: NodeTag = 258;
-pub const NodeTag_T_VacuumStmt: NodeTag = 259;
-pub const NodeTag_T_ExplainStmt: NodeTag = 260;
-pub const NodeTag_T_CreateTableAsStmt: NodeTag = 261;
-pub const NodeTag_T_CreateSeqStmt: NodeTag = 262;
-pub const NodeTag_T_AlterSeqStmt: NodeTag = 263;
-pub const NodeTag_T_VariableSetStmt: NodeTag = 264;
-pub const NodeTag_T_VariableShowStmt: NodeTag = 265;
-pub const NodeTag_T_DiscardStmt: NodeTag = 266;
-pub const NodeTag_T_CreateTrigStmt: NodeTag = 267;
-pub const NodeTag_T_CreatePLangStmt: NodeTag = 268;
-pub const NodeTag_T_CreateRoleStmt: NodeTag = 269;
-pub const NodeTag_T_AlterRoleStmt: NodeTag = 270;
-pub const NodeTag_T_DropRoleStmt: NodeTag = 271;
-pub const NodeTag_T_LockStmt: NodeTag = 272;
-pub const NodeTag_T_ConstraintsSetStmt: NodeTag = 273;
-pub const NodeTag_T_ReindexStmt: NodeTag = 274;
-pub const NodeTag_T_CheckPointStmt: NodeTag = 275;
-pub const NodeTag_T_CreateSchemaStmt: NodeTag = 276;
-pub const NodeTag_T_AlterDatabaseStmt: NodeTag = 277;
-pub const NodeTag_T_AlterDatabaseSetStmt: NodeTag = 278;
-pub const NodeTag_T_AlterRoleSetStmt: NodeTag = 279;
-pub const NodeTag_T_CreateConversionStmt: NodeTag = 280;
-pub const NodeTag_T_CreateCastStmt: NodeTag = 281;
-pub const NodeTag_T_CreateOpClassStmt: NodeTag = 282;
-pub const NodeTag_T_CreateOpFamilyStmt: NodeTag = 283;
-pub const NodeTag_T_AlterOpFamilyStmt: NodeTag = 284;
-pub const NodeTag_T_PrepareStmt: NodeTag = 285;
-pub const NodeTag_T_ExecuteStmt: NodeTag = 286;
-pub const NodeTag_T_DeallocateStmt: NodeTag = 287;
-pub const NodeTag_T_DeclareCursorStmt: NodeTag = 288;
-pub const NodeTag_T_CreateTableSpaceStmt: NodeTag = 289;
-pub const NodeTag_T_DropTableSpaceStmt: NodeTag = 290;
-pub const NodeTag_T_AlterObjectDependsStmt: NodeTag = 291;
-pub const NodeTag_T_AlterObjectSchemaStmt: NodeTag = 292;
-pub const NodeTag_T_AlterOwnerStmt: NodeTag = 293;
-pub const NodeTag_T_AlterOperatorStmt: NodeTag = 294;
-pub const NodeTag_T_DropOwnedStmt: NodeTag = 295;
-pub const NodeTag_T_ReassignOwnedStmt: NodeTag = 296;
-pub const NodeTag_T_CompositeTypeStmt: NodeTag = 297;
-pub const NodeTag_T_CreateEnumStmt: NodeTag = 298;
-pub const NodeTag_T_CreateRangeStmt: NodeTag = 299;
-pub const NodeTag_T_AlterEnumStmt: NodeTag = 300;
-pub const NodeTag_T_AlterTSDictionaryStmt: NodeTag = 301;
-pub const NodeTag_T_AlterTSConfigurationStmt: NodeTag = 302;
-pub const NodeTag_T_CreateFdwStmt: NodeTag = 303;
-pub const NodeTag_T_AlterFdwStmt: NodeTag = 304;
-pub const NodeTag_T_CreateForeignServerStmt: NodeTag = 305;
-pub const NodeTag_T_AlterForeignServerStmt: NodeTag = 306;
-pub const NodeTag_T_CreateUserMappingStmt: NodeTag = 307;
-pub const NodeTag_T_AlterUserMappingStmt: NodeTag = 308;
-pub const NodeTag_T_DropUserMappingStmt: NodeTag = 309;
-pub const NodeTag_T_AlterTableSpaceOptionsStmt: NodeTag = 310;
-pub const NodeTag_T_AlterTableMoveAllStmt: NodeTag = 311;
-pub const NodeTag_T_SecLabelStmt: NodeTag = 312;
-pub const NodeTag_T_CreateForeignTableStmt: NodeTag = 313;
-pub const NodeTag_T_ImportForeignSchemaStmt: NodeTag = 314;
-pub const NodeTag_T_CreateExtensionStmt: NodeTag = 315;
-pub const NodeTag_T_AlterExtensionStmt: NodeTag = 316;
-pub const NodeTag_T_AlterExtensionContentsStmt: NodeTag = 317;
-pub const NodeTag_T_CreateEventTrigStmt: NodeTag = 318;
-pub const NodeTag_T_AlterEventTrigStmt: NodeTag = 319;
-pub const NodeTag_T_RefreshMatViewStmt: NodeTag = 320;
-pub const NodeTag_T_ReplicaIdentityStmt: NodeTag = 321;
-pub const NodeTag_T_AlterSystemStmt: NodeTag = 322;
-pub const NodeTag_T_CreatePolicyStmt: NodeTag = 323;
-pub const NodeTag_T_AlterPolicyStmt: NodeTag = 324;
-pub const NodeTag_T_CreateTransformStmt: NodeTag = 325;
-pub const NodeTag_T_CreateAmStmt: NodeTag = 326;
-pub const NodeTag_T_CreatePublicationStmt: NodeTag = 327;
-pub const NodeTag_T_AlterPublicationStmt: NodeTag = 328;
-pub const NodeTag_T_CreateSubscriptionStmt: NodeTag = 329;
-pub const NodeTag_T_AlterSubscriptionStmt: NodeTag = 330;
-pub const NodeTag_T_DropSubscriptionStmt: NodeTag = 331;
-pub const NodeTag_T_CreateStatsStmt: NodeTag = 332;
-pub const NodeTag_T_AlterCollationStmt: NodeTag = 333;
-pub const NodeTag_T_A_Expr: NodeTag = 334;
-pub const NodeTag_T_ColumnRef: NodeTag = 335;
-pub const NodeTag_T_ParamRef: NodeTag = 336;
-pub const NodeTag_T_A_Const: NodeTag = 337;
-pub const NodeTag_T_FuncCall: NodeTag = 338;
-pub const NodeTag_T_A_Star: NodeTag = 339;
-pub const NodeTag_T_A_Indices: NodeTag = 340;
-pub const NodeTag_T_A_Indirection: NodeTag = 341;
-pub const NodeTag_T_A_ArrayExpr: NodeTag = 342;
-pub const NodeTag_T_ResTarget: NodeTag = 343;
-pub const NodeTag_T_MultiAssignRef: NodeTag = 344;
-pub const NodeTag_T_TypeCast: NodeTag = 345;
-pub const NodeTag_T_CollateClause: NodeTag = 346;
-pub const NodeTag_T_SortBy: NodeTag = 347;
-pub const NodeTag_T_WindowDef: NodeTag = 348;
-pub const NodeTag_T_RangeSubselect: NodeTag = 349;
-pub const NodeTag_T_RangeFunction: NodeTag = 350;
-pub const NodeTag_T_RangeTableSample: NodeTag = 351;
-pub const NodeTag_T_RangeTableFunc: NodeTag = 352;
-pub const NodeTag_T_RangeTableFuncCol: NodeTag = 353;
-pub const NodeTag_T_TypeName: NodeTag = 354;
-pub const NodeTag_T_ColumnDef: NodeTag = 355;
-pub const NodeTag_T_IndexElem: NodeTag = 356;
-pub const NodeTag_T_Constraint: NodeTag = 357;
-pub const NodeTag_T_DefElem: NodeTag = 358;
-pub const NodeTag_T_RangeTblEntry: NodeTag = 359;
-pub const NodeTag_T_RangeTblFunction: NodeTag = 360;
-pub const NodeTag_T_TableSampleClause: NodeTag = 361;
-pub const NodeTag_T_WithCheckOption: NodeTag = 362;
-pub const NodeTag_T_SortGroupClause: NodeTag = 363;
-pub const NodeTag_T_GroupingSet: NodeTag = 364;
-pub const NodeTag_T_WindowClause: NodeTag = 365;
-pub const NodeTag_T_ObjectWithArgs: NodeTag = 366;
-pub const NodeTag_T_AccessPriv: NodeTag = 367;
-pub const NodeTag_T_CreateOpClassItem: NodeTag = 368;
-pub const NodeTag_T_TableLikeClause: NodeTag = 369;
-pub const NodeTag_T_FunctionParameter: NodeTag = 370;
-pub const NodeTag_T_LockingClause: NodeTag = 371;
-pub const NodeTag_T_RowMarkClause: NodeTag = 372;
-pub const NodeTag_T_XmlSerialize: NodeTag = 373;
-pub const NodeTag_T_WithClause: NodeTag = 374;
-pub const NodeTag_T_InferClause: NodeTag = 375;
-pub const NodeTag_T_OnConflictClause: NodeTag = 376;
-pub const NodeTag_T_CommonTableExpr: NodeTag = 377;
-pub const NodeTag_T_RoleSpec: NodeTag = 378;
-pub const NodeTag_T_TriggerTransition: NodeTag = 379;
-pub const NodeTag_T_PartitionElem: NodeTag = 380;
-pub const NodeTag_T_PartitionSpec: NodeTag = 381;
-pub const NodeTag_T_PartitionBoundSpec: NodeTag = 382;
-pub const NodeTag_T_PartitionRangeDatum: NodeTag = 383;
-pub const NodeTag_T_PartitionCmd: NodeTag = 384;
-pub const NodeTag_T_IdentifySystemCmd: NodeTag = 385;
-pub const NodeTag_T_BaseBackupCmd: NodeTag = 386;
-pub const NodeTag_T_CreateReplicationSlotCmd: NodeTag = 387;
-pub const NodeTag_T_DropReplicationSlotCmd: NodeTag = 388;
-pub const NodeTag_T_StartReplicationCmd: NodeTag = 389;
-pub const NodeTag_T_TimeLineHistoryCmd: NodeTag = 390;
-pub const NodeTag_T_SQLCmd: NodeTag = 391;
-pub const NodeTag_T_TriggerData: NodeTag = 392;
-pub const NodeTag_T_EventTriggerData: NodeTag = 393;
-pub const NodeTag_T_ReturnSetInfo: NodeTag = 394;
-pub const NodeTag_T_WindowObjectData: NodeTag = 395;
-pub const NodeTag_T_TIDBitmap: NodeTag = 396;
-pub const NodeTag_T_InlineCodeBlock: NodeTag = 397;
-pub const NodeTag_T_FdwRoutine: NodeTag = 398;
-pub const NodeTag_T_IndexAmRoutine: NodeTag = 399;
-pub const NodeTag_T_TsmRoutine: NodeTag = 400;
-pub const NodeTag_T_ForeignKeyCacheInfo: NodeTag = 401;
+pub const NodeTag_T_OnConflictSetState: NodeTag = 5;
+pub const NodeTag_T_ResultRelInfo: NodeTag = 6;
+pub const NodeTag_T_EState: NodeTag = 7;
+pub const NodeTag_T_TupleTableSlot: NodeTag = 8;
+pub const NodeTag_T_Plan: NodeTag = 9;
+pub const NodeTag_T_Result: NodeTag = 10;
+pub const NodeTag_T_ProjectSet: NodeTag = 11;
+pub const NodeTag_T_ModifyTable: NodeTag = 12;
+pub const NodeTag_T_Append: NodeTag = 13;
+pub const NodeTag_T_MergeAppend: NodeTag = 14;
+pub const NodeTag_T_RecursiveUnion: NodeTag = 15;
+pub const NodeTag_T_BitmapAnd: NodeTag = 16;
+pub const NodeTag_T_BitmapOr: NodeTag = 17;
+pub const NodeTag_T_Scan: NodeTag = 18;
+pub const NodeTag_T_SeqScan: NodeTag = 19;
+pub const NodeTag_T_SampleScan: NodeTag = 20;
+pub const NodeTag_T_IndexScan: NodeTag = 21;
+pub const NodeTag_T_IndexOnlyScan: NodeTag = 22;
+pub const NodeTag_T_BitmapIndexScan: NodeTag = 23;
+pub const NodeTag_T_BitmapHeapScan: NodeTag = 24;
+pub const NodeTag_T_TidScan: NodeTag = 25;
+pub const NodeTag_T_SubqueryScan: NodeTag = 26;
+pub const NodeTag_T_FunctionScan: NodeTag = 27;
+pub const NodeTag_T_ValuesScan: NodeTag = 28;
+pub const NodeTag_T_TableFuncScan: NodeTag = 29;
+pub const NodeTag_T_CteScan: NodeTag = 30;
+pub const NodeTag_T_NamedTuplestoreScan: NodeTag = 31;
+pub const NodeTag_T_WorkTableScan: NodeTag = 32;
+pub const NodeTag_T_ForeignScan: NodeTag = 33;
+pub const NodeTag_T_CustomScan: NodeTag = 34;
+pub const NodeTag_T_Join: NodeTag = 35;
+pub const NodeTag_T_NestLoop: NodeTag = 36;
+pub const NodeTag_T_MergeJoin: NodeTag = 37;
+pub const NodeTag_T_HashJoin: NodeTag = 38;
+pub const NodeTag_T_Material: NodeTag = 39;
+pub const NodeTag_T_Sort: NodeTag = 40;
+pub const NodeTag_T_Group: NodeTag = 41;
+pub const NodeTag_T_Agg: NodeTag = 42;
+pub const NodeTag_T_WindowAgg: NodeTag = 43;
+pub const NodeTag_T_Unique: NodeTag = 44;
+pub const NodeTag_T_Gather: NodeTag = 45;
+pub const NodeTag_T_GatherMerge: NodeTag = 46;
+pub const NodeTag_T_Hash: NodeTag = 47;
+pub const NodeTag_T_SetOp: NodeTag = 48;
+pub const NodeTag_T_LockRows: NodeTag = 49;
+pub const NodeTag_T_Limit: NodeTag = 50;
+pub const NodeTag_T_NestLoopParam: NodeTag = 51;
+pub const NodeTag_T_PlanRowMark: NodeTag = 52;
+pub const NodeTag_T_PartitionPruneInfo: NodeTag = 53;
+pub const NodeTag_T_PartitionedRelPruneInfo: NodeTag = 54;
+pub const NodeTag_T_PartitionPruneStepOp: NodeTag = 55;
+pub const NodeTag_T_PartitionPruneStepCombine: NodeTag = 56;
+pub const NodeTag_T_PlanInvalItem: NodeTag = 57;
+pub const NodeTag_T_PlanState: NodeTag = 58;
+pub const NodeTag_T_ResultState: NodeTag = 59;
+pub const NodeTag_T_ProjectSetState: NodeTag = 60;
+pub const NodeTag_T_ModifyTableState: NodeTag = 61;
+pub const NodeTag_T_AppendState: NodeTag = 62;
+pub const NodeTag_T_MergeAppendState: NodeTag = 63;
+pub const NodeTag_T_RecursiveUnionState: NodeTag = 64;
+pub const NodeTag_T_BitmapAndState: NodeTag = 65;
+pub const NodeTag_T_BitmapOrState: NodeTag = 66;
+pub const NodeTag_T_ScanState: NodeTag = 67;
+pub const NodeTag_T_SeqScanState: NodeTag = 68;
+pub const NodeTag_T_SampleScanState: NodeTag = 69;
+pub const NodeTag_T_IndexScanState: NodeTag = 70;
+pub const NodeTag_T_IndexOnlyScanState: NodeTag = 71;
+pub const NodeTag_T_BitmapIndexScanState: NodeTag = 72;
+pub const NodeTag_T_BitmapHeapScanState: NodeTag = 73;
+pub const NodeTag_T_TidScanState: NodeTag = 74;
+pub const NodeTag_T_SubqueryScanState: NodeTag = 75;
+pub const NodeTag_T_FunctionScanState: NodeTag = 76;
+pub const NodeTag_T_TableFuncScanState: NodeTag = 77;
+pub const NodeTag_T_ValuesScanState: NodeTag = 78;
+pub const NodeTag_T_CteScanState: NodeTag = 79;
+pub const NodeTag_T_NamedTuplestoreScanState: NodeTag = 80;
+pub const NodeTag_T_WorkTableScanState: NodeTag = 81;
+pub const NodeTag_T_ForeignScanState: NodeTag = 82;
+pub const NodeTag_T_CustomScanState: NodeTag = 83;
+pub const NodeTag_T_JoinState: NodeTag = 84;
+pub const NodeTag_T_NestLoopState: NodeTag = 85;
+pub const NodeTag_T_MergeJoinState: NodeTag = 86;
+pub const NodeTag_T_HashJoinState: NodeTag = 87;
+pub const NodeTag_T_MaterialState: NodeTag = 88;
+pub const NodeTag_T_SortState: NodeTag = 89;
+pub const NodeTag_T_GroupState: NodeTag = 90;
+pub const NodeTag_T_AggState: NodeTag = 91;
+pub const NodeTag_T_WindowAggState: NodeTag = 92;
+pub const NodeTag_T_UniqueState: NodeTag = 93;
+pub const NodeTag_T_GatherState: NodeTag = 94;
+pub const NodeTag_T_GatherMergeState: NodeTag = 95;
+pub const NodeTag_T_HashState: NodeTag = 96;
+pub const NodeTag_T_SetOpState: NodeTag = 97;
+pub const NodeTag_T_LockRowsState: NodeTag = 98;
+pub const NodeTag_T_LimitState: NodeTag = 99;
+pub const NodeTag_T_Alias: NodeTag = 100;
+pub const NodeTag_T_RangeVar: NodeTag = 101;
+pub const NodeTag_T_TableFunc: NodeTag = 102;
+pub const NodeTag_T_Expr: NodeTag = 103;
+pub const NodeTag_T_Var: NodeTag = 104;
+pub const NodeTag_T_Const: NodeTag = 105;
+pub const NodeTag_T_Param: NodeTag = 106;
+pub const NodeTag_T_Aggref: NodeTag = 107;
+pub const NodeTag_T_GroupingFunc: NodeTag = 108;
+pub const NodeTag_T_WindowFunc: NodeTag = 109;
+pub const NodeTag_T_ArrayRef: NodeTag = 110;
+pub const NodeTag_T_FuncExpr: NodeTag = 111;
+pub const NodeTag_T_NamedArgExpr: NodeTag = 112;
+pub const NodeTag_T_OpExpr: NodeTag = 113;
+pub const NodeTag_T_DistinctExpr: NodeTag = 114;
+pub const NodeTag_T_NullIfExpr: NodeTag = 115;
+pub const NodeTag_T_ScalarArrayOpExpr: NodeTag = 116;
+pub const NodeTag_T_BoolExpr: NodeTag = 117;
+pub const NodeTag_T_SubLink: NodeTag = 118;
+pub const NodeTag_T_SubPlan: NodeTag = 119;
+pub const NodeTag_T_AlternativeSubPlan: NodeTag = 120;
+pub const NodeTag_T_FieldSelect: NodeTag = 121;
+pub const NodeTag_T_FieldStore: NodeTag = 122;
+pub const NodeTag_T_RelabelType: NodeTag = 123;
+pub const NodeTag_T_CoerceViaIO: NodeTag = 124;
+pub const NodeTag_T_ArrayCoerceExpr: NodeTag = 125;
+pub const NodeTag_T_ConvertRowtypeExpr: NodeTag = 126;
+pub const NodeTag_T_CollateExpr: NodeTag = 127;
+pub const NodeTag_T_CaseExpr: NodeTag = 128;
+pub const NodeTag_T_CaseWhen: NodeTag = 129;
+pub const NodeTag_T_CaseTestExpr: NodeTag = 130;
+pub const NodeTag_T_ArrayExpr: NodeTag = 131;
+pub const NodeTag_T_RowExpr: NodeTag = 132;
+pub const NodeTag_T_RowCompareExpr: NodeTag = 133;
+pub const NodeTag_T_CoalesceExpr: NodeTag = 134;
+pub const NodeTag_T_MinMaxExpr: NodeTag = 135;
+pub const NodeTag_T_SQLValueFunction: NodeTag = 136;
+pub const NodeTag_T_XmlExpr: NodeTag = 137;
+pub const NodeTag_T_NullTest: NodeTag = 138;
+pub const NodeTag_T_BooleanTest: NodeTag = 139;
+pub const NodeTag_T_CoerceToDomain: NodeTag = 140;
+pub const NodeTag_T_CoerceToDomainValue: NodeTag = 141;
+pub const NodeTag_T_SetToDefault: NodeTag = 142;
+pub const NodeTag_T_CurrentOfExpr: NodeTag = 143;
+pub const NodeTag_T_NextValueExpr: NodeTag = 144;
+pub const NodeTag_T_InferenceElem: NodeTag = 145;
+pub const NodeTag_T_TargetEntry: NodeTag = 146;
+pub const NodeTag_T_RangeTblRef: NodeTag = 147;
+pub const NodeTag_T_JoinExpr: NodeTag = 148;
+pub const NodeTag_T_FromExpr: NodeTag = 149;
+pub const NodeTag_T_OnConflictExpr: NodeTag = 150;
+pub const NodeTag_T_IntoClause: NodeTag = 151;
+pub const NodeTag_T_ExprState: NodeTag = 152;
+pub const NodeTag_T_AggrefExprState: NodeTag = 153;
+pub const NodeTag_T_WindowFuncExprState: NodeTag = 154;
+pub const NodeTag_T_SetExprState: NodeTag = 155;
+pub const NodeTag_T_SubPlanState: NodeTag = 156;
+pub const NodeTag_T_AlternativeSubPlanState: NodeTag = 157;
+pub const NodeTag_T_DomainConstraintState: NodeTag = 158;
+pub const NodeTag_T_PlannerInfo: NodeTag = 159;
+pub const NodeTag_T_PlannerGlobal: NodeTag = 160;
+pub const NodeTag_T_RelOptInfo: NodeTag = 161;
+pub const NodeTag_T_IndexOptInfo: NodeTag = 162;
+pub const NodeTag_T_ForeignKeyOptInfo: NodeTag = 163;
+pub const NodeTag_T_ParamPathInfo: NodeTag = 164;
+pub const NodeTag_T_Path: NodeTag = 165;
+pub const NodeTag_T_IndexPath: NodeTag = 166;
+pub const NodeTag_T_BitmapHeapPath: NodeTag = 167;
+pub const NodeTag_T_BitmapAndPath: NodeTag = 168;
+pub const NodeTag_T_BitmapOrPath: NodeTag = 169;
+pub const NodeTag_T_TidPath: NodeTag = 170;
+pub const NodeTag_T_SubqueryScanPath: NodeTag = 171;
+pub const NodeTag_T_ForeignPath: NodeTag = 172;
+pub const NodeTag_T_CustomPath: NodeTag = 173;
+pub const NodeTag_T_NestPath: NodeTag = 174;
+pub const NodeTag_T_MergePath: NodeTag = 175;
+pub const NodeTag_T_HashPath: NodeTag = 176;
+pub const NodeTag_T_AppendPath: NodeTag = 177;
+pub const NodeTag_T_MergeAppendPath: NodeTag = 178;
+pub const NodeTag_T_ResultPath: NodeTag = 179;
+pub const NodeTag_T_MaterialPath: NodeTag = 180;
+pub const NodeTag_T_UniquePath: NodeTag = 181;
+pub const NodeTag_T_GatherPath: NodeTag = 182;
+pub const NodeTag_T_GatherMergePath: NodeTag = 183;
+pub const NodeTag_T_ProjectionPath: NodeTag = 184;
+pub const NodeTag_T_ProjectSetPath: NodeTag = 185;
+pub const NodeTag_T_SortPath: NodeTag = 186;
+pub const NodeTag_T_GroupPath: NodeTag = 187;
+pub const NodeTag_T_UpperUniquePath: NodeTag = 188;
+pub const NodeTag_T_AggPath: NodeTag = 189;
+pub const NodeTag_T_GroupingSetsPath: NodeTag = 190;
+pub const NodeTag_T_MinMaxAggPath: NodeTag = 191;
+pub const NodeTag_T_WindowAggPath: NodeTag = 192;
+pub const NodeTag_T_SetOpPath: NodeTag = 193;
+pub const NodeTag_T_RecursiveUnionPath: NodeTag = 194;
+pub const NodeTag_T_LockRowsPath: NodeTag = 195;
+pub const NodeTag_T_ModifyTablePath: NodeTag = 196;
+pub const NodeTag_T_LimitPath: NodeTag = 197;
+pub const NodeTag_T_EquivalenceClass: NodeTag = 198;
+pub const NodeTag_T_EquivalenceMember: NodeTag = 199;
+pub const NodeTag_T_PathKey: NodeTag = 200;
+pub const NodeTag_T_PathTarget: NodeTag = 201;
+pub const NodeTag_T_RestrictInfo: NodeTag = 202;
+pub const NodeTag_T_PlaceHolderVar: NodeTag = 203;
+pub const NodeTag_T_SpecialJoinInfo: NodeTag = 204;
+pub const NodeTag_T_AppendRelInfo: NodeTag = 205;
+pub const NodeTag_T_PlaceHolderInfo: NodeTag = 206;
+pub const NodeTag_T_MinMaxAggInfo: NodeTag = 207;
+pub const NodeTag_T_PlannerParamItem: NodeTag = 208;
+pub const NodeTag_T_RollupData: NodeTag = 209;
+pub const NodeTag_T_GroupingSetData: NodeTag = 210;
+pub const NodeTag_T_StatisticExtInfo: NodeTag = 211;
+pub const NodeTag_T_MemoryContext: NodeTag = 212;
+pub const NodeTag_T_AllocSetContext: NodeTag = 213;
+pub const NodeTag_T_SlabContext: NodeTag = 214;
+pub const NodeTag_T_GenerationContext: NodeTag = 215;
+pub const NodeTag_T_Value: NodeTag = 216;
+pub const NodeTag_T_Integer: NodeTag = 217;
+pub const NodeTag_T_Float: NodeTag = 218;
+pub const NodeTag_T_String: NodeTag = 219;
+pub const NodeTag_T_BitString: NodeTag = 220;
+pub const NodeTag_T_Null: NodeTag = 221;
+pub const NodeTag_T_List: NodeTag = 222;
+pub const NodeTag_T_IntList: NodeTag = 223;
+pub const NodeTag_T_OidList: NodeTag = 224;
+pub const NodeTag_T_ExtensibleNode: NodeTag = 225;
+pub const NodeTag_T_RawStmt: NodeTag = 226;
+pub const NodeTag_T_Query: NodeTag = 227;
+pub const NodeTag_T_PlannedStmt: NodeTag = 228;
+pub const NodeTag_T_InsertStmt: NodeTag = 229;
+pub const NodeTag_T_DeleteStmt: NodeTag = 230;
+pub const NodeTag_T_UpdateStmt: NodeTag = 231;
+pub const NodeTag_T_SelectStmt: NodeTag = 232;
+pub const NodeTag_T_AlterTableStmt: NodeTag = 233;
+pub const NodeTag_T_AlterTableCmd: NodeTag = 234;
+pub const NodeTag_T_AlterDomainStmt: NodeTag = 235;
+pub const NodeTag_T_SetOperationStmt: NodeTag = 236;
+pub const NodeTag_T_GrantStmt: NodeTag = 237;
+pub const NodeTag_T_GrantRoleStmt: NodeTag = 238;
+pub const NodeTag_T_AlterDefaultPrivilegesStmt: NodeTag = 239;
+pub const NodeTag_T_ClosePortalStmt: NodeTag = 240;
+pub const NodeTag_T_ClusterStmt: NodeTag = 241;
+pub const NodeTag_T_CopyStmt: NodeTag = 242;
+pub const NodeTag_T_CreateStmt: NodeTag = 243;
+pub const NodeTag_T_DefineStmt: NodeTag = 244;
+pub const NodeTag_T_DropStmt: NodeTag = 245;
+pub const NodeTag_T_TruncateStmt: NodeTag = 246;
+pub const NodeTag_T_CommentStmt: NodeTag = 247;
+pub const NodeTag_T_FetchStmt: NodeTag = 248;
+pub const NodeTag_T_IndexStmt: NodeTag = 249;
+pub const NodeTag_T_CreateFunctionStmt: NodeTag = 250;
+pub const NodeTag_T_AlterFunctionStmt: NodeTag = 251;
+pub const NodeTag_T_DoStmt: NodeTag = 252;
+pub const NodeTag_T_RenameStmt: NodeTag = 253;
+pub const NodeTag_T_RuleStmt: NodeTag = 254;
+pub const NodeTag_T_NotifyStmt: NodeTag = 255;
+pub const NodeTag_T_ListenStmt: NodeTag = 256;
+pub const NodeTag_T_UnlistenStmt: NodeTag = 257;
+pub const NodeTag_T_TransactionStmt: NodeTag = 258;
+pub const NodeTag_T_ViewStmt: NodeTag = 259;
+pub const NodeTag_T_LoadStmt: NodeTag = 260;
+pub const NodeTag_T_CreateDomainStmt: NodeTag = 261;
+pub const NodeTag_T_CreatedbStmt: NodeTag = 262;
+pub const NodeTag_T_DropdbStmt: NodeTag = 263;
+pub const NodeTag_T_VacuumStmt: NodeTag = 264;
+pub const NodeTag_T_ExplainStmt: NodeTag = 265;
+pub const NodeTag_T_CreateTableAsStmt: NodeTag = 266;
+pub const NodeTag_T_CreateSeqStmt: NodeTag = 267;
+pub const NodeTag_T_AlterSeqStmt: NodeTag = 268;
+pub const NodeTag_T_VariableSetStmt: NodeTag = 269;
+pub const NodeTag_T_VariableShowStmt: NodeTag = 270;
+pub const NodeTag_T_DiscardStmt: NodeTag = 271;
+pub const NodeTag_T_CreateTrigStmt: NodeTag = 272;
+pub const NodeTag_T_CreatePLangStmt: NodeTag = 273;
+pub const NodeTag_T_CreateRoleStmt: NodeTag = 274;
+pub const NodeTag_T_AlterRoleStmt: NodeTag = 275;
+pub const NodeTag_T_DropRoleStmt: NodeTag = 276;
+pub const NodeTag_T_LockStmt: NodeTag = 277;
+pub const NodeTag_T_ConstraintsSetStmt: NodeTag = 278;
+pub const NodeTag_T_ReindexStmt: NodeTag = 279;
+pub const NodeTag_T_CheckPointStmt: NodeTag = 280;
+pub const NodeTag_T_CreateSchemaStmt: NodeTag = 281;
+pub const NodeTag_T_AlterDatabaseStmt: NodeTag = 282;
+pub const NodeTag_T_AlterDatabaseSetStmt: NodeTag = 283;
+pub const NodeTag_T_AlterRoleSetStmt: NodeTag = 284;
+pub const NodeTag_T_CreateConversionStmt: NodeTag = 285;
+pub const NodeTag_T_CreateCastStmt: NodeTag = 286;
+pub const NodeTag_T_CreateOpClassStmt: NodeTag = 287;
+pub const NodeTag_T_CreateOpFamilyStmt: NodeTag = 288;
+pub const NodeTag_T_AlterOpFamilyStmt: NodeTag = 289;
+pub const NodeTag_T_PrepareStmt: NodeTag = 290;
+pub const NodeTag_T_ExecuteStmt: NodeTag = 291;
+pub const NodeTag_T_DeallocateStmt: NodeTag = 292;
+pub const NodeTag_T_DeclareCursorStmt: NodeTag = 293;
+pub const NodeTag_T_CreateTableSpaceStmt: NodeTag = 294;
+pub const NodeTag_T_DropTableSpaceStmt: NodeTag = 295;
+pub const NodeTag_T_AlterObjectDependsStmt: NodeTag = 296;
+pub const NodeTag_T_AlterObjectSchemaStmt: NodeTag = 297;
+pub const NodeTag_T_AlterOwnerStmt: NodeTag = 298;
+pub const NodeTag_T_AlterOperatorStmt: NodeTag = 299;
+pub const NodeTag_T_DropOwnedStmt: NodeTag = 300;
+pub const NodeTag_T_ReassignOwnedStmt: NodeTag = 301;
+pub const NodeTag_T_CompositeTypeStmt: NodeTag = 302;
+pub const NodeTag_T_CreateEnumStmt: NodeTag = 303;
+pub const NodeTag_T_CreateRangeStmt: NodeTag = 304;
+pub const NodeTag_T_AlterEnumStmt: NodeTag = 305;
+pub const NodeTag_T_AlterTSDictionaryStmt: NodeTag = 306;
+pub const NodeTag_T_AlterTSConfigurationStmt: NodeTag = 307;
+pub const NodeTag_T_CreateFdwStmt: NodeTag = 308;
+pub const NodeTag_T_AlterFdwStmt: NodeTag = 309;
+pub const NodeTag_T_CreateForeignServerStmt: NodeTag = 310;
+pub const NodeTag_T_AlterForeignServerStmt: NodeTag = 311;
+pub const NodeTag_T_CreateUserMappingStmt: NodeTag = 312;
+pub const NodeTag_T_AlterUserMappingStmt: NodeTag = 313;
+pub const NodeTag_T_DropUserMappingStmt: NodeTag = 314;
+pub const NodeTag_T_AlterTableSpaceOptionsStmt: NodeTag = 315;
+pub const NodeTag_T_AlterTableMoveAllStmt: NodeTag = 316;
+pub const NodeTag_T_SecLabelStmt: NodeTag = 317;
+pub const NodeTag_T_CreateForeignTableStmt: NodeTag = 318;
+pub const NodeTag_T_ImportForeignSchemaStmt: NodeTag = 319;
+pub const NodeTag_T_CreateExtensionStmt: NodeTag = 320;
+pub const NodeTag_T_AlterExtensionStmt: NodeTag = 321;
+pub const NodeTag_T_AlterExtensionContentsStmt: NodeTag = 322;
+pub const NodeTag_T_CreateEventTrigStmt: NodeTag = 323;
+pub const NodeTag_T_AlterEventTrigStmt: NodeTag = 324;
+pub const NodeTag_T_RefreshMatViewStmt: NodeTag = 325;
+pub const NodeTag_T_ReplicaIdentityStmt: NodeTag = 326;
+pub const NodeTag_T_AlterSystemStmt: NodeTag = 327;
+pub const NodeTag_T_CreatePolicyStmt: NodeTag = 328;
+pub const NodeTag_T_AlterPolicyStmt: NodeTag = 329;
+pub const NodeTag_T_CreateTransformStmt: NodeTag = 330;
+pub const NodeTag_T_CreateAmStmt: NodeTag = 331;
+pub const NodeTag_T_CreatePublicationStmt: NodeTag = 332;
+pub const NodeTag_T_AlterPublicationStmt: NodeTag = 333;
+pub const NodeTag_T_CreateSubscriptionStmt: NodeTag = 334;
+pub const NodeTag_T_AlterSubscriptionStmt: NodeTag = 335;
+pub const NodeTag_T_DropSubscriptionStmt: NodeTag = 336;
+pub const NodeTag_T_CreateStatsStmt: NodeTag = 337;
+pub const NodeTag_T_AlterCollationStmt: NodeTag = 338;
+pub const NodeTag_T_CallStmt: NodeTag = 339;
+pub const NodeTag_T_A_Expr: NodeTag = 340;
+pub const NodeTag_T_ColumnRef: NodeTag = 341;
+pub const NodeTag_T_ParamRef: NodeTag = 342;
+pub const NodeTag_T_A_Const: NodeTag = 343;
+pub const NodeTag_T_FuncCall: NodeTag = 344;
+pub const NodeTag_T_A_Star: NodeTag = 345;
+pub const NodeTag_T_A_Indices: NodeTag = 346;
+pub const NodeTag_T_A_Indirection: NodeTag = 347;
+pub const NodeTag_T_A_ArrayExpr: NodeTag = 348;
+pub const NodeTag_T_ResTarget: NodeTag = 349;
+pub const NodeTag_T_MultiAssignRef: NodeTag = 350;
+pub const NodeTag_T_TypeCast: NodeTag = 351;
+pub const NodeTag_T_CollateClause: NodeTag = 352;
+pub const NodeTag_T_SortBy: NodeTag = 353;
+pub const NodeTag_T_WindowDef: NodeTag = 354;
+pub const NodeTag_T_RangeSubselect: NodeTag = 355;
+pub const NodeTag_T_RangeFunction: NodeTag = 356;
+pub const NodeTag_T_RangeTableSample: NodeTag = 357;
+pub const NodeTag_T_RangeTableFunc: NodeTag = 358;
+pub const NodeTag_T_RangeTableFuncCol: NodeTag = 359;
+pub const NodeTag_T_TypeName: NodeTag = 360;
+pub const NodeTag_T_ColumnDef: NodeTag = 361;
+pub const NodeTag_T_IndexElem: NodeTag = 362;
+pub const NodeTag_T_Constraint: NodeTag = 363;
+pub const NodeTag_T_DefElem: NodeTag = 364;
+pub const NodeTag_T_RangeTblEntry: NodeTag = 365;
+pub const NodeTag_T_RangeTblFunction: NodeTag = 366;
+pub const NodeTag_T_TableSampleClause: NodeTag = 367;
+pub const NodeTag_T_WithCheckOption: NodeTag = 368;
+pub const NodeTag_T_SortGroupClause: NodeTag = 369;
+pub const NodeTag_T_GroupingSet: NodeTag = 370;
+pub const NodeTag_T_WindowClause: NodeTag = 371;
+pub const NodeTag_T_ObjectWithArgs: NodeTag = 372;
+pub const NodeTag_T_AccessPriv: NodeTag = 373;
+pub const NodeTag_T_CreateOpClassItem: NodeTag = 374;
+pub const NodeTag_T_TableLikeClause: NodeTag = 375;
+pub const NodeTag_T_FunctionParameter: NodeTag = 376;
+pub const NodeTag_T_LockingClause: NodeTag = 377;
+pub const NodeTag_T_RowMarkClause: NodeTag = 378;
+pub const NodeTag_T_XmlSerialize: NodeTag = 379;
+pub const NodeTag_T_WithClause: NodeTag = 380;
+pub const NodeTag_T_InferClause: NodeTag = 381;
+pub const NodeTag_T_OnConflictClause: NodeTag = 382;
+pub const NodeTag_T_CommonTableExpr: NodeTag = 383;
+pub const NodeTag_T_RoleSpec: NodeTag = 384;
+pub const NodeTag_T_TriggerTransition: NodeTag = 385;
+pub const NodeTag_T_PartitionElem: NodeTag = 386;
+pub const NodeTag_T_PartitionSpec: NodeTag = 387;
+pub const NodeTag_T_PartitionBoundSpec: NodeTag = 388;
+pub const NodeTag_T_PartitionRangeDatum: NodeTag = 389;
+pub const NodeTag_T_PartitionCmd: NodeTag = 390;
+pub const NodeTag_T_VacuumRelation: NodeTag = 391;
+pub const NodeTag_T_IdentifySystemCmd: NodeTag = 392;
+pub const NodeTag_T_BaseBackupCmd: NodeTag = 393;
+pub const NodeTag_T_CreateReplicationSlotCmd: NodeTag = 394;
+pub const NodeTag_T_DropReplicationSlotCmd: NodeTag = 395;
+pub const NodeTag_T_StartReplicationCmd: NodeTag = 396;
+pub const NodeTag_T_TimeLineHistoryCmd: NodeTag = 397;
+pub const NodeTag_T_SQLCmd: NodeTag = 398;
+pub const NodeTag_T_TriggerData: NodeTag = 399;
+pub const NodeTag_T_EventTriggerData: NodeTag = 400;
+pub const NodeTag_T_ReturnSetInfo: NodeTag = 401;
+pub const NodeTag_T_WindowObjectData: NodeTag = 402;
+pub const NodeTag_T_TIDBitmap: NodeTag = 403;
+pub const NodeTag_T_InlineCodeBlock: NodeTag = 404;
+pub const NodeTag_T_FdwRoutine: NodeTag = 405;
+pub const NodeTag_T_IndexAmRoutine: NodeTag = 406;
+pub const NodeTag_T_TsmRoutine: NodeTag = 407;
+pub const NodeTag_T_ForeignKeyCacheInfo: NodeTag = 408;
+pub const NodeTag_T_CallContext: NodeTag = 409;
 pub type NodeTag = u32;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -10969,7 +12509,7 @@ extern "C" {
         str: *mut StringInfoData,
         value: usize,
         typlen: ::std::os::raw::c_int,
-        typbyval: bool_,
+        typbyval: bool,
     );
 }
 extern "C" {
@@ -10985,10 +12525,10 @@ extern "C" {
     pub fn readBitmapset() -> *mut Bitmapset;
 }
 extern "C" {
-    pub fn readDatum(typbyval: bool_) -> usize;
+    pub fn readDatum(typbyval: bool) -> usize;
 }
 extern "C" {
-    pub fn readBoolCols(numCols: ::std::os::raw::c_int) -> *mut bool_;
+    pub fn readBoolCols(numCols: ::std::os::raw::c_int) -> *mut bool;
 }
 extern "C" {
     pub fn readIntCols(numCols: ::std::os::raw::c_int) -> *mut ::std::os::raw::c_int;
@@ -11003,7 +12543,7 @@ extern "C" {
     pub fn copyObjectImpl(obj: *const ::std::os::raw::c_void) -> *mut ::std::os::raw::c_void;
 }
 extern "C" {
-    pub fn equal(a: *const ::std::os::raw::c_void, b: *const ::std::os::raw::c_void) -> bool_;
+    pub fn equal(a: *const ::std::os::raw::c_void, b: *const ::std::os::raw::c_void) -> bool;
 }
 pub type Selectivity = f64;
 pub type Cost = f64;
@@ -11256,16 +12796,16 @@ extern "C" {
     pub fn list_nth_oid(list: *const List, n: ::std::os::raw::c_int) -> Oid;
 }
 extern "C" {
-    pub fn list_member(list: *const List, datum: *const ::std::os::raw::c_void) -> bool_;
+    pub fn list_member(list: *const List, datum: *const ::std::os::raw::c_void) -> bool;
 }
 extern "C" {
-    pub fn list_member_ptr(list: *const List, datum: *const ::std::os::raw::c_void) -> bool_;
+    pub fn list_member_ptr(list: *const List, datum: *const ::std::os::raw::c_void) -> bool;
 }
 extern "C" {
-    pub fn list_member_int(list: *const List, datum: ::std::os::raw::c_int) -> bool_;
+    pub fn list_member_int(list: *const List, datum: ::std::os::raw::c_int) -> bool;
 }
 extern "C" {
-    pub fn list_member_oid(list: *const List, datum: Oid) -> bool_;
+    pub fn list_member_oid(list: *const List, datum: Oid) -> bool;
 }
 extern "C" {
     pub fn list_delete(list: *mut List, datum: *mut ::std::os::raw::c_void) -> *mut List;
@@ -11352,6 +12892,15 @@ extern "C" {
 }
 extern "C" {
     pub fn list_copy_tail(list: *const List, nskip: ::std::os::raw::c_int) -> *mut List;
+}
+pub type list_qsort_comparator = ::std::option::Option<
+    unsafe extern "C" fn(
+        a: *const ::std::os::raw::c_void,
+        b: *const ::std::os::raw::c_void,
+    ) -> ::std::os::raw::c_int,
+>;
+extern "C" {
+    pub fn list_qsort(list: *const List, cmp: list_qsort_comparator) -> *mut List;
 }
 pub type LOCKMASK = ::std::os::raw::c_int;
 pub type LOCKMODE = ::std::os::raw::c_int;
@@ -11546,7 +13095,7 @@ fn bindgen_test_layout_ItemPointerData() {
 }
 pub type ItemPointer = *mut ItemPointerData;
 extern "C" {
-    pub fn ItemPointerEquals(pointer1: ItemPointer, pointer2: ItemPointer) -> bool_;
+    pub fn ItemPointerEquals(pointer1: ItemPointer, pointer2: ItemPointer) -> bool;
 }
 extern "C" {
     pub fn ItemPointerCompare(arg1: ItemPointer, arg2: ItemPointer) -> int32;
@@ -11635,7 +13184,7 @@ extern "C" {
     pub fn HeapTupleHeaderAdjustCmax(
         tup: HeapTupleHeader,
         cmax: *mut CommandId,
-        iscombo: *mut bool_,
+        iscombo: *mut bool,
     );
 }
 extern "C" {
@@ -11675,7 +13224,10 @@ extern "C" {
     pub fn bms_copy(a: *const Bitmapset) -> *mut Bitmapset;
 }
 extern "C" {
-    pub fn bms_equal(a: *const Bitmapset, b: *const Bitmapset) -> bool_;
+    pub fn bms_equal(a: *const Bitmapset, b: *const Bitmapset) -> bool;
+}
+extern "C" {
+    pub fn bms_compare(a: *const Bitmapset, b: *const Bitmapset) -> ::std::os::raw::c_int;
 }
 extern "C" {
     pub fn bms_make_singleton(x: ::std::os::raw::c_int) -> *mut Bitmapset;
@@ -11693,22 +13245,22 @@ extern "C" {
     pub fn bms_difference(a: *const Bitmapset, b: *const Bitmapset) -> *mut Bitmapset;
 }
 extern "C" {
-    pub fn bms_is_subset(a: *const Bitmapset, b: *const Bitmapset) -> bool_;
+    pub fn bms_is_subset(a: *const Bitmapset, b: *const Bitmapset) -> bool;
 }
 extern "C" {
     pub fn bms_subset_compare(a: *const Bitmapset, b: *const Bitmapset) -> BMS_Comparison;
 }
 extern "C" {
-    pub fn bms_is_member(x: ::std::os::raw::c_int, a: *const Bitmapset) -> bool_;
+    pub fn bms_is_member(x: ::std::os::raw::c_int, a: *const Bitmapset) -> bool;
 }
 extern "C" {
-    pub fn bms_overlap(a: *const Bitmapset, b: *const Bitmapset) -> bool_;
+    pub fn bms_overlap(a: *const Bitmapset, b: *const Bitmapset) -> bool;
 }
 extern "C" {
-    pub fn bms_overlap_list(a: *const Bitmapset, b: *const List) -> bool_;
+    pub fn bms_overlap_list(a: *const Bitmapset, b: *const List) -> bool;
 }
 extern "C" {
-    pub fn bms_nonempty_difference(a: *const Bitmapset, b: *const Bitmapset) -> bool_;
+    pub fn bms_nonempty_difference(a: *const Bitmapset, b: *const Bitmapset) -> bool;
 }
 extern "C" {
     pub fn bms_singleton_member(a: *const Bitmapset) -> ::std::os::raw::c_int;
@@ -11717,7 +13269,7 @@ extern "C" {
     pub fn bms_get_singleton_member(
         a: *const Bitmapset,
         member: *mut ::std::os::raw::c_int,
-    ) -> bool_;
+    ) -> bool;
 }
 extern "C" {
     pub fn bms_num_members(a: *const Bitmapset) -> ::std::os::raw::c_int;
@@ -11726,7 +13278,7 @@ extern "C" {
     pub fn bms_membership(a: *const Bitmapset) -> BMS_Membership;
 }
 extern "C" {
-    pub fn bms_is_empty(a: *const Bitmapset) -> bool_;
+    pub fn bms_is_empty(a: *const Bitmapset) -> bool;
 }
 extern "C" {
     pub fn bms_add_member(a: *mut Bitmapset, x: ::std::os::raw::c_int) -> *mut Bitmapset;
@@ -11736,6 +13288,13 @@ extern "C" {
 }
 extern "C" {
     pub fn bms_add_members(a: *mut Bitmapset, b: *const Bitmapset) -> *mut Bitmapset;
+}
+extern "C" {
+    pub fn bms_add_range(
+        a: *mut Bitmapset,
+        lower: ::std::os::raw::c_int,
+        upper: ::std::os::raw::c_int,
+    ) -> *mut Bitmapset;
 }
 extern "C" {
     pub fn bms_int_members(a: *mut Bitmapset, b: *const Bitmapset) -> *mut Bitmapset;
@@ -11751,6 +13310,12 @@ extern "C" {
 }
 extern "C" {
     pub fn bms_next_member(
+        a: *const Bitmapset,
+        prevbit: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn bms_prev_member(
         a: *const Bitmapset,
         prevbit: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int;
@@ -11831,7 +13396,7 @@ pub struct RangeVar {
     pub catalogname: *mut ::std::os::raw::c_char,
     pub schemaname: *mut ::std::os::raw::c_char,
     pub relname: *mut ::std::os::raw::c_char,
-    pub inh: bool_,
+    pub inh: bool,
     pub relpersistence: ::std::os::raw::c_char,
     pub alias: *mut Alias,
     pub location: ::std::os::raw::c_int,
@@ -12110,7 +13675,7 @@ pub struct IntoClause {
     pub onCommit: OnCommitAction,
     pub tableSpaceName: *mut ::std::os::raw::c_char,
     pub viewQuery: *mut Node,
-    pub skipData: bool_,
+    pub skipData: bool,
 }
 #[test]
 fn bindgen_test_layout_IntoClause() {
@@ -12364,8 +13929,8 @@ pub struct Const {
     pub constcollid: Oid,
     pub constlen: ::std::os::raw::c_int,
     pub constvalue: Datum,
-    pub constisnull: bool_,
-    pub constbyval: bool_,
+    pub constisnull: bool,
+    pub constbyval: bool,
     pub location: ::std::os::raw::c_int,
 }
 #[test]
@@ -12585,8 +14150,8 @@ pub struct Aggref {
     pub aggorder: *mut List,
     pub aggdistinct: *mut List,
     pub aggfilter: *mut Expr,
-    pub aggstar: bool_,
-    pub aggvariadic: bool_,
+    pub aggstar: bool,
+    pub aggvariadic: bool,
     pub aggkind: ::std::os::raw::c_char,
     pub agglevelsup: Index,
     pub aggsplit: AggSplit,
@@ -12879,8 +14444,8 @@ pub struct WindowFunc {
     pub args: *mut List,
     pub aggfilter: *mut Expr,
     pub winref: Index,
-    pub winstar: bool_,
-    pub winagg: bool_,
+    pub winstar: bool,
+    pub winagg: bool,
     pub location: ::std::os::raw::c_int,
 }
 #[test]
@@ -13136,8 +14701,8 @@ pub struct FuncExpr {
     pub xpr: Expr,
     pub funcid: Oid,
     pub funcresulttype: Oid,
-    pub funcretset: bool_,
-    pub funcvariadic: bool_,
+    pub funcretset: bool,
+    pub funcvariadic: bool,
     pub funcformat: CoercionForm,
     pub funccollid: Oid,
     pub inputcollid: Oid,
@@ -13336,7 +14901,7 @@ pub struct OpExpr {
     pub opno: Oid,
     pub opfuncid: Oid,
     pub opresulttype: Oid,
-    pub opretset: bool_,
+    pub opretset: bool,
     pub opcollid: Oid,
     pub inputcollid: Oid,
     pub args: *mut List,
@@ -13453,7 +15018,7 @@ pub struct ScalarArrayOpExpr {
     pub xpr: Expr,
     pub opno: Oid,
     pub opfuncid: Oid,
-    pub useOr: bool_,
+    pub useOr: bool,
     pub inputcollid: Oid,
     pub args: *mut List,
     pub location: ::std::os::raw::c_int,
@@ -13721,9 +15286,9 @@ pub struct SubPlan {
     pub firstColType: Oid,
     pub firstColTypmod: int32,
     pub firstColCollation: Oid,
-    pub useHashTable: bool_,
-    pub unknownEqFalse: bool_,
-    pub parallel_safe: bool_,
+    pub useHashTable: bool,
+    pub unknownEqFalse: bool,
+    pub parallel_safe: bool,
     pub setParam: *mut List,
     pub parParam: *mut List,
     pub args: *mut List,
@@ -14289,11 +15854,10 @@ fn bindgen_test_layout_CoerceViaIO() {
 pub struct ArrayCoerceExpr {
     pub xpr: Expr,
     pub arg: *mut Expr,
-    pub elemfuncid: Oid,
+    pub elemexpr: *mut Expr,
     pub resulttype: Oid,
     pub resulttypmod: int32,
     pub resultcollid: Oid,
-    pub isExplicit: bool_,
     pub coerceformat: CoercionForm,
     pub location: ::std::os::raw::c_int,
 }
@@ -14330,18 +15894,18 @@ fn bindgen_test_layout_ArrayCoerceExpr() {
         )
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<ArrayCoerceExpr>())).elemfuncid as *const _ as usize },
+        unsafe { &(*(::std::ptr::null::<ArrayCoerceExpr>())).elemexpr as *const _ as usize },
         16usize,
         concat!(
             "Offset of field: ",
             stringify!(ArrayCoerceExpr),
             "::",
-            stringify!(elemfuncid)
+            stringify!(elemexpr)
         )
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ArrayCoerceExpr>())).resulttype as *const _ as usize },
-        20usize,
+        24usize,
         concat!(
             "Offset of field: ",
             stringify!(ArrayCoerceExpr),
@@ -14351,7 +15915,7 @@ fn bindgen_test_layout_ArrayCoerceExpr() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ArrayCoerceExpr>())).resulttypmod as *const _ as usize },
-        24usize,
+        28usize,
         concat!(
             "Offset of field: ",
             stringify!(ArrayCoerceExpr),
@@ -14361,22 +15925,12 @@ fn bindgen_test_layout_ArrayCoerceExpr() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ArrayCoerceExpr>())).resultcollid as *const _ as usize },
-        28usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ArrayCoerceExpr),
-            "::",
-            stringify!(resultcollid)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<ArrayCoerceExpr>())).isExplicit as *const _ as usize },
         32usize,
         concat!(
             "Offset of field: ",
             stringify!(ArrayCoerceExpr),
             "::",
-            stringify!(isExplicit)
+            stringify!(resultcollid)
         )
     );
     assert_eq!(
@@ -14759,7 +16313,7 @@ pub struct ArrayExpr {
     pub array_collid: Oid,
     pub element_typeid: Oid,
     pub elements: *mut List,
-    pub multidims: bool_,
+    pub multidims: bool,
     pub location: ::std::os::raw::c_int,
 }
 #[test]
@@ -15434,7 +16988,7 @@ pub struct NullTest {
     pub xpr: Expr,
     pub arg: *mut Expr,
     pub nulltesttype: NullTestType,
-    pub argisrow: bool_,
+    pub argisrow: bool,
     pub location: ::std::os::raw::c_int,
 }
 #[test]
@@ -15988,7 +17542,7 @@ pub struct TargetEntry {
     pub ressortgroupref: Index,
     pub resorigtbl: Oid,
     pub resorigcol: AttrNumber,
-    pub resjunk: bool_,
+    pub resjunk: bool,
 }
 #[test]
 fn bindgen_test_layout_TargetEntry() {
@@ -16127,7 +17681,7 @@ fn bindgen_test_layout_RangeTblRef() {
 pub struct JoinExpr {
     pub type_: NodeTag,
     pub jointype: JoinType,
-    pub isNatural: bool_,
+    pub isNatural: bool,
     pub larg: *mut Node,
     pub rarg: *mut Node,
     pub usingClause: *mut List,
@@ -16413,7 +17967,7 @@ pub struct Value {
 #[repr(C)]
 #[derive(Copy, Clone)]
 pub union Value_ValUnion {
-    pub ival: ::std::os::raw::c_long,
+    pub ival: ::std::os::raw::c_int,
     pub str: *mut ::std::os::raw::c_char,
     _bindgen_union_align: u64,
 }
@@ -16484,7 +18038,7 @@ fn bindgen_test_layout_Value() {
     );
 }
 extern "C" {
-    pub fn makeInteger(i: ::std::os::raw::c_long) -> *mut Value;
+    pub fn makeInteger(i: ::std::os::raw::c_int) -> *mut Value;
 }
 extern "C" {
     pub fn makeFloat(numericStr: *mut ::std::os::raw::c_char) -> *mut Value;
@@ -16495,6 +18049,24 @@ extern "C" {
 extern "C" {
     pub fn makeBitString(str: *mut ::std::os::raw::c_char) -> *mut Value;
 }
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct PartitionBoundInfoData {
+    _unused: [u8; 0],
+}
+pub type PartitionBoundInfo = *mut PartitionBoundInfoData;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct PartitionKeyData {
+    _unused: [u8; 0],
+}
+pub type PartitionKey = *mut PartitionKeyData;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct PartitionDescData {
+    _unused: [u8; 0],
+}
+pub type PartitionDesc = *mut PartitionDescData;
 pub const OverridingKind_OVERRIDING_NOT_SET: OverridingKind = 0;
 pub const OverridingKind_OVERRIDING_USER_VALUE: OverridingKind = 1;
 pub const OverridingKind_OVERRIDING_SYSTEM_VALUE: OverridingKind = 2;
@@ -16522,19 +18094,19 @@ pub struct Query {
     pub type_: NodeTag,
     pub commandType: CmdType,
     pub querySource: QuerySource,
-    pub queryId: uint32,
-    pub canSetTag: bool_,
+    pub queryId: uint64,
+    pub canSetTag: bool,
     pub utilityStmt: *mut Node,
     pub resultRelation: ::std::os::raw::c_int,
-    pub hasAggs: bool_,
-    pub hasWindowFuncs: bool_,
-    pub hasTargetSRFs: bool_,
-    pub hasSubLinks: bool_,
-    pub hasDistinctOn: bool_,
-    pub hasRecursive: bool_,
-    pub hasModifyingCTE: bool_,
-    pub hasForUpdate: bool_,
-    pub hasRowSecurity: bool_,
+    pub hasAggs: bool,
+    pub hasWindowFuncs: bool,
+    pub hasTargetSRFs: bool,
+    pub hasSubLinks: bool,
+    pub hasDistinctOn: bool,
+    pub hasRecursive: bool,
+    pub hasModifyingCTE: bool,
+    pub hasForUpdate: bool,
+    pub hasRowSecurity: bool,
     pub cteList: *mut List,
     pub rtable: *mut List,
     pub jointree: *mut FromExpr,
@@ -16561,7 +18133,7 @@ pub struct Query {
 fn bindgen_test_layout_Query() {
     assert_eq!(
         ::std::mem::size_of::<Query>(),
-        208usize,
+        216usize,
         concat!("Size of: ", stringify!(Query))
     );
     assert_eq!(
@@ -16601,7 +18173,7 @@ fn bindgen_test_layout_Query() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Query>())).queryId as *const _ as usize },
-        12usize,
+        16usize,
         concat!(
             "Offset of field: ",
             stringify!(Query),
@@ -16611,7 +18183,7 @@ fn bindgen_test_layout_Query() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Query>())).canSetTag as *const _ as usize },
-        16usize,
+        24usize,
         concat!(
             "Offset of field: ",
             stringify!(Query),
@@ -16621,7 +18193,7 @@ fn bindgen_test_layout_Query() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Query>())).utilityStmt as *const _ as usize },
-        24usize,
+        32usize,
         concat!(
             "Offset of field: ",
             stringify!(Query),
@@ -16631,7 +18203,7 @@ fn bindgen_test_layout_Query() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Query>())).resultRelation as *const _ as usize },
-        32usize,
+        40usize,
         concat!(
             "Offset of field: ",
             stringify!(Query),
@@ -16641,7 +18213,7 @@ fn bindgen_test_layout_Query() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Query>())).hasAggs as *const _ as usize },
-        36usize,
+        44usize,
         concat!(
             "Offset of field: ",
             stringify!(Query),
@@ -16651,7 +18223,7 @@ fn bindgen_test_layout_Query() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Query>())).hasWindowFuncs as *const _ as usize },
-        37usize,
+        45usize,
         concat!(
             "Offset of field: ",
             stringify!(Query),
@@ -16661,7 +18233,7 @@ fn bindgen_test_layout_Query() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Query>())).hasTargetSRFs as *const _ as usize },
-        38usize,
+        46usize,
         concat!(
             "Offset of field: ",
             stringify!(Query),
@@ -16671,7 +18243,7 @@ fn bindgen_test_layout_Query() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Query>())).hasSubLinks as *const _ as usize },
-        39usize,
+        47usize,
         concat!(
             "Offset of field: ",
             stringify!(Query),
@@ -16681,7 +18253,7 @@ fn bindgen_test_layout_Query() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Query>())).hasDistinctOn as *const _ as usize },
-        40usize,
+        48usize,
         concat!(
             "Offset of field: ",
             stringify!(Query),
@@ -16691,7 +18263,7 @@ fn bindgen_test_layout_Query() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Query>())).hasRecursive as *const _ as usize },
-        41usize,
+        49usize,
         concat!(
             "Offset of field: ",
             stringify!(Query),
@@ -16701,7 +18273,7 @@ fn bindgen_test_layout_Query() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Query>())).hasModifyingCTE as *const _ as usize },
-        42usize,
+        50usize,
         concat!(
             "Offset of field: ",
             stringify!(Query),
@@ -16711,7 +18283,7 @@ fn bindgen_test_layout_Query() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Query>())).hasForUpdate as *const _ as usize },
-        43usize,
+        51usize,
         concat!(
             "Offset of field: ",
             stringify!(Query),
@@ -16721,7 +18293,7 @@ fn bindgen_test_layout_Query() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Query>())).hasRowSecurity as *const _ as usize },
-        44usize,
+        52usize,
         concat!(
             "Offset of field: ",
             stringify!(Query),
@@ -16731,7 +18303,7 @@ fn bindgen_test_layout_Query() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Query>())).cteList as *const _ as usize },
-        48usize,
+        56usize,
         concat!(
             "Offset of field: ",
             stringify!(Query),
@@ -16741,7 +18313,7 @@ fn bindgen_test_layout_Query() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Query>())).rtable as *const _ as usize },
-        56usize,
+        64usize,
         concat!(
             "Offset of field: ",
             stringify!(Query),
@@ -16751,7 +18323,7 @@ fn bindgen_test_layout_Query() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Query>())).jointree as *const _ as usize },
-        64usize,
+        72usize,
         concat!(
             "Offset of field: ",
             stringify!(Query),
@@ -16761,7 +18333,7 @@ fn bindgen_test_layout_Query() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Query>())).targetList as *const _ as usize },
-        72usize,
+        80usize,
         concat!(
             "Offset of field: ",
             stringify!(Query),
@@ -16771,7 +18343,7 @@ fn bindgen_test_layout_Query() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Query>())).override_ as *const _ as usize },
-        80usize,
+        88usize,
         concat!(
             "Offset of field: ",
             stringify!(Query),
@@ -16781,7 +18353,7 @@ fn bindgen_test_layout_Query() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Query>())).onConflict as *const _ as usize },
-        88usize,
+        96usize,
         concat!(
             "Offset of field: ",
             stringify!(Query),
@@ -16791,7 +18363,7 @@ fn bindgen_test_layout_Query() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Query>())).returningList as *const _ as usize },
-        96usize,
+        104usize,
         concat!(
             "Offset of field: ",
             stringify!(Query),
@@ -16801,7 +18373,7 @@ fn bindgen_test_layout_Query() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Query>())).groupClause as *const _ as usize },
-        104usize,
+        112usize,
         concat!(
             "Offset of field: ",
             stringify!(Query),
@@ -16811,7 +18383,7 @@ fn bindgen_test_layout_Query() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Query>())).groupingSets as *const _ as usize },
-        112usize,
+        120usize,
         concat!(
             "Offset of field: ",
             stringify!(Query),
@@ -16821,7 +18393,7 @@ fn bindgen_test_layout_Query() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Query>())).havingQual as *const _ as usize },
-        120usize,
+        128usize,
         concat!(
             "Offset of field: ",
             stringify!(Query),
@@ -16831,7 +18403,7 @@ fn bindgen_test_layout_Query() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Query>())).windowClause as *const _ as usize },
-        128usize,
+        136usize,
         concat!(
             "Offset of field: ",
             stringify!(Query),
@@ -16841,7 +18413,7 @@ fn bindgen_test_layout_Query() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Query>())).distinctClause as *const _ as usize },
-        136usize,
+        144usize,
         concat!(
             "Offset of field: ",
             stringify!(Query),
@@ -16851,7 +18423,7 @@ fn bindgen_test_layout_Query() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Query>())).sortClause as *const _ as usize },
-        144usize,
+        152usize,
         concat!(
             "Offset of field: ",
             stringify!(Query),
@@ -16861,7 +18433,7 @@ fn bindgen_test_layout_Query() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Query>())).limitOffset as *const _ as usize },
-        152usize,
+        160usize,
         concat!(
             "Offset of field: ",
             stringify!(Query),
@@ -16871,7 +18443,7 @@ fn bindgen_test_layout_Query() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Query>())).limitCount as *const _ as usize },
-        160usize,
+        168usize,
         concat!(
             "Offset of field: ",
             stringify!(Query),
@@ -16881,7 +18453,7 @@ fn bindgen_test_layout_Query() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Query>())).rowMarks as *const _ as usize },
-        168usize,
+        176usize,
         concat!(
             "Offset of field: ",
             stringify!(Query),
@@ -16891,7 +18463,7 @@ fn bindgen_test_layout_Query() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Query>())).setOperations as *const _ as usize },
-        176usize,
+        184usize,
         concat!(
             "Offset of field: ",
             stringify!(Query),
@@ -16901,7 +18473,7 @@ fn bindgen_test_layout_Query() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Query>())).constraintDeps as *const _ as usize },
-        184usize,
+        192usize,
         concat!(
             "Offset of field: ",
             stringify!(Query),
@@ -16911,7 +18483,7 @@ fn bindgen_test_layout_Query() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Query>())).withCheckOptions as *const _ as usize },
-        192usize,
+        200usize,
         concat!(
             "Offset of field: ",
             stringify!(Query),
@@ -16921,7 +18493,7 @@ fn bindgen_test_layout_Query() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Query>())).stmt_location as *const _ as usize },
-        200usize,
+        208usize,
         concat!(
             "Offset of field: ",
             stringify!(Query),
@@ -16931,7 +18503,7 @@ fn bindgen_test_layout_Query() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Query>())).stmt_len as *const _ as usize },
-        204usize,
+        212usize,
         concat!(
             "Offset of field: ",
             stringify!(Query),
@@ -16951,8 +18523,8 @@ pub struct TypeName {
     pub type_: NodeTag,
     pub names: *mut List,
     pub typeOid: Oid,
-    pub setof: bool_,
-    pub pct_type: bool_,
+    pub setof: bool,
+    pub pct_type: bool,
     pub typmods: *mut List,
     pub typemod: int32,
     pub arrayBounds: *mut List,
@@ -17507,10 +19079,10 @@ pub struct FuncCall {
     pub args: *mut List,
     pub agg_order: *mut List,
     pub agg_filter: *mut Node,
-    pub agg_within_group: bool_,
-    pub agg_star: bool_,
-    pub agg_distinct: bool_,
-    pub func_variadic: bool_,
+    pub agg_within_group: bool,
+    pub agg_star: bool,
+    pub agg_distinct: bool,
+    pub func_variadic: bool,
     pub over: *mut WindowDef,
     pub location: ::std::os::raw::c_int,
 }
@@ -17669,7 +19241,7 @@ fn bindgen_test_layout_A_Star() {
 #[derive(Debug, Copy, Clone)]
 pub struct A_Indices {
     pub type_: NodeTag,
-    pub is_slice: bool_,
+    pub is_slice: bool,
     pub lidx: *mut Node,
     pub uidx: *mut Node,
 }
@@ -18162,7 +19734,7 @@ fn bindgen_test_layout_WindowDef() {
 #[derive(Debug, Copy, Clone)]
 pub struct RangeSubselect {
     pub type_: NodeTag,
-    pub lateral: bool_,
+    pub lateral: bool,
     pub subquery: *mut Node,
     pub alias: *mut Alias,
 }
@@ -18223,9 +19795,9 @@ fn bindgen_test_layout_RangeSubselect() {
 #[derive(Debug, Copy, Clone)]
 pub struct RangeFunction {
     pub type_: NodeTag,
-    pub lateral: bool_,
-    pub ordinality: bool_,
-    pub is_rowsfrom: bool_,
+    pub lateral: bool,
+    pub ordinality: bool,
+    pub is_rowsfrom: bool,
     pub functions: *mut List,
     pub alias: *mut Alias,
     pub coldeflist: *mut List,
@@ -18317,7 +19889,7 @@ fn bindgen_test_layout_RangeFunction() {
 #[derive(Debug, Copy, Clone)]
 pub struct RangeTableFunc {
     pub type_: NodeTag,
-    pub lateral: bool_,
+    pub lateral: bool,
     pub docexpr: *mut Node,
     pub rowexpr: *mut Node,
     pub namespaces: *mut List,
@@ -18424,8 +19996,8 @@ pub struct RangeTableFuncCol {
     pub type_: NodeTag,
     pub colname: *mut ::std::os::raw::c_char,
     pub typeName: *mut TypeName,
-    pub for_ordinality: bool_,
-    pub is_not_null: bool_,
+    pub for_ordinality: bool,
+    pub is_not_null: bool,
     pub colexpr: *mut Node,
     pub coldefexpr: *mut Node,
     pub location: ::std::os::raw::c_int,
@@ -18615,10 +20187,10 @@ pub struct ColumnDef {
     pub colname: *mut ::std::os::raw::c_char,
     pub typeName: *mut TypeName,
     pub inhcount: ::std::os::raw::c_int,
-    pub is_local: bool_,
-    pub is_not_null: bool_,
-    pub is_from_type: bool_,
-    pub is_from_parent: bool_,
+    pub is_local: bool,
+    pub is_not_null: bool,
+    pub is_from_type: bool,
+    pub is_from_parent: bool,
     pub storage: ::std::os::raw::c_char,
     pub raw_default: *mut Node,
     pub cooked_default: *mut Node,
@@ -18873,13 +20445,13 @@ fn bindgen_test_layout_TableLikeClause() {
         )
     );
 }
-pub const TableLikeOption_CREATE_TABLE_LIKE_DEFAULTS: TableLikeOption = 1;
+pub const TableLikeOption_CREATE_TABLE_LIKE_COMMENTS: TableLikeOption = 1;
 pub const TableLikeOption_CREATE_TABLE_LIKE_CONSTRAINTS: TableLikeOption = 2;
-pub const TableLikeOption_CREATE_TABLE_LIKE_IDENTITY: TableLikeOption = 4;
-pub const TableLikeOption_CREATE_TABLE_LIKE_INDEXES: TableLikeOption = 8;
-pub const TableLikeOption_CREATE_TABLE_LIKE_STORAGE: TableLikeOption = 16;
-pub const TableLikeOption_CREATE_TABLE_LIKE_COMMENTS: TableLikeOption = 32;
-pub const TableLikeOption_CREATE_TABLE_LIKE_STATISTICS: TableLikeOption = 64;
+pub const TableLikeOption_CREATE_TABLE_LIKE_DEFAULTS: TableLikeOption = 4;
+pub const TableLikeOption_CREATE_TABLE_LIKE_IDENTITY: TableLikeOption = 8;
+pub const TableLikeOption_CREATE_TABLE_LIKE_INDEXES: TableLikeOption = 16;
+pub const TableLikeOption_CREATE_TABLE_LIKE_STATISTICS: TableLikeOption = 32;
+pub const TableLikeOption_CREATE_TABLE_LIKE_STORAGE: TableLikeOption = 64;
 pub const TableLikeOption_CREATE_TABLE_LIKE_ALL: TableLikeOption = 2147483647;
 pub type TableLikeOption = u32;
 #[repr(C)]
@@ -19357,6 +20929,9 @@ fn bindgen_test_layout_PartitionSpec() {
 pub struct PartitionBoundSpec {
     pub type_: NodeTag,
     pub strategy: ::std::os::raw::c_char,
+    pub is_default: bool,
+    pub modulus: ::std::os::raw::c_int,
+    pub remainder: ::std::os::raw::c_int,
     pub listdatums: *mut List,
     pub lowerdatums: *mut List,
     pub upperdatums: *mut List,
@@ -19366,7 +20941,7 @@ pub struct PartitionBoundSpec {
 fn bindgen_test_layout_PartitionBoundSpec() {
     assert_eq!(
         ::std::mem::size_of::<PartitionBoundSpec>(),
-        40usize,
+        48usize,
         concat!("Size of: ", stringify!(PartitionBoundSpec))
     );
     assert_eq!(
@@ -19395,8 +20970,38 @@ fn bindgen_test_layout_PartitionBoundSpec() {
         )
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<PartitionBoundSpec>())).listdatums as *const _ as usize },
+        unsafe { &(*(::std::ptr::null::<PartitionBoundSpec>())).is_default as *const _ as usize },
+        5usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(PartitionBoundSpec),
+            "::",
+            stringify!(is_default)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<PartitionBoundSpec>())).modulus as *const _ as usize },
         8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(PartitionBoundSpec),
+            "::",
+            stringify!(modulus)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<PartitionBoundSpec>())).remainder as *const _ as usize },
+        12usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(PartitionBoundSpec),
+            "::",
+            stringify!(remainder)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<PartitionBoundSpec>())).listdatums as *const _ as usize },
+        16usize,
         concat!(
             "Offset of field: ",
             stringify!(PartitionBoundSpec),
@@ -19406,7 +21011,7 @@ fn bindgen_test_layout_PartitionBoundSpec() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<PartitionBoundSpec>())).lowerdatums as *const _ as usize },
-        16usize,
+        24usize,
         concat!(
             "Offset of field: ",
             stringify!(PartitionBoundSpec),
@@ -19416,7 +21021,7 @@ fn bindgen_test_layout_PartitionBoundSpec() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<PartitionBoundSpec>())).upperdatums as *const _ as usize },
-        24usize,
+        32usize,
         concat!(
             "Offset of field: ",
             stringify!(PartitionBoundSpec),
@@ -19426,7 +21031,7 @@ fn bindgen_test_layout_PartitionBoundSpec() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<PartitionBoundSpec>())).location as *const _ as usize },
-        32usize,
+        40usize,
         concat!(
             "Offset of field: ",
             stringify!(PartitionBoundSpec),
@@ -19568,16 +21173,16 @@ pub struct RangeTblEntry {
     pub relkind: ::std::os::raw::c_char,
     pub tablesample: *mut TableSampleClause,
     pub subquery: *mut Query,
-    pub security_barrier: bool_,
+    pub security_barrier: bool,
     pub jointype: JoinType,
     pub joinaliasvars: *mut List,
     pub functions: *mut List,
-    pub funcordinality: bool_,
+    pub funcordinality: bool,
     pub tablefunc: *mut TableFunc,
     pub values_lists: *mut List,
     pub ctename: *mut ::std::os::raw::c_char,
     pub ctelevelsup: Index,
-    pub self_reference: bool_,
+    pub self_reference: bool,
     pub coltypes: *mut List,
     pub coltypmods: *mut List,
     pub colcollations: *mut List,
@@ -19585,9 +21190,9 @@ pub struct RangeTblEntry {
     pub enrtuples: f64,
     pub alias: *mut Alias,
     pub eref: *mut Alias,
-    pub lateral: bool_,
-    pub inh: bool_,
-    pub inFromCl: bool_,
+    pub lateral: bool,
+    pub inh: bool,
+    pub inFromCl: bool,
     pub requiredPerms: AclMode,
     pub checkAsUser: Oid,
     pub selectedCols: *mut Bitmapset,
@@ -20109,7 +21714,7 @@ pub struct WithCheckOption {
     pub relname: *mut ::std::os::raw::c_char,
     pub polname: *mut ::std::os::raw::c_char,
     pub qual: *mut Node,
-    pub cascaded: bool_,
+    pub cascaded: bool,
 }
 #[test]
 fn bindgen_test_layout_WithCheckOption() {
@@ -20191,8 +21796,8 @@ pub struct SortGroupClause {
     pub tleSortGroupRef: Index,
     pub eqop: Oid,
     pub sortop: Oid,
-    pub nulls_first: bool_,
-    pub hashable: bool_,
+    pub nulls_first: bool,
+    pub hashable: bool,
 }
 #[test]
 fn bindgen_test_layout_SortGroupClause() {
@@ -20345,14 +21950,19 @@ pub struct WindowClause {
     pub frameOptions: ::std::os::raw::c_int,
     pub startOffset: *mut Node,
     pub endOffset: *mut Node,
+    pub startInRangeFunc: Oid,
+    pub endInRangeFunc: Oid,
+    pub inRangeColl: Oid,
+    pub inRangeAsc: bool,
+    pub inRangeNullsFirst: bool,
     pub winref: Index,
-    pub copiedOrder: bool_,
+    pub copiedOrder: bool,
 }
 #[test]
 fn bindgen_test_layout_WindowClause() {
     assert_eq!(
         ::std::mem::size_of::<WindowClause>(),
-        72usize,
+        88usize,
         concat!("Size of: ", stringify!(WindowClause))
     );
     assert_eq!(
@@ -20441,8 +22051,58 @@ fn bindgen_test_layout_WindowClause() {
         )
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<WindowClause>())).winref as *const _ as usize },
+        unsafe { &(*(::std::ptr::null::<WindowClause>())).startInRangeFunc as *const _ as usize },
         64usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(WindowClause),
+            "::",
+            stringify!(startInRangeFunc)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<WindowClause>())).endInRangeFunc as *const _ as usize },
+        68usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(WindowClause),
+            "::",
+            stringify!(endInRangeFunc)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<WindowClause>())).inRangeColl as *const _ as usize },
+        72usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(WindowClause),
+            "::",
+            stringify!(inRangeColl)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<WindowClause>())).inRangeAsc as *const _ as usize },
+        76usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(WindowClause),
+            "::",
+            stringify!(inRangeAsc)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<WindowClause>())).inRangeNullsFirst as *const _ as usize },
+        77usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(WindowClause),
+            "::",
+            stringify!(inRangeNullsFirst)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<WindowClause>())).winref as *const _ as usize },
+        80usize,
         concat!(
             "Offset of field: ",
             stringify!(WindowClause),
@@ -20452,7 +22112,7 @@ fn bindgen_test_layout_WindowClause() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<WindowClause>())).copiedOrder as *const _ as usize },
-        68usize,
+        84usize,
         concat!(
             "Offset of field: ",
             stringify!(WindowClause),
@@ -20468,7 +22128,7 @@ pub struct RowMarkClause {
     pub rti: Index,
     pub strength: LockClauseStrength,
     pub waitPolicy: LockWaitPolicy,
-    pub pushedDown: bool_,
+    pub pushedDown: bool,
 }
 #[test]
 fn bindgen_test_layout_RowMarkClause() {
@@ -20538,7 +22198,7 @@ fn bindgen_test_layout_RowMarkClause() {
 pub struct WithClause {
     pub type_: NodeTag,
     pub ctes: *mut List,
-    pub recursive: bool_,
+    pub recursive: bool,
     pub location: ::std::os::raw::c_int,
 }
 #[test]
@@ -20757,7 +22417,7 @@ pub struct CommonTableExpr {
     pub aliascolnames: *mut List,
     pub ctequery: *mut Node,
     pub location: ::std::os::raw::c_int,
-    pub cterecursive: bool_,
+    pub cterecursive: bool,
     pub cterefcount: ::std::os::raw::c_int,
     pub ctecolnames: *mut List,
     pub ctecoltypes: *mut List,
@@ -20894,8 +22554,8 @@ fn bindgen_test_layout_CommonTableExpr() {
 pub struct TriggerTransition {
     pub type_: NodeTag,
     pub name: *mut ::std::os::raw::c_char,
-    pub isNew: bool_,
-    pub isTable: bool_,
+    pub isNew: bool,
+    pub isTable: bool,
 }
 #[test]
 fn bindgen_test_layout_TriggerTransition() {
@@ -21319,7 +22979,7 @@ pub struct SelectStmt {
     pub lockingClause: *mut List,
     pub withClause: *mut WithClause,
     pub op: SetOperation,
-    pub all: bool_,
+    pub all: bool,
     pub larg: *mut SelectStmt,
     pub rarg: *mut SelectStmt,
 }
@@ -21531,7 +23191,7 @@ fn bindgen_test_layout_SelectStmt() {
 pub struct SetOperationStmt {
     pub type_: NodeTag,
     pub op: SetOperation,
-    pub all: bool_,
+    pub all: bool,
     pub larg: *mut Node,
     pub rarg: *mut Node,
     pub colTypes: *mut List,
@@ -21670,26 +23330,28 @@ pub const ObjectType_OBJECT_OPCLASS: ObjectType = 24;
 pub const ObjectType_OBJECT_OPERATOR: ObjectType = 25;
 pub const ObjectType_OBJECT_OPFAMILY: ObjectType = 26;
 pub const ObjectType_OBJECT_POLICY: ObjectType = 27;
-pub const ObjectType_OBJECT_PUBLICATION: ObjectType = 28;
-pub const ObjectType_OBJECT_PUBLICATION_REL: ObjectType = 29;
-pub const ObjectType_OBJECT_ROLE: ObjectType = 30;
-pub const ObjectType_OBJECT_RULE: ObjectType = 31;
-pub const ObjectType_OBJECT_SCHEMA: ObjectType = 32;
-pub const ObjectType_OBJECT_SEQUENCE: ObjectType = 33;
-pub const ObjectType_OBJECT_SUBSCRIPTION: ObjectType = 34;
-pub const ObjectType_OBJECT_STATISTIC_EXT: ObjectType = 35;
-pub const ObjectType_OBJECT_TABCONSTRAINT: ObjectType = 36;
-pub const ObjectType_OBJECT_TABLE: ObjectType = 37;
-pub const ObjectType_OBJECT_TABLESPACE: ObjectType = 38;
-pub const ObjectType_OBJECT_TRANSFORM: ObjectType = 39;
-pub const ObjectType_OBJECT_TRIGGER: ObjectType = 40;
-pub const ObjectType_OBJECT_TSCONFIGURATION: ObjectType = 41;
-pub const ObjectType_OBJECT_TSDICTIONARY: ObjectType = 42;
-pub const ObjectType_OBJECT_TSPARSER: ObjectType = 43;
-pub const ObjectType_OBJECT_TSTEMPLATE: ObjectType = 44;
-pub const ObjectType_OBJECT_TYPE: ObjectType = 45;
-pub const ObjectType_OBJECT_USER_MAPPING: ObjectType = 46;
-pub const ObjectType_OBJECT_VIEW: ObjectType = 47;
+pub const ObjectType_OBJECT_PROCEDURE: ObjectType = 28;
+pub const ObjectType_OBJECT_PUBLICATION: ObjectType = 29;
+pub const ObjectType_OBJECT_PUBLICATION_REL: ObjectType = 30;
+pub const ObjectType_OBJECT_ROLE: ObjectType = 31;
+pub const ObjectType_OBJECT_ROUTINE: ObjectType = 32;
+pub const ObjectType_OBJECT_RULE: ObjectType = 33;
+pub const ObjectType_OBJECT_SCHEMA: ObjectType = 34;
+pub const ObjectType_OBJECT_SEQUENCE: ObjectType = 35;
+pub const ObjectType_OBJECT_SUBSCRIPTION: ObjectType = 36;
+pub const ObjectType_OBJECT_STATISTIC_EXT: ObjectType = 37;
+pub const ObjectType_OBJECT_TABCONSTRAINT: ObjectType = 38;
+pub const ObjectType_OBJECT_TABLE: ObjectType = 39;
+pub const ObjectType_OBJECT_TABLESPACE: ObjectType = 40;
+pub const ObjectType_OBJECT_TRANSFORM: ObjectType = 41;
+pub const ObjectType_OBJECT_TRIGGER: ObjectType = 42;
+pub const ObjectType_OBJECT_TSCONFIGURATION: ObjectType = 43;
+pub const ObjectType_OBJECT_TSDICTIONARY: ObjectType = 44;
+pub const ObjectType_OBJECT_TSPARSER: ObjectType = 45;
+pub const ObjectType_OBJECT_TSTEMPLATE: ObjectType = 46;
+pub const ObjectType_OBJECT_TYPE: ObjectType = 47;
+pub const ObjectType_OBJECT_USER_MAPPING: ObjectType = 48;
+pub const ObjectType_OBJECT_VIEW: ObjectType = 49;
 ///		Other Statements (no optimizations required)
 ///
 ///		These are not touched by parser/analyze.c except to put them into
@@ -21709,7 +23371,7 @@ pub struct CreateSchemaStmt {
     pub schemaname: *mut ::std::os::raw::c_char,
     pub authrole: *mut RoleSpec,
     pub schemaElts: *mut List,
-    pub if_not_exists: bool_,
+    pub if_not_exists: bool,
 }
 #[test]
 fn bindgen_test_layout_CreateSchemaStmt() {
@@ -21784,7 +23446,7 @@ pub struct AlterTableStmt {
     pub relation: *mut RangeVar,
     pub cmds: *mut List,
     pub relkind: ObjectType,
-    pub missing_ok: bool_,
+    pub missing_ok: bool,
 }
 #[test]
 fn bindgen_test_layout_AlterTableStmt() {
@@ -21866,55 +23528,56 @@ pub const AlterTableType_AT_ReAddIndex: AlterTableType = 13;
 pub const AlterTableType_AT_AddConstraint: AlterTableType = 14;
 pub const AlterTableType_AT_AddConstraintRecurse: AlterTableType = 15;
 pub const AlterTableType_AT_ReAddConstraint: AlterTableType = 16;
-pub const AlterTableType_AT_AlterConstraint: AlterTableType = 17;
-pub const AlterTableType_AT_ValidateConstraint: AlterTableType = 18;
-pub const AlterTableType_AT_ValidateConstraintRecurse: AlterTableType = 19;
-pub const AlterTableType_AT_ProcessedConstraint: AlterTableType = 20;
-pub const AlterTableType_AT_AddIndexConstraint: AlterTableType = 21;
-pub const AlterTableType_AT_DropConstraint: AlterTableType = 22;
-pub const AlterTableType_AT_DropConstraintRecurse: AlterTableType = 23;
-pub const AlterTableType_AT_ReAddComment: AlterTableType = 24;
-pub const AlterTableType_AT_AlterColumnType: AlterTableType = 25;
-pub const AlterTableType_AT_AlterColumnGenericOptions: AlterTableType = 26;
-pub const AlterTableType_AT_ChangeOwner: AlterTableType = 27;
-pub const AlterTableType_AT_ClusterOn: AlterTableType = 28;
-pub const AlterTableType_AT_DropCluster: AlterTableType = 29;
-pub const AlterTableType_AT_SetLogged: AlterTableType = 30;
-pub const AlterTableType_AT_SetUnLogged: AlterTableType = 31;
-pub const AlterTableType_AT_AddOids: AlterTableType = 32;
-pub const AlterTableType_AT_AddOidsRecurse: AlterTableType = 33;
-pub const AlterTableType_AT_DropOids: AlterTableType = 34;
-pub const AlterTableType_AT_SetTableSpace: AlterTableType = 35;
-pub const AlterTableType_AT_SetRelOptions: AlterTableType = 36;
-pub const AlterTableType_AT_ResetRelOptions: AlterTableType = 37;
-pub const AlterTableType_AT_ReplaceRelOptions: AlterTableType = 38;
-pub const AlterTableType_AT_EnableTrig: AlterTableType = 39;
-pub const AlterTableType_AT_EnableAlwaysTrig: AlterTableType = 40;
-pub const AlterTableType_AT_EnableReplicaTrig: AlterTableType = 41;
-pub const AlterTableType_AT_DisableTrig: AlterTableType = 42;
-pub const AlterTableType_AT_EnableTrigAll: AlterTableType = 43;
-pub const AlterTableType_AT_DisableTrigAll: AlterTableType = 44;
-pub const AlterTableType_AT_EnableTrigUser: AlterTableType = 45;
-pub const AlterTableType_AT_DisableTrigUser: AlterTableType = 46;
-pub const AlterTableType_AT_EnableRule: AlterTableType = 47;
-pub const AlterTableType_AT_EnableAlwaysRule: AlterTableType = 48;
-pub const AlterTableType_AT_EnableReplicaRule: AlterTableType = 49;
-pub const AlterTableType_AT_DisableRule: AlterTableType = 50;
-pub const AlterTableType_AT_AddInherit: AlterTableType = 51;
-pub const AlterTableType_AT_DropInherit: AlterTableType = 52;
-pub const AlterTableType_AT_AddOf: AlterTableType = 53;
-pub const AlterTableType_AT_DropOf: AlterTableType = 54;
-pub const AlterTableType_AT_ReplicaIdentity: AlterTableType = 55;
-pub const AlterTableType_AT_EnableRowSecurity: AlterTableType = 56;
-pub const AlterTableType_AT_DisableRowSecurity: AlterTableType = 57;
-pub const AlterTableType_AT_ForceRowSecurity: AlterTableType = 58;
-pub const AlterTableType_AT_NoForceRowSecurity: AlterTableType = 59;
-pub const AlterTableType_AT_GenericOptions: AlterTableType = 60;
-pub const AlterTableType_AT_AttachPartition: AlterTableType = 61;
-pub const AlterTableType_AT_DetachPartition: AlterTableType = 62;
-pub const AlterTableType_AT_AddIdentity: AlterTableType = 63;
-pub const AlterTableType_AT_SetIdentity: AlterTableType = 64;
-pub const AlterTableType_AT_DropIdentity: AlterTableType = 65;
+pub const AlterTableType_AT_ReAddDomainConstraint: AlterTableType = 17;
+pub const AlterTableType_AT_AlterConstraint: AlterTableType = 18;
+pub const AlterTableType_AT_ValidateConstraint: AlterTableType = 19;
+pub const AlterTableType_AT_ValidateConstraintRecurse: AlterTableType = 20;
+pub const AlterTableType_AT_ProcessedConstraint: AlterTableType = 21;
+pub const AlterTableType_AT_AddIndexConstraint: AlterTableType = 22;
+pub const AlterTableType_AT_DropConstraint: AlterTableType = 23;
+pub const AlterTableType_AT_DropConstraintRecurse: AlterTableType = 24;
+pub const AlterTableType_AT_ReAddComment: AlterTableType = 25;
+pub const AlterTableType_AT_AlterColumnType: AlterTableType = 26;
+pub const AlterTableType_AT_AlterColumnGenericOptions: AlterTableType = 27;
+pub const AlterTableType_AT_ChangeOwner: AlterTableType = 28;
+pub const AlterTableType_AT_ClusterOn: AlterTableType = 29;
+pub const AlterTableType_AT_DropCluster: AlterTableType = 30;
+pub const AlterTableType_AT_SetLogged: AlterTableType = 31;
+pub const AlterTableType_AT_SetUnLogged: AlterTableType = 32;
+pub const AlterTableType_AT_AddOids: AlterTableType = 33;
+pub const AlterTableType_AT_AddOidsRecurse: AlterTableType = 34;
+pub const AlterTableType_AT_DropOids: AlterTableType = 35;
+pub const AlterTableType_AT_SetTableSpace: AlterTableType = 36;
+pub const AlterTableType_AT_SetRelOptions: AlterTableType = 37;
+pub const AlterTableType_AT_ResetRelOptions: AlterTableType = 38;
+pub const AlterTableType_AT_ReplaceRelOptions: AlterTableType = 39;
+pub const AlterTableType_AT_EnableTrig: AlterTableType = 40;
+pub const AlterTableType_AT_EnableAlwaysTrig: AlterTableType = 41;
+pub const AlterTableType_AT_EnableReplicaTrig: AlterTableType = 42;
+pub const AlterTableType_AT_DisableTrig: AlterTableType = 43;
+pub const AlterTableType_AT_EnableTrigAll: AlterTableType = 44;
+pub const AlterTableType_AT_DisableTrigAll: AlterTableType = 45;
+pub const AlterTableType_AT_EnableTrigUser: AlterTableType = 46;
+pub const AlterTableType_AT_DisableTrigUser: AlterTableType = 47;
+pub const AlterTableType_AT_EnableRule: AlterTableType = 48;
+pub const AlterTableType_AT_EnableAlwaysRule: AlterTableType = 49;
+pub const AlterTableType_AT_EnableReplicaRule: AlterTableType = 50;
+pub const AlterTableType_AT_DisableRule: AlterTableType = 51;
+pub const AlterTableType_AT_AddInherit: AlterTableType = 52;
+pub const AlterTableType_AT_DropInherit: AlterTableType = 53;
+pub const AlterTableType_AT_AddOf: AlterTableType = 54;
+pub const AlterTableType_AT_DropOf: AlterTableType = 55;
+pub const AlterTableType_AT_ReplicaIdentity: AlterTableType = 56;
+pub const AlterTableType_AT_EnableRowSecurity: AlterTableType = 57;
+pub const AlterTableType_AT_DisableRowSecurity: AlterTableType = 58;
+pub const AlterTableType_AT_ForceRowSecurity: AlterTableType = 59;
+pub const AlterTableType_AT_NoForceRowSecurity: AlterTableType = 60;
+pub const AlterTableType_AT_GenericOptions: AlterTableType = 61;
+pub const AlterTableType_AT_AttachPartition: AlterTableType = 62;
+pub const AlterTableType_AT_DetachPartition: AlterTableType = 63;
+pub const AlterTableType_AT_AddIdentity: AlterTableType = 64;
+pub const AlterTableType_AT_SetIdentity: AlterTableType = 65;
+pub const AlterTableType_AT_DropIdentity: AlterTableType = 66;
 pub type AlterTableType = u32;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -21974,16 +23637,17 @@ pub struct AlterTableCmd {
     pub type_: NodeTag,
     pub subtype: AlterTableType,
     pub name: *mut ::std::os::raw::c_char,
+    pub num: int16,
     pub newowner: *mut RoleSpec,
     pub def: *mut Node,
     pub behavior: DropBehavior,
-    pub missing_ok: bool_,
+    pub missing_ok: bool,
 }
 #[test]
 fn bindgen_test_layout_AlterTableCmd() {
     assert_eq!(
         ::std::mem::size_of::<AlterTableCmd>(),
-        40usize,
+        48usize,
         concat!("Size of: ", stringify!(AlterTableCmd))
     );
     assert_eq!(
@@ -22022,8 +23686,18 @@ fn bindgen_test_layout_AlterTableCmd() {
         )
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<AlterTableCmd>())).newowner as *const _ as usize },
+        unsafe { &(*(::std::ptr::null::<AlterTableCmd>())).num as *const _ as usize },
         16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AlterTableCmd),
+            "::",
+            stringify!(num)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<AlterTableCmd>())).newowner as *const _ as usize },
+        24usize,
         concat!(
             "Offset of field: ",
             stringify!(AlterTableCmd),
@@ -22033,7 +23707,7 @@ fn bindgen_test_layout_AlterTableCmd() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<AlterTableCmd>())).def as *const _ as usize },
-        24usize,
+        32usize,
         concat!(
             "Offset of field: ",
             stringify!(AlterTableCmd),
@@ -22043,7 +23717,7 @@ fn bindgen_test_layout_AlterTableCmd() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<AlterTableCmd>())).behavior as *const _ as usize },
-        32usize,
+        40usize,
         concat!(
             "Offset of field: ",
             stringify!(AlterTableCmd),
@@ -22053,7 +23727,7 @@ fn bindgen_test_layout_AlterTableCmd() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<AlterTableCmd>())).missing_ok as *const _ as usize },
-        36usize,
+        44usize,
         concat!(
             "Offset of field: ",
             stringify!(AlterTableCmd),
@@ -22110,7 +23784,7 @@ pub struct AlterDomainStmt {
     pub name: *mut ::std::os::raw::c_char,
     pub def: *mut Node,
     pub behavior: DropBehavior,
-    pub missing_ok: bool_,
+    pub missing_ok: bool,
 }
 #[test]
 fn bindgen_test_layout_AlterDomainStmt() {
@@ -22199,31 +23873,17 @@ pub const GrantTargetType_ACL_TARGET_OBJECT: GrantTargetType = 0;
 pub const GrantTargetType_ACL_TARGET_ALL_IN_SCHEMA: GrantTargetType = 1;
 pub const GrantTargetType_ACL_TARGET_DEFAULTS: GrantTargetType = 2;
 pub type GrantTargetType = u32;
-pub const GrantObjectType_ACL_OBJECT_COLUMN: GrantObjectType = 0;
-pub const GrantObjectType_ACL_OBJECT_RELATION: GrantObjectType = 1;
-pub const GrantObjectType_ACL_OBJECT_SEQUENCE: GrantObjectType = 2;
-pub const GrantObjectType_ACL_OBJECT_DATABASE: GrantObjectType = 3;
-pub const GrantObjectType_ACL_OBJECT_DOMAIN: GrantObjectType = 4;
-pub const GrantObjectType_ACL_OBJECT_FDW: GrantObjectType = 5;
-pub const GrantObjectType_ACL_OBJECT_FOREIGN_SERVER: GrantObjectType = 6;
-pub const GrantObjectType_ACL_OBJECT_FUNCTION: GrantObjectType = 7;
-pub const GrantObjectType_ACL_OBJECT_LANGUAGE: GrantObjectType = 8;
-pub const GrantObjectType_ACL_OBJECT_LARGEOBJECT: GrantObjectType = 9;
-pub const GrantObjectType_ACL_OBJECT_NAMESPACE: GrantObjectType = 10;
-pub const GrantObjectType_ACL_OBJECT_TABLESPACE: GrantObjectType = 11;
-pub const GrantObjectType_ACL_OBJECT_TYPE: GrantObjectType = 12;
-pub type GrantObjectType = u32;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct GrantStmt {
     pub type_: NodeTag,
-    pub is_grant: bool_,
+    pub is_grant: bool,
     pub targtype: GrantTargetType,
-    pub objtype: GrantObjectType,
+    pub objtype: ObjectType,
     pub objects: *mut List,
     pub privileges: *mut List,
     pub grantees: *mut List,
-    pub grant_option: bool_,
+    pub grant_option: bool,
     pub behavior: DropBehavior,
 }
 #[test]
@@ -22335,7 +23995,7 @@ pub struct ObjectWithArgs {
     pub type_: NodeTag,
     pub objname: *mut List,
     pub objargs: *mut List,
-    pub args_unspecified: bool_,
+    pub args_unspecified: bool,
 }
 #[test]
 fn bindgen_test_layout_ObjectWithArgs() {
@@ -22446,8 +24106,8 @@ pub struct GrantRoleStmt {
     pub type_: NodeTag,
     pub granted_roles: *mut List,
     pub grantee_roles: *mut List,
-    pub is_grant: bool_,
-    pub admin_opt: bool_,
+    pub is_grant: bool,
+    pub admin_opt: bool,
     pub grantor: *mut RoleSpec,
     pub behavior: DropBehavior,
 }
@@ -22597,8 +24257,8 @@ pub struct CopyStmt {
     pub relation: *mut RangeVar,
     pub query: *mut Node,
     pub attlist: *mut List,
-    pub is_from: bool_,
-    pub is_program: bool_,
+    pub is_from: bool,
+    pub is_program: bool,
     pub filename: *mut ::std::os::raw::c_char,
     pub options: *mut List,
 }
@@ -22709,7 +24369,7 @@ pub struct VariableSetStmt {
     pub kind: VariableSetKind,
     pub name: *mut ::std::os::raw::c_char,
     pub args: *mut List,
-    pub is_local: bool_,
+    pub is_local: bool,
 }
 #[test]
 fn bindgen_test_layout_VariableSetStmt() {
@@ -22827,7 +24487,7 @@ pub struct CreateStmt {
     pub options: *mut List,
     pub oncommit: OnCommitAction,
     pub tablespacename: *mut ::std::os::raw::c_char,
-    pub if_not_exists: bool_,
+    pub if_not_exists: bool,
 }
 #[test]
 fn bindgen_test_layout_CreateStmt() {
@@ -22982,14 +24642,15 @@ pub struct Constraint {
     pub type_: NodeTag,
     pub contype: ConstrType,
     pub conname: *mut ::std::os::raw::c_char,
-    pub deferrable: bool_,
-    pub initdeferred: bool_,
+    pub deferrable: bool,
+    pub initdeferred: bool,
     pub location: ::std::os::raw::c_int,
-    pub is_no_inherit: bool_,
+    pub is_no_inherit: bool,
     pub raw_expr: *mut Node,
     pub cooked_expr: *mut ::std::os::raw::c_char,
     pub generated_when: ::std::os::raw::c_char,
     pub keys: *mut List,
+    pub including: *mut List,
     pub exclusions: *mut List,
     pub options: *mut List,
     pub indexname: *mut ::std::os::raw::c_char,
@@ -23004,14 +24665,14 @@ pub struct Constraint {
     pub fk_del_action: ::std::os::raw::c_char,
     pub old_conpfeqop: *mut List,
     pub old_pktable_oid: Oid,
-    pub skip_validation: bool_,
-    pub initially_valid: bool_,
+    pub skip_validation: bool,
+    pub initially_valid: bool,
 }
 #[test]
 fn bindgen_test_layout_Constraint() {
     assert_eq!(
         ::std::mem::size_of::<Constraint>(),
-        160usize,
+        168usize,
         concat!("Size of: ", stringify!(Constraint))
     );
     assert_eq!(
@@ -23130,8 +24791,18 @@ fn bindgen_test_layout_Constraint() {
         )
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<Constraint>())).exclusions as *const _ as usize },
+        unsafe { &(*(::std::ptr::null::<Constraint>())).including as *const _ as usize },
         64usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(Constraint),
+            "::",
+            stringify!(including)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<Constraint>())).exclusions as *const _ as usize },
+        72usize,
         concat!(
             "Offset of field: ",
             stringify!(Constraint),
@@ -23141,7 +24812,7 @@ fn bindgen_test_layout_Constraint() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Constraint>())).options as *const _ as usize },
-        72usize,
+        80usize,
         concat!(
             "Offset of field: ",
             stringify!(Constraint),
@@ -23151,7 +24822,7 @@ fn bindgen_test_layout_Constraint() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Constraint>())).indexname as *const _ as usize },
-        80usize,
+        88usize,
         concat!(
             "Offset of field: ",
             stringify!(Constraint),
@@ -23161,7 +24832,7 @@ fn bindgen_test_layout_Constraint() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Constraint>())).indexspace as *const _ as usize },
-        88usize,
+        96usize,
         concat!(
             "Offset of field: ",
             stringify!(Constraint),
@@ -23171,7 +24842,7 @@ fn bindgen_test_layout_Constraint() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Constraint>())).access_method as *const _ as usize },
-        96usize,
+        104usize,
         concat!(
             "Offset of field: ",
             stringify!(Constraint),
@@ -23181,7 +24852,7 @@ fn bindgen_test_layout_Constraint() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Constraint>())).where_clause as *const _ as usize },
-        104usize,
+        112usize,
         concat!(
             "Offset of field: ",
             stringify!(Constraint),
@@ -23191,7 +24862,7 @@ fn bindgen_test_layout_Constraint() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Constraint>())).pktable as *const _ as usize },
-        112usize,
+        120usize,
         concat!(
             "Offset of field: ",
             stringify!(Constraint),
@@ -23201,7 +24872,7 @@ fn bindgen_test_layout_Constraint() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Constraint>())).fk_attrs as *const _ as usize },
-        120usize,
+        128usize,
         concat!(
             "Offset of field: ",
             stringify!(Constraint),
@@ -23211,7 +24882,7 @@ fn bindgen_test_layout_Constraint() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Constraint>())).pk_attrs as *const _ as usize },
-        128usize,
+        136usize,
         concat!(
             "Offset of field: ",
             stringify!(Constraint),
@@ -23221,7 +24892,7 @@ fn bindgen_test_layout_Constraint() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Constraint>())).fk_matchtype as *const _ as usize },
-        136usize,
+        144usize,
         concat!(
             "Offset of field: ",
             stringify!(Constraint),
@@ -23231,7 +24902,7 @@ fn bindgen_test_layout_Constraint() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Constraint>())).fk_upd_action as *const _ as usize },
-        137usize,
+        145usize,
         concat!(
             "Offset of field: ",
             stringify!(Constraint),
@@ -23241,7 +24912,7 @@ fn bindgen_test_layout_Constraint() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Constraint>())).fk_del_action as *const _ as usize },
-        138usize,
+        146usize,
         concat!(
             "Offset of field: ",
             stringify!(Constraint),
@@ -23251,7 +24922,7 @@ fn bindgen_test_layout_Constraint() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Constraint>())).old_conpfeqop as *const _ as usize },
-        144usize,
+        152usize,
         concat!(
             "Offset of field: ",
             stringify!(Constraint),
@@ -23261,7 +24932,7 @@ fn bindgen_test_layout_Constraint() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Constraint>())).old_pktable_oid as *const _ as usize },
-        152usize,
+        160usize,
         concat!(
             "Offset of field: ",
             stringify!(Constraint),
@@ -23271,7 +24942,7 @@ fn bindgen_test_layout_Constraint() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Constraint>())).skip_validation as *const _ as usize },
-        156usize,
+        164usize,
         concat!(
             "Offset of field: ",
             stringify!(Constraint),
@@ -23281,7 +24952,7 @@ fn bindgen_test_layout_Constraint() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Constraint>())).initially_valid as *const _ as usize },
-        157usize,
+        165usize,
         concat!(
             "Offset of field: ",
             stringify!(Constraint),
@@ -23369,7 +25040,7 @@ fn bindgen_test_layout_CreateTableSpaceStmt() {
 pub struct DropTableSpaceStmt {
     pub type_: NodeTag,
     pub tablespacename: *mut ::std::os::raw::c_char,
-    pub missing_ok: bool_,
+    pub missing_ok: bool,
 }
 #[test]
 fn bindgen_test_layout_DropTableSpaceStmt() {
@@ -23422,7 +25093,7 @@ pub struct AlterTableSpaceOptionsStmt {
     pub type_: NodeTag,
     pub tablespacename: *mut ::std::os::raw::c_char,
     pub options: *mut List,
-    pub isReset: bool_,
+    pub isReset: bool,
 }
 #[test]
 fn bindgen_test_layout_AlterTableSpaceOptionsStmt() {
@@ -23494,7 +25165,7 @@ pub struct AlterTableMoveAllStmt {
     pub objtype: ObjectType,
     pub roles: *mut List,
     pub new_tablespacename: *mut ::std::os::raw::c_char,
-    pub nowait: bool_,
+    pub nowait: bool,
 }
 #[test]
 fn bindgen_test_layout_AlterTableMoveAllStmt() {
@@ -23580,7 +25251,7 @@ fn bindgen_test_layout_AlterTableMoveAllStmt() {
 pub struct CreateExtensionStmt {
     pub type_: NodeTag,
     pub extname: *mut ::std::os::raw::c_char,
-    pub if_not_exists: bool_,
+    pub if_not_exists: bool,
     pub options: *mut List,
 }
 #[test]
@@ -23900,7 +25571,7 @@ pub struct CreateForeignServerStmt {
     pub servertype: *mut ::std::os::raw::c_char,
     pub version: *mut ::std::os::raw::c_char,
     pub fdwname: *mut ::std::os::raw::c_char,
-    pub if_not_exists: bool_,
+    pub if_not_exists: bool,
     pub options: *mut List,
 }
 #[test]
@@ -23999,7 +25670,7 @@ pub struct AlterForeignServerStmt {
     pub servername: *mut ::std::os::raw::c_char,
     pub version: *mut ::std::os::raw::c_char,
     pub options: *mut List,
-    pub has_version: bool_,
+    pub has_version: bool,
 }
 #[test]
 fn bindgen_test_layout_AlterForeignServerStmt() {
@@ -24126,7 +25797,7 @@ pub struct CreateUserMappingStmt {
     pub type_: NodeTag,
     pub user: *mut RoleSpec,
     pub servername: *mut ::std::os::raw::c_char,
-    pub if_not_exists: bool_,
+    pub if_not_exists: bool,
     pub options: *mut List,
 }
 #[test]
@@ -24263,7 +25934,7 @@ pub struct DropUserMappingStmt {
     pub type_: NodeTag,
     pub user: *mut RoleSpec,
     pub servername: *mut ::std::os::raw::c_char,
-    pub missing_ok: bool_,
+    pub missing_ok: bool,
 }
 #[test]
 fn bindgen_test_layout_DropUserMappingStmt() {
@@ -24433,7 +26104,7 @@ pub struct CreatePolicyStmt {
     pub policy_name: *mut ::std::os::raw::c_char,
     pub table: *mut RangeVar,
     pub cmd_name: *mut ::std::os::raw::c_char,
-    pub permissive: bool_,
+    pub permissive: bool,
     pub roles: *mut List,
     pub qual: *mut Node,
     pub with_check: *mut Node,
@@ -24683,15 +26354,15 @@ pub struct CreateTrigStmt {
     pub relation: *mut RangeVar,
     pub funcname: *mut List,
     pub args: *mut List,
-    pub row: bool_,
+    pub row: bool,
     pub timing: int16,
     pub events: int16,
     pub columns: *mut List,
     pub whenClause: *mut Node,
-    pub isconstraint: bool_,
+    pub isconstraint: bool,
     pub transitionRels: *mut List,
-    pub deferrable: bool_,
-    pub initdeferred: bool_,
+    pub deferrable: bool,
+    pub initdeferred: bool,
     pub constrrel: *mut RangeVar,
 }
 #[test]
@@ -24983,12 +26654,12 @@ fn bindgen_test_layout_AlterEventTrigStmt() {
 #[derive(Debug, Copy, Clone)]
 pub struct CreatePLangStmt {
     pub type_: NodeTag,
-    pub replace: bool_,
+    pub replace: bool,
     pub plname: *mut ::std::os::raw::c_char,
     pub plhandler: *mut List,
     pub plinline: *mut List,
     pub plvalidator: *mut List,
-    pub pltrusted: bool_,
+    pub pltrusted: bool,
 }
 #[test]
 fn bindgen_test_layout_CreatePLangStmt() {
@@ -25265,7 +26936,7 @@ fn bindgen_test_layout_AlterRoleSetStmt() {
 pub struct DropRoleStmt {
     pub type_: NodeTag,
     pub roles: *mut List,
-    pub missing_ok: bool_,
+    pub missing_ok: bool,
 }
 #[test]
 fn bindgen_test_layout_DropRoleStmt() {
@@ -25317,8 +26988,8 @@ pub struct CreateSeqStmt {
     pub sequence: *mut RangeVar,
     pub options: *mut List,
     pub ownerId: Oid,
-    pub for_identity: bool_,
-    pub if_not_exists: bool_,
+    pub for_identity: bool,
+    pub if_not_exists: bool,
 }
 #[test]
 fn bindgen_test_layout_CreateSeqStmt() {
@@ -25399,8 +27070,8 @@ pub struct AlterSeqStmt {
     pub type_: NodeTag,
     pub sequence: *mut RangeVar,
     pub options: *mut List,
-    pub for_identity: bool_,
-    pub missing_ok: bool_,
+    pub for_identity: bool,
+    pub missing_ok: bool,
 }
 #[test]
 fn bindgen_test_layout_AlterSeqStmt() {
@@ -25470,11 +27141,11 @@ fn bindgen_test_layout_AlterSeqStmt() {
 pub struct DefineStmt {
     pub type_: NodeTag,
     pub kind: ObjectType,
-    pub oldstyle: bool_,
+    pub oldstyle: bool,
     pub defnames: *mut List,
     pub args: *mut List,
     pub definition: *mut List,
-    pub if_not_exists: bool_,
+    pub if_not_exists: bool,
 }
 #[test]
 fn bindgen_test_layout_DefineStmt() {
@@ -25640,7 +27311,7 @@ pub struct CreateOpClassStmt {
     pub amname: *mut ::std::os::raw::c_char,
     pub datatype: *mut TypeName,
     pub items: *mut List,
-    pub isDefault: bool_,
+    pub isDefault: bool,
 }
 #[test]
 fn bindgen_test_layout_CreateOpClassStmt() {
@@ -25875,7 +27546,7 @@ pub struct AlterOpFamilyStmt {
     pub type_: NodeTag,
     pub opfamilyname: *mut List,
     pub amname: *mut ::std::os::raw::c_char,
-    pub isDrop: bool_,
+    pub isDrop: bool,
     pub items: *mut List,
 }
 #[test]
@@ -25948,8 +27619,8 @@ pub struct DropStmt {
     pub objects: *mut List,
     pub removeType: ObjectType,
     pub behavior: DropBehavior,
-    pub missing_ok: bool_,
-    pub concurrent: bool_,
+    pub missing_ok: bool,
+    pub concurrent: bool,
 }
 #[test]
 fn bindgen_test_layout_DropStmt() {
@@ -26029,7 +27700,7 @@ fn bindgen_test_layout_DropStmt() {
 pub struct TruncateStmt {
     pub type_: NodeTag,
     pub relations: *mut List,
-    pub restart_seqs: bool_,
+    pub restart_seqs: bool,
     pub behavior: DropBehavior,
 }
 #[test]
@@ -26330,7 +28001,7 @@ pub struct FetchStmt {
     pub direction: FetchDirection,
     pub howMany: ::std::os::raw::c_long,
     pub portalname: *mut ::std::os::raw::c_char,
-    pub ismove: bool_,
+    pub ismove: bool,
 }
 #[test]
 fn bindgen_test_layout_FetchStmt() {
@@ -26401,29 +28072,31 @@ pub struct IndexStmt {
     pub type_: NodeTag,
     pub idxname: *mut ::std::os::raw::c_char,
     pub relation: *mut RangeVar,
+    pub relationId: Oid,
     pub accessMethod: *mut ::std::os::raw::c_char,
     pub tableSpace: *mut ::std::os::raw::c_char,
     pub indexParams: *mut List,
+    pub indexIncludingParams: *mut List,
     pub options: *mut List,
     pub whereClause: *mut Node,
     pub excludeOpNames: *mut List,
     pub idxcomment: *mut ::std::os::raw::c_char,
     pub indexOid: Oid,
     pub oldNode: Oid,
-    pub unique: bool_,
-    pub primary: bool_,
-    pub isconstraint: bool_,
-    pub deferrable: bool_,
-    pub initdeferred: bool_,
-    pub transformed: bool_,
-    pub concurrent: bool_,
-    pub if_not_exists: bool_,
+    pub unique: bool,
+    pub primary: bool,
+    pub isconstraint: bool,
+    pub deferrable: bool,
+    pub initdeferred: bool,
+    pub transformed: bool,
+    pub concurrent: bool,
+    pub if_not_exists: bool,
 }
 #[test]
 fn bindgen_test_layout_IndexStmt() {
     assert_eq!(
         ::std::mem::size_of::<IndexStmt>(),
-        96usize,
+        112usize,
         concat!("Size of: ", stringify!(IndexStmt))
     );
     assert_eq!(
@@ -26462,8 +28135,18 @@ fn bindgen_test_layout_IndexStmt() {
         )
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<IndexStmt>())).accessMethod as *const _ as usize },
+        unsafe { &(*(::std::ptr::null::<IndexStmt>())).relationId as *const _ as usize },
         24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(IndexStmt),
+            "::",
+            stringify!(relationId)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<IndexStmt>())).accessMethod as *const _ as usize },
+        32usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexStmt),
@@ -26473,7 +28156,7 @@ fn bindgen_test_layout_IndexStmt() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexStmt>())).tableSpace as *const _ as usize },
-        32usize,
+        40usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexStmt),
@@ -26483,7 +28166,7 @@ fn bindgen_test_layout_IndexStmt() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexStmt>())).indexParams as *const _ as usize },
-        40usize,
+        48usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexStmt),
@@ -26492,8 +28175,18 @@ fn bindgen_test_layout_IndexStmt() {
         )
     );
     assert_eq!(
+        unsafe { &(*(::std::ptr::null::<IndexStmt>())).indexIncludingParams as *const _ as usize },
+        56usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(IndexStmt),
+            "::",
+            stringify!(indexIncludingParams)
+        )
+    );
+    assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexStmt>())).options as *const _ as usize },
-        48usize,
+        64usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexStmt),
@@ -26503,7 +28196,7 @@ fn bindgen_test_layout_IndexStmt() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexStmt>())).whereClause as *const _ as usize },
-        56usize,
+        72usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexStmt),
@@ -26513,7 +28206,7 @@ fn bindgen_test_layout_IndexStmt() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexStmt>())).excludeOpNames as *const _ as usize },
-        64usize,
+        80usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexStmt),
@@ -26523,7 +28216,7 @@ fn bindgen_test_layout_IndexStmt() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexStmt>())).idxcomment as *const _ as usize },
-        72usize,
+        88usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexStmt),
@@ -26533,7 +28226,7 @@ fn bindgen_test_layout_IndexStmt() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexStmt>())).indexOid as *const _ as usize },
-        80usize,
+        96usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexStmt),
@@ -26543,7 +28236,7 @@ fn bindgen_test_layout_IndexStmt() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexStmt>())).oldNode as *const _ as usize },
-        84usize,
+        100usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexStmt),
@@ -26553,7 +28246,7 @@ fn bindgen_test_layout_IndexStmt() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexStmt>())).unique as *const _ as usize },
-        88usize,
+        104usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexStmt),
@@ -26563,7 +28256,7 @@ fn bindgen_test_layout_IndexStmt() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexStmt>())).primary as *const _ as usize },
-        89usize,
+        105usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexStmt),
@@ -26573,7 +28266,7 @@ fn bindgen_test_layout_IndexStmt() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexStmt>())).isconstraint as *const _ as usize },
-        90usize,
+        106usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexStmt),
@@ -26583,7 +28276,7 @@ fn bindgen_test_layout_IndexStmt() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexStmt>())).deferrable as *const _ as usize },
-        91usize,
+        107usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexStmt),
@@ -26593,7 +28286,7 @@ fn bindgen_test_layout_IndexStmt() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexStmt>())).initdeferred as *const _ as usize },
-        92usize,
+        108usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexStmt),
@@ -26603,7 +28296,7 @@ fn bindgen_test_layout_IndexStmt() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexStmt>())).transformed as *const _ as usize },
-        93usize,
+        109usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexStmt),
@@ -26613,7 +28306,7 @@ fn bindgen_test_layout_IndexStmt() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexStmt>())).concurrent as *const _ as usize },
-        94usize,
+        110usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexStmt),
@@ -26623,7 +28316,7 @@ fn bindgen_test_layout_IndexStmt() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexStmt>())).if_not_exists as *const _ as usize },
-        95usize,
+        111usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexStmt),
@@ -26640,13 +28333,14 @@ pub struct CreateStatsStmt {
     pub stat_types: *mut List,
     pub exprs: *mut List,
     pub relations: *mut List,
-    pub if_not_exists: bool_,
+    pub stxcomment: *mut ::std::os::raw::c_char,
+    pub if_not_exists: bool,
 }
 #[test]
 fn bindgen_test_layout_CreateStatsStmt() {
     assert_eq!(
         ::std::mem::size_of::<CreateStatsStmt>(),
-        48usize,
+        56usize,
         concat!("Size of: ", stringify!(CreateStatsStmt))
     );
     assert_eq!(
@@ -26705,8 +28399,18 @@ fn bindgen_test_layout_CreateStatsStmt() {
         )
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<CreateStatsStmt>())).if_not_exists as *const _ as usize },
+        unsafe { &(*(::std::ptr::null::<CreateStatsStmt>())).stxcomment as *const _ as usize },
         40usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(CreateStatsStmt),
+            "::",
+            stringify!(stxcomment)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<CreateStatsStmt>())).if_not_exists as *const _ as usize },
+        48usize,
         concat!(
             "Offset of field: ",
             stringify!(CreateStatsStmt),
@@ -26719,18 +28423,18 @@ fn bindgen_test_layout_CreateStatsStmt() {
 #[derive(Debug, Copy, Clone)]
 pub struct CreateFunctionStmt {
     pub type_: NodeTag,
-    pub replace: bool_,
+    pub is_procedure: bool,
+    pub replace: bool,
     pub funcname: *mut List,
     pub parameters: *mut List,
     pub returnType: *mut TypeName,
     pub options: *mut List,
-    pub withClause: *mut List,
 }
 #[test]
 fn bindgen_test_layout_CreateFunctionStmt() {
     assert_eq!(
         ::std::mem::size_of::<CreateFunctionStmt>(),
-        48usize,
+        40usize,
         concat!("Size of: ", stringify!(CreateFunctionStmt))
     );
     assert_eq!(
@@ -26749,8 +28453,18 @@ fn bindgen_test_layout_CreateFunctionStmt() {
         )
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<CreateFunctionStmt>())).replace as *const _ as usize },
+        unsafe { &(*(::std::ptr::null::<CreateFunctionStmt>())).is_procedure as *const _ as usize },
         4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(CreateFunctionStmt),
+            "::",
+            stringify!(is_procedure)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<CreateFunctionStmt>())).replace as *const _ as usize },
+        5usize,
         concat!(
             "Offset of field: ",
             stringify!(CreateFunctionStmt),
@@ -26796,16 +28510,6 @@ fn bindgen_test_layout_CreateFunctionStmt() {
             stringify!(CreateFunctionStmt),
             "::",
             stringify!(options)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<CreateFunctionStmt>())).withClause as *const _ as usize },
-        40usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(CreateFunctionStmt),
-            "::",
-            stringify!(withClause)
         )
     );
 }
@@ -26891,6 +28595,7 @@ fn bindgen_test_layout_FunctionParameter() {
 #[derive(Debug, Copy, Clone)]
 pub struct AlterFunctionStmt {
     pub type_: NodeTag,
+    pub objtype: ObjectType,
     pub func: *mut ObjectWithArgs,
     pub actions: *mut List,
 }
@@ -26914,6 +28619,16 @@ fn bindgen_test_layout_AlterFunctionStmt() {
             stringify!(AlterFunctionStmt),
             "::",
             stringify!(type_)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<AlterFunctionStmt>())).objtype as *const _ as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AlterFunctionStmt),
+            "::",
+            stringify!(objtype)
         )
     );
     assert_eq!(
@@ -26982,7 +28697,8 @@ pub struct InlineCodeBlock {
     pub type_: NodeTag,
     pub source_text: *mut ::std::os::raw::c_char,
     pub langOid: Oid,
-    pub langIsTrusted: bool_,
+    pub langIsTrusted: bool,
+    pub atomic: bool,
 }
 #[test]
 fn bindgen_test_layout_InlineCodeBlock() {
@@ -27036,6 +28752,105 @@ fn bindgen_test_layout_InlineCodeBlock() {
             stringify!(langIsTrusted)
         )
     );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<InlineCodeBlock>())).atomic as *const _ as usize },
+        21usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(InlineCodeBlock),
+            "::",
+            stringify!(atomic)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CallStmt {
+    pub type_: NodeTag,
+    pub funccall: *mut FuncCall,
+    pub funcexpr: *mut FuncExpr,
+}
+#[test]
+fn bindgen_test_layout_CallStmt() {
+    assert_eq!(
+        ::std::mem::size_of::<CallStmt>(),
+        24usize,
+        concat!("Size of: ", stringify!(CallStmt))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<CallStmt>(),
+        8usize,
+        concat!("Alignment of ", stringify!(CallStmt))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<CallStmt>())).type_ as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(CallStmt),
+            "::",
+            stringify!(type_)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<CallStmt>())).funccall as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(CallStmt),
+            "::",
+            stringify!(funccall)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<CallStmt>())).funcexpr as *const _ as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(CallStmt),
+            "::",
+            stringify!(funcexpr)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CallContext {
+    pub type_: NodeTag,
+    pub atomic: bool,
+}
+#[test]
+fn bindgen_test_layout_CallContext() {
+    assert_eq!(
+        ::std::mem::size_of::<CallContext>(),
+        8usize,
+        concat!("Size of: ", stringify!(CallContext))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<CallContext>(),
+        4usize,
+        concat!("Alignment of ", stringify!(CallContext))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<CallContext>())).type_ as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(CallContext),
+            "::",
+            stringify!(type_)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<CallContext>())).atomic as *const _ as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(CallContext),
+            "::",
+            stringify!(atomic)
+        )
+    );
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -27048,7 +28863,7 @@ pub struct RenameStmt {
     pub subname: *mut ::std::os::raw::c_char,
     pub newname: *mut ::std::os::raw::c_char,
     pub behavior: DropBehavior,
-    pub missing_ok: bool_,
+    pub missing_ok: bool,
 }
 #[test]
 fn bindgen_test_layout_RenameStmt() {
@@ -27235,7 +29050,7 @@ pub struct AlterObjectSchemaStmt {
     pub relation: *mut RangeVar,
     pub object: *mut Node,
     pub newschema: *mut ::std::os::raw::c_char,
-    pub missing_ok: bool_,
+    pub missing_ok: bool,
 }
 #[test]
 fn bindgen_test_layout_AlterObjectSchemaStmt() {
@@ -27444,9 +29259,9 @@ pub struct RuleStmt {
     pub rulename: *mut ::std::os::raw::c_char,
     pub whereClause: *mut Node,
     pub event: CmdType,
-    pub instead: bool_,
+    pub instead: bool,
     pub actions: *mut List,
-    pub replace: bool_,
+    pub replace: bool,
 }
 #[test]
 fn bindgen_test_layout_RuleStmt() {
@@ -27686,13 +29501,14 @@ pub struct TransactionStmt {
     pub type_: NodeTag,
     pub kind: TransactionStmtKind,
     pub options: *mut List,
+    pub savepoint_name: *mut ::std::os::raw::c_char,
     pub gid: *mut ::std::os::raw::c_char,
 }
 #[test]
 fn bindgen_test_layout_TransactionStmt() {
     assert_eq!(
         ::std::mem::size_of::<TransactionStmt>(),
-        24usize,
+        32usize,
         concat!("Size of: ", stringify!(TransactionStmt))
     );
     assert_eq!(
@@ -27731,8 +29547,18 @@ fn bindgen_test_layout_TransactionStmt() {
         )
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TransactionStmt>())).gid as *const _ as usize },
+        unsafe { &(*(::std::ptr::null::<TransactionStmt>())).savepoint_name as *const _ as usize },
         16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(TransactionStmt),
+            "::",
+            stringify!(savepoint_name)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<TransactionStmt>())).gid as *const _ as usize },
+        24usize,
         concat!(
             "Offset of field: ",
             stringify!(TransactionStmt),
@@ -27899,8 +29725,8 @@ pub struct AlterEnumStmt {
     pub oldVal: *mut ::std::os::raw::c_char,
     pub newVal: *mut ::std::os::raw::c_char,
     pub newValNeighbor: *mut ::std::os::raw::c_char,
-    pub newValIsAfter: bool_,
-    pub skipIfNewValExists: bool_,
+    pub newValIsAfter: bool,
+    pub skipIfNewValExists: bool,
 }
 #[test]
 fn bindgen_test_layout_AlterEnumStmt() {
@@ -27998,7 +29824,7 @@ pub struct ViewStmt {
     pub view: *mut RangeVar,
     pub aliases: *mut List,
     pub query: *mut Node,
-    pub replace: bool_,
+    pub replace: bool,
     pub options: *mut List,
     pub withCheckOption: ViewCheckOption,
 }
@@ -28279,7 +30105,7 @@ fn bindgen_test_layout_AlterDatabaseSetStmt() {
 pub struct DropdbStmt {
     pub type_: NodeTag,
     pub dbname: *mut ::std::os::raw::c_char,
-    pub missing_ok: bool_,
+    pub missing_ok: bool,
 }
 #[test]
 fn bindgen_test_layout_DropdbStmt() {
@@ -28369,7 +30195,7 @@ pub struct ClusterStmt {
     pub type_: NodeTag,
     pub relation: *mut RangeVar,
     pub indexname: *mut ::std::os::raw::c_char,
-    pub verbose: bool_,
+    pub verbose: bool,
 }
 #[test]
 fn bindgen_test_layout_ClusterStmt() {
@@ -28435,17 +30261,77 @@ pub const VacuumOption_VACOPT_DISABLE_PAGE_SKIPPING: VacuumOption = 128;
 pub type VacuumOption = u32;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
+pub struct VacuumRelation {
+    pub type_: NodeTag,
+    pub relation: *mut RangeVar,
+    pub oid: Oid,
+    pub va_cols: *mut List,
+}
+#[test]
+fn bindgen_test_layout_VacuumRelation() {
+    assert_eq!(
+        ::std::mem::size_of::<VacuumRelation>(),
+        32usize,
+        concat!("Size of: ", stringify!(VacuumRelation))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<VacuumRelation>(),
+        8usize,
+        concat!("Alignment of ", stringify!(VacuumRelation))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<VacuumRelation>())).type_ as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(VacuumRelation),
+            "::",
+            stringify!(type_)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<VacuumRelation>())).relation as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(VacuumRelation),
+            "::",
+            stringify!(relation)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<VacuumRelation>())).oid as *const _ as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(VacuumRelation),
+            "::",
+            stringify!(oid)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<VacuumRelation>())).va_cols as *const _ as usize },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(VacuumRelation),
+            "::",
+            stringify!(va_cols)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct VacuumStmt {
     pub type_: NodeTag,
     pub options: ::std::os::raw::c_int,
-    pub relation: *mut RangeVar,
-    pub va_cols: *mut List,
+    pub rels: *mut List,
 }
 #[test]
 fn bindgen_test_layout_VacuumStmt() {
     assert_eq!(
         ::std::mem::size_of::<VacuumStmt>(),
-        24usize,
+        16usize,
         concat!("Size of: ", stringify!(VacuumStmt))
     );
     assert_eq!(
@@ -28474,23 +30360,13 @@ fn bindgen_test_layout_VacuumStmt() {
         )
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<VacuumStmt>())).relation as *const _ as usize },
+        unsafe { &(*(::std::ptr::null::<VacuumStmt>())).rels as *const _ as usize },
         8usize,
         concat!(
             "Offset of field: ",
             stringify!(VacuumStmt),
             "::",
-            stringify!(relation)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<VacuumStmt>())).va_cols as *const _ as usize },
-        16usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(VacuumStmt),
-            "::",
-            stringify!(va_cols)
+            stringify!(rels)
         )
     );
 }
@@ -28551,8 +30427,8 @@ pub struct CreateTableAsStmt {
     pub query: *mut Node,
     pub into: *mut IntoClause,
     pub relkind: ObjectType,
-    pub is_select_into: bool_,
-    pub if_not_exists: bool_,
+    pub is_select_into: bool,
+    pub if_not_exists: bool,
 }
 #[test]
 fn bindgen_test_layout_CreateTableAsStmt() {
@@ -28633,8 +30509,8 @@ fn bindgen_test_layout_CreateTableAsStmt() {
 #[derive(Debug, Copy, Clone)]
 pub struct RefreshMatViewStmt {
     pub type_: NodeTag,
-    pub concurrent: bool_,
-    pub skipData: bool_,
+    pub concurrent: bool,
+    pub skipData: bool,
     pub relation: *mut RangeVar,
 }
 #[test]
@@ -28768,7 +30644,7 @@ pub struct LockStmt {
     pub type_: NodeTag,
     pub relations: *mut List,
     pub mode: ::std::os::raw::c_int,
-    pub nowait: bool_,
+    pub nowait: bool,
 }
 #[test]
 fn bindgen_test_layout_LockStmt() {
@@ -28828,7 +30704,7 @@ fn bindgen_test_layout_LockStmt() {
 pub struct ConstraintsSetStmt {
     pub type_: NodeTag,
     pub constraints: *mut List,
-    pub deferred: bool_,
+    pub deferred: bool,
 }
 #[test]
 fn bindgen_test_layout_ConstraintsSetStmt() {
@@ -28959,7 +30835,7 @@ pub struct CreateConversionStmt {
     pub for_encoding_name: *mut ::std::os::raw::c_char,
     pub to_encoding_name: *mut ::std::os::raw::c_char,
     pub func_name: *mut List,
-    pub def: bool_,
+    pub def: bool,
 }
 #[test]
 fn bindgen_test_layout_CreateConversionStmt() {
@@ -29048,7 +30924,7 @@ pub struct CreateCastStmt {
     pub targettype: *mut TypeName,
     pub func: *mut ObjectWithArgs,
     pub context: CoercionContext,
-    pub inout: bool_,
+    pub inout: bool,
 }
 #[test]
 fn bindgen_test_layout_CreateCastStmt() {
@@ -29127,7 +31003,7 @@ fn bindgen_test_layout_CreateCastStmt() {
 #[derive(Debug, Copy, Clone)]
 pub struct CreateTransformStmt {
     pub type_: NodeTag,
-    pub replace: bool_,
+    pub replace: bool,
     pub type_name: *mut TypeName,
     pub lang: *mut ::std::os::raw::c_char,
     pub fromsql: *mut ObjectWithArgs,
@@ -29520,9 +31396,9 @@ pub struct AlterTSConfigurationStmt {
     pub cfgname: *mut List,
     pub tokentype: *mut List,
     pub dicts: *mut List,
-    pub override_: bool_,
-    pub replace: bool_,
-    pub missing_ok: bool_,
+    pub override_: bool,
+    pub replace: bool,
+    pub missing_ok: bool,
 }
 #[test]
 fn bindgen_test_layout_AlterTSConfigurationStmt() {
@@ -29634,7 +31510,7 @@ pub struct CreatePublicationStmt {
     pub pubname: *mut ::std::os::raw::c_char,
     pub options: *mut List,
     pub tables: *mut List,
-    pub for_all_tables: bool_,
+    pub for_all_tables: bool,
 }
 #[test]
 fn bindgen_test_layout_CreatePublicationStmt() {
@@ -29708,7 +31584,7 @@ pub struct AlterPublicationStmt {
     pub pubname: *mut ::std::os::raw::c_char,
     pub options: *mut List,
     pub tables: *mut List,
-    pub for_all_tables: bool_,
+    pub for_all_tables: bool,
     pub tableAction: DefElemAction,
 }
 #[test]
@@ -29958,7 +31834,7 @@ fn bindgen_test_layout_AlterSubscriptionStmt() {
 pub struct DropSubscriptionStmt {
     pub type_: NodeTag,
     pub subname: *mut ::std::os::raw::c_char,
-    pub missing_ok: bool_,
+    pub missing_ok: bool,
     pub behavior: DropBehavior,
 }
 #[test]
@@ -30026,14 +31902,15 @@ pub struct FormData_pg_attribute {
     pub attndims: int32,
     pub attcacheoff: int32,
     pub atttypmod: int32,
-    pub attbyval: bool_,
+    pub attbyval: bool,
     pub attstorage: ::std::os::raw::c_char,
     pub attalign: ::std::os::raw::c_char,
-    pub attnotnull: bool_,
-    pub atthasdef: bool_,
+    pub attnotnull: bool,
+    pub atthasdef: bool,
+    pub atthasmissing: bool,
     pub attidentity: ::std::os::raw::c_char,
-    pub attisdropped: bool_,
-    pub attislocal: bool_,
+    pub attisdropped: bool,
+    pub attislocal: bool,
     pub attinhcount: int32,
     pub attcollation: Oid,
 }
@@ -30041,7 +31918,7 @@ pub struct FormData_pg_attribute {
 fn bindgen_test_layout_FormData_pg_attribute() {
     assert_eq!(
         ::std::mem::size_of::<FormData_pg_attribute>(),
-        108usize,
+        112usize,
         concat!("Size of: ", stringify!(FormData_pg_attribute))
     );
     assert_eq!(
@@ -30199,9 +32076,21 @@ fn bindgen_test_layout_FormData_pg_attribute() {
     );
     assert_eq!(
         unsafe {
-            &(*(::std::ptr::null::<FormData_pg_attribute>())).attidentity as *const _ as usize
+            &(*(::std::ptr::null::<FormData_pg_attribute>())).atthasmissing as *const _ as usize
         },
         97usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(FormData_pg_attribute),
+            "::",
+            stringify!(atthasmissing)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<FormData_pg_attribute>())).attidentity as *const _ as usize
+        },
+        98usize,
         concat!(
             "Offset of field: ",
             stringify!(FormData_pg_attribute),
@@ -30213,7 +32102,7 @@ fn bindgen_test_layout_FormData_pg_attribute() {
         unsafe {
             &(*(::std::ptr::null::<FormData_pg_attribute>())).attisdropped as *const _ as usize
         },
-        98usize,
+        99usize,
         concat!(
             "Offset of field: ",
             stringify!(FormData_pg_attribute),
@@ -30225,7 +32114,7 @@ fn bindgen_test_layout_FormData_pg_attribute() {
         unsafe {
             &(*(::std::ptr::null::<FormData_pg_attribute>())).attislocal as *const _ as usize
         },
-        99usize,
+        100usize,
         concat!(
             "Offset of field: ",
             stringify!(FormData_pg_attribute),
@@ -30237,7 +32126,7 @@ fn bindgen_test_layout_FormData_pg_attribute() {
         unsafe {
             &(*(::std::ptr::null::<FormData_pg_attribute>())).attinhcount as *const _ as usize
         },
-        100usize,
+        104usize,
         concat!(
             "Offset of field: ",
             stringify!(FormData_pg_attribute),
@@ -30249,7 +32138,7 @@ fn bindgen_test_layout_FormData_pg_attribute() {
         unsafe {
             &(*(::std::ptr::null::<FormData_pg_attribute>())).attcollation as *const _ as usize
         },
-        104usize,
+        108usize,
         concat!(
             "Offset of field: ",
             stringify!(FormData_pg_attribute),
@@ -30301,11 +32190,17 @@ fn bindgen_test_layout_attrDefault() {
 pub type AttrDefault = attrDefault;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
+pub struct attrMissing {
+    _unused: [u8; 0],
+}
+pub type MissingPtr = *mut attrMissing;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct constrCheck {
     pub ccname: *mut ::std::os::raw::c_char,
     pub ccbin: *mut ::std::os::raw::c_char,
-    pub ccvalid: bool_,
-    pub ccnoinherit: bool_,
+    pub ccvalid: bool,
+    pub ccnoinherit: bool,
 }
 #[test]
 fn bindgen_test_layout_constrCheck() {
@@ -30366,15 +32261,16 @@ pub type ConstrCheck = constrCheck;
 pub struct tupleConstr {
     pub defval: *mut AttrDefault,
     pub check: *mut ConstrCheck,
+    pub missing: MissingPtr,
     pub num_defval: uint16,
     pub num_check: uint16,
-    pub has_not_null: bool_,
+    pub has_not_null: bool,
 }
 #[test]
 fn bindgen_test_layout_tupleConstr() {
     assert_eq!(
         ::std::mem::size_of::<tupleConstr>(),
-        24usize,
+        32usize,
         concat!("Size of: ", stringify!(tupleConstr))
     );
     assert_eq!(
@@ -30403,8 +32299,18 @@ fn bindgen_test_layout_tupleConstr() {
         )
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<tupleConstr>())).num_defval as *const _ as usize },
+        unsafe { &(*(::std::ptr::null::<tupleConstr>())).missing as *const _ as usize },
         16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(tupleConstr),
+            "::",
+            stringify!(missing)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<tupleConstr>())).num_defval as *const _ as usize },
+        24usize,
         concat!(
             "Offset of field: ",
             stringify!(tupleConstr),
@@ -30414,7 +32320,7 @@ fn bindgen_test_layout_tupleConstr() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<tupleConstr>())).num_check as *const _ as usize },
-        18usize,
+        26usize,
         concat!(
             "Offset of field: ",
             stringify!(tupleConstr),
@@ -30424,7 +32330,7 @@ fn bindgen_test_layout_tupleConstr() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<tupleConstr>())).has_not_null as *const _ as usize },
-        20usize,
+        28usize,
         concat!(
             "Offset of field: ",
             stringify!(tupleConstr),
@@ -30435,21 +32341,20 @@ fn bindgen_test_layout_tupleConstr() {
 }
 pub type TupleConstr = tupleConstr;
 #[repr(C)]
-#[derive(Debug, Copy, Clone)]
 pub struct tupleDesc {
     pub natts: ::std::os::raw::c_int,
-    pub attrs: *mut Form_pg_attribute,
-    pub constr: *mut TupleConstr,
     pub tdtypeid: Oid,
     pub tdtypmod: int32,
-    pub tdhasoid: bool_,
+    pub tdhasoid: bool,
     pub tdrefcount: ::std::os::raw::c_int,
+    pub constr: *mut TupleConstr,
+    pub attrs: __IncompleteArrayField<FormData_pg_attribute>,
 }
 #[test]
 fn bindgen_test_layout_tupleDesc() {
     assert_eq!(
         ::std::mem::size_of::<tupleDesc>(),
-        40usize,
+        32usize,
         concat!("Size of: ", stringify!(tupleDesc))
     );
     assert_eq!(
@@ -30457,85 +32362,15 @@ fn bindgen_test_layout_tupleDesc() {
         8usize,
         concat!("Alignment of ", stringify!(tupleDesc))
     );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<tupleDesc>())).natts as *const _ as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(tupleDesc),
-            "::",
-            stringify!(natts)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<tupleDesc>())).attrs as *const _ as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(tupleDesc),
-            "::",
-            stringify!(attrs)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<tupleDesc>())).constr as *const _ as usize },
-        16usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(tupleDesc),
-            "::",
-            stringify!(constr)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<tupleDesc>())).tdtypeid as *const _ as usize },
-        24usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(tupleDesc),
-            "::",
-            stringify!(tdtypeid)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<tupleDesc>())).tdtypmod as *const _ as usize },
-        28usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(tupleDesc),
-            "::",
-            stringify!(tdtypmod)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<tupleDesc>())).tdhasoid as *const _ as usize },
-        32usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(tupleDesc),
-            "::",
-            stringify!(tdhasoid)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<tupleDesc>())).tdrefcount as *const _ as usize },
-        36usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(tupleDesc),
-            "::",
-            stringify!(tdrefcount)
-        )
-    );
 }
 pub type TupleDesc = *mut tupleDesc;
 extern "C" {
-    pub fn CreateTemplateTupleDesc(natts: ::std::os::raw::c_int, hasoid: bool_) -> TupleDesc;
+    pub fn CreateTemplateTupleDesc(natts: ::std::os::raw::c_int, hasoid: bool) -> TupleDesc;
 }
 extern "C" {
     pub fn CreateTupleDesc(
         natts: ::std::os::raw::c_int,
-        hasoid: bool_,
+        hasoid: bool,
         attrs: *mut Form_pg_attribute,
     ) -> TupleDesc;
 }
@@ -30544,6 +32379,9 @@ extern "C" {
 }
 extern "C" {
     pub fn CreateTupleDescCopyConstr(tupdesc: TupleDesc) -> TupleDesc;
+}
+extern "C" {
+    pub fn TupleDescCopy(dst: TupleDesc, src: TupleDesc);
 }
 extern "C" {
     pub fn TupleDescCopyEntry(
@@ -30563,7 +32401,10 @@ extern "C" {
     pub fn DecrTupleDescRefCount(tupdesc: TupleDesc);
 }
 extern "C" {
-    pub fn equalTupleDescs(tupdesc1: TupleDesc, tupdesc2: TupleDesc) -> bool_;
+    pub fn equalTupleDescs(tupdesc1: TupleDesc, tupdesc2: TupleDesc) -> bool;
+}
+extern "C" {
+    pub fn hashTupleDesc(tupdesc: TupleDesc) -> uint32;
 }
 extern "C" {
     pub fn TupleDescInitEntry(
@@ -30803,10 +32644,11 @@ extern "C" {
 extern "C" {
     pub fn RelationGetIndexPredicate(relation: Relation) -> *mut List;
 }
-pub const IndexAttrBitmapKind_INDEX_ATTR_BITMAP_ALL: IndexAttrBitmapKind = 0;
-pub const IndexAttrBitmapKind_INDEX_ATTR_BITMAP_KEY: IndexAttrBitmapKind = 1;
-pub const IndexAttrBitmapKind_INDEX_ATTR_BITMAP_PRIMARY_KEY: IndexAttrBitmapKind = 2;
-pub const IndexAttrBitmapKind_INDEX_ATTR_BITMAP_IDENTITY_KEY: IndexAttrBitmapKind = 3;
+pub const IndexAttrBitmapKind_INDEX_ATTR_BITMAP_HOT: IndexAttrBitmapKind = 0;
+pub const IndexAttrBitmapKind_INDEX_ATTR_BITMAP_PROJ: IndexAttrBitmapKind = 1;
+pub const IndexAttrBitmapKind_INDEX_ATTR_BITMAP_KEY: IndexAttrBitmapKind = 2;
+pub const IndexAttrBitmapKind_INDEX_ATTR_BITMAP_PRIMARY_KEY: IndexAttrBitmapKind = 3;
+pub const IndexAttrBitmapKind_INDEX_ATTR_BITMAP_IDENTITY_KEY: IndexAttrBitmapKind = 4;
 pub type IndexAttrBitmapKind = u32;
 extern "C" {
     pub fn RelationGetIndexAttrBitmap(
@@ -30871,8 +32713,8 @@ extern "C" {
         relid: Oid,
         relfilenode: Oid,
         reltablespace: Oid,
-        shared_relation: bool_,
-        mapped_relation: bool_,
+        shared_relation: bool,
+        mapped_relation: bool,
         relpersistence: ::std::os::raw::c_char,
         relkind: ::std::os::raw::c_char,
     ) -> Relation;
@@ -30898,17 +32740,17 @@ extern "C" {
     pub fn RelationCloseSmgrByOid(relationId: Oid);
 }
 extern "C" {
-    pub fn AtEOXact_RelationCache(isCommit: bool_);
+    pub fn AtEOXact_RelationCache(isCommit: bool);
 }
 extern "C" {
     pub fn AtEOSubXact_RelationCache(
-        isCommit: bool_,
+        isCommit: bool,
         mySubid: SubTransactionId,
         parentSubid: SubTransactionId,
     );
 }
 extern "C" {
-    pub fn RelationIdIsInInitFile(relationId: Oid) -> bool_;
+    pub fn RelationIdIsInInitFile(relationId: Oid) -> bool;
 }
 extern "C" {
     pub fn RelationCacheInitFilePreInvalidate();
@@ -30921,11 +32763,11 @@ extern "C" {
 }
 extern "C" {
     #[link_name = "\u{1}criticalRelcachesBuilt"]
-    pub static mut criticalRelcachesBuilt: bool_;
+    pub static mut criticalRelcachesBuilt: bool;
 }
 extern "C" {
     #[link_name = "\u{1}criticalSharedRelcachesBuilt"]
-    pub static mut criticalSharedRelcachesBuilt: bool_;
+    pub static mut criticalSharedRelcachesBuilt: bool;
 }
 pub const ParseExprKind_EXPR_KIND_NONE: ParseExprKind = 0;
 pub const ParseExprKind_EXPR_KIND_OTHER: ParseExprKind = 1;
@@ -30940,36 +32782,41 @@ pub const ParseExprKind_EXPR_KIND_WINDOW_PARTITION: ParseExprKind = 9;
 pub const ParseExprKind_EXPR_KIND_WINDOW_ORDER: ParseExprKind = 10;
 pub const ParseExprKind_EXPR_KIND_WINDOW_FRAME_RANGE: ParseExprKind = 11;
 pub const ParseExprKind_EXPR_KIND_WINDOW_FRAME_ROWS: ParseExprKind = 12;
-pub const ParseExprKind_EXPR_KIND_SELECT_TARGET: ParseExprKind = 13;
-pub const ParseExprKind_EXPR_KIND_INSERT_TARGET: ParseExprKind = 14;
-pub const ParseExprKind_EXPR_KIND_UPDATE_SOURCE: ParseExprKind = 15;
-pub const ParseExprKind_EXPR_KIND_UPDATE_TARGET: ParseExprKind = 16;
-pub const ParseExprKind_EXPR_KIND_GROUP_BY: ParseExprKind = 17;
-pub const ParseExprKind_EXPR_KIND_ORDER_BY: ParseExprKind = 18;
-pub const ParseExprKind_EXPR_KIND_DISTINCT_ON: ParseExprKind = 19;
-pub const ParseExprKind_EXPR_KIND_LIMIT: ParseExprKind = 20;
-pub const ParseExprKind_EXPR_KIND_OFFSET: ParseExprKind = 21;
-pub const ParseExprKind_EXPR_KIND_RETURNING: ParseExprKind = 22;
-pub const ParseExprKind_EXPR_KIND_VALUES: ParseExprKind = 23;
-pub const ParseExprKind_EXPR_KIND_VALUES_SINGLE: ParseExprKind = 24;
-pub const ParseExprKind_EXPR_KIND_CHECK_CONSTRAINT: ParseExprKind = 25;
-pub const ParseExprKind_EXPR_KIND_DOMAIN_CHECK: ParseExprKind = 26;
-pub const ParseExprKind_EXPR_KIND_COLUMN_DEFAULT: ParseExprKind = 27;
-pub const ParseExprKind_EXPR_KIND_FUNCTION_DEFAULT: ParseExprKind = 28;
-pub const ParseExprKind_EXPR_KIND_INDEX_EXPRESSION: ParseExprKind = 29;
-pub const ParseExprKind_EXPR_KIND_INDEX_PREDICATE: ParseExprKind = 30;
-pub const ParseExprKind_EXPR_KIND_ALTER_COL_TRANSFORM: ParseExprKind = 31;
-pub const ParseExprKind_EXPR_KIND_EXECUTE_PARAMETER: ParseExprKind = 32;
-pub const ParseExprKind_EXPR_KIND_TRIGGER_WHEN: ParseExprKind = 33;
-pub const ParseExprKind_EXPR_KIND_POLICY: ParseExprKind = 34;
-pub const ParseExprKind_EXPR_KIND_PARTITION_EXPRESSION: ParseExprKind = 35;
+pub const ParseExprKind_EXPR_KIND_WINDOW_FRAME_GROUPS: ParseExprKind = 13;
+pub const ParseExprKind_EXPR_KIND_SELECT_TARGET: ParseExprKind = 14;
+pub const ParseExprKind_EXPR_KIND_INSERT_TARGET: ParseExprKind = 15;
+pub const ParseExprKind_EXPR_KIND_UPDATE_SOURCE: ParseExprKind = 16;
+pub const ParseExprKind_EXPR_KIND_UPDATE_TARGET: ParseExprKind = 17;
+pub const ParseExprKind_EXPR_KIND_GROUP_BY: ParseExprKind = 18;
+pub const ParseExprKind_EXPR_KIND_ORDER_BY: ParseExprKind = 19;
+pub const ParseExprKind_EXPR_KIND_DISTINCT_ON: ParseExprKind = 20;
+pub const ParseExprKind_EXPR_KIND_LIMIT: ParseExprKind = 21;
+pub const ParseExprKind_EXPR_KIND_OFFSET: ParseExprKind = 22;
+pub const ParseExprKind_EXPR_KIND_RETURNING: ParseExprKind = 23;
+pub const ParseExprKind_EXPR_KIND_VALUES: ParseExprKind = 24;
+pub const ParseExprKind_EXPR_KIND_VALUES_SINGLE: ParseExprKind = 25;
+pub const ParseExprKind_EXPR_KIND_CHECK_CONSTRAINT: ParseExprKind = 26;
+pub const ParseExprKind_EXPR_KIND_DOMAIN_CHECK: ParseExprKind = 27;
+pub const ParseExprKind_EXPR_KIND_COLUMN_DEFAULT: ParseExprKind = 28;
+pub const ParseExprKind_EXPR_KIND_FUNCTION_DEFAULT: ParseExprKind = 29;
+pub const ParseExprKind_EXPR_KIND_INDEX_EXPRESSION: ParseExprKind = 30;
+pub const ParseExprKind_EXPR_KIND_INDEX_PREDICATE: ParseExprKind = 31;
+pub const ParseExprKind_EXPR_KIND_ALTER_COL_TRANSFORM: ParseExprKind = 32;
+pub const ParseExprKind_EXPR_KIND_EXECUTE_PARAMETER: ParseExprKind = 33;
+pub const ParseExprKind_EXPR_KIND_TRIGGER_WHEN: ParseExprKind = 34;
+pub const ParseExprKind_EXPR_KIND_POLICY: ParseExprKind = 35;
+pub const ParseExprKind_EXPR_KIND_PARTITION_EXPRESSION: ParseExprKind = 36;
+pub const ParseExprKind_EXPR_KIND_CALL_ARGUMENT: ParseExprKind = 37;
 pub type ParseExprKind = u32;
 pub type PreParseColumnRefHook = ::std::option::Option<
     unsafe extern "C" fn(pstate: *mut ParseState, cref: *mut ColumnRef) -> *mut Node,
 >;
 pub type PostParseColumnRefHook = ::std::option::Option<
-    unsafe extern "C" fn(pstate: *mut ParseState, cref: *mut ColumnRef, var: *mut Node)
-        -> *mut Node,
+    unsafe extern "C" fn(
+        pstate: *mut ParseState,
+        cref: *mut ColumnRef,
+        var: *mut Node,
+    ) -> *mut Node,
 >;
 pub type ParseParamRefHook = ::std::option::Option<
     unsafe extern "C" fn(pstate: *mut ParseState, pref: *mut ParamRef) -> *mut Node,
@@ -30992,26 +32839,26 @@ pub struct ParseState {
     pub p_joinexprs: *mut List,
     pub p_joinlist: *mut List,
     pub p_namespace: *mut List,
-    pub p_lateral_active: bool_,
+    pub p_lateral_active: bool,
     pub p_ctenamespace: *mut List,
     pub p_future_ctes: *mut List,
     pub p_parent_cte: *mut CommonTableExpr,
     pub p_target_relation: Relation,
     pub p_target_rangetblentry: *mut RangeTblEntry,
-    pub p_is_insert: bool_,
+    pub p_is_insert: bool,
     pub p_windowdefs: *mut List,
     pub p_expr_kind: ParseExprKind,
     pub p_next_resno: ::std::os::raw::c_int,
     pub p_multiassign_exprs: *mut List,
     pub p_locking_clause: *mut List,
-    pub p_locked_from_parent: bool_,
-    pub p_resolve_unknowns: bool_,
+    pub p_locked_from_parent: bool,
+    pub p_resolve_unknowns: bool,
     pub p_queryEnv: *mut QueryEnvironment,
-    pub p_hasAggs: bool_,
-    pub p_hasWindowFuncs: bool_,
-    pub p_hasTargetSRFs: bool_,
-    pub p_hasSubLinks: bool_,
-    pub p_hasModifyingCTE: bool_,
+    pub p_hasAggs: bool,
+    pub p_hasWindowFuncs: bool,
+    pub p_hasTargetSRFs: bool,
+    pub p_hasSubLinks: bool,
+    pub p_hasModifyingCTE: bool,
     pub p_last_srf: *mut Node,
     pub p_pre_columnref_hook: PreParseColumnRefHook,
     pub p_post_columnref_hook: PostParseColumnRefHook,
@@ -31360,10 +33207,10 @@ fn bindgen_test_layout_ParseState() {
 #[derive(Debug, Copy, Clone)]
 pub struct ParseNamespaceItem {
     pub p_rte: *mut RangeTblEntry,
-    pub p_rel_visible: bool_,
-    pub p_cols_visible: bool_,
-    pub p_lateral_only: bool_,
-    pub p_lateral_ok: bool_,
+    pub p_rel_visible: bool,
+    pub p_cols_visible: bool,
+    pub p_lateral_only: bool,
+    pub p_lateral_ok: bool,
 }
 #[test]
 fn bindgen_test_layout_ParseNamespaceItem() {
@@ -31763,10 +33610,10 @@ pub struct ExpandedArrayHeader {
     pub lbound: *mut ::std::os::raw::c_int,
     pub element_type: Oid,
     pub typlen: int16,
-    pub typbyval: bool_,
+    pub typbyval: bool,
     pub typalign: ::std::os::raw::c_char,
     pub dvalues: *mut Datum,
-    pub dnulls: *mut bool_,
+    pub dnulls: *mut bool,
     pub dvalueslen: ::std::os::raw::c_int,
     pub nelems: ::std::os::raw::c_int,
     pub flat_size: Size,
@@ -32004,14 +33851,14 @@ fn bindgen_test_layout_AnyArrayType() {
 pub struct ArrayBuildState {
     pub mcontext: MemoryContext,
     pub dvalues: *mut Datum,
-    pub dnulls: *mut bool_,
+    pub dnulls: *mut bool,
     pub alen: ::std::os::raw::c_int,
     pub nelems: ::std::os::raw::c_int,
     pub element_type: Oid,
     pub typlen: int16,
-    pub typbyval: bool_,
+    pub typbyval: bool,
     pub typalign: ::std::os::raw::c_char,
-    pub private_cxt: bool_,
+    pub private_cxt: bool,
 }
 #[test]
 fn bindgen_test_layout_ArrayBuildState() {
@@ -32141,7 +33988,7 @@ pub struct ArrayBuildStateArr {
     pub lbs: [::std::os::raw::c_int; 6usize],
     pub array_type: Oid,
     pub element_type: Oid,
-    pub private_cxt: bool_,
+    pub private_cxt: bool,
 }
 #[test]
 fn bindgen_test_layout_ArrayBuildStateArr() {
@@ -32330,7 +34177,7 @@ fn bindgen_test_layout_ArrayBuildStateAny() {
 pub struct ArrayMetaState {
     pub element_type: Oid,
     pub typlen: int16,
-    pub typbyval: bool_,
+    pub typbyval: bool,
     pub typalign: ::std::os::raw::c_char,
     pub typdelim: ::std::os::raw::c_char,
     pub typioparam: Oid,
@@ -32477,18 +34324,18 @@ pub struct ArrayIteratorData {
 pub type ArrayIterator = *mut ArrayIteratorData;
 extern "C" {
     #[link_name = "\u{1}Array_nulls"]
-    pub static mut Array_nulls: bool_;
+    pub static mut Array_nulls: bool;
 }
 extern "C" {
     pub fn CopyArrayEls(
         array: *mut ArrayType,
         values: *mut Datum,
-        nulls: *mut bool_,
+        nulls: *mut bool,
         nitems: ::std::os::raw::c_int,
         typlen: ::std::os::raw::c_int,
-        typbyval: bool_,
+        typbyval: bool,
         typalign: ::std::os::raw::c_char,
-        freedata: bool_,
+        freedata: bool,
     );
 }
 extern "C" {
@@ -32498,9 +34345,9 @@ extern "C" {
         indx: *mut ::std::os::raw::c_int,
         arraytyplen: ::std::os::raw::c_int,
         elmlen: ::std::os::raw::c_int,
-        elmbyval: bool_,
+        elmbyval: bool,
         elmalign: ::std::os::raw::c_char,
-        isNull: *mut bool_,
+        isNull: *mut bool,
     ) -> Datum;
 }
 extern "C" {
@@ -32509,10 +34356,10 @@ extern "C" {
         nSubscripts: ::std::os::raw::c_int,
         indx: *mut ::std::os::raw::c_int,
         dataValue: Datum,
-        isNull: bool_,
+        isNull: bool,
         arraytyplen: ::std::os::raw::c_int,
         elmlen: ::std::os::raw::c_int,
-        elmbyval: bool_,
+        elmbyval: bool,
         elmalign: ::std::os::raw::c_char,
     ) -> Datum;
 }
@@ -32522,11 +34369,11 @@ extern "C" {
         nSubscripts: ::std::os::raw::c_int,
         upperIndx: *mut ::std::os::raw::c_int,
         lowerIndx: *mut ::std::os::raw::c_int,
-        upperProvided: *mut bool_,
-        lowerProvided: *mut bool_,
+        upperProvided: *mut bool,
+        lowerProvided: *mut bool,
         arraytyplen: ::std::os::raw::c_int,
         elmlen: ::std::os::raw::c_int,
-        elmbyval: bool_,
+        elmbyval: bool,
         elmalign: ::std::os::raw::c_char,
     ) -> Datum;
 }
@@ -32536,13 +34383,13 @@ extern "C" {
         nSubscripts: ::std::os::raw::c_int,
         upperIndx: *mut ::std::os::raw::c_int,
         lowerIndx: *mut ::std::os::raw::c_int,
-        upperProvided: *mut bool_,
-        lowerProvided: *mut bool_,
+        upperProvided: *mut bool,
+        lowerProvided: *mut bool,
         srcArrayDatum: Datum,
-        isNull: bool_,
+        isNull: bool,
         arraytyplen: ::std::os::raw::c_int,
         elmlen: ::std::os::raw::c_int,
-        elmbyval: bool_,
+        elmbyval: bool,
         elmalign: ::std::os::raw::c_char,
     ) -> Datum;
 }
@@ -32553,9 +34400,9 @@ extern "C" {
         indx: *mut ::std::os::raw::c_int,
         arraytyplen: ::std::os::raw::c_int,
         elmlen: ::std::os::raw::c_int,
-        elmbyval: bool_,
+        elmbyval: bool,
         elmalign: ::std::os::raw::c_char,
-        isNull: *mut bool_,
+        isNull: *mut bool,
     ) -> Datum;
 }
 extern "C" {
@@ -32564,15 +34411,21 @@ extern "C" {
         nSubscripts: ::std::os::raw::c_int,
         indx: *mut ::std::os::raw::c_int,
         dataValue: Datum,
-        isNull: bool_,
+        isNull: bool,
         arraytyplen: ::std::os::raw::c_int,
         elmlen: ::std::os::raw::c_int,
-        elmbyval: bool_,
+        elmbyval: bool,
         elmalign: ::std::os::raw::c_char,
     ) -> *mut ArrayType;
 }
 extern "C" {
-    pub fn array_map(fcinfo: FunctionCallInfo, retType: Oid, amstate: *mut ArrayMapState) -> Datum;
+    pub fn array_map(
+        arrayd: Datum,
+        exprstate: *mut ExprState,
+        econtext: *mut ExprContext,
+        retType: Oid,
+        amstate: *mut ArrayMapState,
+    ) -> Datum;
 }
 extern "C" {
     pub fn array_bitmap_copy(
@@ -32589,20 +34442,20 @@ extern "C" {
         nelems: ::std::os::raw::c_int,
         elmtype: Oid,
         elmlen: ::std::os::raw::c_int,
-        elmbyval: bool_,
+        elmbyval: bool,
         elmalign: ::std::os::raw::c_char,
     ) -> *mut ArrayType;
 }
 extern "C" {
     pub fn construct_md_array(
         elems: *mut Datum,
-        nulls: *mut bool_,
+        nulls: *mut bool,
         ndims: ::std::os::raw::c_int,
         dims: *mut ::std::os::raw::c_int,
         lbs: *mut ::std::os::raw::c_int,
         elmtype: Oid,
         elmlen: ::std::os::raw::c_int,
-        elmbyval: bool_,
+        elmbyval: bool,
         elmalign: ::std::os::raw::c_char,
     ) -> *mut ArrayType;
 }
@@ -32621,28 +34474,28 @@ extern "C" {
         array: *mut ArrayType,
         elmtype: Oid,
         elmlen: ::std::os::raw::c_int,
-        elmbyval: bool_,
+        elmbyval: bool,
         elmalign: ::std::os::raw::c_char,
         elemsp: *mut *mut Datum,
-        nullsp: *mut *mut bool_,
+        nullsp: *mut *mut bool,
         nelemsp: *mut ::std::os::raw::c_int,
     );
 }
 extern "C" {
-    pub fn array_contains_nulls(array: *mut ArrayType) -> bool_;
+    pub fn array_contains_nulls(array: *mut ArrayType) -> bool;
 }
 extern "C" {
     pub fn initArrayResult(
         element_type: Oid,
         rcontext: MemoryContext,
-        subcontext: bool_,
+        subcontext: bool,
     ) -> *mut ArrayBuildState;
 }
 extern "C" {
     pub fn accumArrayResult(
         astate: *mut ArrayBuildState,
         dvalue: Datum,
-        disnull: bool_,
+        disnull: bool,
         element_type: Oid,
         rcontext: MemoryContext,
     ) -> *mut ArrayBuildState;
@@ -32657,7 +34510,7 @@ extern "C" {
         dims: *mut ::std::os::raw::c_int,
         lbs: *mut ::std::os::raw::c_int,
         rcontext: MemoryContext,
-        release: bool_,
+        release: bool,
     ) -> Datum;
 }
 extern "C" {
@@ -32665,14 +34518,14 @@ extern "C" {
         array_type: Oid,
         element_type: Oid,
         rcontext: MemoryContext,
-        subcontext: bool_,
+        subcontext: bool,
     ) -> *mut ArrayBuildStateArr;
 }
 extern "C" {
     pub fn accumArrayResultArr(
         astate: *mut ArrayBuildStateArr,
         dvalue: Datum,
-        disnull: bool_,
+        disnull: bool,
         array_type: Oid,
         rcontext: MemoryContext,
     ) -> *mut ArrayBuildStateArr;
@@ -32681,21 +34534,21 @@ extern "C" {
     pub fn makeArrayResultArr(
         astate: *mut ArrayBuildStateArr,
         rcontext: MemoryContext,
-        release: bool_,
+        release: bool,
     ) -> Datum;
 }
 extern "C" {
     pub fn initArrayResultAny(
         input_type: Oid,
         rcontext: MemoryContext,
-        subcontext: bool_,
+        subcontext: bool,
     ) -> *mut ArrayBuildStateAny;
 }
 extern "C" {
     pub fn accumArrayResultAny(
         astate: *mut ArrayBuildStateAny,
         dvalue: Datum,
-        disnull: bool_,
+        disnull: bool,
         input_type: Oid,
         rcontext: MemoryContext,
     ) -> *mut ArrayBuildStateAny;
@@ -32704,7 +34557,7 @@ extern "C" {
     pub fn makeArrayResultAny(
         astate: *mut ArrayBuildStateAny,
         rcontext: MemoryContext,
-        release: bool_,
+        release: bool,
     ) -> Datum;
 }
 extern "C" {
@@ -32715,7 +34568,7 @@ extern "C" {
     ) -> ArrayIterator;
 }
 extern "C" {
-    pub fn array_iterate(iterator: ArrayIterator, value: *mut Datum, isnull: *mut bool_) -> bool_;
+    pub fn array_iterate(iterator: ArrayIterator, value: *mut Datum, isnull: *mut bool) -> bool;
 }
 extern "C" {
     pub fn array_free_iterator(iterator: ArrayIterator);
@@ -32792,7 +34645,7 @@ extern "C" {
     ) -> *mut ExpandedArrayHeader;
 }
 extern "C" {
-    pub fn DatumGetAnyArray(d: Datum) -> *mut AnyArrayType;
+    pub fn DatumGetAnyArrayP(d: Datum) -> *mut AnyArrayType;
 }
 extern "C" {
     pub fn deconstruct_expanded_array(eah: *mut ExpandedArrayHeader);
@@ -33254,6 +35107,13 @@ extern "C" {
     );
 }
 extern "C" {
+    pub fn appendBinaryStringInfoNT(
+        str: StringInfo,
+        data: *const ::std::os::raw::c_char,
+        datalen: ::std::os::raw::c_int,
+    );
+}
+extern "C" {
     pub fn enlargeStringInfo(str: StringInfo, needed: ::std::os::raw::c_int);
 }
 #[repr(C)]
@@ -33393,7 +35253,7 @@ pub struct BufferAccessStrategyData {
 pub type BufferAccessStrategy = *mut BufferAccessStrategyData;
 pub type Snapshot = *mut SnapshotData;
 pub type SnapshotSatisfiesFunc = ::std::option::Option<
-    unsafe extern "C" fn(htup: HeapTuple, snapshot: Snapshot, buffer: Buffer) -> bool_,
+    unsafe extern "C" fn(htup: HeapTuple, snapshot: Snapshot, buffer: Buffer) -> bool,
 >;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -33405,9 +35265,9 @@ pub struct SnapshotData {
     pub xcnt: uint32,
     pub subxip: *mut TransactionId,
     pub subxcnt: int32,
-    pub suboverflowed: bool_,
-    pub takenDuringRecovery: bool_,
-    pub copied: bool_,
+    pub suboverflowed: bool,
+    pub takenDuringRecovery: bool,
+    pub copied: bool,
     pub curcid: CommandId,
     pub speculativeToken: uint32,
     pub active_count: uint32,
@@ -33666,37 +35526,11 @@ pub const AclResult_ACLCHECK_OK: AclResult = 0;
 pub const AclResult_ACLCHECK_NO_PRIV: AclResult = 1;
 pub const AclResult_ACLCHECK_NOT_OWNER: AclResult = 2;
 pub type AclResult = u32;
-pub const AclObjectKind_ACL_KIND_COLUMN: AclObjectKind = 0;
-pub const AclObjectKind_ACL_KIND_CLASS: AclObjectKind = 1;
-pub const AclObjectKind_ACL_KIND_SEQUENCE: AclObjectKind = 2;
-pub const AclObjectKind_ACL_KIND_DATABASE: AclObjectKind = 3;
-pub const AclObjectKind_ACL_KIND_PROC: AclObjectKind = 4;
-pub const AclObjectKind_ACL_KIND_OPER: AclObjectKind = 5;
-pub const AclObjectKind_ACL_KIND_TYPE: AclObjectKind = 6;
-pub const AclObjectKind_ACL_KIND_LANGUAGE: AclObjectKind = 7;
-pub const AclObjectKind_ACL_KIND_LARGEOBJECT: AclObjectKind = 8;
-pub const AclObjectKind_ACL_KIND_NAMESPACE: AclObjectKind = 9;
-pub const AclObjectKind_ACL_KIND_OPCLASS: AclObjectKind = 10;
-pub const AclObjectKind_ACL_KIND_OPFAMILY: AclObjectKind = 11;
-pub const AclObjectKind_ACL_KIND_COLLATION: AclObjectKind = 12;
-pub const AclObjectKind_ACL_KIND_CONVERSION: AclObjectKind = 13;
-pub const AclObjectKind_ACL_KIND_STATISTICS: AclObjectKind = 14;
-pub const AclObjectKind_ACL_KIND_TABLESPACE: AclObjectKind = 15;
-pub const AclObjectKind_ACL_KIND_TSDICTIONARY: AclObjectKind = 16;
-pub const AclObjectKind_ACL_KIND_TSCONFIGURATION: AclObjectKind = 17;
-pub const AclObjectKind_ACL_KIND_FDW: AclObjectKind = 18;
-pub const AclObjectKind_ACL_KIND_FOREIGN_SERVER: AclObjectKind = 19;
-pub const AclObjectKind_ACL_KIND_EVENT_TRIGGER: AclObjectKind = 20;
-pub const AclObjectKind_ACL_KIND_EXTENSION: AclObjectKind = 21;
-pub const AclObjectKind_ACL_KIND_PUBLICATION: AclObjectKind = 22;
-pub const AclObjectKind_ACL_KIND_SUBSCRIPTION: AclObjectKind = 23;
-pub const AclObjectKind_MAX_ACL_KIND: AclObjectKind = 24;
-pub type AclObjectKind = u32;
 extern "C" {
-    pub fn acldefault(objtype: GrantObjectType, ownerId: Oid) -> *mut Acl;
+    pub fn acldefault(objtype: ObjectType, ownerId: Oid) -> *mut Acl;
 }
 extern "C" {
-    pub fn get_user_default_acl(objtype: GrantObjectType, ownerId: Oid, nsp_oid: Oid) -> *mut Acl;
+    pub fn get_user_default_acl(objtype: ObjectType, ownerId: Oid, nsp_oid: Oid) -> *mut Acl;
 }
 extern "C" {
     pub fn aclupdate(
@@ -33726,7 +35560,7 @@ extern "C" {
     pub fn aclitemsort(acl: *mut Acl);
 }
 extern "C" {
-    pub fn aclequal(left_acl: *const Acl, right_acl: *const Acl) -> bool_;
+    pub fn aclequal(left_acl: *const Acl, right_acl: *const Acl) -> bool;
 }
 extern "C" {
     pub fn aclmask(
@@ -33741,28 +35575,28 @@ extern "C" {
     pub fn aclmembers(acl: *const Acl, roleids: *mut *mut Oid) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    pub fn has_privs_of_role(member: Oid, role: Oid) -> bool_;
+    pub fn has_privs_of_role(member: Oid, role: Oid) -> bool;
 }
 extern "C" {
-    pub fn is_member_of_role(member: Oid, role: Oid) -> bool_;
+    pub fn is_member_of_role(member: Oid, role: Oid) -> bool;
 }
 extern "C" {
-    pub fn is_member_of_role_nosuper(member: Oid, role: Oid) -> bool_;
+    pub fn is_member_of_role_nosuper(member: Oid, role: Oid) -> bool;
 }
 extern "C" {
-    pub fn is_admin_of_role(member: Oid, role: Oid) -> bool_;
+    pub fn is_admin_of_role(member: Oid, role: Oid) -> bool;
 }
 extern "C" {
     pub fn check_is_member_of_role(member: Oid, role: Oid);
 }
 extern "C" {
-    pub fn get_role_oid(rolename: *const ::std::os::raw::c_char, missing_ok: bool_) -> Oid;
+    pub fn get_role_oid(rolename: *const ::std::os::raw::c_char, missing_ok: bool) -> Oid;
 }
 extern "C" {
     pub fn get_role_oid_or_public(rolename: *const ::std::os::raw::c_char) -> Oid;
 }
 extern "C" {
-    pub fn get_rolespec_oid(role: *const RoleSpec, missing_ok: bool_) -> Oid;
+    pub fn get_rolespec_oid(role: *const RoleSpec, missing_ok: bool) -> Oid;
 }
 extern "C" {
     pub fn check_rolespec_name(role: *const RoleSpec, detail_msg: *const ::std::os::raw::c_char);
@@ -33927,14 +35761,14 @@ extern "C" {
 extern "C" {
     pub fn aclcheck_error(
         aclerr: AclResult,
-        objectkind: AclObjectKind,
+        objtype: ObjectType,
         objectname: *const ::std::os::raw::c_char,
     );
 }
 extern "C" {
     pub fn aclcheck_error_col(
         aclerr: AclResult,
-        objectkind: AclObjectKind,
+        objtype: ObjectType,
         objectname: *const ::std::os::raw::c_char,
         colname: *const ::std::os::raw::c_char,
     );
@@ -33949,76 +35783,76 @@ extern "C" {
     pub fn removeExtObjInitPriv(objoid: Oid, classoid: Oid);
 }
 extern "C" {
-    pub fn pg_class_ownercheck(class_oid: Oid, roleid: Oid) -> bool_;
+    pub fn pg_class_ownercheck(class_oid: Oid, roleid: Oid) -> bool;
 }
 extern "C" {
-    pub fn pg_type_ownercheck(type_oid: Oid, roleid: Oid) -> bool_;
+    pub fn pg_type_ownercheck(type_oid: Oid, roleid: Oid) -> bool;
 }
 extern "C" {
-    pub fn pg_oper_ownercheck(oper_oid: Oid, roleid: Oid) -> bool_;
+    pub fn pg_oper_ownercheck(oper_oid: Oid, roleid: Oid) -> bool;
 }
 extern "C" {
-    pub fn pg_proc_ownercheck(proc_oid: Oid, roleid: Oid) -> bool_;
+    pub fn pg_proc_ownercheck(proc_oid: Oid, roleid: Oid) -> bool;
 }
 extern "C" {
-    pub fn pg_language_ownercheck(lan_oid: Oid, roleid: Oid) -> bool_;
+    pub fn pg_language_ownercheck(lan_oid: Oid, roleid: Oid) -> bool;
 }
 extern "C" {
-    pub fn pg_largeobject_ownercheck(lobj_oid: Oid, roleid: Oid) -> bool_;
+    pub fn pg_largeobject_ownercheck(lobj_oid: Oid, roleid: Oid) -> bool;
 }
 extern "C" {
-    pub fn pg_namespace_ownercheck(nsp_oid: Oid, roleid: Oid) -> bool_;
+    pub fn pg_namespace_ownercheck(nsp_oid: Oid, roleid: Oid) -> bool;
 }
 extern "C" {
-    pub fn pg_tablespace_ownercheck(spc_oid: Oid, roleid: Oid) -> bool_;
+    pub fn pg_tablespace_ownercheck(spc_oid: Oid, roleid: Oid) -> bool;
 }
 extern "C" {
-    pub fn pg_opclass_ownercheck(opc_oid: Oid, roleid: Oid) -> bool_;
+    pub fn pg_opclass_ownercheck(opc_oid: Oid, roleid: Oid) -> bool;
 }
 extern "C" {
-    pub fn pg_opfamily_ownercheck(opf_oid: Oid, roleid: Oid) -> bool_;
+    pub fn pg_opfamily_ownercheck(opf_oid: Oid, roleid: Oid) -> bool;
 }
 extern "C" {
-    pub fn pg_database_ownercheck(db_oid: Oid, roleid: Oid) -> bool_;
+    pub fn pg_database_ownercheck(db_oid: Oid, roleid: Oid) -> bool;
 }
 extern "C" {
-    pub fn pg_collation_ownercheck(coll_oid: Oid, roleid: Oid) -> bool_;
+    pub fn pg_collation_ownercheck(coll_oid: Oid, roleid: Oid) -> bool;
 }
 extern "C" {
-    pub fn pg_conversion_ownercheck(conv_oid: Oid, roleid: Oid) -> bool_;
+    pub fn pg_conversion_ownercheck(conv_oid: Oid, roleid: Oid) -> bool;
 }
 extern "C" {
-    pub fn pg_ts_dict_ownercheck(dict_oid: Oid, roleid: Oid) -> bool_;
+    pub fn pg_ts_dict_ownercheck(dict_oid: Oid, roleid: Oid) -> bool;
 }
 extern "C" {
-    pub fn pg_ts_config_ownercheck(cfg_oid: Oid, roleid: Oid) -> bool_;
+    pub fn pg_ts_config_ownercheck(cfg_oid: Oid, roleid: Oid) -> bool;
 }
 extern "C" {
-    pub fn pg_foreign_data_wrapper_ownercheck(srv_oid: Oid, roleid: Oid) -> bool_;
+    pub fn pg_foreign_data_wrapper_ownercheck(srv_oid: Oid, roleid: Oid) -> bool;
 }
 extern "C" {
-    pub fn pg_foreign_server_ownercheck(srv_oid: Oid, roleid: Oid) -> bool_;
+    pub fn pg_foreign_server_ownercheck(srv_oid: Oid, roleid: Oid) -> bool;
 }
 extern "C" {
-    pub fn pg_event_trigger_ownercheck(et_oid: Oid, roleid: Oid) -> bool_;
+    pub fn pg_event_trigger_ownercheck(et_oid: Oid, roleid: Oid) -> bool;
 }
 extern "C" {
-    pub fn pg_extension_ownercheck(ext_oid: Oid, roleid: Oid) -> bool_;
+    pub fn pg_extension_ownercheck(ext_oid: Oid, roleid: Oid) -> bool;
 }
 extern "C" {
-    pub fn pg_publication_ownercheck(pub_oid: Oid, roleid: Oid) -> bool_;
+    pub fn pg_publication_ownercheck(pub_oid: Oid, roleid: Oid) -> bool;
 }
 extern "C" {
-    pub fn pg_subscription_ownercheck(sub_oid: Oid, roleid: Oid) -> bool_;
+    pub fn pg_subscription_ownercheck(sub_oid: Oid, roleid: Oid) -> bool;
 }
 extern "C" {
-    pub fn pg_statistics_object_ownercheck(stat_oid: Oid, roleid: Oid) -> bool_;
+    pub fn pg_statistics_object_ownercheck(stat_oid: Oid, roleid: Oid) -> bool;
 }
 extern "C" {
-    pub fn has_createrole_privilege(roleid: Oid) -> bool_;
+    pub fn has_createrole_privilege(roleid: Oid) -> bool;
 }
 extern "C" {
-    pub fn has_bypassrls_privilege(roleid: Oid) -> bool_;
+    pub fn has_bypassrls_privilege(roleid: Oid) -> bool;
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -34080,7 +35914,7 @@ extern "C" {
         object: *mut Node,
         relp: *mut Relation,
         lockmode: LOCKMODE,
-        missing_ok: bool_,
+        missing_ok: bool,
     ) -> ObjectAddress;
 }
 extern "C" {
@@ -34090,7 +35924,7 @@ extern "C" {
         object: *mut List,
         relp: *mut Relation,
         lockmode: LOCKMODE,
-        missing_ok: bool_,
+        missing_ok: bool,
     ) -> ObjectAddress;
 }
 extern "C" {
@@ -34106,7 +35940,7 @@ extern "C" {
     pub fn get_object_namespace(address: *const ObjectAddress) -> Oid;
 }
 extern "C" {
-    pub fn is_objectclass_supported(class_id: Oid) -> bool_;
+    pub fn is_objectclass_supported(class_id: Oid) -> bool;
 }
 extern "C" {
     pub fn get_object_oid_index(class_id: Oid) -> Oid;
@@ -34130,10 +35964,10 @@ extern "C" {
     pub fn get_object_attnum_acl(class_id: Oid) -> AttrNumber;
 }
 extern "C" {
-    pub fn get_object_aclkind(class_id: Oid) -> AclObjectKind;
+    pub fn get_object_type(class_id: Oid, object_id: Oid) -> ObjectType;
 }
 extern "C" {
-    pub fn get_object_namensp_unique(class_id: Oid) -> bool_;
+    pub fn get_object_namensp_unique(class_id: Oid) -> bool;
 }
 extern "C" {
     pub fn get_catalog_object_by_oid(catalog: Relation, objectId: Oid) -> HeapTuple;
@@ -34164,6 +35998,9 @@ extern "C" {
 }
 extern "C" {
     pub fn strlist_to_textarray(list: *mut List) -> *mut ArrayType;
+}
+extern "C" {
+    pub fn get_relkind_objtype(relkind: ::std::os::raw::c_char) -> ObjectType;
 }
 pub const ScanDirection_BackwardScanDirection: ScanDirection = -1;
 pub const ScanDirection_NoMovementScanDirection: ScanDirection = 0;
@@ -34402,10 +36239,10 @@ extern "C" {
         mapped_address: *mut *mut ::std::os::raw::c_void,
         mapped_size: *mut Size,
         elevel: ::std::os::raw::c_int,
-    ) -> bool_;
+    ) -> bool;
 }
 extern "C" {
-    pub fn dsm_impl_can_resize() -> bool_;
+    pub fn dsm_impl_can_resize() -> bool;
 }
 extern "C" {
     pub fn dsm_impl_pin_segment(
@@ -34513,7 +36350,7 @@ extern "C" {
 extern "C" {
     pub fn dsa_create_in_place(
         place: *mut ::std::os::raw::c_void,
-        size: Size,
+        size: usize,
         tranche_id: ::std::os::raw::c_int,
         segment: *mut dsm_segment,
     ) -> *mut dsa_area;
@@ -34549,10 +36386,10 @@ extern "C" {
     pub fn dsa_unpin(area: *mut dsa_area);
 }
 extern "C" {
-    pub fn dsa_set_size_limit(area: *mut dsa_area, limit: Size);
+    pub fn dsa_set_size_limit(area: *mut dsa_area, limit: usize);
 }
 extern "C" {
-    pub fn dsa_minimum_size() -> Size;
+    pub fn dsa_minimum_size() -> usize;
 }
 extern "C" {
     pub fn dsa_get_handle(area: *mut dsa_area) -> dsa_handle;
@@ -34560,7 +36397,7 @@ extern "C" {
 extern "C" {
     pub fn dsa_allocate_extended(
         area: *mut dsa_area,
-        size: Size,
+        size: usize,
         flags: ::std::os::raw::c_int,
     ) -> dsa_pointer;
 }
@@ -34596,7 +36433,7 @@ pub struct TBMSharedIterator {
 pub struct TBMIterateResult {
     pub blockno: BlockNumber,
     pub ntuples: ::std::os::raw::c_int,
-    pub recheck: bool_,
+    pub recheck: bool,
     pub offsets: __IncompleteArrayField<OffsetNumber>,
 }
 #[test]
@@ -34626,7 +36463,7 @@ extern "C" {
         tbm: *mut TIDBitmap,
         tids: ItemPointer,
         ntids: ::std::os::raw::c_int,
-        recheck: bool_,
+        recheck: bool,
     );
 }
 extern "C" {
@@ -34639,7 +36476,7 @@ extern "C" {
     pub fn tbm_intersect(a: *mut TIDBitmap, b: *const TIDBitmap);
 }
 extern "C" {
-    pub fn tbm_is_empty(tbm: *const TIDBitmap) -> bool_;
+    pub fn tbm_is_empty(tbm: *const TIDBitmap) -> bool;
 }
 extern "C" {
     pub fn tbm_begin_iterate(tbm: *mut TIDBitmap) -> *mut TBMIterator;
@@ -34662,6 +36499,9 @@ extern "C" {
 extern "C" {
     pub fn tbm_attach_shared_iterate(dsa: *mut dsa_area, dp: dsa_pointer)
         -> *mut TBMSharedIterator;
+}
+extern "C" {
+    pub fn tbm_calculate_entries(maxbytes: f64) -> ::std::os::raw::c_long;
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -34706,8 +36546,8 @@ fn bindgen_test_layout_IndexBuildResult() {
 #[derive(Debug, Copy, Clone)]
 pub struct IndexVacuumInfo {
     pub index: Relation,
-    pub analyze_only: bool_,
-    pub estimated_count: bool_,
+    pub analyze_only: bool,
+    pub estimated_count: bool,
     pub message_level: ::std::os::raw::c_int,
     pub num_heap_tuples: f64,
     pub strategy: BufferAccessStrategy,
@@ -34790,7 +36630,7 @@ fn bindgen_test_layout_IndexVacuumInfo() {
 pub struct IndexBulkDeleteResult {
     pub num_pages: BlockNumber,
     pub pages_removed: BlockNumber,
-    pub estimated_count: bool_,
+    pub estimated_count: bool,
     pub num_index_tuples: f64,
     pub tuples_removed: f64,
     pub pages_deleted: BlockNumber,
@@ -34892,7 +36732,7 @@ fn bindgen_test_layout_IndexBulkDeleteResult() {
     );
 }
 pub type IndexBulkDeleteCallback = ::std::option::Option<
-    unsafe extern "C" fn(itemptr: ItemPointer, state: *mut ::std::os::raw::c_void) -> bool_,
+    unsafe extern "C" fn(itemptr: ItemPointer, state: *mut ::std::os::raw::c_void) -> bool,
 >;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -34927,12 +36767,12 @@ extern "C" {
     pub fn index_insert(
         indexRelation: Relation,
         values: *mut Datum,
-        isnull: *mut bool_,
+        isnull: *mut bool,
         heap_t_ctid: ItemPointer,
         heapRelation: Relation,
         checkUnique: IndexUniqueCheck,
         indexInfo: *mut IndexInfo,
-    ) -> bool_;
+    ) -> bool;
 }
 extern "C" {
     pub fn index_beginscan(
@@ -35018,7 +36858,7 @@ extern "C" {
     ) -> *mut IndexBulkDeleteResult;
 }
 extern "C" {
-    pub fn index_can_return(indexRelation: Relation, attno: ::std::os::raw::c_int) -> bool_;
+    pub fn index_can_return(indexRelation: Relation, attno: ::std::os::raw::c_int) -> bool;
 }
 extern "C" {
     pub fn index_getprocid(irel: Relation, attnum: AttrNumber, procnum: uint16) -> RegProcedure;
@@ -35040,14 +36880,14 @@ extern "C" {
     pub fn BuildIndexValueDescription(
         indexRelation: Relation,
         values: *mut Datum,
-        isnull: *mut bool_,
+        isnull: *mut bool,
     ) -> *mut ::std::os::raw::c_char;
 }
 extern "C" {
     pub fn systable_beginscan(
         heapRelation: Relation,
         indexId: Oid,
-        indexOK: bool_,
+        indexOK: bool,
         snapshot: Snapshot,
         nkeys: ::std::os::raw::c_int,
         key: ScanKey,
@@ -35057,7 +36897,7 @@ extern "C" {
     pub fn systable_getnext(sysscan: SysScanDesc) -> HeapTuple;
 }
 extern "C" {
-    pub fn systable_recheck_tuple(sysscan: SysScanDesc, tup: HeapTuple) -> bool_;
+    pub fn systable_recheck_tuple(sysscan: SysScanDesc, tup: HeapTuple) -> bool;
 }
 extern "C" {
     pub fn systable_endscan(sysscan: SysScanDesc);
@@ -35150,7 +36990,7 @@ extern "C" {
     pub fn PageInit(page: Page, pageSize: Size, specialSize: Size);
 }
 extern "C" {
-    pub fn PageIsVerified(page: Page, blkno: BlockNumber) -> bool_;
+    pub fn PageIsVerified(page: Page, blkno: BlockNumber) -> bool;
 }
 extern "C" {
     pub fn PageAddItemExtended(
@@ -35207,7 +37047,7 @@ extern "C" {
         offnum: OffsetNumber,
         newtup: Item,
         newsize: Size,
-    ) -> bool_;
+    ) -> bool;
 }
 extern "C" {
     pub fn PageSetChecksumCopy(page: Page, blkno: BlockNumber) -> *mut ::std::os::raw::c_char;
@@ -35289,7 +37129,7 @@ extern "C" {
     pub fn relation_openrv_extended(
         relation: *const RangeVar,
         lockmode: LOCKMODE,
-        missing_ok: bool_,
+        missing_ok: bool,
     ) -> Relation;
 }
 extern "C" {
@@ -35305,7 +37145,7 @@ extern "C" {
     pub fn heap_openrv_extended(
         relation: *const RangeVar,
         lockmode: LOCKMODE,
-        missing_ok: bool_,
+        missing_ok: bool,
     ) -> Relation;
 }
 #[repr(C)]
@@ -35341,8 +37181,8 @@ extern "C" {
         snapshot: Snapshot,
         nkeys: ::std::os::raw::c_int,
         key: ScanKey,
-        allow_strat: bool_,
-        allow_sync: bool_,
+        allow_strat: bool,
+        allow_sync: bool,
     ) -> HeapScanDesc;
 }
 extern "C" {
@@ -35359,9 +37199,9 @@ extern "C" {
         snapshot: Snapshot,
         nkeys: ::std::os::raw::c_int,
         key: ScanKey,
-        allow_strat: bool_,
-        allow_sync: bool_,
-        allow_pagemode: bool_,
+        allow_strat: bool,
+        allow_sync: bool,
+        allow_pagemode: bool,
     ) -> HeapScanDesc;
 }
 extern "C" {
@@ -35377,9 +37217,9 @@ extern "C" {
     pub fn heap_rescan_set_params(
         scan: HeapScanDesc,
         key: ScanKey,
-        allow_strat: bool_,
-        allow_sync: bool_,
-        allow_pagemode: bool_,
+        allow_strat: bool,
+        allow_sync: bool,
+        allow_pagemode: bool,
     );
 }
 extern "C" {
@@ -35410,9 +37250,9 @@ extern "C" {
         snapshot: Snapshot,
         tuple: HeapTuple,
         userbuf: *mut Buffer,
-        keep_buf: bool_,
+        keep_buf: bool,
         stats_relation: Relation,
-    ) -> bool_;
+    ) -> bool;
 }
 extern "C" {
     pub fn heap_hot_search_buffer(
@@ -35421,17 +37261,17 @@ extern "C" {
         buffer: Buffer,
         snapshot: Snapshot,
         heapTuple: HeapTuple,
-        all_dead: *mut bool_,
-        first_call: bool_,
-    ) -> bool_;
+        all_dead: *mut bool,
+        first_call: bool,
+    ) -> bool;
 }
 extern "C" {
     pub fn heap_hot_search(
         tid: ItemPointer,
         relation: Relation,
         snapshot: Snapshot,
-        all_dead: *mut bool_,
-    ) -> bool_;
+        all_dead: *mut bool,
+    ) -> bool;
 }
 extern "C" {
     pub fn heap_get_latest_tid(relation: Relation, snapshot: Snapshot, tid: ItemPointer);
@@ -35473,8 +37313,9 @@ extern "C" {
         tid: ItemPointer,
         cid: CommandId,
         crosscheck: Snapshot,
-        wait: bool_,
+        wait: bool,
         hufd: *mut HeapUpdateFailureData,
+        changingPart: bool,
     ) -> HTSU_Result;
 }
 extern "C" {
@@ -35490,7 +37331,7 @@ extern "C" {
         newtup: HeapTuple,
         cid: CommandId,
         crosscheck: Snapshot,
-        wait: bool_,
+        wait: bool,
         hufd: *mut HeapUpdateFailureData,
         lockmode: *mut LockTupleMode,
     ) -> HTSU_Result;
@@ -35502,7 +37343,7 @@ extern "C" {
         cid: CommandId,
         mode: LockTupleMode,
         wait_policy: LockWaitPolicy,
-        follow_update: bool_,
+        follow_update: bool,
         buffer: *mut Buffer,
         hufd: *mut HeapUpdateFailureData,
     ) -> HTSU_Result;
@@ -35517,7 +37358,7 @@ extern "C" {
         relminmxid: TransactionId,
         cutoff_xid: TransactionId,
         cutoff_multi: TransactionId,
-    ) -> bool_;
+    ) -> bool;
 }
 extern "C" {
     pub fn heap_tuple_needs_freeze(
@@ -35525,10 +37366,10 @@ extern "C" {
         cutoff_xid: TransactionId,
         cutoff_multi: MultiXactId,
         buf: Buffer,
-    ) -> bool_;
+    ) -> bool;
 }
 extern "C" {
-    pub fn heap_tuple_needs_eventual_freeze(tuple: HeapTupleHeader) -> bool_;
+    pub fn heap_tuple_needs_eventual_freeze(tuple: HeapTupleHeader) -> bool;
 }
 extern "C" {
     pub fn simple_heap_insert(relation: Relation, tup: HeapTuple) -> Oid;
@@ -35553,7 +37394,7 @@ extern "C" {
         relation: Relation,
         buffer: Buffer,
         OldestXmin: TransactionId,
-        report_stats: bool_,
+        report_stats: bool,
         latestRemovedXid: *mut TransactionId,
     ) -> ::std::os::raw::c_int;
 }
@@ -35590,9 +37431,9 @@ pub struct TupleConversionMap {
     pub outdesc: TupleDesc,
     pub attrMap: *mut AttrNumber,
     pub invalues: *mut Datum,
-    pub inisnull: *mut bool_,
+    pub inisnull: *mut bool,
     pub outvalues: *mut Datum,
-    pub outisnull: *mut bool_,
+    pub outisnull: *mut bool,
 }
 #[test]
 fn bindgen_test_layout_TupleConversionMap() {
@@ -36198,9 +38039,9 @@ pub type InstrumentOption = u32;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct Instrumentation {
-    pub need_timer: bool_,
-    pub need_bufusage: bool_,
-    pub running: bool_,
+    pub need_timer: bool,
+    pub need_bufusage: bool,
+    pub running: bool,
     pub starttime: instr_time,
     pub counter: instr_time,
     pub firsttuple: f64,
@@ -36209,6 +38050,7 @@ pub struct Instrumentation {
     pub startup: f64,
     pub total: f64,
     pub ntuples: f64,
+    pub ntuples2: f64,
     pub nloops: f64,
     pub nfiltered1: f64,
     pub nfiltered2: f64,
@@ -36218,7 +38060,7 @@ pub struct Instrumentation {
 fn bindgen_test_layout_Instrumentation() {
     assert_eq!(
         ::std::mem::size_of::<Instrumentation>(),
-        328usize,
+        336usize,
         concat!("Size of: ", stringify!(Instrumentation))
     );
     assert_eq!(
@@ -36337,8 +38179,18 @@ fn bindgen_test_layout_Instrumentation() {
         )
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<Instrumentation>())).nloops as *const _ as usize },
+        unsafe { &(*(::std::ptr::null::<Instrumentation>())).ntuples2 as *const _ as usize },
         192usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(Instrumentation),
+            "::",
+            stringify!(ntuples2)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<Instrumentation>())).nloops as *const _ as usize },
+        200usize,
         concat!(
             "Offset of field: ",
             stringify!(Instrumentation),
@@ -36348,7 +38200,7 @@ fn bindgen_test_layout_Instrumentation() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Instrumentation>())).nfiltered1 as *const _ as usize },
-        200usize,
+        208usize,
         concat!(
             "Offset of field: ",
             stringify!(Instrumentation),
@@ -36358,7 +38210,7 @@ fn bindgen_test_layout_Instrumentation() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Instrumentation>())).nfiltered2 as *const _ as usize },
-        208usize,
+        216usize,
         concat!(
             "Offset of field: ",
             stringify!(Instrumentation),
@@ -36368,7 +38220,7 @@ fn bindgen_test_layout_Instrumentation() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<Instrumentation>())).bufusage as *const _ as usize },
-        216usize,
+        224usize,
         concat!(
             "Offset of field: ",
             stringify!(Instrumentation),
@@ -36435,7 +38287,7 @@ extern "C" {
 #[derive(Debug, Copy, Clone)]
 pub struct ParamExternData {
     pub value: Datum,
-    pub isnull: bool_,
+    pub isnull: bool,
     pub pflags: uint16,
     pub ptype: Oid,
 }
@@ -36494,7 +38346,21 @@ fn bindgen_test_layout_ParamExternData() {
 }
 pub type ParamListInfo = *mut ParamListInfoData;
 pub type ParamFetchHook = ::std::option::Option<
-    unsafe extern "C" fn(params: ParamListInfo, paramid: ::std::os::raw::c_int),
+    unsafe extern "C" fn(
+        params: ParamListInfo,
+        paramid: ::std::os::raw::c_int,
+        speculative: bool,
+        workspace: *mut ParamExternData,
+    ) -> *mut ParamExternData,
+>;
+pub type ParamCompileHook = ::std::option::Option<
+    unsafe extern "C" fn(
+        params: ParamListInfo,
+        param: *mut Param,
+        state: *mut ExprState,
+        resv: *mut Datum,
+        resnull: *mut bool,
+    ),
 >;
 pub type ParserSetupHook = ::std::option::Option<
     unsafe extern "C" fn(pstate: *mut ParseState, arg: *mut ::std::os::raw::c_void),
@@ -36504,17 +38370,18 @@ pub type ParserSetupHook = ::std::option::Option<
 pub struct ParamListInfoData {
     pub paramFetch: ParamFetchHook,
     pub paramFetchArg: *mut ::std::os::raw::c_void,
+    pub paramCompile: ParamCompileHook,
+    pub paramCompileArg: *mut ::std::os::raw::c_void,
     pub parserSetup: ParserSetupHook,
     pub parserSetupArg: *mut ::std::os::raw::c_void,
     pub numParams: ::std::os::raw::c_int,
-    pub paramMask: *mut Bitmapset,
     pub params: __IncompleteArrayField<ParamExternData>,
 }
 #[test]
 fn bindgen_test_layout_ParamListInfoData() {
     assert_eq!(
         ::std::mem::size_of::<ParamListInfoData>(),
-        48usize,
+        56usize,
         concat!("Size of: ", stringify!(ParamListInfoData))
     );
     assert_eq!(
@@ -36528,7 +38395,7 @@ fn bindgen_test_layout_ParamListInfoData() {
 pub struct ParamExecData {
     pub execPlan: *mut ::std::os::raw::c_void,
     pub value: Datum,
-    pub isnull: bool_,
+    pub isnull: bool,
 }
 #[test]
 fn bindgen_test_layout_ParamExecData() {
@@ -36593,13 +38460,14 @@ extern "C" {
 pub struct PlannedStmt {
     pub type_: NodeTag,
     pub commandType: CmdType,
-    pub queryId: uint32,
-    pub hasReturning: bool_,
-    pub hasModifyingCTE: bool_,
-    pub canSetTag: bool_,
-    pub transientPlan: bool_,
-    pub dependsOnRole: bool_,
-    pub parallelModeNeeded: bool_,
+    pub queryId: uint64,
+    pub hasReturning: bool,
+    pub hasModifyingCTE: bool,
+    pub canSetTag: bool,
+    pub transientPlan: bool,
+    pub dependsOnRole: bool,
+    pub parallelModeNeeded: bool,
+    pub jitFlags: ::std::os::raw::c_int,
     pub planTree: *mut Plan,
     pub rtable: *mut List,
     pub resultRelations: *mut List,
@@ -36610,7 +38478,7 @@ pub struct PlannedStmt {
     pub rowMarks: *mut List,
     pub relationOids: *mut List,
     pub invalItems: *mut List,
-    pub nParamExec: ::std::os::raw::c_int,
+    pub paramExecTypes: *mut List,
     pub utilityStmt: *mut Node,
     pub stmt_location: ::std::os::raw::c_int,
     pub stmt_len: ::std::os::raw::c_int,
@@ -36619,7 +38487,7 @@ pub struct PlannedStmt {
 fn bindgen_test_layout_PlannedStmt() {
     assert_eq!(
         ::std::mem::size_of::<PlannedStmt>(),
-        128usize,
+        136usize,
         concat!("Size of: ", stringify!(PlannedStmt))
     );
     assert_eq!(
@@ -36659,7 +38527,7 @@ fn bindgen_test_layout_PlannedStmt() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<PlannedStmt>())).hasReturning as *const _ as usize },
-        12usize,
+        16usize,
         concat!(
             "Offset of field: ",
             stringify!(PlannedStmt),
@@ -36669,7 +38537,7 @@ fn bindgen_test_layout_PlannedStmt() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<PlannedStmt>())).hasModifyingCTE as *const _ as usize },
-        13usize,
+        17usize,
         concat!(
             "Offset of field: ",
             stringify!(PlannedStmt),
@@ -36679,7 +38547,7 @@ fn bindgen_test_layout_PlannedStmt() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<PlannedStmt>())).canSetTag as *const _ as usize },
-        14usize,
+        18usize,
         concat!(
             "Offset of field: ",
             stringify!(PlannedStmt),
@@ -36689,7 +38557,7 @@ fn bindgen_test_layout_PlannedStmt() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<PlannedStmt>())).transientPlan as *const _ as usize },
-        15usize,
+        19usize,
         concat!(
             "Offset of field: ",
             stringify!(PlannedStmt),
@@ -36699,7 +38567,7 @@ fn bindgen_test_layout_PlannedStmt() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<PlannedStmt>())).dependsOnRole as *const _ as usize },
-        16usize,
+        20usize,
         concat!(
             "Offset of field: ",
             stringify!(PlannedStmt),
@@ -36709,7 +38577,7 @@ fn bindgen_test_layout_PlannedStmt() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<PlannedStmt>())).parallelModeNeeded as *const _ as usize },
-        17usize,
+        21usize,
         concat!(
             "Offset of field: ",
             stringify!(PlannedStmt),
@@ -36718,8 +38586,18 @@ fn bindgen_test_layout_PlannedStmt() {
         )
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<PlannedStmt>())).planTree as *const _ as usize },
+        unsafe { &(*(::std::ptr::null::<PlannedStmt>())).jitFlags as *const _ as usize },
         24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(PlannedStmt),
+            "::",
+            stringify!(jitFlags)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<PlannedStmt>())).planTree as *const _ as usize },
+        32usize,
         concat!(
             "Offset of field: ",
             stringify!(PlannedStmt),
@@ -36729,7 +38607,7 @@ fn bindgen_test_layout_PlannedStmt() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<PlannedStmt>())).rtable as *const _ as usize },
-        32usize,
+        40usize,
         concat!(
             "Offset of field: ",
             stringify!(PlannedStmt),
@@ -36739,7 +38617,7 @@ fn bindgen_test_layout_PlannedStmt() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<PlannedStmt>())).resultRelations as *const _ as usize },
-        40usize,
+        48usize,
         concat!(
             "Offset of field: ",
             stringify!(PlannedStmt),
@@ -36751,7 +38629,7 @@ fn bindgen_test_layout_PlannedStmt() {
         unsafe {
             &(*(::std::ptr::null::<PlannedStmt>())).nonleafResultRelations as *const _ as usize
         },
-        48usize,
+        56usize,
         concat!(
             "Offset of field: ",
             stringify!(PlannedStmt),
@@ -36761,7 +38639,7 @@ fn bindgen_test_layout_PlannedStmt() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<PlannedStmt>())).rootResultRelations as *const _ as usize },
-        56usize,
+        64usize,
         concat!(
             "Offset of field: ",
             stringify!(PlannedStmt),
@@ -36771,7 +38649,7 @@ fn bindgen_test_layout_PlannedStmt() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<PlannedStmt>())).subplans as *const _ as usize },
-        64usize,
+        72usize,
         concat!(
             "Offset of field: ",
             stringify!(PlannedStmt),
@@ -36781,7 +38659,7 @@ fn bindgen_test_layout_PlannedStmt() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<PlannedStmt>())).rewindPlanIDs as *const _ as usize },
-        72usize,
+        80usize,
         concat!(
             "Offset of field: ",
             stringify!(PlannedStmt),
@@ -36791,7 +38669,7 @@ fn bindgen_test_layout_PlannedStmt() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<PlannedStmt>())).rowMarks as *const _ as usize },
-        80usize,
+        88usize,
         concat!(
             "Offset of field: ",
             stringify!(PlannedStmt),
@@ -36801,7 +38679,7 @@ fn bindgen_test_layout_PlannedStmt() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<PlannedStmt>())).relationOids as *const _ as usize },
-        88usize,
+        96usize,
         concat!(
             "Offset of field: ",
             stringify!(PlannedStmt),
@@ -36811,7 +38689,7 @@ fn bindgen_test_layout_PlannedStmt() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<PlannedStmt>())).invalItems as *const _ as usize },
-        96usize,
+        104usize,
         concat!(
             "Offset of field: ",
             stringify!(PlannedStmt),
@@ -36820,18 +38698,18 @@ fn bindgen_test_layout_PlannedStmt() {
         )
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<PlannedStmt>())).nParamExec as *const _ as usize },
-        104usize,
+        unsafe { &(*(::std::ptr::null::<PlannedStmt>())).paramExecTypes as *const _ as usize },
+        112usize,
         concat!(
             "Offset of field: ",
             stringify!(PlannedStmt),
             "::",
-            stringify!(nParamExec)
+            stringify!(paramExecTypes)
         )
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<PlannedStmt>())).utilityStmt as *const _ as usize },
-        112usize,
+        120usize,
         concat!(
             "Offset of field: ",
             stringify!(PlannedStmt),
@@ -36841,7 +38719,7 @@ fn bindgen_test_layout_PlannedStmt() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<PlannedStmt>())).stmt_location as *const _ as usize },
-        120usize,
+        128usize,
         concat!(
             "Offset of field: ",
             stringify!(PlannedStmt),
@@ -36851,7 +38729,7 @@ fn bindgen_test_layout_PlannedStmt() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<PlannedStmt>())).stmt_len as *const _ as usize },
-        124usize,
+        132usize,
         concat!(
             "Offset of field: ",
             stringify!(PlannedStmt),
@@ -36868,8 +38746,8 @@ pub struct Plan {
     pub total_cost: Cost,
     pub plan_rows: f64,
     pub plan_width: ::std::os::raw::c_int,
-    pub parallel_aware: bool_,
-    pub parallel_safe: bool_,
+    pub parallel_aware: bool,
+    pub parallel_safe: bool,
     pub plan_node_id: ::std::os::raw::c_int,
     pub targetlist: *mut List,
     pub qual: *mut List,
@@ -37114,9 +38992,10 @@ fn bindgen_test_layout_ProjectSet() {
 pub struct ModifyTable {
     pub plan: Plan,
     pub operation: CmdType,
-    pub canSetTag: bool_,
+    pub canSetTag: bool,
     pub nominalRelation: Index,
     pub partitioned_rels: *mut List,
+    pub partColsUpdated: bool,
     pub resultRelations: *mut List,
     pub resultRelIndex: ::std::os::raw::c_int,
     pub rootResultRelIndex: ::std::os::raw::c_int,
@@ -37138,7 +39017,7 @@ pub struct ModifyTable {
 fn bindgen_test_layout_ModifyTable() {
     assert_eq!(
         ::std::mem::size_of::<ModifyTable>(),
-        240usize,
+        248usize,
         concat!("Size of: ", stringify!(ModifyTable))
     );
     assert_eq!(
@@ -37197,8 +39076,18 @@ fn bindgen_test_layout_ModifyTable() {
         )
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<ModifyTable>())).resultRelations as *const _ as usize },
+        unsafe { &(*(::std::ptr::null::<ModifyTable>())).partColsUpdated as *const _ as usize },
         128usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ModifyTable),
+            "::",
+            stringify!(partColsUpdated)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ModifyTable>())).resultRelations as *const _ as usize },
+        136usize,
         concat!(
             "Offset of field: ",
             stringify!(ModifyTable),
@@ -37208,7 +39097,7 @@ fn bindgen_test_layout_ModifyTable() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ModifyTable>())).resultRelIndex as *const _ as usize },
-        136usize,
+        144usize,
         concat!(
             "Offset of field: ",
             stringify!(ModifyTable),
@@ -37218,7 +39107,7 @@ fn bindgen_test_layout_ModifyTable() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ModifyTable>())).rootResultRelIndex as *const _ as usize },
-        140usize,
+        148usize,
         concat!(
             "Offset of field: ",
             stringify!(ModifyTable),
@@ -37228,7 +39117,7 @@ fn bindgen_test_layout_ModifyTable() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ModifyTable>())).plans as *const _ as usize },
-        144usize,
+        152usize,
         concat!(
             "Offset of field: ",
             stringify!(ModifyTable),
@@ -37240,7 +39129,7 @@ fn bindgen_test_layout_ModifyTable() {
         unsafe {
             &(*(::std::ptr::null::<ModifyTable>())).withCheckOptionLists as *const _ as usize
         },
-        152usize,
+        160usize,
         concat!(
             "Offset of field: ",
             stringify!(ModifyTable),
@@ -37250,7 +39139,7 @@ fn bindgen_test_layout_ModifyTable() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ModifyTable>())).returningLists as *const _ as usize },
-        160usize,
+        168usize,
         concat!(
             "Offset of field: ",
             stringify!(ModifyTable),
@@ -37260,7 +39149,7 @@ fn bindgen_test_layout_ModifyTable() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ModifyTable>())).fdwPrivLists as *const _ as usize },
-        168usize,
+        176usize,
         concat!(
             "Offset of field: ",
             stringify!(ModifyTable),
@@ -37272,7 +39161,7 @@ fn bindgen_test_layout_ModifyTable() {
         unsafe {
             &(*(::std::ptr::null::<ModifyTable>())).fdwDirectModifyPlans as *const _ as usize
         },
-        176usize,
+        184usize,
         concat!(
             "Offset of field: ",
             stringify!(ModifyTable),
@@ -37282,7 +39171,7 @@ fn bindgen_test_layout_ModifyTable() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ModifyTable>())).rowMarks as *const _ as usize },
-        184usize,
+        192usize,
         concat!(
             "Offset of field: ",
             stringify!(ModifyTable),
@@ -37292,7 +39181,7 @@ fn bindgen_test_layout_ModifyTable() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ModifyTable>())).epqParam as *const _ as usize },
-        192usize,
+        200usize,
         concat!(
             "Offset of field: ",
             stringify!(ModifyTable),
@@ -37302,7 +39191,7 @@ fn bindgen_test_layout_ModifyTable() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ModifyTable>())).onConflictAction as *const _ as usize },
-        196usize,
+        204usize,
         concat!(
             "Offset of field: ",
             stringify!(ModifyTable),
@@ -37312,7 +39201,7 @@ fn bindgen_test_layout_ModifyTable() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ModifyTable>())).arbiterIndexes as *const _ as usize },
-        200usize,
+        208usize,
         concat!(
             "Offset of field: ",
             stringify!(ModifyTable),
@@ -37322,7 +39211,7 @@ fn bindgen_test_layout_ModifyTable() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ModifyTable>())).onConflictSet as *const _ as usize },
-        208usize,
+        216usize,
         concat!(
             "Offset of field: ",
             stringify!(ModifyTable),
@@ -37332,7 +39221,7 @@ fn bindgen_test_layout_ModifyTable() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ModifyTable>())).onConflictWhere as *const _ as usize },
-        216usize,
+        224usize,
         concat!(
             "Offset of field: ",
             stringify!(ModifyTable),
@@ -37342,7 +39231,7 @@ fn bindgen_test_layout_ModifyTable() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ModifyTable>())).exclRelRTI as *const _ as usize },
-        224usize,
+        232usize,
         concat!(
             "Offset of field: ",
             stringify!(ModifyTable),
@@ -37352,7 +39241,7 @@ fn bindgen_test_layout_ModifyTable() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ModifyTable>())).exclRelTlist as *const _ as usize },
-        232usize,
+        240usize,
         concat!(
             "Offset of field: ",
             stringify!(ModifyTable),
@@ -37365,14 +39254,16 @@ fn bindgen_test_layout_ModifyTable() {
 #[derive(Debug, Copy, Clone)]
 pub struct Append {
     pub plan: Plan,
-    pub partitioned_rels: *mut List,
     pub appendplans: *mut List,
+    pub first_partial_plan: ::std::os::raw::c_int,
+    pub partitioned_rels: *mut List,
+    pub part_prune_info: *mut PartitionPruneInfo,
 }
 #[test]
 fn bindgen_test_layout_Append() {
     assert_eq!(
         ::std::mem::size_of::<Append>(),
-        120usize,
+        136usize,
         concat!("Size of: ", stringify!(Append))
     );
     assert_eq!(
@@ -37391,8 +39282,28 @@ fn bindgen_test_layout_Append() {
         )
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<Append>())).partitioned_rels as *const _ as usize },
+        unsafe { &(*(::std::ptr::null::<Append>())).appendplans as *const _ as usize },
         104usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(Append),
+            "::",
+            stringify!(appendplans)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<Append>())).first_partial_plan as *const _ as usize },
+        112usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(Append),
+            "::",
+            stringify!(first_partial_plan)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<Append>())).partitioned_rels as *const _ as usize },
+        120usize,
         concat!(
             "Offset of field: ",
             stringify!(Append),
@@ -37401,13 +39312,13 @@ fn bindgen_test_layout_Append() {
         )
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<Append>())).appendplans as *const _ as usize },
-        112usize,
+        unsafe { &(*(::std::ptr::null::<Append>())).part_prune_info as *const _ as usize },
+        128usize,
         concat!(
             "Offset of field: ",
             stringify!(Append),
             "::",
-            stringify!(appendplans)
+            stringify!(part_prune_info)
         )
     );
 }
@@ -37421,7 +39332,7 @@ pub struct MergeAppend {
     pub sortColIdx: *mut AttrNumber,
     pub sortOperators: *mut Oid,
     pub collations: *mut Oid,
-    pub nullsFirst: *mut bool_,
+    pub nullsFirst: *mut bool,
 }
 #[test]
 fn bindgen_test_layout_MergeAppend() {
@@ -37642,7 +39553,7 @@ fn bindgen_test_layout_BitmapAnd() {
 #[derive(Debug, Copy, Clone)]
 pub struct BitmapOr {
     pub plan: Plan,
-    pub isshared: bool_,
+    pub isshared: bool,
     pub bitmapplans: *mut List,
 }
 #[test]
@@ -37960,7 +39871,7 @@ fn bindgen_test_layout_IndexOnlyScan() {
 pub struct BitmapIndexScan {
     pub scan: Scan,
     pub indexid: Oid,
-    pub isshared: bool_,
+    pub isshared: bool,
     pub indexqual: *mut List,
     pub indexqualorig: *mut List,
 }
@@ -38149,7 +40060,7 @@ fn bindgen_test_layout_SubqueryScan() {
 pub struct FunctionScan {
     pub scan: Scan,
     pub functions: *mut List,
-    pub funcordinality: bool_,
+    pub funcordinality: bool,
 }
 #[test]
 fn bindgen_test_layout_FunctionScan() {
@@ -38411,7 +40322,7 @@ pub struct ForeignScan {
     pub fdw_scan_tlist: *mut List,
     pub fdw_recheck_quals: *mut List,
     pub fs_relids: *mut Bitmapset,
-    pub fsSystemCol: bool_,
+    pub fsSystemCol: bool,
 }
 #[test]
 fn bindgen_test_layout_ForeignScan() {
@@ -38631,7 +40542,7 @@ fn bindgen_test_layout_CustomScan() {
 pub struct Join {
     pub plan: Plan,
     pub jointype: JoinType,
-    pub inner_unique: bool_,
+    pub inner_unique: bool,
     pub joinqual: *mut List,
 }
 #[test]
@@ -38780,12 +40691,12 @@ fn bindgen_test_layout_NestLoopParam() {
 #[derive(Debug, Copy, Clone)]
 pub struct MergeJoin {
     pub join: Join,
-    pub skip_mark_restore: bool_,
+    pub skip_mark_restore: bool,
     pub mergeclauses: *mut List,
     pub mergeFamilies: *mut Oid,
     pub mergeCollations: *mut Oid,
     pub mergeStrategies: *mut ::std::os::raw::c_int,
-    pub mergeNullsFirst: *mut bool_,
+    pub mergeNullsFirst: *mut bool,
 }
 #[test]
 fn bindgen_test_layout_MergeJoin() {
@@ -38945,7 +40856,7 @@ pub struct Sort {
     pub sortColIdx: *mut AttrNumber,
     pub sortOperators: *mut Oid,
     pub collations: *mut Oid,
-    pub nullsFirst: *mut bool_,
+    pub nullsFirst: *mut bool,
 }
 #[test]
 fn bindgen_test_layout_Sort() {
@@ -39217,12 +41128,17 @@ pub struct WindowAgg {
     pub frameOptions: ::std::os::raw::c_int,
     pub startOffset: *mut Node,
     pub endOffset: *mut Node,
+    pub startInRangeFunc: Oid,
+    pub endInRangeFunc: Oid,
+    pub inRangeColl: Oid,
+    pub inRangeAsc: bool,
+    pub inRangeNullsFirst: bool,
 }
 #[test]
 fn bindgen_test_layout_WindowAgg() {
     assert_eq!(
         ::std::mem::size_of::<WindowAgg>(),
-        176usize,
+        192usize,
         concat!("Size of: ", stringify!(WindowAgg))
     );
     assert_eq!(
@@ -39340,6 +41256,56 @@ fn bindgen_test_layout_WindowAgg() {
             stringify!(endOffset)
         )
     );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<WindowAgg>())).startInRangeFunc as *const _ as usize },
+        176usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(WindowAgg),
+            "::",
+            stringify!(startInRangeFunc)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<WindowAgg>())).endInRangeFunc as *const _ as usize },
+        180usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(WindowAgg),
+            "::",
+            stringify!(endInRangeFunc)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<WindowAgg>())).inRangeColl as *const _ as usize },
+        184usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(WindowAgg),
+            "::",
+            stringify!(inRangeColl)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<WindowAgg>())).inRangeAsc as *const _ as usize },
+        188usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(WindowAgg),
+            "::",
+            stringify!(inRangeAsc)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<WindowAgg>())).inRangeNullsFirst as *const _ as usize },
+        189usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(WindowAgg),
+            "::",
+            stringify!(inRangeNullsFirst)
+        )
+    );
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -39408,14 +41374,15 @@ pub struct Gather {
     pub plan: Plan,
     pub num_workers: ::std::os::raw::c_int,
     pub rescan_param: ::std::os::raw::c_int,
-    pub single_copy: bool_,
-    pub invisible: bool_,
+    pub single_copy: bool,
+    pub invisible: bool,
+    pub initParam: *mut Bitmapset,
 }
 #[test]
 fn bindgen_test_layout_Gather() {
     assert_eq!(
         ::std::mem::size_of::<Gather>(),
-        120usize,
+        128usize,
         concat!("Size of: ", stringify!(Gather))
     );
     assert_eq!(
@@ -39473,6 +41440,16 @@ fn bindgen_test_layout_Gather() {
             stringify!(invisible)
         )
     );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<Gather>())).initParam as *const _ as usize },
+        120usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(Gather),
+            "::",
+            stringify!(initParam)
+        )
+    );
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -39484,13 +41461,14 @@ pub struct GatherMerge {
     pub sortColIdx: *mut AttrNumber,
     pub sortOperators: *mut Oid,
     pub collations: *mut Oid,
-    pub nullsFirst: *mut bool_,
+    pub nullsFirst: *mut bool,
+    pub initParam: *mut Bitmapset,
 }
 #[test]
 fn bindgen_test_layout_GatherMerge() {
     assert_eq!(
         ::std::mem::size_of::<GatherMerge>(),
-        152usize,
+        160usize,
         concat!("Size of: ", stringify!(GatherMerge))
     );
     assert_eq!(
@@ -39578,6 +41556,16 @@ fn bindgen_test_layout_GatherMerge() {
             stringify!(nullsFirst)
         )
     );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<GatherMerge>())).initParam as *const _ as usize },
+        152usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GatherMerge),
+            "::",
+            stringify!(initParam)
+        )
+    );
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -39585,13 +41573,14 @@ pub struct Hash {
     pub plan: Plan,
     pub skewTable: Oid,
     pub skewColumn: AttrNumber,
-    pub skewInherit: bool_,
+    pub skewInherit: bool,
+    pub rows_total: f64,
 }
 #[test]
 fn bindgen_test_layout_Hash() {
     assert_eq!(
         ::std::mem::size_of::<Hash>(),
-        112usize,
+        120usize,
         concat!("Size of: ", stringify!(Hash))
     );
     assert_eq!(
@@ -39637,6 +41626,16 @@ fn bindgen_test_layout_Hash() {
             stringify!(Hash),
             "::",
             stringify!(skewInherit)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<Hash>())).rows_total as *const _ as usize },
+        112usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(Hash),
+            "::",
+            stringify!(rows_total)
         )
     );
 }
@@ -39874,7 +41873,7 @@ pub struct PlanRowMark {
     pub allMarkTypes: ::std::os::raw::c_int,
     pub strength: LockClauseStrength,
     pub waitPolicy: LockWaitPolicy,
-    pub isParent: bool_,
+    pub isParent: bool,
 }
 #[test]
 fn bindgen_test_layout_PlanRowMark() {
@@ -39976,6 +41975,393 @@ fn bindgen_test_layout_PlanRowMark() {
             stringify!(PlanRowMark),
             "::",
             stringify!(isParent)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct PartitionPruneInfo {
+    pub type_: NodeTag,
+    pub prune_infos: *mut List,
+    pub other_subplans: *mut Bitmapset,
+}
+#[test]
+fn bindgen_test_layout_PartitionPruneInfo() {
+    assert_eq!(
+        ::std::mem::size_of::<PartitionPruneInfo>(),
+        24usize,
+        concat!("Size of: ", stringify!(PartitionPruneInfo))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<PartitionPruneInfo>(),
+        8usize,
+        concat!("Alignment of ", stringify!(PartitionPruneInfo))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<PartitionPruneInfo>())).type_ as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(PartitionPruneInfo),
+            "::",
+            stringify!(type_)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<PartitionPruneInfo>())).prune_infos as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(PartitionPruneInfo),
+            "::",
+            stringify!(prune_infos)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<PartitionPruneInfo>())).other_subplans as *const _ as usize
+        },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(PartitionPruneInfo),
+            "::",
+            stringify!(other_subplans)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct PartitionedRelPruneInfo {
+    pub type_: NodeTag,
+    pub reloid: Oid,
+    pub pruning_steps: *mut List,
+    pub present_parts: *mut Bitmapset,
+    pub nparts: ::std::os::raw::c_int,
+    pub nexprs: ::std::os::raw::c_int,
+    pub subplan_map: *mut ::std::os::raw::c_int,
+    pub subpart_map: *mut ::std::os::raw::c_int,
+    pub hasexecparam: *mut bool,
+    pub do_initial_prune: bool,
+    pub do_exec_prune: bool,
+    pub execparamids: *mut Bitmapset,
+}
+#[test]
+fn bindgen_test_layout_PartitionedRelPruneInfo() {
+    assert_eq!(
+        ::std::mem::size_of::<PartitionedRelPruneInfo>(),
+        72usize,
+        concat!("Size of: ", stringify!(PartitionedRelPruneInfo))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<PartitionedRelPruneInfo>(),
+        8usize,
+        concat!("Alignment of ", stringify!(PartitionedRelPruneInfo))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<PartitionedRelPruneInfo>())).type_ as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(PartitionedRelPruneInfo),
+            "::",
+            stringify!(type_)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<PartitionedRelPruneInfo>())).reloid as *const _ as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(PartitionedRelPruneInfo),
+            "::",
+            stringify!(reloid)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<PartitionedRelPruneInfo>())).pruning_steps as *const _ as usize
+        },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(PartitionedRelPruneInfo),
+            "::",
+            stringify!(pruning_steps)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<PartitionedRelPruneInfo>())).present_parts as *const _ as usize
+        },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(PartitionedRelPruneInfo),
+            "::",
+            stringify!(present_parts)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<PartitionedRelPruneInfo>())).nparts as *const _ as usize },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(PartitionedRelPruneInfo),
+            "::",
+            stringify!(nparts)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<PartitionedRelPruneInfo>())).nexprs as *const _ as usize },
+        28usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(PartitionedRelPruneInfo),
+            "::",
+            stringify!(nexprs)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<PartitionedRelPruneInfo>())).subplan_map as *const _ as usize
+        },
+        32usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(PartitionedRelPruneInfo),
+            "::",
+            stringify!(subplan_map)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<PartitionedRelPruneInfo>())).subpart_map as *const _ as usize
+        },
+        40usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(PartitionedRelPruneInfo),
+            "::",
+            stringify!(subpart_map)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<PartitionedRelPruneInfo>())).hasexecparam as *const _ as usize
+        },
+        48usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(PartitionedRelPruneInfo),
+            "::",
+            stringify!(hasexecparam)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<PartitionedRelPruneInfo>())).do_initial_prune as *const _
+                as usize
+        },
+        56usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(PartitionedRelPruneInfo),
+            "::",
+            stringify!(do_initial_prune)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<PartitionedRelPruneInfo>())).do_exec_prune as *const _ as usize
+        },
+        57usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(PartitionedRelPruneInfo),
+            "::",
+            stringify!(do_exec_prune)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<PartitionedRelPruneInfo>())).execparamids as *const _ as usize
+        },
+        64usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(PartitionedRelPruneInfo),
+            "::",
+            stringify!(execparamids)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct PartitionPruneStep {
+    pub type_: NodeTag,
+    pub step_id: ::std::os::raw::c_int,
+}
+#[test]
+fn bindgen_test_layout_PartitionPruneStep() {
+    assert_eq!(
+        ::std::mem::size_of::<PartitionPruneStep>(),
+        8usize,
+        concat!("Size of: ", stringify!(PartitionPruneStep))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<PartitionPruneStep>(),
+        4usize,
+        concat!("Alignment of ", stringify!(PartitionPruneStep))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<PartitionPruneStep>())).type_ as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(PartitionPruneStep),
+            "::",
+            stringify!(type_)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<PartitionPruneStep>())).step_id as *const _ as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(PartitionPruneStep),
+            "::",
+            stringify!(step_id)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct PartitionPruneStepOp {
+    pub step: PartitionPruneStep,
+    pub opstrategy: StrategyNumber,
+    pub exprs: *mut List,
+    pub cmpfns: *mut List,
+    pub nullkeys: *mut Bitmapset,
+}
+#[test]
+fn bindgen_test_layout_PartitionPruneStepOp() {
+    assert_eq!(
+        ::std::mem::size_of::<PartitionPruneStepOp>(),
+        40usize,
+        concat!("Size of: ", stringify!(PartitionPruneStepOp))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<PartitionPruneStepOp>(),
+        8usize,
+        concat!("Alignment of ", stringify!(PartitionPruneStepOp))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<PartitionPruneStepOp>())).step as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(PartitionPruneStepOp),
+            "::",
+            stringify!(step)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<PartitionPruneStepOp>())).opstrategy as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(PartitionPruneStepOp),
+            "::",
+            stringify!(opstrategy)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<PartitionPruneStepOp>())).exprs as *const _ as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(PartitionPruneStepOp),
+            "::",
+            stringify!(exprs)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<PartitionPruneStepOp>())).cmpfns as *const _ as usize },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(PartitionPruneStepOp),
+            "::",
+            stringify!(cmpfns)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<PartitionPruneStepOp>())).nullkeys as *const _ as usize },
+        32usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(PartitionPruneStepOp),
+            "::",
+            stringify!(nullkeys)
+        )
+    );
+}
+pub const PartitionPruneCombineOp_PARTPRUNE_COMBINE_UNION: PartitionPruneCombineOp = 0;
+pub const PartitionPruneCombineOp_PARTPRUNE_COMBINE_INTERSECT: PartitionPruneCombineOp = 1;
+pub type PartitionPruneCombineOp = u32;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct PartitionPruneStepCombine {
+    pub step: PartitionPruneStep,
+    pub combineOp: PartitionPruneCombineOp,
+    pub source_stepids: *mut List,
+}
+#[test]
+fn bindgen_test_layout_PartitionPruneStepCombine() {
+    assert_eq!(
+        ::std::mem::size_of::<PartitionPruneStepCombine>(),
+        24usize,
+        concat!("Size of: ", stringify!(PartitionPruneStepCombine))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<PartitionPruneStepCombine>(),
+        8usize,
+        concat!("Alignment of ", stringify!(PartitionPruneStepCombine))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<PartitionPruneStepCombine>())).step as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(PartitionPruneStepCombine),
+            "::",
+            stringify!(step)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<PartitionPruneStepCombine>())).combineOp as *const _ as usize
+        },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(PartitionPruneStepCombine),
+            "::",
+            stringify!(combineOp)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<PartitionPruneStepCombine>())).source_stepids as *const _
+                as usize
+        },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(PartitionPruneStepCombine),
+            "::",
+            stringify!(source_stepids)
         )
     );
 }
@@ -40331,7 +42717,7 @@ extern "C" {
         hashp: *mut HTAB,
         keyPtr: *const ::std::os::raw::c_void,
         action: HASHACTION,
-        foundPtr: *mut bool_,
+        foundPtr: *mut bool,
     ) -> *mut ::std::os::raw::c_void;
 }
 extern "C" {
@@ -40343,7 +42729,7 @@ extern "C" {
         keyPtr: *const ::std::os::raw::c_void,
         hashvalue: uint32,
         action: HASHACTION,
-        foundPtr: *mut bool_,
+        foundPtr: *mut bool,
     ) -> *mut ::std::os::raw::c_void;
 }
 extern "C" {
@@ -40351,7 +42737,7 @@ extern "C" {
         hashp: *mut HTAB,
         existingEntry: *mut ::std::os::raw::c_void,
         newKeyPtr: *const ::std::os::raw::c_void,
-    ) -> bool_;
+    ) -> bool;
 }
 extern "C" {
     pub fn hash_get_num_entries(hashp: *mut HTAB) -> ::std::os::raw::c_long;
@@ -40378,10 +42764,10 @@ extern "C" {
     pub fn hash_get_shared_size(info: *mut HASHCTL, flags: ::std::os::raw::c_int) -> Size;
 }
 extern "C" {
-    pub fn AtEOXact_HashTables(isCommit: bool_);
+    pub fn AtEOXact_HashTables(isCommit: bool);
 }
 extern "C" {
-    pub fn AtEOSubXact_HashTables(isCommit: bool_, nestDepth: ::std::os::raw::c_int);
+    pub fn AtEOSubXact_HashTables(isCommit: bool, nestDepth: ::std::os::raw::c_int);
 }
 extern "C" {
     pub fn string_hash(key: *const ::std::os::raw::c_void, keysize: Size) -> uint32;
@@ -40410,12 +42796,12 @@ pub struct Trigger {
     pub tgfoid: Oid,
     pub tgtype: int16,
     pub tgenabled: ::std::os::raw::c_char,
-    pub tgisinternal: bool_,
+    pub tgisinternal: bool,
     pub tgconstrrelid: Oid,
     pub tgconstrindid: Oid,
     pub tgconstraint: Oid,
-    pub tgdeferrable: bool_,
-    pub tginitdeferred: bool_,
+    pub tgdeferrable: bool,
+    pub tginitdeferred: bool,
     pub tgnargs: int16,
     pub tgnattr: int16,
     pub tgattr: *mut int16,
@@ -40622,27 +43008,27 @@ fn bindgen_test_layout_Trigger() {
 pub struct TriggerDesc {
     pub triggers: *mut Trigger,
     pub numtriggers: ::std::os::raw::c_int,
-    pub trig_insert_before_row: bool_,
-    pub trig_insert_after_row: bool_,
-    pub trig_insert_instead_row: bool_,
-    pub trig_insert_before_statement: bool_,
-    pub trig_insert_after_statement: bool_,
-    pub trig_update_before_row: bool_,
-    pub trig_update_after_row: bool_,
-    pub trig_update_instead_row: bool_,
-    pub trig_update_before_statement: bool_,
-    pub trig_update_after_statement: bool_,
-    pub trig_delete_before_row: bool_,
-    pub trig_delete_after_row: bool_,
-    pub trig_delete_instead_row: bool_,
-    pub trig_delete_before_statement: bool_,
-    pub trig_delete_after_statement: bool_,
-    pub trig_truncate_before_statement: bool_,
-    pub trig_truncate_after_statement: bool_,
-    pub trig_insert_new_table: bool_,
-    pub trig_update_old_table: bool_,
-    pub trig_update_new_table: bool_,
-    pub trig_delete_old_table: bool_,
+    pub trig_insert_before_row: bool,
+    pub trig_insert_after_row: bool,
+    pub trig_insert_instead_row: bool,
+    pub trig_insert_before_statement: bool,
+    pub trig_insert_after_statement: bool,
+    pub trig_update_before_row: bool,
+    pub trig_update_after_row: bool,
+    pub trig_update_instead_row: bool,
+    pub trig_update_before_statement: bool,
+    pub trig_update_after_statement: bool,
+    pub trig_delete_before_row: bool,
+    pub trig_delete_after_row: bool,
+    pub trig_delete_instead_row: bool,
+    pub trig_delete_before_statement: bool,
+    pub trig_delete_after_statement: bool,
+    pub trig_truncate_before_statement: bool,
+    pub trig_truncate_after_statement: bool,
+    pub trig_insert_new_table: bool,
+    pub trig_update_old_table: bool,
+    pub trig_update_new_table: bool,
+    pub trig_delete_old_table: bool,
 }
 #[test]
 fn bindgen_test_layout_TriggerDesc() {
@@ -40934,24 +43320,706 @@ fn bindgen_test_layout_TriggerDesc() {
         )
     );
 }
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct dirent {
+    pub d_ino: __ino_t,
+    pub d_off: __off_t,
+    pub d_reclen: ::std::os::raw::c_ushort,
+    pub d_type: ::std::os::raw::c_uchar,
+    pub d_name: [::std::os::raw::c_char; 256usize],
+}
+#[test]
+fn bindgen_test_layout_dirent() {
+    assert_eq!(
+        ::std::mem::size_of::<dirent>(),
+        280usize,
+        concat!("Size of: ", stringify!(dirent))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<dirent>(),
+        8usize,
+        concat!("Alignment of ", stringify!(dirent))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<dirent>())).d_ino as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(dirent),
+            "::",
+            stringify!(d_ino)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<dirent>())).d_off as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(dirent),
+            "::",
+            stringify!(d_off)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<dirent>())).d_reclen as *const _ as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(dirent),
+            "::",
+            stringify!(d_reclen)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<dirent>())).d_type as *const _ as usize },
+        18usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(dirent),
+            "::",
+            stringify!(d_type)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<dirent>())).d_name as *const _ as usize },
+        19usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(dirent),
+            "::",
+            stringify!(d_name)
+        )
+    );
+}
+pub const DT_UNKNOWN: _bindgen_ty_9 = 0;
+pub const DT_FIFO: _bindgen_ty_9 = 1;
+pub const DT_CHR: _bindgen_ty_9 = 2;
+pub const DT_DIR: _bindgen_ty_9 = 4;
+pub const DT_BLK: _bindgen_ty_9 = 6;
+pub const DT_REG: _bindgen_ty_9 = 8;
+pub const DT_LNK: _bindgen_ty_9 = 10;
+pub const DT_SOCK: _bindgen_ty_9 = 12;
+pub const DT_WHT: _bindgen_ty_9 = 14;
+pub type _bindgen_ty_9 = u32;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct __dirstream {
+    _unused: [u8; 0],
+}
+pub type DIR = __dirstream;
+extern "C" {
+    pub fn opendir(__name: *const ::std::os::raw::c_char) -> *mut DIR;
+}
+extern "C" {
+    pub fn fdopendir(__fd: ::std::os::raw::c_int) -> *mut DIR;
+}
+extern "C" {
+    pub fn closedir(__dirp: *mut DIR) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn readdir(__dirp: *mut DIR) -> *mut dirent;
+}
+extern "C" {
+    pub fn readdir_r(
+        __dirp: *mut DIR,
+        __entry: *mut dirent,
+        __result: *mut *mut dirent,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn rewinddir(__dirp: *mut DIR);
+}
+extern "C" {
+    pub fn seekdir(__dirp: *mut DIR, __pos: ::std::os::raw::c_long);
+}
+extern "C" {
+    pub fn telldir(__dirp: *mut DIR) -> ::std::os::raw::c_long;
+}
+extern "C" {
+    pub fn dirfd(__dirp: *mut DIR) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn scandir(
+        __dir: *const ::std::os::raw::c_char,
+        __namelist: *mut *mut *mut dirent,
+        __selector: ::std::option::Option<
+            unsafe extern "C" fn(arg1: *const dirent) -> ::std::os::raw::c_int,
+        >,
+        __cmp: ::std::option::Option<
+            unsafe extern "C" fn(
+                arg1: *mut *const dirent,
+                arg2: *mut *const dirent,
+            ) -> ::std::os::raw::c_int,
+        >,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn alphasort(__e1: *mut *const dirent, __e2: *mut *const dirent) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn getdirentries(
+        __fd: ::std::os::raw::c_int,
+        __buf: *mut ::std::os::raw::c_char,
+        __nbytes: usize,
+        __basep: *mut __off_t,
+    ) -> __ssize_t;
+}
+pub type File = ::std::os::raw::c_int;
+extern "C" {
+    #[link_name = "\u{1}max_files_per_process"]
+    pub static mut max_files_per_process: ::std::os::raw::c_int;
+}
+extern "C" {
+    #[link_name = "\u{1}max_safe_fds"]
+    pub static mut max_safe_fds: ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn PathNameOpenFile(
+        fileName: *const ::std::os::raw::c_char,
+        fileFlags: ::std::os::raw::c_int,
+    ) -> File;
+}
+extern "C" {
+    pub fn PathNameOpenFilePerm(
+        fileName: *const ::std::os::raw::c_char,
+        fileFlags: ::std::os::raw::c_int,
+        fileMode: mode_t,
+    ) -> File;
+}
+extern "C" {
+    pub fn OpenTemporaryFile(interXact: bool) -> File;
+}
+extern "C" {
+    pub fn FileClose(file: File);
+}
+extern "C" {
+    pub fn FilePrefetch(
+        file: File,
+        offset: off_t,
+        amount: ::std::os::raw::c_int,
+        wait_event_info: uint32,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn FileRead(
+        file: File,
+        buffer: *mut ::std::os::raw::c_char,
+        amount: ::std::os::raw::c_int,
+        wait_event_info: uint32,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn FileWrite(
+        file: File,
+        buffer: *mut ::std::os::raw::c_char,
+        amount: ::std::os::raw::c_int,
+        wait_event_info: uint32,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn FileSync(file: File, wait_event_info: uint32) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn FileSeek(file: File, offset: off_t, whence: ::std::os::raw::c_int) -> off_t;
+}
+extern "C" {
+    pub fn FileTruncate(
+        file: File,
+        offset: off_t,
+        wait_event_info: uint32,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn FileWriteback(file: File, offset: off_t, nbytes: off_t, wait_event_info: uint32);
+}
+extern "C" {
+    pub fn FilePathName(file: File) -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn FileGetRawDesc(file: File) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn FileGetRawFlags(file: File) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn FileGetRawMode(file: File) -> mode_t;
+}
+extern "C" {
+    pub fn PathNameCreateTemporaryFile(
+        name: *const ::std::os::raw::c_char,
+        error_on_failure: bool,
+    ) -> File;
+}
+extern "C" {
+    pub fn PathNameOpenTemporaryFile(name: *const ::std::os::raw::c_char) -> File;
+}
+extern "C" {
+    pub fn PathNameDeleteTemporaryFile(
+        name: *const ::std::os::raw::c_char,
+        error_on_failure: bool,
+    ) -> bool;
+}
+extern "C" {
+    pub fn PathNameCreateTemporaryDir(
+        base: *const ::std::os::raw::c_char,
+        name: *const ::std::os::raw::c_char,
+    );
+}
+extern "C" {
+    pub fn PathNameDeleteTemporaryDir(name: *const ::std::os::raw::c_char);
+}
+extern "C" {
+    pub fn TempTablespacePath(path: *mut ::std::os::raw::c_char, tablespace: Oid);
+}
+extern "C" {
+    pub fn AllocateFile(
+        name: *const ::std::os::raw::c_char,
+        mode: *const ::std::os::raw::c_char,
+    ) -> *mut FILE;
+}
+extern "C" {
+    pub fn FreeFile(file: *mut FILE) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn OpenPipeStream(
+        command: *const ::std::os::raw::c_char,
+        mode: *const ::std::os::raw::c_char,
+    ) -> *mut FILE;
+}
+extern "C" {
+    pub fn ClosePipeStream(file: *mut FILE) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn AllocateDir(dirname: *const ::std::os::raw::c_char) -> *mut DIR;
+}
+extern "C" {
+    pub fn ReadDir(dir: *mut DIR, dirname: *const ::std::os::raw::c_char) -> *mut dirent;
+}
+extern "C" {
+    pub fn ReadDirExtended(
+        dir: *mut DIR,
+        dirname: *const ::std::os::raw::c_char,
+        elevel: ::std::os::raw::c_int,
+    ) -> *mut dirent;
+}
+extern "C" {
+    pub fn FreeDir(dir: *mut DIR) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn OpenTransientFile(
+        fileName: *const ::std::os::raw::c_char,
+        fileFlags: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn OpenTransientFilePerm(
+        fileName: *const ::std::os::raw::c_char,
+        fileFlags: ::std::os::raw::c_int,
+        fileMode: mode_t,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn CloseTransientFile(fd: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn BasicOpenFile(
+        fileName: *const ::std::os::raw::c_char,
+        fileFlags: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn BasicOpenFilePerm(
+        fileName: *const ::std::os::raw::c_char,
+        fileFlags: ::std::os::raw::c_int,
+        fileMode: mode_t,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn MakePGDirectory(directoryName: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn InitFileAccess();
+}
+extern "C" {
+    pub fn set_max_safe_fds();
+}
+extern "C" {
+    pub fn closeAllVfds();
+}
+extern "C" {
+    pub fn SetTempTablespaces(tableSpaces: *mut Oid, numSpaces: ::std::os::raw::c_int);
+}
+extern "C" {
+    pub fn TempTablespacesAreSet() -> bool;
+}
+extern "C" {
+    pub fn GetTempTablespaces(
+        tableSpaces: *mut Oid,
+        numSpaces: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn GetNextTempTableSpace() -> Oid;
+}
+extern "C" {
+    pub fn AtEOXact_Files(isCommit: bool);
+}
+extern "C" {
+    pub fn AtEOSubXact_Files(
+        isCommit: bool,
+        mySubid: SubTransactionId,
+        parentSubid: SubTransactionId,
+    );
+}
+extern "C" {
+    pub fn RemovePgTempFiles();
+}
+extern "C" {
+    pub fn looks_like_temp_rel_name(name: *const ::std::os::raw::c_char) -> bool;
+}
+extern "C" {
+    pub fn pg_fsync(fd: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn pg_fsync_no_writethrough(fd: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn pg_fsync_writethrough(fd: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn pg_fdatasync(fd: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn pg_flush_data(fd: ::std::os::raw::c_int, offset: off_t, amount: off_t);
+}
+extern "C" {
+    pub fn fsync_fname(fname: *const ::std::os::raw::c_char, isdir: bool);
+}
+extern "C" {
+    pub fn durable_rename(
+        oldfile: *const ::std::os::raw::c_char,
+        newfile: *const ::std::os::raw::c_char,
+        loglevel: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn durable_unlink(
+        fname: *const ::std::os::raw::c_char,
+        loglevel: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn durable_link_or_rename(
+        oldfile: *const ::std::os::raw::c_char,
+        newfile: *const ::std::os::raw::c_char,
+        loglevel: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn SyncDataDirectory();
+}
+pub type slock_t = ::std::os::raw::c_uchar;
+extern "C" {
+    #[link_name = "\u{1}dummy_spinlock"]
+    pub static mut dummy_spinlock: slock_t;
+}
+extern "C" {
+    pub fn s_lock(
+        lock: *mut slock_t,
+        file: *const ::std::os::raw::c_char,
+        line: ::std::os::raw::c_int,
+        func: *const ::std::os::raw::c_char,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn set_spins_per_delay(shared_spins_per_delay: ::std::os::raw::c_int);
+}
+extern "C" {
+    pub fn update_spins_per_delay(
+        shared_spins_per_delay: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct SpinDelayStatus {
+    pub spins: ::std::os::raw::c_int,
+    pub delays: ::std::os::raw::c_int,
+    pub cur_delay: ::std::os::raw::c_int,
+    pub file: *const ::std::os::raw::c_char,
+    pub line: ::std::os::raw::c_int,
+    pub func: *const ::std::os::raw::c_char,
+}
+#[test]
+fn bindgen_test_layout_SpinDelayStatus() {
+    assert_eq!(
+        ::std::mem::size_of::<SpinDelayStatus>(),
+        40usize,
+        concat!("Size of: ", stringify!(SpinDelayStatus))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<SpinDelayStatus>(),
+        8usize,
+        concat!("Alignment of ", stringify!(SpinDelayStatus))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<SpinDelayStatus>())).spins as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(SpinDelayStatus),
+            "::",
+            stringify!(spins)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<SpinDelayStatus>())).delays as *const _ as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(SpinDelayStatus),
+            "::",
+            stringify!(delays)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<SpinDelayStatus>())).cur_delay as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(SpinDelayStatus),
+            "::",
+            stringify!(cur_delay)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<SpinDelayStatus>())).file as *const _ as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(SpinDelayStatus),
+            "::",
+            stringify!(file)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<SpinDelayStatus>())).line as *const _ as usize },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(SpinDelayStatus),
+            "::",
+            stringify!(line)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<SpinDelayStatus>())).func as *const _ as usize },
+        32usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(SpinDelayStatus),
+            "::",
+            stringify!(func)
+        )
+    );
+}
+extern "C" {
+    pub fn perform_spin_delay(status: *mut SpinDelayStatus);
+}
+extern "C" {
+    pub fn finish_spin_delay(status: *mut SpinDelayStatus);
+}
+extern "C" {
+    pub fn SpinlockSemas() -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn SpinlockSemaSize() -> Size;
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct SharedFileSet {
+    pub creator_pid: pid_t,
+    pub number: uint32,
+    pub mutex: slock_t,
+    pub refcnt: ::std::os::raw::c_int,
+    pub ntablespaces: ::std::os::raw::c_int,
+    pub tablespaces: [Oid; 8usize],
+}
+#[test]
+fn bindgen_test_layout_SharedFileSet() {
+    assert_eq!(
+        ::std::mem::size_of::<SharedFileSet>(),
+        52usize,
+        concat!("Size of: ", stringify!(SharedFileSet))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<SharedFileSet>(),
+        4usize,
+        concat!("Alignment of ", stringify!(SharedFileSet))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<SharedFileSet>())).creator_pid as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(SharedFileSet),
+            "::",
+            stringify!(creator_pid)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<SharedFileSet>())).number as *const _ as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(SharedFileSet),
+            "::",
+            stringify!(number)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<SharedFileSet>())).mutex as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(SharedFileSet),
+            "::",
+            stringify!(mutex)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<SharedFileSet>())).refcnt as *const _ as usize },
+        12usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(SharedFileSet),
+            "::",
+            stringify!(refcnt)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<SharedFileSet>())).ntablespaces as *const _ as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(SharedFileSet),
+            "::",
+            stringify!(ntablespaces)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<SharedFileSet>())).tablespaces as *const _ as usize },
+        20usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(SharedFileSet),
+            "::",
+            stringify!(tablespaces)
+        )
+    );
+}
+extern "C" {
+    pub fn SharedFileSetInit(fileset: *mut SharedFileSet, seg: *mut dsm_segment);
+}
+extern "C" {
+    pub fn SharedFileSetAttach(fileset: *mut SharedFileSet, seg: *mut dsm_segment);
+}
+extern "C" {
+    pub fn SharedFileSetCreate(
+        fileset: *mut SharedFileSet,
+        name: *const ::std::os::raw::c_char,
+    ) -> File;
+}
+extern "C" {
+    pub fn SharedFileSetOpen(
+        fileset: *mut SharedFileSet,
+        name: *const ::std::os::raw::c_char,
+    ) -> File;
+}
+extern "C" {
+    pub fn SharedFileSetDelete(
+        fileset: *mut SharedFileSet,
+        name: *const ::std::os::raw::c_char,
+        error_on_failure: bool,
+    ) -> bool;
+}
+extern "C" {
+    pub fn SharedFileSetDeleteAll(fileset: *mut SharedFileSet);
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct SharedTuplestore {
+    _unused: [u8; 0],
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct SharedTuplestoreAccessor {
+    _unused: [u8; 0],
+}
+extern "C" {
+    pub fn sts_estimate(participants: ::std::os::raw::c_int) -> usize;
+}
+extern "C" {
+    pub fn sts_initialize(
+        sts: *mut SharedTuplestore,
+        participants: ::std::os::raw::c_int,
+        my_participant_number: ::std::os::raw::c_int,
+        meta_data_size: usize,
+        flags: ::std::os::raw::c_int,
+        fileset: *mut SharedFileSet,
+        name: *const ::std::os::raw::c_char,
+    ) -> *mut SharedTuplestoreAccessor;
+}
+extern "C" {
+    pub fn sts_attach(
+        sts: *mut SharedTuplestore,
+        my_participant_number: ::std::os::raw::c_int,
+        fileset: *mut SharedFileSet,
+    ) -> *mut SharedTuplestoreAccessor;
+}
+extern "C" {
+    pub fn sts_end_write(accessor: *mut SharedTuplestoreAccessor);
+}
+extern "C" {
+    pub fn sts_reinitialize(accessor: *mut SharedTuplestoreAccessor);
+}
+extern "C" {
+    pub fn sts_begin_parallel_scan(accessor: *mut SharedTuplestoreAccessor);
+}
+extern "C" {
+    pub fn sts_end_parallel_scan(accessor: *mut SharedTuplestoreAccessor);
+}
+extern "C" {
+    pub fn sts_puttuple(
+        accessor: *mut SharedTuplestoreAccessor,
+        meta_data: *mut ::std::os::raw::c_void,
+        tuple: MinimalTuple,
+    );
+}
+extern "C" {
+    pub fn sts_parallel_scan_next(
+        accessor: *mut SharedTuplestoreAccessor,
+        meta_data: *mut ::std::os::raw::c_void,
+    ) -> MinimalTuple;
+}
 pub type SortSupport = *mut SortSupportData;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct SortSupportData {
     pub ssup_cxt: MemoryContext,
     pub ssup_collation: Oid,
-    pub ssup_reverse: bool_,
-    pub ssup_nulls_first: bool_,
+    pub ssup_reverse: bool,
+    pub ssup_nulls_first: bool,
     pub ssup_attno: AttrNumber,
     pub ssup_extra: *mut ::std::os::raw::c_void,
     pub comparator: ::std::option::Option<
         unsafe extern "C" fn(x: Datum, y: Datum, ssup: SortSupport) -> ::std::os::raw::c_int,
     >,
-    pub abbreviate: bool_,
+    pub abbreviate: bool,
     pub abbrev_converter:
         ::std::option::Option<unsafe extern "C" fn(original: Datum, ssup: SortSupport) -> Datum>,
     pub abbrev_abort: ::std::option::Option<
-        unsafe extern "C" fn(memtupcount: ::std::os::raw::c_int, ssup: SortSupport) -> bool_,
+        unsafe extern "C" fn(memtupcount: ::std::os::raw::c_int, ssup: SortSupport) -> bool,
     >,
     pub abbrev_full_comparator: ::std::option::Option<
         unsafe extern "C" fn(x: Datum, y: Datum, ssup: SortSupport) -> ::std::os::raw::c_int,
@@ -41099,20 +44167,21 @@ extern "C" {
 #[derive(Debug, Copy, Clone)]
 pub struct TupleTableSlot {
     pub type_: NodeTag,
-    pub tts_isempty: bool_,
-    pub tts_shouldFree: bool_,
-    pub tts_shouldFreeMin: bool_,
-    pub tts_slow: bool_,
+    pub tts_isempty: bool,
+    pub tts_shouldFree: bool,
+    pub tts_shouldFreeMin: bool,
+    pub tts_slow: bool,
     pub tts_tuple: HeapTuple,
     pub tts_tupleDescriptor: TupleDesc,
     pub tts_mcxt: MemoryContext,
     pub tts_buffer: Buffer,
     pub tts_nvalid: ::std::os::raw::c_int,
     pub tts_values: *mut Datum,
-    pub tts_isnull: *mut bool_,
+    pub tts_isnull: *mut bool,
     pub tts_mintuple: MinimalTuple,
     pub tts_minhdr: HeapTupleData,
-    pub tts_off: ::std::os::raw::c_long,
+    pub tts_off: uint32,
+    pub tts_fixedTupleDescriptor: bool,
 }
 #[test]
 fn bindgen_test_layout_TupleTableSlot() {
@@ -41280,15 +44349,27 @@ fn bindgen_test_layout_TupleTableSlot() {
             stringify!(tts_off)
         )
     );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<TupleTableSlot>())).tts_fixedTupleDescriptor as *const _ as usize
+        },
+        92usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(TupleTableSlot),
+            "::",
+            stringify!(tts_fixedTupleDescriptor)
+        )
+    );
 }
 extern "C" {
-    pub fn MakeTupleTableSlot() -> *mut TupleTableSlot;
+    pub fn MakeTupleTableSlot(desc: TupleDesc) -> *mut TupleTableSlot;
 }
 extern "C" {
-    pub fn ExecAllocTableSlot(tupleTable: *mut *mut List) -> *mut TupleTableSlot;
+    pub fn ExecAllocTableSlot(tupleTable: *mut *mut List, desc: TupleDesc) -> *mut TupleTableSlot;
 }
 extern "C" {
-    pub fn ExecResetTupleTable(tupleTable: *mut List, shouldFree: bool_);
+    pub fn ExecResetTupleTable(tupleTable: *mut List, shouldFree: bool);
 }
 extern "C" {
     pub fn MakeSingleTupleTableSlot(tupdesc: TupleDesc) -> *mut TupleTableSlot;
@@ -41304,14 +44385,14 @@ extern "C" {
         tuple: HeapTuple,
         slot: *mut TupleTableSlot,
         buffer: Buffer,
-        shouldFree: bool_,
+        shouldFree: bool,
     ) -> *mut TupleTableSlot;
 }
 extern "C" {
     pub fn ExecStoreMinimalTuple(
         mtup: MinimalTuple,
         slot: *mut TupleTableSlot,
-        shouldFree: bool_,
+        shouldFree: bool,
     ) -> *mut TupleTableSlot;
 }
 extern "C" {
@@ -41351,7 +44432,7 @@ extern "C" {
     pub fn slot_getattr(
         slot: *mut TupleTableSlot,
         attnum: ::std::os::raw::c_int,
-        isnull: *mut bool_,
+        isnull: *mut bool,
     ) -> Datum;
 }
 extern "C" {
@@ -41361,15 +44442,22 @@ extern "C" {
     pub fn slot_getsomeattrs(slot: *mut TupleTableSlot, attnum: ::std::os::raw::c_int);
 }
 extern "C" {
-    pub fn slot_attisnull(slot: *mut TupleTableSlot, attnum: ::std::os::raw::c_int) -> bool_;
+    pub fn slot_attisnull(slot: *mut TupleTableSlot, attnum: ::std::os::raw::c_int) -> bool;
 }
 extern "C" {
     pub fn slot_getsysattr(
         slot: *mut TupleTableSlot,
         attnum: ::std::os::raw::c_int,
         value: *mut Datum,
-        isnull: *mut bool_,
-    ) -> bool_;
+        isnull: *mut bool,
+    ) -> bool;
+}
+extern "C" {
+    pub fn slot_getmissingattrs(
+        slot: *mut TupleTableSlot,
+        startAttNum: ::std::os::raw::c_int,
+        lastAttNum: ::std::os::raw::c_int,
+    );
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -41378,8 +44466,8 @@ pub struct Tuplestorestate {
 }
 extern "C" {
     pub fn tuplestore_begin_heap(
-        randomAccess: bool_,
-        interXact: bool_,
+        randomAccess: bool,
+        interXact: bool,
         maxKBytes: ::std::os::raw::c_int,
     ) -> *mut Tuplestorestate;
 }
@@ -41397,7 +44485,7 @@ extern "C" {
         state: *mut Tuplestorestate,
         tdesc: TupleDesc,
         values: *mut Datum,
-        isnull: *mut bool_,
+        isnull: *mut bool,
     );
 }
 extern "C" {
@@ -41420,31 +44508,31 @@ extern "C" {
     pub fn tuplestore_trim(state: *mut Tuplestorestate);
 }
 extern "C" {
-    pub fn tuplestore_in_memory(state: *mut Tuplestorestate) -> bool_;
+    pub fn tuplestore_in_memory(state: *mut Tuplestorestate) -> bool;
 }
 extern "C" {
     pub fn tuplestore_gettupleslot(
         state: *mut Tuplestorestate,
-        forward: bool_,
-        copy: bool_,
+        forward: bool,
+        copy: bool,
         slot: *mut TupleTableSlot,
-    ) -> bool_;
+    ) -> bool;
 }
 extern "C" {
-    pub fn tuplestore_advance(state: *mut Tuplestorestate, forward: bool_) -> bool_;
+    pub fn tuplestore_advance(state: *mut Tuplestorestate, forward: bool) -> bool;
 }
 extern "C" {
     pub fn tuplestore_skiptuples(
         state: *mut Tuplestorestate,
         ntuples: int64,
-        forward: bool_,
-    ) -> bool_;
+        forward: bool,
+    ) -> bool;
 }
 extern "C" {
     pub fn tuplestore_tuple_count(state: *mut Tuplestorestate) -> int64;
 }
 extern "C" {
-    pub fn tuplestore_ateof(state: *mut Tuplestorestate) -> bool_;
+    pub fn tuplestore_ateof(state: *mut Tuplestorestate) -> bool;
 }
 extern "C" {
     pub fn tuplestore_rescan(state: *mut Tuplestorestate);
@@ -41528,7 +44616,7 @@ extern "C" {
     pub fn index_form_tuple(
         tupleDescriptor: TupleDesc,
         values: *mut Datum,
-        isnull: *mut bool_,
+        isnull: *mut bool,
     ) -> IndexTuple;
 }
 extern "C" {
@@ -41543,16 +44631,146 @@ extern "C" {
         tup: IndexTuple,
         tupleDescriptor: TupleDesc,
         values: *mut Datum,
-        isnull: *mut bool_,
+        isnull: *mut bool,
     );
 }
 extern "C" {
     pub fn CopyIndexTuple(source: IndexTuple) -> IndexTuple;
 }
+extern "C" {
+    pub fn index_truncate_tuple(
+        sourceDescriptor: TupleDesc,
+        source: IndexTuple,
+        leavenatts: ::std::os::raw::c_int,
+    ) -> IndexTuple;
+}
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct Tuplesortstate {
     _unused: [u8; 0],
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct Sharedsort {
+    _unused: [u8; 0],
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct SortCoordinateData {
+    pub isWorker: bool,
+    pub nParticipants: ::std::os::raw::c_int,
+    pub sharedsort: *mut Sharedsort,
+}
+#[test]
+fn bindgen_test_layout_SortCoordinateData() {
+    assert_eq!(
+        ::std::mem::size_of::<SortCoordinateData>(),
+        16usize,
+        concat!("Size of: ", stringify!(SortCoordinateData))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<SortCoordinateData>(),
+        8usize,
+        concat!("Alignment of ", stringify!(SortCoordinateData))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<SortCoordinateData>())).isWorker as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(SortCoordinateData),
+            "::",
+            stringify!(isWorker)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<SortCoordinateData>())).nParticipants as *const _ as usize
+        },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(SortCoordinateData),
+            "::",
+            stringify!(nParticipants)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<SortCoordinateData>())).sharedsort as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(SortCoordinateData),
+            "::",
+            stringify!(sharedsort)
+        )
+    );
+}
+pub type SortCoordinate = *mut SortCoordinateData;
+pub const TuplesortMethod_SORT_TYPE_STILL_IN_PROGRESS: TuplesortMethod = 0;
+pub const TuplesortMethod_SORT_TYPE_TOP_N_HEAPSORT: TuplesortMethod = 1;
+pub const TuplesortMethod_SORT_TYPE_QUICKSORT: TuplesortMethod = 2;
+pub const TuplesortMethod_SORT_TYPE_EXTERNAL_SORT: TuplesortMethod = 3;
+pub const TuplesortMethod_SORT_TYPE_EXTERNAL_MERGE: TuplesortMethod = 4;
+pub type TuplesortMethod = u32;
+pub const TuplesortSpaceType_SORT_SPACE_TYPE_DISK: TuplesortSpaceType = 0;
+pub const TuplesortSpaceType_SORT_SPACE_TYPE_MEMORY: TuplesortSpaceType = 1;
+pub type TuplesortSpaceType = u32;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct TuplesortInstrumentation {
+    pub sortMethod: TuplesortMethod,
+    pub spaceType: TuplesortSpaceType,
+    pub spaceUsed: ::std::os::raw::c_long,
+}
+#[test]
+fn bindgen_test_layout_TuplesortInstrumentation() {
+    assert_eq!(
+        ::std::mem::size_of::<TuplesortInstrumentation>(),
+        16usize,
+        concat!("Size of: ", stringify!(TuplesortInstrumentation))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<TuplesortInstrumentation>(),
+        8usize,
+        concat!("Alignment of ", stringify!(TuplesortInstrumentation))
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<TuplesortInstrumentation>())).sortMethod as *const _ as usize
+        },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(TuplesortInstrumentation),
+            "::",
+            stringify!(sortMethod)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<TuplesortInstrumentation>())).spaceType as *const _ as usize
+        },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(TuplesortInstrumentation),
+            "::",
+            stringify!(spaceType)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<TuplesortInstrumentation>())).spaceUsed as *const _ as usize
+        },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(TuplesortInstrumentation),
+            "::",
+            stringify!(spaceUsed)
+        )
+    );
 }
 extern "C" {
     pub fn tuplesort_begin_heap(
@@ -41561,9 +44779,10 @@ extern "C" {
         attNums: *mut AttrNumber,
         sortOperators: *mut Oid,
         sortCollations: *mut Oid,
-        nullsFirstFlags: *mut bool_,
+        nullsFirstFlags: *mut bool,
         workMem: ::std::os::raw::c_int,
-        randomAccess: bool_,
+        coordinate: SortCoordinate,
+        randomAccess: bool,
     ) -> *mut Tuplesortstate;
 }
 extern "C" {
@@ -41571,16 +44790,18 @@ extern "C" {
         tupDesc: TupleDesc,
         indexRel: Relation,
         workMem: ::std::os::raw::c_int,
-        randomAccess: bool_,
+        coordinate: SortCoordinate,
+        randomAccess: bool,
     ) -> *mut Tuplesortstate;
 }
 extern "C" {
     pub fn tuplesort_begin_index_btree(
         heapRel: Relation,
         indexRel: Relation,
-        enforceUnique: bool_,
+        enforceUnique: bool,
         workMem: ::std::os::raw::c_int,
-        randomAccess: bool_,
+        coordinate: SortCoordinate,
+        randomAccess: bool,
     ) -> *mut Tuplesortstate;
 }
 extern "C" {
@@ -41591,7 +44812,8 @@ extern "C" {
         low_mask: uint32,
         max_buckets: uint32,
         workMem: ::std::os::raw::c_int,
-        randomAccess: bool_,
+        coordinate: SortCoordinate,
+        randomAccess: bool,
     ) -> *mut Tuplesortstate;
 }
 extern "C" {
@@ -41599,9 +44821,10 @@ extern "C" {
         datumType: Oid,
         sortOperator: Oid,
         sortCollation: Oid,
-        nullsFirstFlag: bool_,
+        nullsFirstFlag: bool,
         workMem: ::std::os::raw::c_int,
-        randomAccess: bool_,
+        coordinate: SortCoordinate,
+        randomAccess: bool,
     ) -> *mut Tuplesortstate;
 }
 extern "C" {
@@ -41619,11 +44842,11 @@ extern "C" {
         rel: Relation,
         self_: ItemPointer,
         values: *mut Datum,
-        isnull: *mut bool_,
+        isnull: *mut bool,
     );
 }
 extern "C" {
-    pub fn tuplesort_putdatum(state: *mut Tuplesortstate, val: Datum, isNull: bool_);
+    pub fn tuplesort_putdatum(state: *mut Tuplesortstate, val: Datum, isNull: bool);
 }
 extern "C" {
     pub fn tuplesort_performsort(state: *mut Tuplesortstate);
@@ -41631,47 +44854,57 @@ extern "C" {
 extern "C" {
     pub fn tuplesort_gettupleslot(
         state: *mut Tuplesortstate,
-        forward: bool_,
-        copy: bool_,
+        forward: bool,
+        copy: bool,
         slot: *mut TupleTableSlot,
         abbrev: *mut Datum,
-    ) -> bool_;
+    ) -> bool;
 }
 extern "C" {
-    pub fn tuplesort_getheaptuple(state: *mut Tuplesortstate, forward: bool_) -> HeapTuple;
+    pub fn tuplesort_getheaptuple(state: *mut Tuplesortstate, forward: bool) -> HeapTuple;
 }
 extern "C" {
-    pub fn tuplesort_getindextuple(state: *mut Tuplesortstate, forward: bool_) -> IndexTuple;
+    pub fn tuplesort_getindextuple(state: *mut Tuplesortstate, forward: bool) -> IndexTuple;
 }
 extern "C" {
     pub fn tuplesort_getdatum(
         state: *mut Tuplesortstate,
-        forward: bool_,
+        forward: bool,
         val: *mut Datum,
-        isNull: *mut bool_,
+        isNull: *mut bool,
         abbrev: *mut Datum,
-    ) -> bool_;
+    ) -> bool;
 }
 extern "C" {
-    pub fn tuplesort_skiptuples(
-        state: *mut Tuplesortstate,
-        ntuples: int64,
-        forward: bool_,
-    ) -> bool_;
+    pub fn tuplesort_skiptuples(state: *mut Tuplesortstate, ntuples: int64, forward: bool) -> bool;
 }
 extern "C" {
     pub fn tuplesort_end(state: *mut Tuplesortstate);
 }
 extern "C" {
-    pub fn tuplesort_get_stats(
-        state: *mut Tuplesortstate,
-        sortMethod: *mut *const ::std::os::raw::c_char,
-        spaceType: *mut *const ::std::os::raw::c_char,
-        spaceUsed: *mut ::std::os::raw::c_long,
-    );
+    pub fn tuplesort_get_stats(state: *mut Tuplesortstate, stats: *mut TuplesortInstrumentation);
+}
+extern "C" {
+    pub fn tuplesort_method_name(m: TuplesortMethod) -> *const ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn tuplesort_space_type_name(t: TuplesortSpaceType) -> *const ::std::os::raw::c_char;
 }
 extern "C" {
     pub fn tuplesort_merge_order(allowedMem: int64) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn tuplesort_estimate_shared(nworkers: ::std::os::raw::c_int) -> Size;
+}
+extern "C" {
+    pub fn tuplesort_initialize_shared(
+        shared: *mut Sharedsort,
+        nWorkers: ::std::os::raw::c_int,
+        seg: *mut dsm_segment,
+    );
+}
+extern "C" {
+    pub fn tuplesort_attach_shared(shared: *mut Sharedsort, seg: *mut dsm_segment);
 }
 extern "C" {
     pub fn tuplesort_rescan(state: *mut Tuplesortstate);
@@ -41681,116 +44914,6 @@ extern "C" {
 }
 extern "C" {
     pub fn tuplesort_restorepos(state: *mut Tuplesortstate);
-}
-pub type slock_t = ::std::os::raw::c_uchar;
-extern "C" {
-    #[link_name = "\u{1}dummy_spinlock"]
-    pub static mut dummy_spinlock: slock_t;
-}
-extern "C" {
-    pub fn s_lock(
-        lock: *mut slock_t,
-        file: *const ::std::os::raw::c_char,
-        line: ::std::os::raw::c_int,
-        func: *const ::std::os::raw::c_char,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn set_spins_per_delay(shared_spins_per_delay: ::std::os::raw::c_int);
-}
-extern "C" {
-    pub fn update_spins_per_delay(
-        shared_spins_per_delay: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct SpinDelayStatus {
-    pub spins: ::std::os::raw::c_int,
-    pub delays: ::std::os::raw::c_int,
-    pub cur_delay: ::std::os::raw::c_int,
-    pub file: *const ::std::os::raw::c_char,
-    pub line: ::std::os::raw::c_int,
-    pub func: *const ::std::os::raw::c_char,
-}
-#[test]
-fn bindgen_test_layout_SpinDelayStatus() {
-    assert_eq!(
-        ::std::mem::size_of::<SpinDelayStatus>(),
-        40usize,
-        concat!("Size of: ", stringify!(SpinDelayStatus))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<SpinDelayStatus>(),
-        8usize,
-        concat!("Alignment of ", stringify!(SpinDelayStatus))
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<SpinDelayStatus>())).spins as *const _ as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(SpinDelayStatus),
-            "::",
-            stringify!(spins)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<SpinDelayStatus>())).delays as *const _ as usize },
-        4usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(SpinDelayStatus),
-            "::",
-            stringify!(delays)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<SpinDelayStatus>())).cur_delay as *const _ as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(SpinDelayStatus),
-            "::",
-            stringify!(cur_delay)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<SpinDelayStatus>())).file as *const _ as usize },
-        16usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(SpinDelayStatus),
-            "::",
-            stringify!(file)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<SpinDelayStatus>())).line as *const _ as usize },
-        24usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(SpinDelayStatus),
-            "::",
-            stringify!(line)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<SpinDelayStatus>())).func as *const _ as usize },
-        32usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(SpinDelayStatus),
-            "::",
-            stringify!(func)
-        )
-    );
-}
-extern "C" {
-    pub fn perform_spin_delay(status: *mut SpinDelayStatus);
-}
-extern "C" {
-    pub fn finish_spin_delay(status: *mut SpinDelayStatus);
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -41949,22 +45072,27 @@ fn bindgen_test_layout_ConditionVariable() {
     );
 }
 extern "C" {
-    pub fn ConditionVariableInit(arg1: *mut ConditionVariable);
+    pub fn ConditionVariableInit(cv: *mut ConditionVariable);
 }
 extern "C" {
-    pub fn ConditionVariableSleep(arg1: *mut ConditionVariable, wait_event_info: uint32);
+    pub fn ConditionVariableSleep(cv: *mut ConditionVariable, wait_event_info: uint32);
 }
 extern "C" {
     pub fn ConditionVariableCancelSleep();
 }
 extern "C" {
-    pub fn ConditionVariablePrepareToSleep(arg1: *mut ConditionVariable);
+    pub fn ConditionVariablePrepareToSleep(cv: *mut ConditionVariable);
 }
 extern "C" {
-    pub fn ConditionVariableSignal(arg1: *mut ConditionVariable) -> bool_;
+    pub fn ConditionVariableSignal(cv: *mut ConditionVariable);
 }
 extern "C" {
-    pub fn ConditionVariableBroadcast(arg1: *mut ConditionVariable) -> ::std::os::raw::c_int;
+    pub fn ConditionVariableBroadcast(cv: *mut ConditionVariable);
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct ParallelHashJoinState {
+    _unused: [u8; 0],
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -41975,7 +45103,7 @@ pub type ExprStateEvalFunc = ::std::option::Option<
     unsafe extern "C" fn(
         expression: *mut ExprState,
         econtext: *mut ExprContext,
-        isNull: *mut bool_,
+        isNull: *mut bool,
     ) -> Datum,
 >;
 #[repr(C)]
@@ -41983,24 +45111,27 @@ pub type ExprStateEvalFunc = ::std::option::Option<
 pub struct ExprState {
     pub tag: Node,
     pub flags: uint8,
-    pub resnull: bool_,
+    pub resnull: bool,
     pub resvalue: Datum,
     pub resultslot: *mut TupleTableSlot,
     pub steps: *mut ExprEvalStep,
     pub evalfunc: ExprStateEvalFunc,
     pub expr: *mut Expr,
+    pub evalfunc_private: *mut ::std::os::raw::c_void,
     pub steps_len: ::std::os::raw::c_int,
     pub steps_alloc: ::std::os::raw::c_int,
+    pub parent: *mut PlanState,
+    pub ext_params: ParamListInfo,
     pub innermost_caseval: *mut Datum,
-    pub innermost_casenull: *mut bool_,
+    pub innermost_casenull: *mut bool,
     pub innermost_domainval: *mut Datum,
-    pub innermost_domainnull: *mut bool_,
+    pub innermost_domainnull: *mut bool,
 }
 #[test]
 fn bindgen_test_layout_ExprState() {
     assert_eq!(
         ::std::mem::size_of::<ExprState>(),
-        88usize,
+        112usize,
         concat!("Size of: ", stringify!(ExprState))
     );
     assert_eq!(
@@ -42089,8 +45220,18 @@ fn bindgen_test_layout_ExprState() {
         )
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<ExprState>())).steps_len as *const _ as usize },
+        unsafe { &(*(::std::ptr::null::<ExprState>())).evalfunc_private as *const _ as usize },
         48usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ExprState),
+            "::",
+            stringify!(evalfunc_private)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ExprState>())).steps_len as *const _ as usize },
+        56usize,
         concat!(
             "Offset of field: ",
             stringify!(ExprState),
@@ -42100,7 +45241,7 @@ fn bindgen_test_layout_ExprState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ExprState>())).steps_alloc as *const _ as usize },
-        52usize,
+        60usize,
         concat!(
             "Offset of field: ",
             stringify!(ExprState),
@@ -42109,8 +45250,28 @@ fn bindgen_test_layout_ExprState() {
         )
     );
     assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ExprState>())).parent as *const _ as usize },
+        64usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ExprState),
+            "::",
+            stringify!(parent)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ExprState>())).ext_params as *const _ as usize },
+        72usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ExprState),
+            "::",
+            stringify!(ext_params)
+        )
+    );
+    assert_eq!(
         unsafe { &(*(::std::ptr::null::<ExprState>())).innermost_caseval as *const _ as usize },
-        56usize,
+        80usize,
         concat!(
             "Offset of field: ",
             stringify!(ExprState),
@@ -42120,7 +45281,7 @@ fn bindgen_test_layout_ExprState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ExprState>())).innermost_casenull as *const _ as usize },
-        64usize,
+        88usize,
         concat!(
             "Offset of field: ",
             stringify!(ExprState),
@@ -42130,7 +45291,7 @@ fn bindgen_test_layout_ExprState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ExprState>())).innermost_domainval as *const _ as usize },
-        72usize,
+        96usize,
         concat!(
             "Offset of field: ",
             stringify!(ExprState),
@@ -42140,7 +45301,7 @@ fn bindgen_test_layout_ExprState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ExprState>())).innermost_domainnull as *const _ as usize },
-        80usize,
+        104usize,
         concat!(
             "Offset of field: ",
             stringify!(ExprState),
@@ -42154,7 +45315,8 @@ fn bindgen_test_layout_ExprState() {
 pub struct IndexInfo {
     pub type_: NodeTag,
     pub ii_NumIndexAttrs: ::std::os::raw::c_int,
-    pub ii_KeyAttrNumbers: [AttrNumber; 32usize],
+    pub ii_NumIndexKeyAttrs: ::std::os::raw::c_int,
+    pub ii_IndexAttrNumbers: [AttrNumber; 32usize],
     pub ii_Expressions: *mut List,
     pub ii_ExpressionsState: *mut List,
     pub ii_Predicate: *mut List,
@@ -42165,10 +45327,12 @@ pub struct IndexInfo {
     pub ii_UniqueOps: *mut Oid,
     pub ii_UniqueProcs: *mut Oid,
     pub ii_UniqueStrats: *mut uint16,
-    pub ii_Unique: bool_,
-    pub ii_ReadyForInserts: bool_,
-    pub ii_Concurrent: bool_,
-    pub ii_BrokenHotChain: bool_,
+    pub ii_Unique: bool,
+    pub ii_ReadyForInserts: bool,
+    pub ii_Concurrent: bool,
+    pub ii_BrokenHotChain: bool,
+    pub ii_ParallelWorkers: ::std::os::raw::c_int,
+    pub ii_Am: Oid,
     pub ii_AmCache: *mut ::std::os::raw::c_void,
     pub ii_Context: MemoryContext,
 }
@@ -42176,7 +45340,7 @@ pub struct IndexInfo {
 fn bindgen_test_layout_IndexInfo() {
     assert_eq!(
         ::std::mem::size_of::<IndexInfo>(),
-        176usize,
+        192usize,
         concat!("Size of: ", stringify!(IndexInfo))
     );
     assert_eq!(
@@ -42205,18 +45369,28 @@ fn bindgen_test_layout_IndexInfo() {
         )
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<IndexInfo>())).ii_KeyAttrNumbers as *const _ as usize },
+        unsafe { &(*(::std::ptr::null::<IndexInfo>())).ii_NumIndexKeyAttrs as *const _ as usize },
         8usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexInfo),
             "::",
-            stringify!(ii_KeyAttrNumbers)
+            stringify!(ii_NumIndexKeyAttrs)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<IndexInfo>())).ii_IndexAttrNumbers as *const _ as usize },
+        12usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(IndexInfo),
+            "::",
+            stringify!(ii_IndexAttrNumbers)
         )
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexInfo>())).ii_Expressions as *const _ as usize },
-        72usize,
+        80usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexInfo),
@@ -42226,7 +45400,7 @@ fn bindgen_test_layout_IndexInfo() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexInfo>())).ii_ExpressionsState as *const _ as usize },
-        80usize,
+        88usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexInfo),
@@ -42236,7 +45410,7 @@ fn bindgen_test_layout_IndexInfo() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexInfo>())).ii_Predicate as *const _ as usize },
-        88usize,
+        96usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexInfo),
@@ -42246,7 +45420,7 @@ fn bindgen_test_layout_IndexInfo() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexInfo>())).ii_PredicateState as *const _ as usize },
-        96usize,
+        104usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexInfo),
@@ -42256,7 +45430,7 @@ fn bindgen_test_layout_IndexInfo() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexInfo>())).ii_ExclusionOps as *const _ as usize },
-        104usize,
+        112usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexInfo),
@@ -42266,7 +45440,7 @@ fn bindgen_test_layout_IndexInfo() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexInfo>())).ii_ExclusionProcs as *const _ as usize },
-        112usize,
+        120usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexInfo),
@@ -42276,7 +45450,7 @@ fn bindgen_test_layout_IndexInfo() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexInfo>())).ii_ExclusionStrats as *const _ as usize },
-        120usize,
+        128usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexInfo),
@@ -42286,7 +45460,7 @@ fn bindgen_test_layout_IndexInfo() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexInfo>())).ii_UniqueOps as *const _ as usize },
-        128usize,
+        136usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexInfo),
@@ -42296,7 +45470,7 @@ fn bindgen_test_layout_IndexInfo() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexInfo>())).ii_UniqueProcs as *const _ as usize },
-        136usize,
+        144usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexInfo),
@@ -42306,7 +45480,7 @@ fn bindgen_test_layout_IndexInfo() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexInfo>())).ii_UniqueStrats as *const _ as usize },
-        144usize,
+        152usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexInfo),
@@ -42316,7 +45490,7 @@ fn bindgen_test_layout_IndexInfo() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexInfo>())).ii_Unique as *const _ as usize },
-        152usize,
+        160usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexInfo),
@@ -42326,7 +45500,7 @@ fn bindgen_test_layout_IndexInfo() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexInfo>())).ii_ReadyForInserts as *const _ as usize },
-        153usize,
+        161usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexInfo),
@@ -42336,7 +45510,7 @@ fn bindgen_test_layout_IndexInfo() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexInfo>())).ii_Concurrent as *const _ as usize },
-        154usize,
+        162usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexInfo),
@@ -42346,7 +45520,7 @@ fn bindgen_test_layout_IndexInfo() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexInfo>())).ii_BrokenHotChain as *const _ as usize },
-        155usize,
+        163usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexInfo),
@@ -42355,8 +45529,28 @@ fn bindgen_test_layout_IndexInfo() {
         )
     );
     assert_eq!(
+        unsafe { &(*(::std::ptr::null::<IndexInfo>())).ii_ParallelWorkers as *const _ as usize },
+        164usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(IndexInfo),
+            "::",
+            stringify!(ii_ParallelWorkers)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<IndexInfo>())).ii_Am as *const _ as usize },
+        168usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(IndexInfo),
+            "::",
+            stringify!(ii_Am)
+        )
+    );
+    assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexInfo>())).ii_AmCache as *const _ as usize },
-        160usize,
+        176usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexInfo),
@@ -42366,7 +45560,7 @@ fn bindgen_test_layout_IndexInfo() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexInfo>())).ii_Context as *const _ as usize },
-        168usize,
+        184usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexInfo),
@@ -42438,11 +45632,11 @@ pub struct ExprContext {
     pub ecxt_param_exec_vals: *mut ParamExecData,
     pub ecxt_param_list_info: ParamListInfo,
     pub ecxt_aggvalues: *mut Datum,
-    pub ecxt_aggnulls: *mut bool_,
+    pub ecxt_aggnulls: *mut bool,
     pub caseValue_datum: Datum,
-    pub caseValue_isNull: bool_,
+    pub caseValue_isNull: bool,
     pub domainValue_datum: Datum,
-    pub domainValue_isNull: bool_,
+    pub domainValue_isNull: bool,
     pub ecxt_estate: *mut EState,
     pub ecxt_callbacks: *mut ExprContext_CB,
 }
@@ -42752,7 +45946,7 @@ pub struct ProjectionInfo {
 fn bindgen_test_layout_ProjectionInfo() {
     assert_eq!(
         ::std::mem::size_of::<ProjectionInfo>(),
-        104usize,
+        128usize,
         concat!("Size of: ", stringify!(ProjectionInfo))
     );
     assert_eq!(
@@ -42782,7 +45976,7 @@ fn bindgen_test_layout_ProjectionInfo() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ProjectionInfo>())).pi_exprContext as *const _ as usize },
-        96usize,
+        120usize,
         concat!(
             "Offset of field: ",
             stringify!(ProjectionInfo),
@@ -42876,6 +46070,71 @@ fn bindgen_test_layout_JunkFilter() {
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
+pub struct OnConflictSetState {
+    pub type_: NodeTag,
+    pub oc_ProjInfo: *mut ProjectionInfo,
+    pub oc_ProjTupdesc: TupleDesc,
+    pub oc_WhereClause: *mut ExprState,
+}
+#[test]
+fn bindgen_test_layout_OnConflictSetState() {
+    assert_eq!(
+        ::std::mem::size_of::<OnConflictSetState>(),
+        32usize,
+        concat!("Size of: ", stringify!(OnConflictSetState))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<OnConflictSetState>(),
+        8usize,
+        concat!("Alignment of ", stringify!(OnConflictSetState))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<OnConflictSetState>())).type_ as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(OnConflictSetState),
+            "::",
+            stringify!(type_)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<OnConflictSetState>())).oc_ProjInfo as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(OnConflictSetState),
+            "::",
+            stringify!(oc_ProjInfo)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<OnConflictSetState>())).oc_ProjTupdesc as *const _ as usize
+        },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(OnConflictSetState),
+            "::",
+            stringify!(oc_ProjTupdesc)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<OnConflictSetState>())).oc_WhereClause as *const _ as usize
+        },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(OnConflictSetState),
+            "::",
+            stringify!(oc_WhereClause)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct ResultRelInfo {
     pub type_: NodeTag,
     pub ri_RangeTableIndex: Index,
@@ -42889,23 +46148,25 @@ pub struct ResultRelInfo {
     pub ri_TrigInstrument: *mut Instrumentation,
     pub ri_FdwRoutine: *mut FdwRoutine,
     pub ri_FdwState: *mut ::std::os::raw::c_void,
-    pub ri_usesFdwDirectModify: bool_,
+    pub ri_usesFdwDirectModify: bool,
     pub ri_WithCheckOptions: *mut List,
     pub ri_WithCheckOptionExprs: *mut List,
     pub ri_ConstraintExprs: *mut *mut ExprState,
     pub ri_junkFilter: *mut JunkFilter,
+    pub ri_returningList: *mut List,
     pub ri_projectReturning: *mut ProjectionInfo,
-    pub ri_onConflictSetProj: *mut ProjectionInfo,
-    pub ri_onConflictSetWhere: *mut ExprState,
+    pub ri_onConflictArbiterIndexes: *mut List,
+    pub ri_onConflict: *mut OnConflictSetState,
     pub ri_PartitionCheck: *mut List,
     pub ri_PartitionCheckExpr: *mut ExprState,
     pub ri_PartitionRoot: Relation,
+    pub ri_PartitionReadyForRouting: bool,
 }
 #[test]
 fn bindgen_test_layout_ResultRelInfo() {
     assert_eq!(
         ::std::mem::size_of::<ResultRelInfo>(),
-        176usize,
+        192usize,
         concat!("Size of: ", stringify!(ResultRelInfo))
     );
     assert_eq!(
@@ -43098,10 +46359,20 @@ fn bindgen_test_layout_ResultRelInfo() {
         )
     );
     assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ResultRelInfo>())).ri_returningList as *const _ as usize },
+        128usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ResultRelInfo),
+            "::",
+            stringify!(ri_returningList)
+        )
+    );
+    assert_eq!(
         unsafe {
             &(*(::std::ptr::null::<ResultRelInfo>())).ri_projectReturning as *const _ as usize
         },
-        128usize,
+        136usize,
         concat!(
             "Offset of field: ",
             stringify!(ResultRelInfo),
@@ -43111,31 +46382,30 @@ fn bindgen_test_layout_ResultRelInfo() {
     );
     assert_eq!(
         unsafe {
-            &(*(::std::ptr::null::<ResultRelInfo>())).ri_onConflictSetProj as *const _ as usize
-        },
-        136usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ResultRelInfo),
-            "::",
-            stringify!(ri_onConflictSetProj)
-        )
-    );
-    assert_eq!(
-        unsafe {
-            &(*(::std::ptr::null::<ResultRelInfo>())).ri_onConflictSetWhere as *const _ as usize
+            &(*(::std::ptr::null::<ResultRelInfo>())).ri_onConflictArbiterIndexes as *const _
+                as usize
         },
         144usize,
         concat!(
             "Offset of field: ",
             stringify!(ResultRelInfo),
             "::",
-            stringify!(ri_onConflictSetWhere)
+            stringify!(ri_onConflictArbiterIndexes)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ResultRelInfo>())).ri_onConflict as *const _ as usize },
+        152usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ResultRelInfo),
+            "::",
+            stringify!(ri_onConflict)
         )
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ResultRelInfo>())).ri_PartitionCheck as *const _ as usize },
-        152usize,
+        160usize,
         concat!(
             "Offset of field: ",
             stringify!(ResultRelInfo),
@@ -43147,7 +46417,7 @@ fn bindgen_test_layout_ResultRelInfo() {
         unsafe {
             &(*(::std::ptr::null::<ResultRelInfo>())).ri_PartitionCheckExpr as *const _ as usize
         },
-        160usize,
+        168usize,
         concat!(
             "Offset of field: ",
             stringify!(ResultRelInfo),
@@ -43157,12 +46427,25 @@ fn bindgen_test_layout_ResultRelInfo() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ResultRelInfo>())).ri_PartitionRoot as *const _ as usize },
-        168usize,
+        176usize,
         concat!(
             "Offset of field: ",
             stringify!(ResultRelInfo),
             "::",
             stringify!(ri_PartitionRoot)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<ResultRelInfo>())).ri_PartitionReadyForRouting as *const _
+                as usize
+        },
+        184usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ResultRelInfo),
+            "::",
+            stringify!(ri_PartitionReadyForRouting)
         )
     );
 }
@@ -43183,7 +46466,7 @@ pub struct EState {
     pub es_result_relation_info: *mut ResultRelInfo,
     pub es_root_result_relations: *mut ResultRelInfo,
     pub es_num_root_result_relations: ::std::os::raw::c_int,
-    pub es_leaf_result_relations: *mut List,
+    pub es_tuple_routing_result_relations: *mut List,
     pub es_trig_target_relations: *mut List,
     pub es_trig_tuple_slot: *mut TupleTableSlot,
     pub es_trig_oldtup_slot: *mut TupleTableSlot,
@@ -43198,22 +46481,25 @@ pub struct EState {
     pub es_lastoid: Oid,
     pub es_top_eflags: ::std::os::raw::c_int,
     pub es_instrument: ::std::os::raw::c_int,
-    pub es_finished: bool_,
+    pub es_finished: bool,
     pub es_exprcontexts: *mut List,
     pub es_subplanstates: *mut List,
     pub es_auxmodifytables: *mut List,
     pub es_per_tuple_exprcontext: *mut ExprContext,
     pub es_epqTuple: *mut HeapTuple,
-    pub es_epqTupleSet: *mut bool_,
-    pub es_epqScanDone: *mut bool_,
+    pub es_epqTupleSet: *mut bool,
+    pub es_epqScanDone: *mut bool,
+    pub es_use_parallel_mode: bool,
     pub es_query_dsa: *mut dsa_area,
-    pub es_use_parallel_mode: bool_,
+    pub es_jit_flags: ::std::os::raw::c_int,
+    pub es_jit: *mut JitContext,
+    pub es_jit_worker_instr: *mut JitInstrumentation,
 }
 #[test]
 fn bindgen_test_layout_EState() {
     assert_eq!(
         ::std::mem::size_of::<EState>(),
-        288usize,
+        312usize,
         concat!("Size of: ", stringify!(EState))
     );
     assert_eq!(
@@ -43364,13 +46650,16 @@ fn bindgen_test_layout_EState() {
         )
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<EState>())).es_leaf_result_relations as *const _ as usize },
+        unsafe {
+            &(*(::std::ptr::null::<EState>())).es_tuple_routing_result_relations as *const _
+                as usize
+        },
         104usize,
         concat!(
             "Offset of field: ",
             stringify!(EState),
             "::",
-            stringify!(es_leaf_result_relations)
+            stringify!(es_tuple_routing_result_relations)
         )
     );
     assert_eq!(
@@ -43594,8 +46883,18 @@ fn bindgen_test_layout_EState() {
         )
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<EState>())).es_query_dsa as *const _ as usize },
+        unsafe { &(*(::std::ptr::null::<EState>())).es_use_parallel_mode as *const _ as usize },
         272usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(EState),
+            "::",
+            stringify!(es_use_parallel_mode)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<EState>())).es_query_dsa as *const _ as usize },
+        280usize,
         concat!(
             "Offset of field: ",
             stringify!(EState),
@@ -43604,13 +46903,33 @@ fn bindgen_test_layout_EState() {
         )
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<EState>())).es_use_parallel_mode as *const _ as usize },
-        280usize,
+        unsafe { &(*(::std::ptr::null::<EState>())).es_jit_flags as *const _ as usize },
+        288usize,
         concat!(
             "Offset of field: ",
             stringify!(EState),
             "::",
-            stringify!(es_use_parallel_mode)
+            stringify!(es_jit_flags)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<EState>())).es_jit as *const _ as usize },
+        296usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(EState),
+            "::",
+            stringify!(es_jit)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<EState>())).es_jit_worker_instr as *const _ as usize },
+        304usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(EState),
+            "::",
+            stringify!(es_jit_worker_instr)
         )
     );
 }
@@ -43625,7 +46944,7 @@ pub struct ExecRowMark {
     pub markType: RowMarkType,
     pub strength: LockClauseStrength,
     pub waitPolicy: LockWaitPolicy,
-    pub ermActive: bool_,
+    pub ermActive: bool,
     pub curCtid: ItemPointerData,
     pub ermExtra: *mut ::std::os::raw::c_void,
 }
@@ -43978,7 +47297,7 @@ pub type tuplehash_status = u32;
 pub struct tuplehash_iterator {
     pub cur: uint32,
     pub end: uint32,
-    pub done: bool_,
+    pub done: bool,
 }
 #[test]
 fn bindgen_test_layout_tuplehash_iterator() {
@@ -44040,14 +47359,14 @@ extern "C" {
     pub fn tuplehash_insert(
         tb: *mut tuplehash_hash,
         key: MinimalTuple,
-        found: *mut bool_,
+        found: *mut bool,
     ) -> *mut TupleHashEntryData;
 }
 extern "C" {
     pub fn tuplehash_lookup(tb: *mut tuplehash_hash, key: MinimalTuple) -> *mut TupleHashEntryData;
 }
 extern "C" {
-    pub fn tuplehash_delete(tb: *mut tuplehash_hash, key: MinimalTuple) -> bool_;
+    pub fn tuplehash_delete(tb: *mut tuplehash_hash, key: MinimalTuple) -> bool;
 }
 extern "C" {
     pub fn tuplehash_start_iterate(tb: *mut tuplehash_hash, iter: *mut tuplehash_iterator);
@@ -44075,21 +47394,22 @@ pub struct TupleHashTableData {
     pub numCols: ::std::os::raw::c_int,
     pub keyColIdx: *mut AttrNumber,
     pub tab_hash_funcs: *mut FmgrInfo,
-    pub tab_eq_funcs: *mut FmgrInfo,
+    pub tab_eq_func: *mut ExprState,
     pub tablecxt: MemoryContext,
     pub tempcxt: MemoryContext,
     pub entrysize: Size,
     pub tableslot: *mut TupleTableSlot,
     pub inputslot: *mut TupleTableSlot,
     pub in_hash_funcs: *mut FmgrInfo,
-    pub cur_eq_funcs: *mut FmgrInfo,
+    pub cur_eq_func: *mut ExprState,
     pub hash_iv: uint32,
+    pub exprcontext: *mut ExprContext,
 }
 #[test]
 fn bindgen_test_layout_TupleHashTableData() {
     assert_eq!(
         ::std::mem::size_of::<TupleHashTableData>(),
-        104usize,
+        112usize,
         concat!("Size of: ", stringify!(TupleHashTableData))
     );
     assert_eq!(
@@ -44140,13 +47460,13 @@ fn bindgen_test_layout_TupleHashTableData() {
         )
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TupleHashTableData>())).tab_eq_funcs as *const _ as usize },
+        unsafe { &(*(::std::ptr::null::<TupleHashTableData>())).tab_eq_func as *const _ as usize },
         32usize,
         concat!(
             "Offset of field: ",
             stringify!(TupleHashTableData),
             "::",
-            stringify!(tab_eq_funcs)
+            stringify!(tab_eq_func)
         )
     );
     assert_eq!(
@@ -44212,13 +47532,13 @@ fn bindgen_test_layout_TupleHashTableData() {
         )
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TupleHashTableData>())).cur_eq_funcs as *const _ as usize },
+        unsafe { &(*(::std::ptr::null::<TupleHashTableData>())).cur_eq_func as *const _ as usize },
         88usize,
         concat!(
             "Offset of field: ",
             stringify!(TupleHashTableData),
             "::",
-            stringify!(cur_eq_funcs)
+            stringify!(cur_eq_func)
         )
     );
     assert_eq!(
@@ -44229,6 +47549,16 @@ fn bindgen_test_layout_TupleHashTableData() {
             stringify!(TupleHashTableData),
             "::",
             stringify!(hash_iv)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<TupleHashTableData>())).exprcontext as *const _ as usize },
+        104usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(TupleHashTableData),
+            "::",
+            stringify!(exprcontext)
         )
     );
 }
@@ -44366,10 +47696,10 @@ pub struct SetExprState {
     pub funcResultStore: *mut Tuplestorestate,
     pub funcResultSlot: *mut TupleTableSlot,
     pub funcResultDesc: TupleDesc,
-    pub funcReturnsTuple: bool_,
-    pub funcReturnsSet: bool_,
-    pub setArgsValid: bool_,
-    pub shutdown_reg: bool_,
+    pub funcReturnsTuple: bool,
+    pub funcReturnsSet: bool,
+    pub setArgsValid: bool,
+    pub shutdown_reg: bool,
     pub fcinfo_data: FunctionCallInfoData,
 }
 #[test]
@@ -44526,26 +47856,29 @@ pub struct SubPlanState {
     pub args: *mut List,
     pub curTuple: HeapTuple,
     pub curArray: Datum,
+    pub descRight: TupleDesc,
     pub projLeft: *mut ProjectionInfo,
     pub projRight: *mut ProjectionInfo,
     pub hashtable: TupleHashTable,
     pub hashnulls: TupleHashTable,
-    pub havehashrows: bool_,
-    pub havenullrows: bool_,
+    pub havehashrows: bool,
+    pub havenullrows: bool,
     pub hashtablecxt: MemoryContext,
     pub hashtempcxt: MemoryContext,
     pub innerecontext: *mut ExprContext,
     pub keyColIdx: *mut AttrNumber,
+    pub tab_eq_funcoids: *mut Oid,
     pub tab_hash_funcs: *mut FmgrInfo,
     pub tab_eq_funcs: *mut FmgrInfo,
     pub lhs_hash_funcs: *mut FmgrInfo,
     pub cur_eq_funcs: *mut FmgrInfo,
+    pub cur_eq_comp: *mut ExprState,
 }
 #[test]
 fn bindgen_test_layout_SubPlanState() {
     assert_eq!(
         ::std::mem::size_of::<SubPlanState>(),
-        168usize,
+        192usize,
         concat!("Size of: ", stringify!(SubPlanState))
     );
     assert_eq!(
@@ -44634,8 +47967,18 @@ fn bindgen_test_layout_SubPlanState() {
         )
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<SubPlanState>())).projLeft as *const _ as usize },
+        unsafe { &(*(::std::ptr::null::<SubPlanState>())).descRight as *const _ as usize },
         64usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(SubPlanState),
+            "::",
+            stringify!(descRight)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<SubPlanState>())).projLeft as *const _ as usize },
+        72usize,
         concat!(
             "Offset of field: ",
             stringify!(SubPlanState),
@@ -44645,7 +47988,7 @@ fn bindgen_test_layout_SubPlanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<SubPlanState>())).projRight as *const _ as usize },
-        72usize,
+        80usize,
         concat!(
             "Offset of field: ",
             stringify!(SubPlanState),
@@ -44655,7 +47998,7 @@ fn bindgen_test_layout_SubPlanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<SubPlanState>())).hashtable as *const _ as usize },
-        80usize,
+        88usize,
         concat!(
             "Offset of field: ",
             stringify!(SubPlanState),
@@ -44665,7 +48008,7 @@ fn bindgen_test_layout_SubPlanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<SubPlanState>())).hashnulls as *const _ as usize },
-        88usize,
+        96usize,
         concat!(
             "Offset of field: ",
             stringify!(SubPlanState),
@@ -44675,7 +48018,7 @@ fn bindgen_test_layout_SubPlanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<SubPlanState>())).havehashrows as *const _ as usize },
-        96usize,
+        104usize,
         concat!(
             "Offset of field: ",
             stringify!(SubPlanState),
@@ -44685,7 +48028,7 @@ fn bindgen_test_layout_SubPlanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<SubPlanState>())).havenullrows as *const _ as usize },
-        97usize,
+        105usize,
         concat!(
             "Offset of field: ",
             stringify!(SubPlanState),
@@ -44695,7 +48038,7 @@ fn bindgen_test_layout_SubPlanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<SubPlanState>())).hashtablecxt as *const _ as usize },
-        104usize,
+        112usize,
         concat!(
             "Offset of field: ",
             stringify!(SubPlanState),
@@ -44705,7 +48048,7 @@ fn bindgen_test_layout_SubPlanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<SubPlanState>())).hashtempcxt as *const _ as usize },
-        112usize,
+        120usize,
         concat!(
             "Offset of field: ",
             stringify!(SubPlanState),
@@ -44715,7 +48058,7 @@ fn bindgen_test_layout_SubPlanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<SubPlanState>())).innerecontext as *const _ as usize },
-        120usize,
+        128usize,
         concat!(
             "Offset of field: ",
             stringify!(SubPlanState),
@@ -44725,7 +48068,7 @@ fn bindgen_test_layout_SubPlanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<SubPlanState>())).keyColIdx as *const _ as usize },
-        128usize,
+        136usize,
         concat!(
             "Offset of field: ",
             stringify!(SubPlanState),
@@ -44734,8 +48077,18 @@ fn bindgen_test_layout_SubPlanState() {
         )
     );
     assert_eq!(
+        unsafe { &(*(::std::ptr::null::<SubPlanState>())).tab_eq_funcoids as *const _ as usize },
+        144usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(SubPlanState),
+            "::",
+            stringify!(tab_eq_funcoids)
+        )
+    );
+    assert_eq!(
         unsafe { &(*(::std::ptr::null::<SubPlanState>())).tab_hash_funcs as *const _ as usize },
-        136usize,
+        152usize,
         concat!(
             "Offset of field: ",
             stringify!(SubPlanState),
@@ -44745,7 +48098,7 @@ fn bindgen_test_layout_SubPlanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<SubPlanState>())).tab_eq_funcs as *const _ as usize },
-        144usize,
+        160usize,
         concat!(
             "Offset of field: ",
             stringify!(SubPlanState),
@@ -44755,7 +48108,7 @@ fn bindgen_test_layout_SubPlanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<SubPlanState>())).lhs_hash_funcs as *const _ as usize },
-        152usize,
+        168usize,
         concat!(
             "Offset of field: ",
             stringify!(SubPlanState),
@@ -44765,12 +48118,22 @@ fn bindgen_test_layout_SubPlanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<SubPlanState>())).cur_eq_funcs as *const _ as usize },
-        160usize,
+        176usize,
         concat!(
             "Offset of field: ",
             stringify!(SubPlanState),
             "::",
             stringify!(cur_eq_funcs)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<SubPlanState>())).cur_eq_comp as *const _ as usize },
+        184usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(SubPlanState),
+            "::",
+            stringify!(cur_eq_comp)
         )
     );
 }
@@ -44930,6 +48293,7 @@ pub struct PlanState {
     pub ExecProcNodeReal: ExecProcNodeMtd,
     pub instrument: *mut Instrumentation,
     pub worker_instrument: *mut WorkerInstrumentation,
+    pub worker_jit_instrument: *mut SharedJitInstrumentation,
     pub qual: *mut ExprState,
     pub lefttree: *mut PlanState,
     pub righttree: *mut PlanState,
@@ -44939,12 +48303,13 @@ pub struct PlanState {
     pub ps_ResultTupleSlot: *mut TupleTableSlot,
     pub ps_ExprContext: *mut ExprContext,
     pub ps_ProjInfo: *mut ProjectionInfo,
+    pub scandesc: TupleDesc,
 }
 #[test]
 fn bindgen_test_layout_PlanState() {
     assert_eq!(
         ::std::mem::size_of::<PlanState>(),
-        128usize,
+        144usize,
         concat!("Size of: ", stringify!(PlanState))
     );
     assert_eq!(
@@ -45023,8 +48388,18 @@ fn bindgen_test_layout_PlanState() {
         )
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<PlanState>())).qual as *const _ as usize },
+        unsafe { &(*(::std::ptr::null::<PlanState>())).worker_jit_instrument as *const _ as usize },
         56usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(PlanState),
+            "::",
+            stringify!(worker_jit_instrument)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<PlanState>())).qual as *const _ as usize },
+        64usize,
         concat!(
             "Offset of field: ",
             stringify!(PlanState),
@@ -45034,7 +48409,7 @@ fn bindgen_test_layout_PlanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<PlanState>())).lefttree as *const _ as usize },
-        64usize,
+        72usize,
         concat!(
             "Offset of field: ",
             stringify!(PlanState),
@@ -45044,7 +48419,7 @@ fn bindgen_test_layout_PlanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<PlanState>())).righttree as *const _ as usize },
-        72usize,
+        80usize,
         concat!(
             "Offset of field: ",
             stringify!(PlanState),
@@ -45054,7 +48429,7 @@ fn bindgen_test_layout_PlanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<PlanState>())).initPlan as *const _ as usize },
-        80usize,
+        88usize,
         concat!(
             "Offset of field: ",
             stringify!(PlanState),
@@ -45064,7 +48439,7 @@ fn bindgen_test_layout_PlanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<PlanState>())).subPlan as *const _ as usize },
-        88usize,
+        96usize,
         concat!(
             "Offset of field: ",
             stringify!(PlanState),
@@ -45074,7 +48449,7 @@ fn bindgen_test_layout_PlanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<PlanState>())).chgParam as *const _ as usize },
-        96usize,
+        104usize,
         concat!(
             "Offset of field: ",
             stringify!(PlanState),
@@ -45084,7 +48459,7 @@ fn bindgen_test_layout_PlanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<PlanState>())).ps_ResultTupleSlot as *const _ as usize },
-        104usize,
+        112usize,
         concat!(
             "Offset of field: ",
             stringify!(PlanState),
@@ -45094,7 +48469,7 @@ fn bindgen_test_layout_PlanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<PlanState>())).ps_ExprContext as *const _ as usize },
-        112usize,
+        120usize,
         concat!(
             "Offset of field: ",
             stringify!(PlanState),
@@ -45104,12 +48479,22 @@ fn bindgen_test_layout_PlanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<PlanState>())).ps_ProjInfo as *const _ as usize },
-        120usize,
+        128usize,
         concat!(
             "Offset of field: ",
             stringify!(PlanState),
             "::",
             stringify!(ps_ProjInfo)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<PlanState>())).scandesc as *const _ as usize },
+        136usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(PlanState),
+            "::",
+            stringify!(scandesc)
         )
     );
 }
@@ -45201,14 +48586,14 @@ fn bindgen_test_layout_EPQState() {
 pub struct ResultState {
     pub ps: PlanState,
     pub resconstantqual: *mut ExprState,
-    pub rs_done: bool_,
-    pub rs_checkqual: bool_,
+    pub rs_done: bool,
+    pub rs_checkqual: bool,
 }
 #[test]
 fn bindgen_test_layout_ResultState() {
     assert_eq!(
         ::std::mem::size_of::<ResultState>(),
-        144usize,
+        160usize,
         concat!("Size of: ", stringify!(ResultState))
     );
     assert_eq!(
@@ -45228,7 +48613,7 @@ fn bindgen_test_layout_ResultState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ResultState>())).resconstantqual as *const _ as usize },
-        128usize,
+        144usize,
         concat!(
             "Offset of field: ",
             stringify!(ResultState),
@@ -45238,7 +48623,7 @@ fn bindgen_test_layout_ResultState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ResultState>())).rs_done as *const _ as usize },
-        136usize,
+        152usize,
         concat!(
             "Offset of field: ",
             stringify!(ResultState),
@@ -45248,7 +48633,7 @@ fn bindgen_test_layout_ResultState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ResultState>())).rs_checkqual as *const _ as usize },
-        137usize,
+        153usize,
         concat!(
             "Offset of field: ",
             stringify!(ResultState),
@@ -45264,13 +48649,14 @@ pub struct ProjectSetState {
     pub elems: *mut *mut Node,
     pub elemdone: *mut ExprDoneCond,
     pub nelems: ::std::os::raw::c_int,
-    pub pending_srf_tuples: bool_,
+    pub pending_srf_tuples: bool,
+    pub argcontext: MemoryContext,
 }
 #[test]
 fn bindgen_test_layout_ProjectSetState() {
     assert_eq!(
         ::std::mem::size_of::<ProjectSetState>(),
-        152usize,
+        176usize,
         concat!("Size of: ", stringify!(ProjectSetState))
     );
     assert_eq!(
@@ -45290,7 +48676,7 @@ fn bindgen_test_layout_ProjectSetState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ProjectSetState>())).elems as *const _ as usize },
-        128usize,
+        144usize,
         concat!(
             "Offset of field: ",
             stringify!(ProjectSetState),
@@ -45300,7 +48686,7 @@ fn bindgen_test_layout_ProjectSetState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ProjectSetState>())).elemdone as *const _ as usize },
-        136usize,
+        152usize,
         concat!(
             "Offset of field: ",
             stringify!(ProjectSetState),
@@ -45310,7 +48696,7 @@ fn bindgen_test_layout_ProjectSetState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ProjectSetState>())).nelems as *const _ as usize },
-        144usize,
+        160usize,
         concat!(
             "Offset of field: ",
             stringify!(ProjectSetState),
@@ -45322,12 +48708,22 @@ fn bindgen_test_layout_ProjectSetState() {
         unsafe {
             &(*(::std::ptr::null::<ProjectSetState>())).pending_srf_tuples as *const _ as usize
         },
-        148usize,
+        164usize,
         concat!(
             "Offset of field: ",
             stringify!(ProjectSetState),
             "::",
             stringify!(pending_srf_tuples)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<ProjectSetState>())).argcontext as *const _ as usize },
+        168usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(ProjectSetState),
+            "::",
+            stringify!(argcontext)
         )
     );
 }
@@ -45336,8 +48732,8 @@ fn bindgen_test_layout_ProjectSetState() {
 pub struct ModifyTableState {
     pub ps: PlanState,
     pub operation: CmdType,
-    pub canSetTag: bool_,
-    pub mt_done: bool_,
+    pub canSetTag: bool,
+    pub mt_done: bool,
     pub mt_plans: *mut *mut PlanState,
     pub mt_nplans: ::std::os::raw::c_int,
     pub mt_whichplan: ::std::os::raw::c_int,
@@ -45345,27 +48741,20 @@ pub struct ModifyTableState {
     pub rootResultRelInfo: *mut ResultRelInfo,
     pub mt_arowmarks: *mut *mut List,
     pub mt_epqstate: EPQState,
-    pub fireBSTriggers: bool_,
-    pub mt_onconflict: OnConflictAction,
-    pub mt_arbiterindexes: *mut List,
+    pub fireBSTriggers: bool,
     pub mt_existing: *mut TupleTableSlot,
     pub mt_excludedtlist: *mut List,
     pub mt_conflproj: *mut TupleTableSlot,
-    pub mt_partition_dispatch_info: *mut *mut PartitionDispatchData,
-    pub mt_num_dispatch: ::std::os::raw::c_int,
-    pub mt_num_partitions: ::std::os::raw::c_int,
-    pub mt_partitions: *mut ResultRelInfo,
-    pub mt_partition_tupconv_maps: *mut *mut TupleConversionMap,
-    pub mt_partition_tuple_slot: *mut TupleTableSlot,
+    pub mt_partition_tuple_routing: *mut PartitionTupleRouting,
     pub mt_transition_capture: *mut TransitionCaptureState,
     pub mt_oc_transition_capture: *mut TransitionCaptureState,
-    pub mt_transition_tupconv_maps: *mut *mut TupleConversionMap,
+    pub mt_per_subplan_tupconv_maps: *mut *mut TupleConversionMap,
 }
 #[test]
 fn bindgen_test_layout_ModifyTableState() {
     assert_eq!(
         ::std::mem::size_of::<ModifyTableState>(),
-        328usize,
+        304usize,
         concat!("Size of: ", stringify!(ModifyTableState))
     );
     assert_eq!(
@@ -45385,7 +48774,7 @@ fn bindgen_test_layout_ModifyTableState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ModifyTableState>())).operation as *const _ as usize },
-        128usize,
+        144usize,
         concat!(
             "Offset of field: ",
             stringify!(ModifyTableState),
@@ -45395,7 +48784,7 @@ fn bindgen_test_layout_ModifyTableState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ModifyTableState>())).canSetTag as *const _ as usize },
-        132usize,
+        148usize,
         concat!(
             "Offset of field: ",
             stringify!(ModifyTableState),
@@ -45405,7 +48794,7 @@ fn bindgen_test_layout_ModifyTableState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ModifyTableState>())).mt_done as *const _ as usize },
-        133usize,
+        149usize,
         concat!(
             "Offset of field: ",
             stringify!(ModifyTableState),
@@ -45415,7 +48804,7 @@ fn bindgen_test_layout_ModifyTableState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ModifyTableState>())).mt_plans as *const _ as usize },
-        136usize,
+        152usize,
         concat!(
             "Offset of field: ",
             stringify!(ModifyTableState),
@@ -45425,7 +48814,7 @@ fn bindgen_test_layout_ModifyTableState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ModifyTableState>())).mt_nplans as *const _ as usize },
-        144usize,
+        160usize,
         concat!(
             "Offset of field: ",
             stringify!(ModifyTableState),
@@ -45435,7 +48824,7 @@ fn bindgen_test_layout_ModifyTableState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ModifyTableState>())).mt_whichplan as *const _ as usize },
-        148usize,
+        164usize,
         concat!(
             "Offset of field: ",
             stringify!(ModifyTableState),
@@ -45445,7 +48834,7 @@ fn bindgen_test_layout_ModifyTableState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ModifyTableState>())).resultRelInfo as *const _ as usize },
-        152usize,
+        168usize,
         concat!(
             "Offset of field: ",
             stringify!(ModifyTableState),
@@ -45457,7 +48846,7 @@ fn bindgen_test_layout_ModifyTableState() {
         unsafe {
             &(*(::std::ptr::null::<ModifyTableState>())).rootResultRelInfo as *const _ as usize
         },
-        160usize,
+        176usize,
         concat!(
             "Offset of field: ",
             stringify!(ModifyTableState),
@@ -45467,7 +48856,7 @@ fn bindgen_test_layout_ModifyTableState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ModifyTableState>())).mt_arowmarks as *const _ as usize },
-        168usize,
+        184usize,
         concat!(
             "Offset of field: ",
             stringify!(ModifyTableState),
@@ -45477,7 +48866,7 @@ fn bindgen_test_layout_ModifyTableState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ModifyTableState>())).mt_epqstate as *const _ as usize },
-        176usize,
+        192usize,
         concat!(
             "Offset of field: ",
             stringify!(ModifyTableState),
@@ -45487,7 +48876,7 @@ fn bindgen_test_layout_ModifyTableState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ModifyTableState>())).fireBSTriggers as *const _ as usize },
-        224usize,
+        240usize,
         concat!(
             "Offset of field: ",
             stringify!(ModifyTableState),
@@ -45496,30 +48885,8 @@ fn bindgen_test_layout_ModifyTableState() {
         )
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<ModifyTableState>())).mt_onconflict as *const _ as usize },
-        228usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ModifyTableState),
-            "::",
-            stringify!(mt_onconflict)
-        )
-    );
-    assert_eq!(
-        unsafe {
-            &(*(::std::ptr::null::<ModifyTableState>())).mt_arbiterindexes as *const _ as usize
-        },
-        232usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ModifyTableState),
-            "::",
-            stringify!(mt_arbiterindexes)
-        )
-    );
-    assert_eq!(
         unsafe { &(*(::std::ptr::null::<ModifyTableState>())).mt_existing as *const _ as usize },
-        240usize,
+        248usize,
         concat!(
             "Offset of field: ",
             stringify!(ModifyTableState),
@@ -45531,7 +48898,7 @@ fn bindgen_test_layout_ModifyTableState() {
         unsafe {
             &(*(::std::ptr::null::<ModifyTableState>())).mt_excludedtlist as *const _ as usize
         },
-        248usize,
+        256usize,
         concat!(
             "Offset of field: ",
             stringify!(ModifyTableState),
@@ -45541,7 +48908,7 @@ fn bindgen_test_layout_ModifyTableState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ModifyTableState>())).mt_conflproj as *const _ as usize },
-        256usize,
+        264usize,
         concat!(
             "Offset of field: ",
             stringify!(ModifyTableState),
@@ -45551,82 +48918,22 @@ fn bindgen_test_layout_ModifyTableState() {
     );
     assert_eq!(
         unsafe {
-            &(*(::std::ptr::null::<ModifyTableState>())).mt_partition_dispatch_info as *const _
+            &(*(::std::ptr::null::<ModifyTableState>())).mt_partition_tuple_routing as *const _
                 as usize
-        },
-        264usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ModifyTableState),
-            "::",
-            stringify!(mt_partition_dispatch_info)
-        )
-    );
-    assert_eq!(
-        unsafe {
-            &(*(::std::ptr::null::<ModifyTableState>())).mt_num_dispatch as *const _ as usize
         },
         272usize,
         concat!(
             "Offset of field: ",
             stringify!(ModifyTableState),
             "::",
-            stringify!(mt_num_dispatch)
-        )
-    );
-    assert_eq!(
-        unsafe {
-            &(*(::std::ptr::null::<ModifyTableState>())).mt_num_partitions as *const _ as usize
-        },
-        276usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ModifyTableState),
-            "::",
-            stringify!(mt_num_partitions)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<ModifyTableState>())).mt_partitions as *const _ as usize },
-        280usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ModifyTableState),
-            "::",
-            stringify!(mt_partitions)
-        )
-    );
-    assert_eq!(
-        unsafe {
-            &(*(::std::ptr::null::<ModifyTableState>())).mt_partition_tupconv_maps as *const _
-                as usize
-        },
-        288usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ModifyTableState),
-            "::",
-            stringify!(mt_partition_tupconv_maps)
-        )
-    );
-    assert_eq!(
-        unsafe {
-            &(*(::std::ptr::null::<ModifyTableState>())).mt_partition_tuple_slot as *const _
-                as usize
-        },
-        296usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(ModifyTableState),
-            "::",
-            stringify!(mt_partition_tuple_slot)
+            stringify!(mt_partition_tuple_routing)
         )
     );
     assert_eq!(
         unsafe {
             &(*(::std::ptr::null::<ModifyTableState>())).mt_transition_capture as *const _ as usize
         },
-        304usize,
+        280usize,
         concat!(
             "Offset of field: ",
             stringify!(ModifyTableState),
@@ -45639,7 +48946,7 @@ fn bindgen_test_layout_ModifyTableState() {
             &(*(::std::ptr::null::<ModifyTableState>())).mt_oc_transition_capture as *const _
                 as usize
         },
-        312usize,
+        288usize,
         concat!(
             "Offset of field: ",
             stringify!(ModifyTableState),
@@ -45649,17 +48956,27 @@ fn bindgen_test_layout_ModifyTableState() {
     );
     assert_eq!(
         unsafe {
-            &(*(::std::ptr::null::<ModifyTableState>())).mt_transition_tupconv_maps as *const _
+            &(*(::std::ptr::null::<ModifyTableState>())).mt_per_subplan_tupconv_maps as *const _
                 as usize
         },
-        320usize,
+        296usize,
         concat!(
             "Offset of field: ",
             stringify!(ModifyTableState),
             "::",
-            stringify!(mt_transition_tupconv_maps)
+            stringify!(mt_per_subplan_tupconv_maps)
         )
     );
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct ParallelAppendState {
+    _unused: [u8; 0],
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct PartitionPruneState {
+    _unused: [u8; 0],
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -45668,12 +48985,19 @@ pub struct AppendState {
     pub appendplans: *mut *mut PlanState,
     pub as_nplans: ::std::os::raw::c_int,
     pub as_whichplan: ::std::os::raw::c_int,
+    pub as_first_partial_plan: ::std::os::raw::c_int,
+    pub as_pstate: *mut ParallelAppendState,
+    pub pstate_len: Size,
+    pub as_prune_state: *mut PartitionPruneState,
+    pub as_valid_subplans: *mut Bitmapset,
+    pub choose_next_subplan:
+        ::std::option::Option<unsafe extern "C" fn(arg1: *mut AppendState) -> bool>,
 }
 #[test]
 fn bindgen_test_layout_AppendState() {
     assert_eq!(
         ::std::mem::size_of::<AppendState>(),
-        144usize,
+        208usize,
         concat!("Size of: ", stringify!(AppendState))
     );
     assert_eq!(
@@ -45693,7 +49017,7 @@ fn bindgen_test_layout_AppendState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<AppendState>())).appendplans as *const _ as usize },
-        128usize,
+        144usize,
         concat!(
             "Offset of field: ",
             stringify!(AppendState),
@@ -45703,7 +49027,7 @@ fn bindgen_test_layout_AppendState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<AppendState>())).as_nplans as *const _ as usize },
-        136usize,
+        152usize,
         concat!(
             "Offset of field: ",
             stringify!(AppendState),
@@ -45713,12 +49037,74 @@ fn bindgen_test_layout_AppendState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<AppendState>())).as_whichplan as *const _ as usize },
-        140usize,
+        156usize,
         concat!(
             "Offset of field: ",
             stringify!(AppendState),
             "::",
             stringify!(as_whichplan)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<AppendState>())).as_first_partial_plan as *const _ as usize
+        },
+        160usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AppendState),
+            "::",
+            stringify!(as_first_partial_plan)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<AppendState>())).as_pstate as *const _ as usize },
+        168usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AppendState),
+            "::",
+            stringify!(as_pstate)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<AppendState>())).pstate_len as *const _ as usize },
+        176usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AppendState),
+            "::",
+            stringify!(pstate_len)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<AppendState>())).as_prune_state as *const _ as usize },
+        184usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AppendState),
+            "::",
+            stringify!(as_prune_state)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<AppendState>())).as_valid_subplans as *const _ as usize },
+        192usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AppendState),
+            "::",
+            stringify!(as_valid_subplans)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<AppendState>())).choose_next_subplan as *const _ as usize },
+        200usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AppendState),
+            "::",
+            stringify!(choose_next_subplan)
         )
     );
 }
@@ -45732,13 +49118,13 @@ pub struct MergeAppendState {
     pub ms_sortkeys: SortSupport,
     pub ms_slots: *mut *mut TupleTableSlot,
     pub ms_heap: *mut binaryheap,
-    pub ms_initialized: bool_,
+    pub ms_initialized: bool,
 }
 #[test]
 fn bindgen_test_layout_MergeAppendState() {
     assert_eq!(
         ::std::mem::size_of::<MergeAppendState>(),
-        176usize,
+        192usize,
         concat!("Size of: ", stringify!(MergeAppendState))
     );
     assert_eq!(
@@ -45758,7 +49144,7 @@ fn bindgen_test_layout_MergeAppendState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<MergeAppendState>())).mergeplans as *const _ as usize },
-        128usize,
+        144usize,
         concat!(
             "Offset of field: ",
             stringify!(MergeAppendState),
@@ -45768,7 +49154,7 @@ fn bindgen_test_layout_MergeAppendState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<MergeAppendState>())).ms_nplans as *const _ as usize },
-        136usize,
+        152usize,
         concat!(
             "Offset of field: ",
             stringify!(MergeAppendState),
@@ -45778,7 +49164,7 @@ fn bindgen_test_layout_MergeAppendState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<MergeAppendState>())).ms_nkeys as *const _ as usize },
-        140usize,
+        156usize,
         concat!(
             "Offset of field: ",
             stringify!(MergeAppendState),
@@ -45788,7 +49174,7 @@ fn bindgen_test_layout_MergeAppendState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<MergeAppendState>())).ms_sortkeys as *const _ as usize },
-        144usize,
+        160usize,
         concat!(
             "Offset of field: ",
             stringify!(MergeAppendState),
@@ -45798,7 +49184,7 @@ fn bindgen_test_layout_MergeAppendState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<MergeAppendState>())).ms_slots as *const _ as usize },
-        152usize,
+        168usize,
         concat!(
             "Offset of field: ",
             stringify!(MergeAppendState),
@@ -45808,7 +49194,7 @@ fn bindgen_test_layout_MergeAppendState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<MergeAppendState>())).ms_heap as *const _ as usize },
-        160usize,
+        176usize,
         concat!(
             "Offset of field: ",
             stringify!(MergeAppendState),
@@ -45818,7 +49204,7 @@ fn bindgen_test_layout_MergeAppendState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<MergeAppendState>())).ms_initialized as *const _ as usize },
-        168usize,
+        184usize,
         concat!(
             "Offset of field: ",
             stringify!(MergeAppendState),
@@ -45831,11 +49217,11 @@ fn bindgen_test_layout_MergeAppendState() {
 #[derive(Debug, Copy, Clone)]
 pub struct RecursiveUnionState {
     pub ps: PlanState,
-    pub recursing: bool_,
-    pub intermediate_empty: bool_,
+    pub recursing: bool,
+    pub intermediate_empty: bool,
     pub working_table: *mut Tuplestorestate,
     pub intermediate_table: *mut Tuplestorestate,
-    pub eqfunctions: *mut FmgrInfo,
+    pub eqfuncoids: *mut Oid,
     pub hashfunctions: *mut FmgrInfo,
     pub tempContext: MemoryContext,
     pub hashtable: TupleHashTable,
@@ -45845,7 +49231,7 @@ pub struct RecursiveUnionState {
 fn bindgen_test_layout_RecursiveUnionState() {
     assert_eq!(
         ::std::mem::size_of::<RecursiveUnionState>(),
-        192usize,
+        208usize,
         concat!("Size of: ", stringify!(RecursiveUnionState))
     );
     assert_eq!(
@@ -45865,7 +49251,7 @@ fn bindgen_test_layout_RecursiveUnionState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<RecursiveUnionState>())).recursing as *const _ as usize },
-        128usize,
+        144usize,
         concat!(
             "Offset of field: ",
             stringify!(RecursiveUnionState),
@@ -45877,7 +49263,7 @@ fn bindgen_test_layout_RecursiveUnionState() {
         unsafe {
             &(*(::std::ptr::null::<RecursiveUnionState>())).intermediate_empty as *const _ as usize
         },
-        129usize,
+        145usize,
         concat!(
             "Offset of field: ",
             stringify!(RecursiveUnionState),
@@ -45889,7 +49275,7 @@ fn bindgen_test_layout_RecursiveUnionState() {
         unsafe {
             &(*(::std::ptr::null::<RecursiveUnionState>())).working_table as *const _ as usize
         },
-        136usize,
+        152usize,
         concat!(
             "Offset of field: ",
             stringify!(RecursiveUnionState),
@@ -45901,7 +49287,7 @@ fn bindgen_test_layout_RecursiveUnionState() {
         unsafe {
             &(*(::std::ptr::null::<RecursiveUnionState>())).intermediate_table as *const _ as usize
         },
-        144usize,
+        160usize,
         concat!(
             "Offset of field: ",
             stringify!(RecursiveUnionState),
@@ -45910,20 +49296,20 @@ fn bindgen_test_layout_RecursiveUnionState() {
         )
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<RecursiveUnionState>())).eqfunctions as *const _ as usize },
-        152usize,
+        unsafe { &(*(::std::ptr::null::<RecursiveUnionState>())).eqfuncoids as *const _ as usize },
+        168usize,
         concat!(
             "Offset of field: ",
             stringify!(RecursiveUnionState),
             "::",
-            stringify!(eqfunctions)
+            stringify!(eqfuncoids)
         )
     );
     assert_eq!(
         unsafe {
             &(*(::std::ptr::null::<RecursiveUnionState>())).hashfunctions as *const _ as usize
         },
-        160usize,
+        176usize,
         concat!(
             "Offset of field: ",
             stringify!(RecursiveUnionState),
@@ -45933,7 +49319,7 @@ fn bindgen_test_layout_RecursiveUnionState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<RecursiveUnionState>())).tempContext as *const _ as usize },
-        168usize,
+        184usize,
         concat!(
             "Offset of field: ",
             stringify!(RecursiveUnionState),
@@ -45943,7 +49329,7 @@ fn bindgen_test_layout_RecursiveUnionState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<RecursiveUnionState>())).hashtable as *const _ as usize },
-        176usize,
+        192usize,
         concat!(
             "Offset of field: ",
             stringify!(RecursiveUnionState),
@@ -45955,7 +49341,7 @@ fn bindgen_test_layout_RecursiveUnionState() {
         unsafe {
             &(*(::std::ptr::null::<RecursiveUnionState>())).tableContext as *const _ as usize
         },
-        184usize,
+        200usize,
         concat!(
             "Offset of field: ",
             stringify!(RecursiveUnionState),
@@ -45975,7 +49361,7 @@ pub struct BitmapAndState {
 fn bindgen_test_layout_BitmapAndState() {
     assert_eq!(
         ::std::mem::size_of::<BitmapAndState>(),
-        144usize,
+        160usize,
         concat!("Size of: ", stringify!(BitmapAndState))
     );
     assert_eq!(
@@ -45995,7 +49381,7 @@ fn bindgen_test_layout_BitmapAndState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<BitmapAndState>())).bitmapplans as *const _ as usize },
-        128usize,
+        144usize,
         concat!(
             "Offset of field: ",
             stringify!(BitmapAndState),
@@ -46005,7 +49391,7 @@ fn bindgen_test_layout_BitmapAndState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<BitmapAndState>())).nplans as *const _ as usize },
-        136usize,
+        152usize,
         concat!(
             "Offset of field: ",
             stringify!(BitmapAndState),
@@ -46025,7 +49411,7 @@ pub struct BitmapOrState {
 fn bindgen_test_layout_BitmapOrState() {
     assert_eq!(
         ::std::mem::size_of::<BitmapOrState>(),
-        144usize,
+        160usize,
         concat!("Size of: ", stringify!(BitmapOrState))
     );
     assert_eq!(
@@ -46045,7 +49431,7 @@ fn bindgen_test_layout_BitmapOrState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<BitmapOrState>())).bitmapplans as *const _ as usize },
-        128usize,
+        144usize,
         concat!(
             "Offset of field: ",
             stringify!(BitmapOrState),
@@ -46055,7 +49441,7 @@ fn bindgen_test_layout_BitmapOrState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<BitmapOrState>())).nplans as *const _ as usize },
-        136usize,
+        152usize,
         concat!(
             "Offset of field: ",
             stringify!(BitmapOrState),
@@ -46076,7 +49462,7 @@ pub struct ScanState {
 fn bindgen_test_layout_ScanState() {
     assert_eq!(
         ::std::mem::size_of::<ScanState>(),
-        152usize,
+        168usize,
         concat!("Size of: ", stringify!(ScanState))
     );
     assert_eq!(
@@ -46096,7 +49482,7 @@ fn bindgen_test_layout_ScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ScanState>())).ss_currentRelation as *const _ as usize },
-        128usize,
+        144usize,
         concat!(
             "Offset of field: ",
             stringify!(ScanState),
@@ -46106,7 +49492,7 @@ fn bindgen_test_layout_ScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ScanState>())).ss_currentScanDesc as *const _ as usize },
-        136usize,
+        152usize,
         concat!(
             "Offset of field: ",
             stringify!(ScanState),
@@ -46116,7 +49502,7 @@ fn bindgen_test_layout_ScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ScanState>())).ss_ScanTupleSlot as *const _ as usize },
-        144usize,
+        160usize,
         concat!(
             "Offset of field: ",
             stringify!(ScanState),
@@ -46135,7 +49521,7 @@ pub struct SeqScanState {
 fn bindgen_test_layout_SeqScanState() {
     assert_eq!(
         ::std::mem::size_of::<SeqScanState>(),
-        160usize,
+        176usize,
         concat!("Size of: ", stringify!(SeqScanState))
     );
     assert_eq!(
@@ -46155,7 +49541,7 @@ fn bindgen_test_layout_SeqScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<SeqScanState>())).pscan_len as *const _ as usize },
-        152usize,
+        168usize,
         concat!(
             "Offset of field: ",
             stringify!(SeqScanState),
@@ -46172,16 +49558,16 @@ pub struct SampleScanState {
     pub repeatable: *mut ExprState,
     pub tsmroutine: *mut TsmRoutine,
     pub tsm_state: *mut ::std::os::raw::c_void,
-    pub use_bulkread: bool_,
-    pub use_pagemode: bool_,
-    pub begun: bool_,
+    pub use_bulkread: bool,
+    pub use_pagemode: bool,
+    pub begun: bool,
     pub seed: uint32,
 }
 #[test]
 fn bindgen_test_layout_SampleScanState() {
     assert_eq!(
         ::std::mem::size_of::<SampleScanState>(),
-        192usize,
+        208usize,
         concat!("Size of: ", stringify!(SampleScanState))
     );
     assert_eq!(
@@ -46201,7 +49587,7 @@ fn bindgen_test_layout_SampleScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<SampleScanState>())).args as *const _ as usize },
-        152usize,
+        168usize,
         concat!(
             "Offset of field: ",
             stringify!(SampleScanState),
@@ -46211,7 +49597,7 @@ fn bindgen_test_layout_SampleScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<SampleScanState>())).repeatable as *const _ as usize },
-        160usize,
+        176usize,
         concat!(
             "Offset of field: ",
             stringify!(SampleScanState),
@@ -46221,7 +49607,7 @@ fn bindgen_test_layout_SampleScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<SampleScanState>())).tsmroutine as *const _ as usize },
-        168usize,
+        184usize,
         concat!(
             "Offset of field: ",
             stringify!(SampleScanState),
@@ -46231,7 +49617,7 @@ fn bindgen_test_layout_SampleScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<SampleScanState>())).tsm_state as *const _ as usize },
-        176usize,
+        192usize,
         concat!(
             "Offset of field: ",
             stringify!(SampleScanState),
@@ -46241,7 +49627,7 @@ fn bindgen_test_layout_SampleScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<SampleScanState>())).use_bulkread as *const _ as usize },
-        184usize,
+        200usize,
         concat!(
             "Offset of field: ",
             stringify!(SampleScanState),
@@ -46251,7 +49637,7 @@ fn bindgen_test_layout_SampleScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<SampleScanState>())).use_pagemode as *const _ as usize },
-        185usize,
+        201usize,
         concat!(
             "Offset of field: ",
             stringify!(SampleScanState),
@@ -46261,7 +49647,7 @@ fn bindgen_test_layout_SampleScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<SampleScanState>())).begun as *const _ as usize },
-        186usize,
+        202usize,
         concat!(
             "Offset of field: ",
             stringify!(SampleScanState),
@@ -46271,7 +49657,7 @@ fn bindgen_test_layout_SampleScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<SampleScanState>())).seed as *const _ as usize },
-        188usize,
+        204usize,
         concat!(
             "Offset of field: ",
             stringify!(SampleScanState),
@@ -46285,7 +49671,7 @@ fn bindgen_test_layout_SampleScanState() {
 pub struct IndexRuntimeKeyInfo {
     pub scan_key: ScanKey,
     pub key_expr: *mut ExprState,
-    pub key_toastable: bool_,
+    pub key_toastable: bool,
 }
 #[test]
 fn bindgen_test_layout_IndexRuntimeKeyInfo() {
@@ -46340,7 +49726,7 @@ pub struct IndexArrayKeyInfo {
     pub next_elem: ::std::os::raw::c_int,
     pub num_elems: ::std::os::raw::c_int,
     pub elem_values: *mut Datum,
-    pub elem_nulls: *mut bool_,
+    pub elem_nulls: *mut bool,
 }
 #[test]
 fn bindgen_test_layout_IndexArrayKeyInfo() {
@@ -46427,16 +49813,16 @@ pub struct IndexScanState {
     pub iss_NumOrderByKeys: ::std::os::raw::c_int,
     pub iss_RuntimeKeys: *mut IndexRuntimeKeyInfo,
     pub iss_NumRuntimeKeys: ::std::os::raw::c_int,
-    pub iss_RuntimeKeysReady: bool_,
+    pub iss_RuntimeKeysReady: bool,
     pub iss_RuntimeContext: *mut ExprContext,
     pub iss_RelationDesc: Relation,
     pub iss_ScanDesc: IndexScanDesc,
     pub iss_ReorderQueue: *mut pairingheap,
-    pub iss_ReachedEnd: bool_,
+    pub iss_ReachedEnd: bool,
     pub iss_OrderByValues: *mut Datum,
-    pub iss_OrderByNulls: *mut bool_,
+    pub iss_OrderByNulls: *mut bool,
     pub iss_SortSupport: SortSupport,
-    pub iss_OrderByTypByVals: *mut bool_,
+    pub iss_OrderByTypByVals: *mut bool,
     pub iss_OrderByTypLens: *mut int16,
     pub iss_PscanLen: Size,
 }
@@ -46444,7 +49830,7 @@ pub struct IndexScanState {
 fn bindgen_test_layout_IndexScanState() {
     assert_eq!(
         ::std::mem::size_of::<IndexScanState>(),
-        304usize,
+        320usize,
         concat!("Size of: ", stringify!(IndexScanState))
     );
     assert_eq!(
@@ -46464,7 +49850,7 @@ fn bindgen_test_layout_IndexScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexScanState>())).indexqualorig as *const _ as usize },
-        152usize,
+        168usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexScanState),
@@ -46474,7 +49860,7 @@ fn bindgen_test_layout_IndexScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexScanState>())).indexorderbyorig as *const _ as usize },
-        160usize,
+        176usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexScanState),
@@ -46484,7 +49870,7 @@ fn bindgen_test_layout_IndexScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexScanState>())).iss_ScanKeys as *const _ as usize },
-        168usize,
+        184usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexScanState),
@@ -46494,7 +49880,7 @@ fn bindgen_test_layout_IndexScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexScanState>())).iss_NumScanKeys as *const _ as usize },
-        176usize,
+        192usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexScanState),
@@ -46504,7 +49890,7 @@ fn bindgen_test_layout_IndexScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexScanState>())).iss_OrderByKeys as *const _ as usize },
-        184usize,
+        200usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexScanState),
@@ -46516,7 +49902,7 @@ fn bindgen_test_layout_IndexScanState() {
         unsafe {
             &(*(::std::ptr::null::<IndexScanState>())).iss_NumOrderByKeys as *const _ as usize
         },
-        192usize,
+        208usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexScanState),
@@ -46526,7 +49912,7 @@ fn bindgen_test_layout_IndexScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexScanState>())).iss_RuntimeKeys as *const _ as usize },
-        200usize,
+        216usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexScanState),
@@ -46538,7 +49924,7 @@ fn bindgen_test_layout_IndexScanState() {
         unsafe {
             &(*(::std::ptr::null::<IndexScanState>())).iss_NumRuntimeKeys as *const _ as usize
         },
-        208usize,
+        224usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexScanState),
@@ -46550,7 +49936,7 @@ fn bindgen_test_layout_IndexScanState() {
         unsafe {
             &(*(::std::ptr::null::<IndexScanState>())).iss_RuntimeKeysReady as *const _ as usize
         },
-        212usize,
+        228usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexScanState),
@@ -46562,7 +49948,7 @@ fn bindgen_test_layout_IndexScanState() {
         unsafe {
             &(*(::std::ptr::null::<IndexScanState>())).iss_RuntimeContext as *const _ as usize
         },
-        216usize,
+        232usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexScanState),
@@ -46572,7 +49958,7 @@ fn bindgen_test_layout_IndexScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexScanState>())).iss_RelationDesc as *const _ as usize },
-        224usize,
+        240usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexScanState),
@@ -46582,7 +49968,7 @@ fn bindgen_test_layout_IndexScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexScanState>())).iss_ScanDesc as *const _ as usize },
-        232usize,
+        248usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexScanState),
@@ -46592,7 +49978,7 @@ fn bindgen_test_layout_IndexScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexScanState>())).iss_ReorderQueue as *const _ as usize },
-        240usize,
+        256usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexScanState),
@@ -46602,7 +49988,7 @@ fn bindgen_test_layout_IndexScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexScanState>())).iss_ReachedEnd as *const _ as usize },
-        248usize,
+        264usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexScanState),
@@ -46614,7 +50000,7 @@ fn bindgen_test_layout_IndexScanState() {
         unsafe {
             &(*(::std::ptr::null::<IndexScanState>())).iss_OrderByValues as *const _ as usize
         },
-        256usize,
+        272usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexScanState),
@@ -46624,7 +50010,7 @@ fn bindgen_test_layout_IndexScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexScanState>())).iss_OrderByNulls as *const _ as usize },
-        264usize,
+        280usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexScanState),
@@ -46634,7 +50020,7 @@ fn bindgen_test_layout_IndexScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexScanState>())).iss_SortSupport as *const _ as usize },
-        272usize,
+        288usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexScanState),
@@ -46646,7 +50032,7 @@ fn bindgen_test_layout_IndexScanState() {
         unsafe {
             &(*(::std::ptr::null::<IndexScanState>())).iss_OrderByTypByVals as *const _ as usize
         },
-        280usize,
+        296usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexScanState),
@@ -46658,7 +50044,7 @@ fn bindgen_test_layout_IndexScanState() {
         unsafe {
             &(*(::std::ptr::null::<IndexScanState>())).iss_OrderByTypLens as *const _ as usize
         },
-        288usize,
+        304usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexScanState),
@@ -46668,7 +50054,7 @@ fn bindgen_test_layout_IndexScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexScanState>())).iss_PscanLen as *const _ as usize },
-        296usize,
+        312usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexScanState),
@@ -46688,19 +50074,18 @@ pub struct IndexOnlyScanState {
     pub ioss_NumOrderByKeys: ::std::os::raw::c_int,
     pub ioss_RuntimeKeys: *mut IndexRuntimeKeyInfo,
     pub ioss_NumRuntimeKeys: ::std::os::raw::c_int,
-    pub ioss_RuntimeKeysReady: bool_,
+    pub ioss_RuntimeKeysReady: bool,
     pub ioss_RuntimeContext: *mut ExprContext,
     pub ioss_RelationDesc: Relation,
     pub ioss_ScanDesc: IndexScanDesc,
     pub ioss_VMBuffer: Buffer,
-    pub ioss_HeapFetches: ::std::os::raw::c_long,
     pub ioss_PscanLen: Size,
 }
 #[test]
 fn bindgen_test_layout_IndexOnlyScanState() {
     assert_eq!(
         ::std::mem::size_of::<IndexOnlyScanState>(),
-        256usize,
+        264usize,
         concat!("Size of: ", stringify!(IndexOnlyScanState))
     );
     assert_eq!(
@@ -46720,7 +50105,7 @@ fn bindgen_test_layout_IndexOnlyScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<IndexOnlyScanState>())).indexqual as *const _ as usize },
-        152usize,
+        168usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexOnlyScanState),
@@ -46732,7 +50117,7 @@ fn bindgen_test_layout_IndexOnlyScanState() {
         unsafe {
             &(*(::std::ptr::null::<IndexOnlyScanState>())).ioss_ScanKeys as *const _ as usize
         },
-        160usize,
+        176usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexOnlyScanState),
@@ -46744,7 +50129,7 @@ fn bindgen_test_layout_IndexOnlyScanState() {
         unsafe {
             &(*(::std::ptr::null::<IndexOnlyScanState>())).ioss_NumScanKeys as *const _ as usize
         },
-        168usize,
+        184usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexOnlyScanState),
@@ -46756,7 +50141,7 @@ fn bindgen_test_layout_IndexOnlyScanState() {
         unsafe {
             &(*(::std::ptr::null::<IndexOnlyScanState>())).ioss_OrderByKeys as *const _ as usize
         },
-        176usize,
+        192usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexOnlyScanState),
@@ -46768,7 +50153,7 @@ fn bindgen_test_layout_IndexOnlyScanState() {
         unsafe {
             &(*(::std::ptr::null::<IndexOnlyScanState>())).ioss_NumOrderByKeys as *const _ as usize
         },
-        184usize,
+        200usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexOnlyScanState),
@@ -46780,7 +50165,7 @@ fn bindgen_test_layout_IndexOnlyScanState() {
         unsafe {
             &(*(::std::ptr::null::<IndexOnlyScanState>())).ioss_RuntimeKeys as *const _ as usize
         },
-        192usize,
+        208usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexOnlyScanState),
@@ -46792,7 +50177,7 @@ fn bindgen_test_layout_IndexOnlyScanState() {
         unsafe {
             &(*(::std::ptr::null::<IndexOnlyScanState>())).ioss_NumRuntimeKeys as *const _ as usize
         },
-        200usize,
+        216usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexOnlyScanState),
@@ -46805,7 +50190,7 @@ fn bindgen_test_layout_IndexOnlyScanState() {
             &(*(::std::ptr::null::<IndexOnlyScanState>())).ioss_RuntimeKeysReady as *const _
                 as usize
         },
-        204usize,
+        220usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexOnlyScanState),
@@ -46817,7 +50202,7 @@ fn bindgen_test_layout_IndexOnlyScanState() {
         unsafe {
             &(*(::std::ptr::null::<IndexOnlyScanState>())).ioss_RuntimeContext as *const _ as usize
         },
-        208usize,
+        224usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexOnlyScanState),
@@ -46829,7 +50214,7 @@ fn bindgen_test_layout_IndexOnlyScanState() {
         unsafe {
             &(*(::std::ptr::null::<IndexOnlyScanState>())).ioss_RelationDesc as *const _ as usize
         },
-        216usize,
+        232usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexOnlyScanState),
@@ -46841,7 +50226,7 @@ fn bindgen_test_layout_IndexOnlyScanState() {
         unsafe {
             &(*(::std::ptr::null::<IndexOnlyScanState>())).ioss_ScanDesc as *const _ as usize
         },
-        224usize,
+        240usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexOnlyScanState),
@@ -46853,7 +50238,7 @@ fn bindgen_test_layout_IndexOnlyScanState() {
         unsafe {
             &(*(::std::ptr::null::<IndexOnlyScanState>())).ioss_VMBuffer as *const _ as usize
         },
-        232usize,
+        248usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexOnlyScanState),
@@ -46863,21 +50248,9 @@ fn bindgen_test_layout_IndexOnlyScanState() {
     );
     assert_eq!(
         unsafe {
-            &(*(::std::ptr::null::<IndexOnlyScanState>())).ioss_HeapFetches as *const _ as usize
-        },
-        240usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(IndexOnlyScanState),
-            "::",
-            stringify!(ioss_HeapFetches)
-        )
-    );
-    assert_eq!(
-        unsafe {
             &(*(::std::ptr::null::<IndexOnlyScanState>())).ioss_PscanLen as *const _ as usize
         },
-        248usize,
+        256usize,
         concat!(
             "Offset of field: ",
             stringify!(IndexOnlyScanState),
@@ -46897,7 +50270,7 @@ pub struct BitmapIndexScanState {
     pub biss_NumRuntimeKeys: ::std::os::raw::c_int,
     pub biss_ArrayKeys: *mut IndexArrayKeyInfo,
     pub biss_NumArrayKeys: ::std::os::raw::c_int,
-    pub biss_RuntimeKeysReady: bool_,
+    pub biss_RuntimeKeysReady: bool,
     pub biss_RuntimeContext: *mut ExprContext,
     pub biss_RelationDesc: Relation,
     pub biss_ScanDesc: IndexScanDesc,
@@ -46906,7 +50279,7 @@ pub struct BitmapIndexScanState {
 fn bindgen_test_layout_BitmapIndexScanState() {
     assert_eq!(
         ::std::mem::size_of::<BitmapIndexScanState>(),
-        232usize,
+        248usize,
         concat!("Size of: ", stringify!(BitmapIndexScanState))
     );
     assert_eq!(
@@ -46928,7 +50301,7 @@ fn bindgen_test_layout_BitmapIndexScanState() {
         unsafe {
             &(*(::std::ptr::null::<BitmapIndexScanState>())).biss_result as *const _ as usize
         },
-        152usize,
+        168usize,
         concat!(
             "Offset of field: ",
             stringify!(BitmapIndexScanState),
@@ -46940,7 +50313,7 @@ fn bindgen_test_layout_BitmapIndexScanState() {
         unsafe {
             &(*(::std::ptr::null::<BitmapIndexScanState>())).biss_ScanKeys as *const _ as usize
         },
-        160usize,
+        176usize,
         concat!(
             "Offset of field: ",
             stringify!(BitmapIndexScanState),
@@ -46952,7 +50325,7 @@ fn bindgen_test_layout_BitmapIndexScanState() {
         unsafe {
             &(*(::std::ptr::null::<BitmapIndexScanState>())).biss_NumScanKeys as *const _ as usize
         },
-        168usize,
+        184usize,
         concat!(
             "Offset of field: ",
             stringify!(BitmapIndexScanState),
@@ -46964,7 +50337,7 @@ fn bindgen_test_layout_BitmapIndexScanState() {
         unsafe {
             &(*(::std::ptr::null::<BitmapIndexScanState>())).biss_RuntimeKeys as *const _ as usize
         },
-        176usize,
+        192usize,
         concat!(
             "Offset of field: ",
             stringify!(BitmapIndexScanState),
@@ -46977,7 +50350,7 @@ fn bindgen_test_layout_BitmapIndexScanState() {
             &(*(::std::ptr::null::<BitmapIndexScanState>())).biss_NumRuntimeKeys as *const _
                 as usize
         },
-        184usize,
+        200usize,
         concat!(
             "Offset of field: ",
             stringify!(BitmapIndexScanState),
@@ -46989,7 +50362,7 @@ fn bindgen_test_layout_BitmapIndexScanState() {
         unsafe {
             &(*(::std::ptr::null::<BitmapIndexScanState>())).biss_ArrayKeys as *const _ as usize
         },
-        192usize,
+        208usize,
         concat!(
             "Offset of field: ",
             stringify!(BitmapIndexScanState),
@@ -47001,7 +50374,7 @@ fn bindgen_test_layout_BitmapIndexScanState() {
         unsafe {
             &(*(::std::ptr::null::<BitmapIndexScanState>())).biss_NumArrayKeys as *const _ as usize
         },
-        200usize,
+        216usize,
         concat!(
             "Offset of field: ",
             stringify!(BitmapIndexScanState),
@@ -47014,7 +50387,7 @@ fn bindgen_test_layout_BitmapIndexScanState() {
             &(*(::std::ptr::null::<BitmapIndexScanState>())).biss_RuntimeKeysReady as *const _
                 as usize
         },
-        204usize,
+        220usize,
         concat!(
             "Offset of field: ",
             stringify!(BitmapIndexScanState),
@@ -47027,7 +50400,7 @@ fn bindgen_test_layout_BitmapIndexScanState() {
             &(*(::std::ptr::null::<BitmapIndexScanState>())).biss_RuntimeContext as *const _
                 as usize
         },
-        208usize,
+        224usize,
         concat!(
             "Offset of field: ",
             stringify!(BitmapIndexScanState),
@@ -47039,7 +50412,7 @@ fn bindgen_test_layout_BitmapIndexScanState() {
         unsafe {
             &(*(::std::ptr::null::<BitmapIndexScanState>())).biss_RelationDesc as *const _ as usize
         },
-        216usize,
+        232usize,
         concat!(
             "Offset of field: ",
             stringify!(BitmapIndexScanState),
@@ -47051,7 +50424,7 @@ fn bindgen_test_layout_BitmapIndexScanState() {
         unsafe {
             &(*(::std::ptr::null::<BitmapIndexScanState>())).biss_ScanDesc as *const _ as usize
         },
-        224usize,
+        240usize,
         concat!(
             "Offset of field: ",
             stringify!(BitmapIndexScanState),
@@ -47097,6 +50470,10 @@ pub struct BitmapHeapScanState {
     pub tbm: *mut TIDBitmap,
     pub tbmiterator: *mut TBMIterator,
     pub tbmres: *mut TBMIterateResult,
+    pub can_skip_fetch: bool,
+    pub skip_fetch: bool,
+    pub vmbuffer: Buffer,
+    pub pvmbuffer: Buffer,
     pub exact_pages: ::std::os::raw::c_long,
     pub lossy_pages: ::std::os::raw::c_long,
     pub prefetch_iterator: *mut TBMIterator,
@@ -47104,7 +50481,7 @@ pub struct BitmapHeapScanState {
     pub prefetch_target: ::std::os::raw::c_int,
     pub prefetch_maximum: ::std::os::raw::c_int,
     pub pscan_len: Size,
-    pub initialized: bool_,
+    pub initialized: bool,
     pub shared_tbmiterator: *mut TBMSharedIterator,
     pub shared_prefetch_iterator: *mut TBMSharedIterator,
     pub pstate: *mut ParallelBitmapHeapState,
@@ -47113,7 +50490,7 @@ pub struct BitmapHeapScanState {
 fn bindgen_test_layout_BitmapHeapScanState() {
     assert_eq!(
         ::std::mem::size_of::<BitmapHeapScanState>(),
-        264usize,
+        296usize,
         concat!("Size of: ", stringify!(BitmapHeapScanState))
     );
     assert_eq!(
@@ -47135,7 +50512,7 @@ fn bindgen_test_layout_BitmapHeapScanState() {
         unsafe {
             &(*(::std::ptr::null::<BitmapHeapScanState>())).bitmapqualorig as *const _ as usize
         },
-        152usize,
+        168usize,
         concat!(
             "Offset of field: ",
             stringify!(BitmapHeapScanState),
@@ -47145,7 +50522,7 @@ fn bindgen_test_layout_BitmapHeapScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<BitmapHeapScanState>())).tbm as *const _ as usize },
-        160usize,
+        176usize,
         concat!(
             "Offset of field: ",
             stringify!(BitmapHeapScanState),
@@ -47155,7 +50532,7 @@ fn bindgen_test_layout_BitmapHeapScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<BitmapHeapScanState>())).tbmiterator as *const _ as usize },
-        168usize,
+        184usize,
         concat!(
             "Offset of field: ",
             stringify!(BitmapHeapScanState),
@@ -47165,7 +50542,7 @@ fn bindgen_test_layout_BitmapHeapScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<BitmapHeapScanState>())).tbmres as *const _ as usize },
-        176usize,
+        192usize,
         concat!(
             "Offset of field: ",
             stringify!(BitmapHeapScanState),
@@ -47174,8 +50551,50 @@ fn bindgen_test_layout_BitmapHeapScanState() {
         )
     );
     assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<BitmapHeapScanState>())).can_skip_fetch as *const _ as usize
+        },
+        200usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(BitmapHeapScanState),
+            "::",
+            stringify!(can_skip_fetch)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<BitmapHeapScanState>())).skip_fetch as *const _ as usize },
+        201usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(BitmapHeapScanState),
+            "::",
+            stringify!(skip_fetch)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<BitmapHeapScanState>())).vmbuffer as *const _ as usize },
+        204usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(BitmapHeapScanState),
+            "::",
+            stringify!(vmbuffer)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<BitmapHeapScanState>())).pvmbuffer as *const _ as usize },
+        208usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(BitmapHeapScanState),
+            "::",
+            stringify!(pvmbuffer)
+        )
+    );
+    assert_eq!(
         unsafe { &(*(::std::ptr::null::<BitmapHeapScanState>())).exact_pages as *const _ as usize },
-        184usize,
+        216usize,
         concat!(
             "Offset of field: ",
             stringify!(BitmapHeapScanState),
@@ -47185,7 +50604,7 @@ fn bindgen_test_layout_BitmapHeapScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<BitmapHeapScanState>())).lossy_pages as *const _ as usize },
-        192usize,
+        224usize,
         concat!(
             "Offset of field: ",
             stringify!(BitmapHeapScanState),
@@ -47197,7 +50616,7 @@ fn bindgen_test_layout_BitmapHeapScanState() {
         unsafe {
             &(*(::std::ptr::null::<BitmapHeapScanState>())).prefetch_iterator as *const _ as usize
         },
-        200usize,
+        232usize,
         concat!(
             "Offset of field: ",
             stringify!(BitmapHeapScanState),
@@ -47209,7 +50628,7 @@ fn bindgen_test_layout_BitmapHeapScanState() {
         unsafe {
             &(*(::std::ptr::null::<BitmapHeapScanState>())).prefetch_pages as *const _ as usize
         },
-        208usize,
+        240usize,
         concat!(
             "Offset of field: ",
             stringify!(BitmapHeapScanState),
@@ -47221,7 +50640,7 @@ fn bindgen_test_layout_BitmapHeapScanState() {
         unsafe {
             &(*(::std::ptr::null::<BitmapHeapScanState>())).prefetch_target as *const _ as usize
         },
-        212usize,
+        244usize,
         concat!(
             "Offset of field: ",
             stringify!(BitmapHeapScanState),
@@ -47233,7 +50652,7 @@ fn bindgen_test_layout_BitmapHeapScanState() {
         unsafe {
             &(*(::std::ptr::null::<BitmapHeapScanState>())).prefetch_maximum as *const _ as usize
         },
-        216usize,
+        248usize,
         concat!(
             "Offset of field: ",
             stringify!(BitmapHeapScanState),
@@ -47243,7 +50662,7 @@ fn bindgen_test_layout_BitmapHeapScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<BitmapHeapScanState>())).pscan_len as *const _ as usize },
-        224usize,
+        256usize,
         concat!(
             "Offset of field: ",
             stringify!(BitmapHeapScanState),
@@ -47253,7 +50672,7 @@ fn bindgen_test_layout_BitmapHeapScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<BitmapHeapScanState>())).initialized as *const _ as usize },
-        232usize,
+        264usize,
         concat!(
             "Offset of field: ",
             stringify!(BitmapHeapScanState),
@@ -47265,7 +50684,7 @@ fn bindgen_test_layout_BitmapHeapScanState() {
         unsafe {
             &(*(::std::ptr::null::<BitmapHeapScanState>())).shared_tbmiterator as *const _ as usize
         },
-        240usize,
+        272usize,
         concat!(
             "Offset of field: ",
             stringify!(BitmapHeapScanState),
@@ -47278,7 +50697,7 @@ fn bindgen_test_layout_BitmapHeapScanState() {
             &(*(::std::ptr::null::<BitmapHeapScanState>())).shared_prefetch_iterator as *const _
                 as usize
         },
-        248usize,
+        280usize,
         concat!(
             "Offset of field: ",
             stringify!(BitmapHeapScanState),
@@ -47288,7 +50707,7 @@ fn bindgen_test_layout_BitmapHeapScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<BitmapHeapScanState>())).pstate as *const _ as usize },
-        256usize,
+        288usize,
         concat!(
             "Offset of field: ",
             stringify!(BitmapHeapScanState),
@@ -47302,7 +50721,7 @@ fn bindgen_test_layout_BitmapHeapScanState() {
 pub struct TidScanState {
     pub ss: ScanState,
     pub tss_tidexprs: *mut List,
-    pub tss_isCurrentOf: bool_,
+    pub tss_isCurrentOf: bool,
     pub tss_NumTids: ::std::os::raw::c_int,
     pub tss_TidPtr: ::std::os::raw::c_int,
     pub tss_TidList: *mut ItemPointerData,
@@ -47312,7 +50731,7 @@ pub struct TidScanState {
 fn bindgen_test_layout_TidScanState() {
     assert_eq!(
         ::std::mem::size_of::<TidScanState>(),
-        208usize,
+        224usize,
         concat!("Size of: ", stringify!(TidScanState))
     );
     assert_eq!(
@@ -47332,7 +50751,7 @@ fn bindgen_test_layout_TidScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<TidScanState>())).tss_tidexprs as *const _ as usize },
-        152usize,
+        168usize,
         concat!(
             "Offset of field: ",
             stringify!(TidScanState),
@@ -47342,7 +50761,7 @@ fn bindgen_test_layout_TidScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<TidScanState>())).tss_isCurrentOf as *const _ as usize },
-        160usize,
+        176usize,
         concat!(
             "Offset of field: ",
             stringify!(TidScanState),
@@ -47352,7 +50771,7 @@ fn bindgen_test_layout_TidScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<TidScanState>())).tss_NumTids as *const _ as usize },
-        164usize,
+        180usize,
         concat!(
             "Offset of field: ",
             stringify!(TidScanState),
@@ -47362,7 +50781,7 @@ fn bindgen_test_layout_TidScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<TidScanState>())).tss_TidPtr as *const _ as usize },
-        168usize,
+        184usize,
         concat!(
             "Offset of field: ",
             stringify!(TidScanState),
@@ -47372,7 +50791,7 @@ fn bindgen_test_layout_TidScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<TidScanState>())).tss_TidList as *const _ as usize },
-        176usize,
+        192usize,
         concat!(
             "Offset of field: ",
             stringify!(TidScanState),
@@ -47382,7 +50801,7 @@ fn bindgen_test_layout_TidScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<TidScanState>())).tss_htup as *const _ as usize },
-        184usize,
+        200usize,
         concat!(
             "Offset of field: ",
             stringify!(TidScanState),
@@ -47401,7 +50820,7 @@ pub struct SubqueryScanState {
 fn bindgen_test_layout_SubqueryScanState() {
     assert_eq!(
         ::std::mem::size_of::<SubqueryScanState>(),
-        160usize,
+        176usize,
         concat!("Size of: ", stringify!(SubqueryScanState))
     );
     assert_eq!(
@@ -47421,7 +50840,7 @@ fn bindgen_test_layout_SubqueryScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<SubqueryScanState>())).subplan as *const _ as usize },
-        152usize,
+        168usize,
         concat!(
             "Offset of field: ",
             stringify!(SubqueryScanState),
@@ -47440,8 +50859,8 @@ pub struct FunctionScanPerFuncState {
 pub struct FunctionScanState {
     pub ss: ScanState,
     pub eflags: ::std::os::raw::c_int,
-    pub ordinality: bool_,
-    pub simple: bool_,
+    pub ordinality: bool,
+    pub simple: bool,
     pub ordinal: int64,
     pub nfuncs: ::std::os::raw::c_int,
     pub funcstates: *mut FunctionScanPerFuncState,
@@ -47451,7 +50870,7 @@ pub struct FunctionScanState {
 fn bindgen_test_layout_FunctionScanState() {
     assert_eq!(
         ::std::mem::size_of::<FunctionScanState>(),
-        192usize,
+        208usize,
         concat!("Size of: ", stringify!(FunctionScanState))
     );
     assert_eq!(
@@ -47471,7 +50890,7 @@ fn bindgen_test_layout_FunctionScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<FunctionScanState>())).eflags as *const _ as usize },
-        152usize,
+        168usize,
         concat!(
             "Offset of field: ",
             stringify!(FunctionScanState),
@@ -47481,7 +50900,7 @@ fn bindgen_test_layout_FunctionScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<FunctionScanState>())).ordinality as *const _ as usize },
-        156usize,
+        172usize,
         concat!(
             "Offset of field: ",
             stringify!(FunctionScanState),
@@ -47491,7 +50910,7 @@ fn bindgen_test_layout_FunctionScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<FunctionScanState>())).simple as *const _ as usize },
-        157usize,
+        173usize,
         concat!(
             "Offset of field: ",
             stringify!(FunctionScanState),
@@ -47501,7 +50920,7 @@ fn bindgen_test_layout_FunctionScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<FunctionScanState>())).ordinal as *const _ as usize },
-        160usize,
+        176usize,
         concat!(
             "Offset of field: ",
             stringify!(FunctionScanState),
@@ -47511,7 +50930,7 @@ fn bindgen_test_layout_FunctionScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<FunctionScanState>())).nfuncs as *const _ as usize },
-        168usize,
+        184usize,
         concat!(
             "Offset of field: ",
             stringify!(FunctionScanState),
@@ -47521,7 +50940,7 @@ fn bindgen_test_layout_FunctionScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<FunctionScanState>())).funcstates as *const _ as usize },
-        176usize,
+        192usize,
         concat!(
             "Offset of field: ",
             stringify!(FunctionScanState),
@@ -47531,7 +50950,7 @@ fn bindgen_test_layout_FunctionScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<FunctionScanState>())).argcontext as *const _ as usize },
-        184usize,
+        200usize,
         concat!(
             "Offset of field: ",
             stringify!(FunctionScanState),
@@ -47553,7 +50972,7 @@ pub struct ValuesScanState {
 fn bindgen_test_layout_ValuesScanState() {
     assert_eq!(
         ::std::mem::size_of::<ValuesScanState>(),
-        176usize,
+        192usize,
         concat!("Size of: ", stringify!(ValuesScanState))
     );
     assert_eq!(
@@ -47573,7 +50992,7 @@ fn bindgen_test_layout_ValuesScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ValuesScanState>())).rowcontext as *const _ as usize },
-        152usize,
+        168usize,
         concat!(
             "Offset of field: ",
             stringify!(ValuesScanState),
@@ -47583,7 +51002,7 @@ fn bindgen_test_layout_ValuesScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ValuesScanState>())).exprlists as *const _ as usize },
-        160usize,
+        176usize,
         concat!(
             "Offset of field: ",
             stringify!(ValuesScanState),
@@ -47593,7 +51012,7 @@ fn bindgen_test_layout_ValuesScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ValuesScanState>())).array_len as *const _ as usize },
-        168usize,
+        184usize,
         concat!(
             "Offset of field: ",
             stringify!(ValuesScanState),
@@ -47603,7 +51022,7 @@ fn bindgen_test_layout_ValuesScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ValuesScanState>())).curr_idx as *const _ as usize },
-        172usize,
+        188usize,
         concat!(
             "Offset of field: ",
             stringify!(ValuesScanState),
@@ -47628,14 +51047,14 @@ pub struct TableFuncScanState {
     pub in_functions: *mut FmgrInfo,
     pub typioparams: *mut Oid,
     pub ordinal: int64,
-    pub perValueCxt: MemoryContext,
+    pub perTableCxt: MemoryContext,
     pub tupstore: *mut Tuplestorestate,
 }
 #[test]
 fn bindgen_test_layout_TableFuncScanState() {
     assert_eq!(
         ::std::mem::size_of::<TableFuncScanState>(),
-        264usize,
+        280usize,
         concat!("Size of: ", stringify!(TableFuncScanState))
     );
     assert_eq!(
@@ -47655,7 +51074,7 @@ fn bindgen_test_layout_TableFuncScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<TableFuncScanState>())).docexpr as *const _ as usize },
-        152usize,
+        168usize,
         concat!(
             "Offset of field: ",
             stringify!(TableFuncScanState),
@@ -47665,7 +51084,7 @@ fn bindgen_test_layout_TableFuncScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<TableFuncScanState>())).rowexpr as *const _ as usize },
-        160usize,
+        176usize,
         concat!(
             "Offset of field: ",
             stringify!(TableFuncScanState),
@@ -47675,7 +51094,7 @@ fn bindgen_test_layout_TableFuncScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<TableFuncScanState>())).colexprs as *const _ as usize },
-        168usize,
+        184usize,
         concat!(
             "Offset of field: ",
             stringify!(TableFuncScanState),
@@ -47685,7 +51104,7 @@ fn bindgen_test_layout_TableFuncScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<TableFuncScanState>())).coldefexprs as *const _ as usize },
-        176usize,
+        192usize,
         concat!(
             "Offset of field: ",
             stringify!(TableFuncScanState),
@@ -47695,7 +51114,7 @@ fn bindgen_test_layout_TableFuncScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<TableFuncScanState>())).ns_names as *const _ as usize },
-        184usize,
+        200usize,
         concat!(
             "Offset of field: ",
             stringify!(TableFuncScanState),
@@ -47705,7 +51124,7 @@ fn bindgen_test_layout_TableFuncScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<TableFuncScanState>())).ns_uris as *const _ as usize },
-        192usize,
+        208usize,
         concat!(
             "Offset of field: ",
             stringify!(TableFuncScanState),
@@ -47715,7 +51134,7 @@ fn bindgen_test_layout_TableFuncScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<TableFuncScanState>())).notnulls as *const _ as usize },
-        200usize,
+        216usize,
         concat!(
             "Offset of field: ",
             stringify!(TableFuncScanState),
@@ -47725,7 +51144,7 @@ fn bindgen_test_layout_TableFuncScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<TableFuncScanState>())).opaque as *const _ as usize },
-        208usize,
+        224usize,
         concat!(
             "Offset of field: ",
             stringify!(TableFuncScanState),
@@ -47735,7 +51154,7 @@ fn bindgen_test_layout_TableFuncScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<TableFuncScanState>())).routine as *const _ as usize },
-        216usize,
+        232usize,
         concat!(
             "Offset of field: ",
             stringify!(TableFuncScanState),
@@ -47745,7 +51164,7 @@ fn bindgen_test_layout_TableFuncScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<TableFuncScanState>())).in_functions as *const _ as usize },
-        224usize,
+        240usize,
         concat!(
             "Offset of field: ",
             stringify!(TableFuncScanState),
@@ -47755,7 +51174,7 @@ fn bindgen_test_layout_TableFuncScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<TableFuncScanState>())).typioparams as *const _ as usize },
-        232usize,
+        248usize,
         concat!(
             "Offset of field: ",
             stringify!(TableFuncScanState),
@@ -47765,7 +51184,7 @@ fn bindgen_test_layout_TableFuncScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<TableFuncScanState>())).ordinal as *const _ as usize },
-        240usize,
+        256usize,
         concat!(
             "Offset of field: ",
             stringify!(TableFuncScanState),
@@ -47774,18 +51193,18 @@ fn bindgen_test_layout_TableFuncScanState() {
         )
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TableFuncScanState>())).perValueCxt as *const _ as usize },
-        248usize,
+        unsafe { &(*(::std::ptr::null::<TableFuncScanState>())).perTableCxt as *const _ as usize },
+        264usize,
         concat!(
             "Offset of field: ",
             stringify!(TableFuncScanState),
             "::",
-            stringify!(perValueCxt)
+            stringify!(perTableCxt)
         )
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<TableFuncScanState>())).tupstore as *const _ as usize },
-        256usize,
+        272usize,
         concat!(
             "Offset of field: ",
             stringify!(TableFuncScanState),
@@ -47803,13 +51222,13 @@ pub struct CteScanState {
     pub cteplanstate: *mut PlanState,
     pub leader: *mut CteScanState,
     pub cte_table: *mut Tuplestorestate,
-    pub eof_cte: bool_,
+    pub eof_cte: bool,
 }
 #[test]
 fn bindgen_test_layout_CteScanState() {
     assert_eq!(
         ::std::mem::size_of::<CteScanState>(),
-        192usize,
+        208usize,
         concat!("Size of: ", stringify!(CteScanState))
     );
     assert_eq!(
@@ -47829,7 +51248,7 @@ fn bindgen_test_layout_CteScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<CteScanState>())).eflags as *const _ as usize },
-        152usize,
+        168usize,
         concat!(
             "Offset of field: ",
             stringify!(CteScanState),
@@ -47839,7 +51258,7 @@ fn bindgen_test_layout_CteScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<CteScanState>())).readptr as *const _ as usize },
-        156usize,
+        172usize,
         concat!(
             "Offset of field: ",
             stringify!(CteScanState),
@@ -47849,7 +51268,7 @@ fn bindgen_test_layout_CteScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<CteScanState>())).cteplanstate as *const _ as usize },
-        160usize,
+        176usize,
         concat!(
             "Offset of field: ",
             stringify!(CteScanState),
@@ -47859,7 +51278,7 @@ fn bindgen_test_layout_CteScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<CteScanState>())).leader as *const _ as usize },
-        168usize,
+        184usize,
         concat!(
             "Offset of field: ",
             stringify!(CteScanState),
@@ -47869,7 +51288,7 @@ fn bindgen_test_layout_CteScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<CteScanState>())).cte_table as *const _ as usize },
-        176usize,
+        192usize,
         concat!(
             "Offset of field: ",
             stringify!(CteScanState),
@@ -47879,7 +51298,7 @@ fn bindgen_test_layout_CteScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<CteScanState>())).eof_cte as *const _ as usize },
-        184usize,
+        200usize,
         concat!(
             "Offset of field: ",
             stringify!(CteScanState),
@@ -47900,7 +51319,7 @@ pub struct NamedTuplestoreScanState {
 fn bindgen_test_layout_NamedTuplestoreScanState() {
     assert_eq!(
         ::std::mem::size_of::<NamedTuplestoreScanState>(),
-        176usize,
+        192usize,
         concat!("Size of: ", stringify!(NamedTuplestoreScanState))
     );
     assert_eq!(
@@ -47922,7 +51341,7 @@ fn bindgen_test_layout_NamedTuplestoreScanState() {
         unsafe {
             &(*(::std::ptr::null::<NamedTuplestoreScanState>())).readptr as *const _ as usize
         },
-        152usize,
+        168usize,
         concat!(
             "Offset of field: ",
             stringify!(NamedTuplestoreScanState),
@@ -47934,7 +51353,7 @@ fn bindgen_test_layout_NamedTuplestoreScanState() {
         unsafe {
             &(*(::std::ptr::null::<NamedTuplestoreScanState>())).tupdesc as *const _ as usize
         },
-        160usize,
+        176usize,
         concat!(
             "Offset of field: ",
             stringify!(NamedTuplestoreScanState),
@@ -47946,7 +51365,7 @@ fn bindgen_test_layout_NamedTuplestoreScanState() {
         unsafe {
             &(*(::std::ptr::null::<NamedTuplestoreScanState>())).relation as *const _ as usize
         },
-        168usize,
+        184usize,
         concat!(
             "Offset of field: ",
             stringify!(NamedTuplestoreScanState),
@@ -47965,7 +51384,7 @@ pub struct WorkTableScanState {
 fn bindgen_test_layout_WorkTableScanState() {
     assert_eq!(
         ::std::mem::size_of::<WorkTableScanState>(),
-        160usize,
+        176usize,
         concat!("Size of: ", stringify!(WorkTableScanState))
     );
     assert_eq!(
@@ -47985,7 +51404,7 @@ fn bindgen_test_layout_WorkTableScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<WorkTableScanState>())).rustate as *const _ as usize },
-        152usize,
+        168usize,
         concat!(
             "Offset of field: ",
             stringify!(WorkTableScanState),
@@ -48007,7 +51426,7 @@ pub struct ForeignScanState {
 fn bindgen_test_layout_ForeignScanState() {
     assert_eq!(
         ::std::mem::size_of::<ForeignScanState>(),
-        184usize,
+        200usize,
         concat!("Size of: ", stringify!(ForeignScanState))
     );
     assert_eq!(
@@ -48029,7 +51448,7 @@ fn bindgen_test_layout_ForeignScanState() {
         unsafe {
             &(*(::std::ptr::null::<ForeignScanState>())).fdw_recheck_quals as *const _ as usize
         },
-        152usize,
+        168usize,
         concat!(
             "Offset of field: ",
             stringify!(ForeignScanState),
@@ -48039,7 +51458,7 @@ fn bindgen_test_layout_ForeignScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ForeignScanState>())).pscan_len as *const _ as usize },
-        160usize,
+        176usize,
         concat!(
             "Offset of field: ",
             stringify!(ForeignScanState),
@@ -48049,7 +51468,7 @@ fn bindgen_test_layout_ForeignScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ForeignScanState>())).fdwroutine as *const _ as usize },
-        168usize,
+        184usize,
         concat!(
             "Offset of field: ",
             stringify!(ForeignScanState),
@@ -48059,7 +51478,7 @@ fn bindgen_test_layout_ForeignScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<ForeignScanState>())).fdw_state as *const _ as usize },
-        176usize,
+        192usize,
         concat!(
             "Offset of field: ",
             stringify!(ForeignScanState),
@@ -48086,7 +51505,7 @@ pub struct CustomScanState {
 fn bindgen_test_layout_CustomScanState() {
     assert_eq!(
         ::std::mem::size_of::<CustomScanState>(),
-        184usize,
+        200usize,
         concat!("Size of: ", stringify!(CustomScanState))
     );
     assert_eq!(
@@ -48106,7 +51525,7 @@ fn bindgen_test_layout_CustomScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<CustomScanState>())).flags as *const _ as usize },
-        152usize,
+        168usize,
         concat!(
             "Offset of field: ",
             stringify!(CustomScanState),
@@ -48116,7 +51535,7 @@ fn bindgen_test_layout_CustomScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<CustomScanState>())).custom_ps as *const _ as usize },
-        160usize,
+        176usize,
         concat!(
             "Offset of field: ",
             stringify!(CustomScanState),
@@ -48126,7 +51545,7 @@ fn bindgen_test_layout_CustomScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<CustomScanState>())).pscan_len as *const _ as usize },
-        168usize,
+        184usize,
         concat!(
             "Offset of field: ",
             stringify!(CustomScanState),
@@ -48136,7 +51555,7 @@ fn bindgen_test_layout_CustomScanState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<CustomScanState>())).methods as *const _ as usize },
-        176usize,
+        192usize,
         concat!(
             "Offset of field: ",
             stringify!(CustomScanState),
@@ -48150,14 +51569,14 @@ fn bindgen_test_layout_CustomScanState() {
 pub struct JoinState {
     pub ps: PlanState,
     pub jointype: JoinType,
-    pub single_match: bool_,
+    pub single_match: bool,
     pub joinqual: *mut ExprState,
 }
 #[test]
 fn bindgen_test_layout_JoinState() {
     assert_eq!(
         ::std::mem::size_of::<JoinState>(),
-        144usize,
+        160usize,
         concat!("Size of: ", stringify!(JoinState))
     );
     assert_eq!(
@@ -48177,7 +51596,7 @@ fn bindgen_test_layout_JoinState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<JoinState>())).jointype as *const _ as usize },
-        128usize,
+        144usize,
         concat!(
             "Offset of field: ",
             stringify!(JoinState),
@@ -48187,7 +51606,7 @@ fn bindgen_test_layout_JoinState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<JoinState>())).single_match as *const _ as usize },
-        132usize,
+        148usize,
         concat!(
             "Offset of field: ",
             stringify!(JoinState),
@@ -48197,7 +51616,7 @@ fn bindgen_test_layout_JoinState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<JoinState>())).joinqual as *const _ as usize },
-        136usize,
+        152usize,
         concat!(
             "Offset of field: ",
             stringify!(JoinState),
@@ -48210,15 +51629,15 @@ fn bindgen_test_layout_JoinState() {
 #[derive(Debug, Copy, Clone)]
 pub struct NestLoopState {
     pub js: JoinState,
-    pub nl_NeedNewOuter: bool_,
-    pub nl_MatchedOuter: bool_,
+    pub nl_NeedNewOuter: bool,
+    pub nl_MatchedOuter: bool,
     pub nl_NullInnerTupleSlot: *mut TupleTableSlot,
 }
 #[test]
 fn bindgen_test_layout_NestLoopState() {
     assert_eq!(
         ::std::mem::size_of::<NestLoopState>(),
-        160usize,
+        176usize,
         concat!("Size of: ", stringify!(NestLoopState))
     );
     assert_eq!(
@@ -48238,7 +51657,7 @@ fn bindgen_test_layout_NestLoopState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<NestLoopState>())).nl_NeedNewOuter as *const _ as usize },
-        144usize,
+        160usize,
         concat!(
             "Offset of field: ",
             stringify!(NestLoopState),
@@ -48248,7 +51667,7 @@ fn bindgen_test_layout_NestLoopState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<NestLoopState>())).nl_MatchedOuter as *const _ as usize },
-        145usize,
+        161usize,
         concat!(
             "Offset of field: ",
             stringify!(NestLoopState),
@@ -48260,7 +51679,7 @@ fn bindgen_test_layout_NestLoopState() {
         unsafe {
             &(*(::std::ptr::null::<NestLoopState>())).nl_NullInnerTupleSlot as *const _ as usize
         },
-        152usize,
+        168usize,
         concat!(
             "Offset of field: ",
             stringify!(NestLoopState),
@@ -48282,13 +51701,13 @@ pub struct MergeJoinState {
     pub mj_NumClauses: ::std::os::raw::c_int,
     pub mj_Clauses: MergeJoinClause,
     pub mj_JoinState: ::std::os::raw::c_int,
-    pub mj_SkipMarkRestore: bool_,
-    pub mj_ExtraMarks: bool_,
-    pub mj_ConstFalseJoin: bool_,
-    pub mj_FillOuter: bool_,
-    pub mj_FillInner: bool_,
-    pub mj_MatchedOuter: bool_,
-    pub mj_MatchedInner: bool_,
+    pub mj_SkipMarkRestore: bool,
+    pub mj_ExtraMarks: bool,
+    pub mj_ConstFalseJoin: bool,
+    pub mj_FillOuter: bool,
+    pub mj_FillInner: bool,
+    pub mj_MatchedOuter: bool,
+    pub mj_MatchedInner: bool,
     pub mj_OuterTupleSlot: *mut TupleTableSlot,
     pub mj_InnerTupleSlot: *mut TupleTableSlot,
     pub mj_MarkedTupleSlot: *mut TupleTableSlot,
@@ -48301,7 +51720,7 @@ pub struct MergeJoinState {
 fn bindgen_test_layout_MergeJoinState() {
     assert_eq!(
         ::std::mem::size_of::<MergeJoinState>(),
-        232usize,
+        248usize,
         concat!("Size of: ", stringify!(MergeJoinState))
     );
     assert_eq!(
@@ -48321,7 +51740,7 @@ fn bindgen_test_layout_MergeJoinState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<MergeJoinState>())).mj_NumClauses as *const _ as usize },
-        144usize,
+        160usize,
         concat!(
             "Offset of field: ",
             stringify!(MergeJoinState),
@@ -48331,7 +51750,7 @@ fn bindgen_test_layout_MergeJoinState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<MergeJoinState>())).mj_Clauses as *const _ as usize },
-        152usize,
+        168usize,
         concat!(
             "Offset of field: ",
             stringify!(MergeJoinState),
@@ -48341,7 +51760,7 @@ fn bindgen_test_layout_MergeJoinState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<MergeJoinState>())).mj_JoinState as *const _ as usize },
-        160usize,
+        176usize,
         concat!(
             "Offset of field: ",
             stringify!(MergeJoinState),
@@ -48353,7 +51772,7 @@ fn bindgen_test_layout_MergeJoinState() {
         unsafe {
             &(*(::std::ptr::null::<MergeJoinState>())).mj_SkipMarkRestore as *const _ as usize
         },
-        164usize,
+        180usize,
         concat!(
             "Offset of field: ",
             stringify!(MergeJoinState),
@@ -48363,7 +51782,7 @@ fn bindgen_test_layout_MergeJoinState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<MergeJoinState>())).mj_ExtraMarks as *const _ as usize },
-        165usize,
+        181usize,
         concat!(
             "Offset of field: ",
             stringify!(MergeJoinState),
@@ -48375,7 +51794,7 @@ fn bindgen_test_layout_MergeJoinState() {
         unsafe {
             &(*(::std::ptr::null::<MergeJoinState>())).mj_ConstFalseJoin as *const _ as usize
         },
-        166usize,
+        182usize,
         concat!(
             "Offset of field: ",
             stringify!(MergeJoinState),
@@ -48385,7 +51804,7 @@ fn bindgen_test_layout_MergeJoinState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<MergeJoinState>())).mj_FillOuter as *const _ as usize },
-        167usize,
+        183usize,
         concat!(
             "Offset of field: ",
             stringify!(MergeJoinState),
@@ -48395,7 +51814,7 @@ fn bindgen_test_layout_MergeJoinState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<MergeJoinState>())).mj_FillInner as *const _ as usize },
-        168usize,
+        184usize,
         concat!(
             "Offset of field: ",
             stringify!(MergeJoinState),
@@ -48405,7 +51824,7 @@ fn bindgen_test_layout_MergeJoinState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<MergeJoinState>())).mj_MatchedOuter as *const _ as usize },
-        169usize,
+        185usize,
         concat!(
             "Offset of field: ",
             stringify!(MergeJoinState),
@@ -48415,7 +51834,7 @@ fn bindgen_test_layout_MergeJoinState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<MergeJoinState>())).mj_MatchedInner as *const _ as usize },
-        170usize,
+        186usize,
         concat!(
             "Offset of field: ",
             stringify!(MergeJoinState),
@@ -48427,7 +51846,7 @@ fn bindgen_test_layout_MergeJoinState() {
         unsafe {
             &(*(::std::ptr::null::<MergeJoinState>())).mj_OuterTupleSlot as *const _ as usize
         },
-        176usize,
+        192usize,
         concat!(
             "Offset of field: ",
             stringify!(MergeJoinState),
@@ -48439,7 +51858,7 @@ fn bindgen_test_layout_MergeJoinState() {
         unsafe {
             &(*(::std::ptr::null::<MergeJoinState>())).mj_InnerTupleSlot as *const _ as usize
         },
-        184usize,
+        200usize,
         concat!(
             "Offset of field: ",
             stringify!(MergeJoinState),
@@ -48451,7 +51870,7 @@ fn bindgen_test_layout_MergeJoinState() {
         unsafe {
             &(*(::std::ptr::null::<MergeJoinState>())).mj_MarkedTupleSlot as *const _ as usize
         },
-        192usize,
+        208usize,
         concat!(
             "Offset of field: ",
             stringify!(MergeJoinState),
@@ -48463,7 +51882,7 @@ fn bindgen_test_layout_MergeJoinState() {
         unsafe {
             &(*(::std::ptr::null::<MergeJoinState>())).mj_NullOuterTupleSlot as *const _ as usize
         },
-        200usize,
+        216usize,
         concat!(
             "Offset of field: ",
             stringify!(MergeJoinState),
@@ -48475,7 +51894,7 @@ fn bindgen_test_layout_MergeJoinState() {
         unsafe {
             &(*(::std::ptr::null::<MergeJoinState>())).mj_NullInnerTupleSlot as *const _ as usize
         },
-        208usize,
+        224usize,
         concat!(
             "Offset of field: ",
             stringify!(MergeJoinState),
@@ -48485,7 +51904,7 @@ fn bindgen_test_layout_MergeJoinState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<MergeJoinState>())).mj_OuterEContext as *const _ as usize },
-        216usize,
+        232usize,
         concat!(
             "Offset of field: ",
             stringify!(MergeJoinState),
@@ -48495,7 +51914,7 @@ fn bindgen_test_layout_MergeJoinState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<MergeJoinState>())).mj_InnerEContext as *const _ as usize },
-        224usize,
+        240usize,
         concat!(
             "Offset of field: ",
             stringify!(MergeJoinState),
@@ -48535,14 +51954,14 @@ pub struct HashJoinState {
     pub hj_NullInnerTupleSlot: *mut TupleTableSlot,
     pub hj_FirstOuterTupleSlot: *mut TupleTableSlot,
     pub hj_JoinState: ::std::os::raw::c_int,
-    pub hj_MatchedOuter: bool_,
-    pub hj_OuterNotEmpty: bool_,
+    pub hj_MatchedOuter: bool,
+    pub hj_OuterNotEmpty: bool,
 }
 #[test]
 fn bindgen_test_layout_HashJoinState() {
     assert_eq!(
         ::std::mem::size_of::<HashJoinState>(),
-        256usize,
+        272usize,
         concat!("Size of: ", stringify!(HashJoinState))
     );
     assert_eq!(
@@ -48562,7 +51981,7 @@ fn bindgen_test_layout_HashJoinState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<HashJoinState>())).hashclauses as *const _ as usize },
-        144usize,
+        160usize,
         concat!(
             "Offset of field: ",
             stringify!(HashJoinState),
@@ -48572,7 +51991,7 @@ fn bindgen_test_layout_HashJoinState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<HashJoinState>())).hj_OuterHashKeys as *const _ as usize },
-        152usize,
+        168usize,
         concat!(
             "Offset of field: ",
             stringify!(HashJoinState),
@@ -48582,7 +52001,7 @@ fn bindgen_test_layout_HashJoinState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<HashJoinState>())).hj_InnerHashKeys as *const _ as usize },
-        160usize,
+        176usize,
         concat!(
             "Offset of field: ",
             stringify!(HashJoinState),
@@ -48592,7 +52011,7 @@ fn bindgen_test_layout_HashJoinState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<HashJoinState>())).hj_HashOperators as *const _ as usize },
-        168usize,
+        184usize,
         concat!(
             "Offset of field: ",
             stringify!(HashJoinState),
@@ -48602,7 +52021,7 @@ fn bindgen_test_layout_HashJoinState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<HashJoinState>())).hj_HashTable as *const _ as usize },
-        176usize,
+        192usize,
         concat!(
             "Offset of field: ",
             stringify!(HashJoinState),
@@ -48612,7 +52031,7 @@ fn bindgen_test_layout_HashJoinState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<HashJoinState>())).hj_CurHashValue as *const _ as usize },
-        184usize,
+        200usize,
         concat!(
             "Offset of field: ",
             stringify!(HashJoinState),
@@ -48622,7 +52041,7 @@ fn bindgen_test_layout_HashJoinState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<HashJoinState>())).hj_CurBucketNo as *const _ as usize },
-        188usize,
+        204usize,
         concat!(
             "Offset of field: ",
             stringify!(HashJoinState),
@@ -48634,7 +52053,7 @@ fn bindgen_test_layout_HashJoinState() {
         unsafe {
             &(*(::std::ptr::null::<HashJoinState>())).hj_CurSkewBucketNo as *const _ as usize
         },
-        192usize,
+        208usize,
         concat!(
             "Offset of field: ",
             stringify!(HashJoinState),
@@ -48644,7 +52063,7 @@ fn bindgen_test_layout_HashJoinState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<HashJoinState>())).hj_CurTuple as *const _ as usize },
-        200usize,
+        216usize,
         concat!(
             "Offset of field: ",
             stringify!(HashJoinState),
@@ -48654,7 +52073,7 @@ fn bindgen_test_layout_HashJoinState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<HashJoinState>())).hj_OuterTupleSlot as *const _ as usize },
-        208usize,
+        224usize,
         concat!(
             "Offset of field: ",
             stringify!(HashJoinState),
@@ -48664,7 +52083,7 @@ fn bindgen_test_layout_HashJoinState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<HashJoinState>())).hj_HashTupleSlot as *const _ as usize },
-        216usize,
+        232usize,
         concat!(
             "Offset of field: ",
             stringify!(HashJoinState),
@@ -48676,7 +52095,7 @@ fn bindgen_test_layout_HashJoinState() {
         unsafe {
             &(*(::std::ptr::null::<HashJoinState>())).hj_NullOuterTupleSlot as *const _ as usize
         },
-        224usize,
+        240usize,
         concat!(
             "Offset of field: ",
             stringify!(HashJoinState),
@@ -48688,7 +52107,7 @@ fn bindgen_test_layout_HashJoinState() {
         unsafe {
             &(*(::std::ptr::null::<HashJoinState>())).hj_NullInnerTupleSlot as *const _ as usize
         },
-        232usize,
+        248usize,
         concat!(
             "Offset of field: ",
             stringify!(HashJoinState),
@@ -48700,7 +52119,7 @@ fn bindgen_test_layout_HashJoinState() {
         unsafe {
             &(*(::std::ptr::null::<HashJoinState>())).hj_FirstOuterTupleSlot as *const _ as usize
         },
-        240usize,
+        256usize,
         concat!(
             "Offset of field: ",
             stringify!(HashJoinState),
@@ -48710,7 +52129,7 @@ fn bindgen_test_layout_HashJoinState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<HashJoinState>())).hj_JoinState as *const _ as usize },
-        248usize,
+        264usize,
         concat!(
             "Offset of field: ",
             stringify!(HashJoinState),
@@ -48720,7 +52139,7 @@ fn bindgen_test_layout_HashJoinState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<HashJoinState>())).hj_MatchedOuter as *const _ as usize },
-        252usize,
+        268usize,
         concat!(
             "Offset of field: ",
             stringify!(HashJoinState),
@@ -48730,7 +52149,7 @@ fn bindgen_test_layout_HashJoinState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<HashJoinState>())).hj_OuterNotEmpty as *const _ as usize },
-        253usize,
+        269usize,
         concat!(
             "Offset of field: ",
             stringify!(HashJoinState),
@@ -48744,14 +52163,14 @@ fn bindgen_test_layout_HashJoinState() {
 pub struct MaterialState {
     pub ss: ScanState,
     pub eflags: ::std::os::raw::c_int,
-    pub eof_underlying: bool_,
+    pub eof_underlying: bool,
     pub tuplestorestate: *mut Tuplestorestate,
 }
 #[test]
 fn bindgen_test_layout_MaterialState() {
     assert_eq!(
         ::std::mem::size_of::<MaterialState>(),
-        168usize,
+        184usize,
         concat!("Size of: ", stringify!(MaterialState))
     );
     assert_eq!(
@@ -48771,7 +52190,7 @@ fn bindgen_test_layout_MaterialState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<MaterialState>())).eflags as *const _ as usize },
-        152usize,
+        168usize,
         concat!(
             "Offset of field: ",
             stringify!(MaterialState),
@@ -48781,7 +52200,7 @@ fn bindgen_test_layout_MaterialState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<MaterialState>())).eof_underlying as *const _ as usize },
-        156usize,
+        172usize,
         concat!(
             "Offset of field: ",
             stringify!(MaterialState),
@@ -48791,7 +52210,7 @@ fn bindgen_test_layout_MaterialState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<MaterialState>())).tuplestorestate as *const _ as usize },
-        160usize,
+        176usize,
         concat!(
             "Offset of field: ",
             stringify!(MaterialState),
@@ -48801,22 +52220,44 @@ fn bindgen_test_layout_MaterialState() {
     );
 }
 #[repr(C)]
+#[derive(Debug)]
+pub struct SharedSortInfo {
+    pub num_workers: ::std::os::raw::c_int,
+    pub sinstrument: __IncompleteArrayField<TuplesortInstrumentation>,
+    pub __bindgen_align: [u64; 0usize],
+}
+#[test]
+fn bindgen_test_layout_SharedSortInfo() {
+    assert_eq!(
+        ::std::mem::size_of::<SharedSortInfo>(),
+        8usize,
+        concat!("Size of: ", stringify!(SharedSortInfo))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<SharedSortInfo>(),
+        8usize,
+        concat!("Alignment of ", stringify!(SharedSortInfo))
+    );
+}
+#[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct SortState {
     pub ss: ScanState,
-    pub randomAccess: bool_,
-    pub bounded: bool_,
+    pub randomAccess: bool,
+    pub bounded: bool,
     pub bound: int64,
-    pub sort_Done: bool_,
-    pub bounded_Done: bool_,
+    pub sort_Done: bool,
+    pub bounded_Done: bool,
     pub bound_Done: int64,
     pub tuplesortstate: *mut ::std::os::raw::c_void,
+    pub am_worker: bool,
+    pub shared_info: *mut SharedSortInfo,
 }
 #[test]
 fn bindgen_test_layout_SortState() {
     assert_eq!(
         ::std::mem::size_of::<SortState>(),
-        192usize,
+        224usize,
         concat!("Size of: ", stringify!(SortState))
     );
     assert_eq!(
@@ -48836,7 +52277,7 @@ fn bindgen_test_layout_SortState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<SortState>())).randomAccess as *const _ as usize },
-        152usize,
+        168usize,
         concat!(
             "Offset of field: ",
             stringify!(SortState),
@@ -48846,7 +52287,7 @@ fn bindgen_test_layout_SortState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<SortState>())).bounded as *const _ as usize },
-        153usize,
+        169usize,
         concat!(
             "Offset of field: ",
             stringify!(SortState),
@@ -48856,7 +52297,7 @@ fn bindgen_test_layout_SortState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<SortState>())).bound as *const _ as usize },
-        160usize,
+        176usize,
         concat!(
             "Offset of field: ",
             stringify!(SortState),
@@ -48866,7 +52307,7 @@ fn bindgen_test_layout_SortState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<SortState>())).sort_Done as *const _ as usize },
-        168usize,
+        184usize,
         concat!(
             "Offset of field: ",
             stringify!(SortState),
@@ -48876,7 +52317,7 @@ fn bindgen_test_layout_SortState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<SortState>())).bounded_Done as *const _ as usize },
-        169usize,
+        185usize,
         concat!(
             "Offset of field: ",
             stringify!(SortState),
@@ -48886,7 +52327,7 @@ fn bindgen_test_layout_SortState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<SortState>())).bound_Done as *const _ as usize },
-        176usize,
+        192usize,
         concat!(
             "Offset of field: ",
             stringify!(SortState),
@@ -48896,7 +52337,7 @@ fn bindgen_test_layout_SortState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<SortState>())).tuplesortstate as *const _ as usize },
-        184usize,
+        200usize,
         concat!(
             "Offset of field: ",
             stringify!(SortState),
@@ -48904,19 +52345,39 @@ fn bindgen_test_layout_SortState() {
             stringify!(tuplesortstate)
         )
     );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<SortState>())).am_worker as *const _ as usize },
+        208usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(SortState),
+            "::",
+            stringify!(am_worker)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<SortState>())).shared_info as *const _ as usize },
+        216usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(SortState),
+            "::",
+            stringify!(shared_info)
+        )
+    );
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct GroupState {
     pub ss: ScanState,
-    pub eqfunctions: *mut FmgrInfo,
-    pub grp_done: bool_,
+    pub eqfunction: *mut ExprState,
+    pub grp_done: bool,
 }
 #[test]
 fn bindgen_test_layout_GroupState() {
     assert_eq!(
         ::std::mem::size_of::<GroupState>(),
-        168usize,
+        184usize,
         concat!("Size of: ", stringify!(GroupState))
     );
     assert_eq!(
@@ -48935,18 +52396,18 @@ fn bindgen_test_layout_GroupState() {
         )
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<GroupState>())).eqfunctions as *const _ as usize },
-        152usize,
+        unsafe { &(*(::std::ptr::null::<GroupState>())).eqfunction as *const _ as usize },
+        168usize,
         concat!(
             "Offset of field: ",
             stringify!(GroupState),
             "::",
-            stringify!(eqfunctions)
+            stringify!(eqfunction)
         )
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<GroupState>())).grp_done as *const _ as usize },
-        160usize,
+        176usize,
         concat!(
             "Offset of field: ",
             stringify!(GroupState),
@@ -49003,9 +52464,10 @@ pub struct AggState {
     pub aggcontexts: *mut *mut ExprContext,
     pub tmpcontext: *mut ExprContext,
     pub curaggcontext: *mut ExprContext,
+    pub curperagg: AggStatePerAgg,
     pub curpertrans: AggStatePerTrans,
-    pub input_done: bool_,
-    pub agg_done: bool_,
+    pub input_done: bool,
+    pub agg_done: bool,
     pub projected_set: ::std::os::raw::c_int,
     pub current_set: ::std::os::raw::c_int,
     pub grouped_cols: *mut Bitmapset,
@@ -49015,20 +52477,20 @@ pub struct AggState {
     pub sort_in: *mut Tuplesortstate,
     pub sort_out: *mut Tuplesortstate,
     pub sort_slot: *mut TupleTableSlot,
-    pub pergroup: AggStatePerGroup,
+    pub pergroups: *mut AggStatePerGroup,
     pub grp_firstTuple: HeapTuple,
-    pub table_filled: bool_,
+    pub table_filled: bool,
     pub num_hashes: ::std::os::raw::c_int,
     pub perhash: AggStatePerHash,
     pub hash_pergroup: *mut AggStatePerGroup,
+    pub all_pergroups: *mut AggStatePerGroup,
     pub combinedproj: *mut ProjectionInfo,
-    pub curperagg: AggStatePerAgg,
 }
 #[test]
 fn bindgen_test_layout_AggState() {
     assert_eq!(
         ::std::mem::size_of::<AggState>(),
-        376usize,
+        400usize,
         concat!("Size of: ", stringify!(AggState))
     );
     assert_eq!(
@@ -49048,7 +52510,7 @@ fn bindgen_test_layout_AggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<AggState>())).aggs as *const _ as usize },
-        152usize,
+        168usize,
         concat!(
             "Offset of field: ",
             stringify!(AggState),
@@ -49058,7 +52520,7 @@ fn bindgen_test_layout_AggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<AggState>())).numaggs as *const _ as usize },
-        160usize,
+        176usize,
         concat!(
             "Offset of field: ",
             stringify!(AggState),
@@ -49068,7 +52530,7 @@ fn bindgen_test_layout_AggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<AggState>())).numtrans as *const _ as usize },
-        164usize,
+        180usize,
         concat!(
             "Offset of field: ",
             stringify!(AggState),
@@ -49078,7 +52540,7 @@ fn bindgen_test_layout_AggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<AggState>())).aggstrategy as *const _ as usize },
-        168usize,
+        184usize,
         concat!(
             "Offset of field: ",
             stringify!(AggState),
@@ -49088,7 +52550,7 @@ fn bindgen_test_layout_AggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<AggState>())).aggsplit as *const _ as usize },
-        172usize,
+        188usize,
         concat!(
             "Offset of field: ",
             stringify!(AggState),
@@ -49098,7 +52560,7 @@ fn bindgen_test_layout_AggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<AggState>())).phase as *const _ as usize },
-        176usize,
+        192usize,
         concat!(
             "Offset of field: ",
             stringify!(AggState),
@@ -49108,7 +52570,7 @@ fn bindgen_test_layout_AggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<AggState>())).numphases as *const _ as usize },
-        184usize,
+        200usize,
         concat!(
             "Offset of field: ",
             stringify!(AggState),
@@ -49118,7 +52580,7 @@ fn bindgen_test_layout_AggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<AggState>())).current_phase as *const _ as usize },
-        188usize,
+        204usize,
         concat!(
             "Offset of field: ",
             stringify!(AggState),
@@ -49128,7 +52590,7 @@ fn bindgen_test_layout_AggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<AggState>())).peragg as *const _ as usize },
-        192usize,
+        208usize,
         concat!(
             "Offset of field: ",
             stringify!(AggState),
@@ -49138,7 +52600,7 @@ fn bindgen_test_layout_AggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<AggState>())).pertrans as *const _ as usize },
-        200usize,
+        216usize,
         concat!(
             "Offset of field: ",
             stringify!(AggState),
@@ -49148,7 +52610,7 @@ fn bindgen_test_layout_AggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<AggState>())).hashcontext as *const _ as usize },
-        208usize,
+        224usize,
         concat!(
             "Offset of field: ",
             stringify!(AggState),
@@ -49158,7 +52620,7 @@ fn bindgen_test_layout_AggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<AggState>())).aggcontexts as *const _ as usize },
-        216usize,
+        232usize,
         concat!(
             "Offset of field: ",
             stringify!(AggState),
@@ -49168,7 +52630,7 @@ fn bindgen_test_layout_AggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<AggState>())).tmpcontext as *const _ as usize },
-        224usize,
+        240usize,
         concat!(
             "Offset of field: ",
             stringify!(AggState),
@@ -49178,7 +52640,7 @@ fn bindgen_test_layout_AggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<AggState>())).curaggcontext as *const _ as usize },
-        232usize,
+        248usize,
         concat!(
             "Offset of field: ",
             stringify!(AggState),
@@ -49187,8 +52649,18 @@ fn bindgen_test_layout_AggState() {
         )
     );
     assert_eq!(
+        unsafe { &(*(::std::ptr::null::<AggState>())).curperagg as *const _ as usize },
+        256usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AggState),
+            "::",
+            stringify!(curperagg)
+        )
+    );
+    assert_eq!(
         unsafe { &(*(::std::ptr::null::<AggState>())).curpertrans as *const _ as usize },
-        240usize,
+        264usize,
         concat!(
             "Offset of field: ",
             stringify!(AggState),
@@ -49198,7 +52670,7 @@ fn bindgen_test_layout_AggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<AggState>())).input_done as *const _ as usize },
-        248usize,
+        272usize,
         concat!(
             "Offset of field: ",
             stringify!(AggState),
@@ -49208,7 +52680,7 @@ fn bindgen_test_layout_AggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<AggState>())).agg_done as *const _ as usize },
-        249usize,
+        273usize,
         concat!(
             "Offset of field: ",
             stringify!(AggState),
@@ -49218,7 +52690,7 @@ fn bindgen_test_layout_AggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<AggState>())).projected_set as *const _ as usize },
-        252usize,
+        276usize,
         concat!(
             "Offset of field: ",
             stringify!(AggState),
@@ -49228,7 +52700,7 @@ fn bindgen_test_layout_AggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<AggState>())).current_set as *const _ as usize },
-        256usize,
+        280usize,
         concat!(
             "Offset of field: ",
             stringify!(AggState),
@@ -49238,7 +52710,7 @@ fn bindgen_test_layout_AggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<AggState>())).grouped_cols as *const _ as usize },
-        264usize,
+        288usize,
         concat!(
             "Offset of field: ",
             stringify!(AggState),
@@ -49248,7 +52720,7 @@ fn bindgen_test_layout_AggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<AggState>())).all_grouped_cols as *const _ as usize },
-        272usize,
+        296usize,
         concat!(
             "Offset of field: ",
             stringify!(AggState),
@@ -49258,7 +52730,7 @@ fn bindgen_test_layout_AggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<AggState>())).maxsets as *const _ as usize },
-        280usize,
+        304usize,
         concat!(
             "Offset of field: ",
             stringify!(AggState),
@@ -49268,7 +52740,7 @@ fn bindgen_test_layout_AggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<AggState>())).phases as *const _ as usize },
-        288usize,
+        312usize,
         concat!(
             "Offset of field: ",
             stringify!(AggState),
@@ -49278,7 +52750,7 @@ fn bindgen_test_layout_AggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<AggState>())).sort_in as *const _ as usize },
-        296usize,
+        320usize,
         concat!(
             "Offset of field: ",
             stringify!(AggState),
@@ -49288,7 +52760,7 @@ fn bindgen_test_layout_AggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<AggState>())).sort_out as *const _ as usize },
-        304usize,
+        328usize,
         concat!(
             "Offset of field: ",
             stringify!(AggState),
@@ -49298,7 +52770,7 @@ fn bindgen_test_layout_AggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<AggState>())).sort_slot as *const _ as usize },
-        312usize,
+        336usize,
         concat!(
             "Offset of field: ",
             stringify!(AggState),
@@ -49307,18 +52779,18 @@ fn bindgen_test_layout_AggState() {
         )
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<AggState>())).pergroup as *const _ as usize },
-        320usize,
+        unsafe { &(*(::std::ptr::null::<AggState>())).pergroups as *const _ as usize },
+        344usize,
         concat!(
             "Offset of field: ",
             stringify!(AggState),
             "::",
-            stringify!(pergroup)
+            stringify!(pergroups)
         )
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<AggState>())).grp_firstTuple as *const _ as usize },
-        328usize,
+        352usize,
         concat!(
             "Offset of field: ",
             stringify!(AggState),
@@ -49328,7 +52800,7 @@ fn bindgen_test_layout_AggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<AggState>())).table_filled as *const _ as usize },
-        336usize,
+        360usize,
         concat!(
             "Offset of field: ",
             stringify!(AggState),
@@ -49338,7 +52810,7 @@ fn bindgen_test_layout_AggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<AggState>())).num_hashes as *const _ as usize },
-        340usize,
+        364usize,
         concat!(
             "Offset of field: ",
             stringify!(AggState),
@@ -49348,7 +52820,7 @@ fn bindgen_test_layout_AggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<AggState>())).perhash as *const _ as usize },
-        344usize,
+        368usize,
         concat!(
             "Offset of field: ",
             stringify!(AggState),
@@ -49358,7 +52830,7 @@ fn bindgen_test_layout_AggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<AggState>())).hash_pergroup as *const _ as usize },
-        352usize,
+        376usize,
         concat!(
             "Offset of field: ",
             stringify!(AggState),
@@ -49367,23 +52839,23 @@ fn bindgen_test_layout_AggState() {
         )
     );
     assert_eq!(
+        unsafe { &(*(::std::ptr::null::<AggState>())).all_pergroups as *const _ as usize },
+        384usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AggState),
+            "::",
+            stringify!(all_pergroups)
+        )
+    );
+    assert_eq!(
         unsafe { &(*(::std::ptr::null::<AggState>())).combinedproj as *const _ as usize },
-        360usize,
+        392usize,
         concat!(
             "Offset of field: ",
             stringify!(AggState),
             "::",
             stringify!(combinedproj)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<AggState>())).curperagg as *const _ as usize },
-        368usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(AggState),
-            "::",
-            stringify!(curperagg)
         )
     );
 }
@@ -49408,10 +52880,13 @@ pub struct WindowAggState {
     pub numaggs: ::std::os::raw::c_int,
     pub perfunc: WindowStatePerFunc,
     pub peragg: WindowStatePerAgg,
-    pub partEqfunctions: *mut FmgrInfo,
-    pub ordEqfunctions: *mut FmgrInfo,
+    pub partEqfunction: *mut ExprState,
+    pub ordEqfunction: *mut ExprState,
     pub buffer: *mut Tuplestorestate,
     pub current_ptr: ::std::os::raw::c_int,
+    pub framehead_ptr: ::std::os::raw::c_int,
+    pub frametail_ptr: ::std::os::raw::c_int,
+    pub grouptail_ptr: ::std::os::raw::c_int,
     pub spooled_rows: int64,
     pub currentpos: int64,
     pub frameheadpos: int64,
@@ -49424,17 +52899,30 @@ pub struct WindowAggState {
     pub endOffset: *mut ExprState,
     pub startOffsetValue: Datum,
     pub endOffsetValue: Datum,
+    pub startInRangeFunc: FmgrInfo,
+    pub endInRangeFunc: FmgrInfo,
+    pub inRangeColl: Oid,
+    pub inRangeAsc: bool,
+    pub inRangeNullsFirst: bool,
+    pub currentgroup: int64,
+    pub frameheadgroup: int64,
+    pub frametailgroup: int64,
+    pub groupheadpos: int64,
+    pub grouptailpos: int64,
     pub partcontext: MemoryContext,
     pub aggcontext: MemoryContext,
     pub curaggcontext: MemoryContext,
     pub tmpcontext: *mut ExprContext,
-    pub all_first: bool_,
-    pub all_done: bool_,
-    pub partition_spooled: bool_,
-    pub more_partitions: bool_,
-    pub framehead_valid: bool_,
-    pub frametail_valid: bool_,
+    pub all_first: bool,
+    pub all_done: bool,
+    pub partition_spooled: bool,
+    pub more_partitions: bool,
+    pub framehead_valid: bool,
+    pub frametail_valid: bool,
+    pub grouptail_valid: bool,
     pub first_part_slot: *mut TupleTableSlot,
+    pub framehead_slot: *mut TupleTableSlot,
+    pub frametail_slot: *mut TupleTableSlot,
     pub agg_row_slot: *mut TupleTableSlot,
     pub temp_slot_1: *mut TupleTableSlot,
     pub temp_slot_2: *mut TupleTableSlot,
@@ -49443,7 +52931,7 @@ pub struct WindowAggState {
 fn bindgen_test_layout_WindowAggState() {
     assert_eq!(
         ::std::mem::size_of::<WindowAggState>(),
-        384usize,
+        568usize,
         concat!("Size of: ", stringify!(WindowAggState))
     );
     assert_eq!(
@@ -49463,7 +52951,7 @@ fn bindgen_test_layout_WindowAggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<WindowAggState>())).funcs as *const _ as usize },
-        152usize,
+        168usize,
         concat!(
             "Offset of field: ",
             stringify!(WindowAggState),
@@ -49473,7 +52961,7 @@ fn bindgen_test_layout_WindowAggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<WindowAggState>())).numfuncs as *const _ as usize },
-        160usize,
+        176usize,
         concat!(
             "Offset of field: ",
             stringify!(WindowAggState),
@@ -49483,7 +52971,7 @@ fn bindgen_test_layout_WindowAggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<WindowAggState>())).numaggs as *const _ as usize },
-        164usize,
+        180usize,
         concat!(
             "Offset of field: ",
             stringify!(WindowAggState),
@@ -49493,7 +52981,7 @@ fn bindgen_test_layout_WindowAggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<WindowAggState>())).perfunc as *const _ as usize },
-        168usize,
+        184usize,
         concat!(
             "Offset of field: ",
             stringify!(WindowAggState),
@@ -49503,7 +52991,7 @@ fn bindgen_test_layout_WindowAggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<WindowAggState>())).peragg as *const _ as usize },
-        176usize,
+        192usize,
         concat!(
             "Offset of field: ",
             stringify!(WindowAggState),
@@ -49512,28 +53000,28 @@ fn bindgen_test_layout_WindowAggState() {
         )
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<WindowAggState>())).partEqfunctions as *const _ as usize },
-        184usize,
+        unsafe { &(*(::std::ptr::null::<WindowAggState>())).partEqfunction as *const _ as usize },
+        200usize,
         concat!(
             "Offset of field: ",
             stringify!(WindowAggState),
             "::",
-            stringify!(partEqfunctions)
+            stringify!(partEqfunction)
         )
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<WindowAggState>())).ordEqfunctions as *const _ as usize },
-        192usize,
+        unsafe { &(*(::std::ptr::null::<WindowAggState>())).ordEqfunction as *const _ as usize },
+        208usize,
         concat!(
             "Offset of field: ",
             stringify!(WindowAggState),
             "::",
-            stringify!(ordEqfunctions)
+            stringify!(ordEqfunction)
         )
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<WindowAggState>())).buffer as *const _ as usize },
-        200usize,
+        216usize,
         concat!(
             "Offset of field: ",
             stringify!(WindowAggState),
@@ -49543,7 +53031,7 @@ fn bindgen_test_layout_WindowAggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<WindowAggState>())).current_ptr as *const _ as usize },
-        208usize,
+        224usize,
         concat!(
             "Offset of field: ",
             stringify!(WindowAggState),
@@ -49552,8 +53040,38 @@ fn bindgen_test_layout_WindowAggState() {
         )
     );
     assert_eq!(
+        unsafe { &(*(::std::ptr::null::<WindowAggState>())).framehead_ptr as *const _ as usize },
+        228usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(WindowAggState),
+            "::",
+            stringify!(framehead_ptr)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<WindowAggState>())).frametail_ptr as *const _ as usize },
+        232usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(WindowAggState),
+            "::",
+            stringify!(frametail_ptr)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<WindowAggState>())).grouptail_ptr as *const _ as usize },
+        236usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(WindowAggState),
+            "::",
+            stringify!(grouptail_ptr)
+        )
+    );
+    assert_eq!(
         unsafe { &(*(::std::ptr::null::<WindowAggState>())).spooled_rows as *const _ as usize },
-        216usize,
+        240usize,
         concat!(
             "Offset of field: ",
             stringify!(WindowAggState),
@@ -49563,7 +53081,7 @@ fn bindgen_test_layout_WindowAggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<WindowAggState>())).currentpos as *const _ as usize },
-        224usize,
+        248usize,
         concat!(
             "Offset of field: ",
             stringify!(WindowAggState),
@@ -49573,7 +53091,7 @@ fn bindgen_test_layout_WindowAggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<WindowAggState>())).frameheadpos as *const _ as usize },
-        232usize,
+        256usize,
         concat!(
             "Offset of field: ",
             stringify!(WindowAggState),
@@ -49583,7 +53101,7 @@ fn bindgen_test_layout_WindowAggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<WindowAggState>())).frametailpos as *const _ as usize },
-        240usize,
+        264usize,
         concat!(
             "Offset of field: ",
             stringify!(WindowAggState),
@@ -49593,7 +53111,7 @@ fn bindgen_test_layout_WindowAggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<WindowAggState>())).agg_winobj as *const _ as usize },
-        248usize,
+        272usize,
         concat!(
             "Offset of field: ",
             stringify!(WindowAggState),
@@ -49603,7 +53121,7 @@ fn bindgen_test_layout_WindowAggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<WindowAggState>())).aggregatedbase as *const _ as usize },
-        256usize,
+        280usize,
         concat!(
             "Offset of field: ",
             stringify!(WindowAggState),
@@ -49613,7 +53131,7 @@ fn bindgen_test_layout_WindowAggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<WindowAggState>())).aggregatedupto as *const _ as usize },
-        264usize,
+        288usize,
         concat!(
             "Offset of field: ",
             stringify!(WindowAggState),
@@ -49623,7 +53141,7 @@ fn bindgen_test_layout_WindowAggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<WindowAggState>())).frameOptions as *const _ as usize },
-        272usize,
+        296usize,
         concat!(
             "Offset of field: ",
             stringify!(WindowAggState),
@@ -49633,7 +53151,7 @@ fn bindgen_test_layout_WindowAggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<WindowAggState>())).startOffset as *const _ as usize },
-        280usize,
+        304usize,
         concat!(
             "Offset of field: ",
             stringify!(WindowAggState),
@@ -49643,7 +53161,7 @@ fn bindgen_test_layout_WindowAggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<WindowAggState>())).endOffset as *const _ as usize },
-        288usize,
+        312usize,
         concat!(
             "Offset of field: ",
             stringify!(WindowAggState),
@@ -49653,7 +53171,7 @@ fn bindgen_test_layout_WindowAggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<WindowAggState>())).startOffsetValue as *const _ as usize },
-        296usize,
+        320usize,
         concat!(
             "Offset of field: ",
             stringify!(WindowAggState),
@@ -49663,7 +53181,7 @@ fn bindgen_test_layout_WindowAggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<WindowAggState>())).endOffsetValue as *const _ as usize },
-        304usize,
+        328usize,
         concat!(
             "Offset of field: ",
             stringify!(WindowAggState),
@@ -49672,8 +53190,110 @@ fn bindgen_test_layout_WindowAggState() {
         )
     );
     assert_eq!(
+        unsafe { &(*(::std::ptr::null::<WindowAggState>())).startInRangeFunc as *const _ as usize },
+        336usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(WindowAggState),
+            "::",
+            stringify!(startInRangeFunc)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<WindowAggState>())).endInRangeFunc as *const _ as usize },
+        384usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(WindowAggState),
+            "::",
+            stringify!(endInRangeFunc)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<WindowAggState>())).inRangeColl as *const _ as usize },
+        432usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(WindowAggState),
+            "::",
+            stringify!(inRangeColl)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<WindowAggState>())).inRangeAsc as *const _ as usize },
+        436usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(WindowAggState),
+            "::",
+            stringify!(inRangeAsc)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<WindowAggState>())).inRangeNullsFirst as *const _ as usize
+        },
+        437usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(WindowAggState),
+            "::",
+            stringify!(inRangeNullsFirst)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<WindowAggState>())).currentgroup as *const _ as usize },
+        440usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(WindowAggState),
+            "::",
+            stringify!(currentgroup)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<WindowAggState>())).frameheadgroup as *const _ as usize },
+        448usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(WindowAggState),
+            "::",
+            stringify!(frameheadgroup)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<WindowAggState>())).frametailgroup as *const _ as usize },
+        456usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(WindowAggState),
+            "::",
+            stringify!(frametailgroup)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<WindowAggState>())).groupheadpos as *const _ as usize },
+        464usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(WindowAggState),
+            "::",
+            stringify!(groupheadpos)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<WindowAggState>())).grouptailpos as *const _ as usize },
+        472usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(WindowAggState),
+            "::",
+            stringify!(grouptailpos)
+        )
+    );
+    assert_eq!(
         unsafe { &(*(::std::ptr::null::<WindowAggState>())).partcontext as *const _ as usize },
-        312usize,
+        480usize,
         concat!(
             "Offset of field: ",
             stringify!(WindowAggState),
@@ -49683,7 +53303,7 @@ fn bindgen_test_layout_WindowAggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<WindowAggState>())).aggcontext as *const _ as usize },
-        320usize,
+        488usize,
         concat!(
             "Offset of field: ",
             stringify!(WindowAggState),
@@ -49693,7 +53313,7 @@ fn bindgen_test_layout_WindowAggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<WindowAggState>())).curaggcontext as *const _ as usize },
-        328usize,
+        496usize,
         concat!(
             "Offset of field: ",
             stringify!(WindowAggState),
@@ -49703,7 +53323,7 @@ fn bindgen_test_layout_WindowAggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<WindowAggState>())).tmpcontext as *const _ as usize },
-        336usize,
+        504usize,
         concat!(
             "Offset of field: ",
             stringify!(WindowAggState),
@@ -49713,7 +53333,7 @@ fn bindgen_test_layout_WindowAggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<WindowAggState>())).all_first as *const _ as usize },
-        344usize,
+        512usize,
         concat!(
             "Offset of field: ",
             stringify!(WindowAggState),
@@ -49723,7 +53343,7 @@ fn bindgen_test_layout_WindowAggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<WindowAggState>())).all_done as *const _ as usize },
-        345usize,
+        513usize,
         concat!(
             "Offset of field: ",
             stringify!(WindowAggState),
@@ -49735,7 +53355,7 @@ fn bindgen_test_layout_WindowAggState() {
         unsafe {
             &(*(::std::ptr::null::<WindowAggState>())).partition_spooled as *const _ as usize
         },
-        346usize,
+        514usize,
         concat!(
             "Offset of field: ",
             stringify!(WindowAggState),
@@ -49745,7 +53365,7 @@ fn bindgen_test_layout_WindowAggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<WindowAggState>())).more_partitions as *const _ as usize },
-        347usize,
+        515usize,
         concat!(
             "Offset of field: ",
             stringify!(WindowAggState),
@@ -49755,7 +53375,7 @@ fn bindgen_test_layout_WindowAggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<WindowAggState>())).framehead_valid as *const _ as usize },
-        348usize,
+        516usize,
         concat!(
             "Offset of field: ",
             stringify!(WindowAggState),
@@ -49765,7 +53385,7 @@ fn bindgen_test_layout_WindowAggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<WindowAggState>())).frametail_valid as *const _ as usize },
-        349usize,
+        517usize,
         concat!(
             "Offset of field: ",
             stringify!(WindowAggState),
@@ -49774,8 +53394,18 @@ fn bindgen_test_layout_WindowAggState() {
         )
     );
     assert_eq!(
+        unsafe { &(*(::std::ptr::null::<WindowAggState>())).grouptail_valid as *const _ as usize },
+        518usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(WindowAggState),
+            "::",
+            stringify!(grouptail_valid)
+        )
+    );
+    assert_eq!(
         unsafe { &(*(::std::ptr::null::<WindowAggState>())).first_part_slot as *const _ as usize },
-        352usize,
+        520usize,
         concat!(
             "Offset of field: ",
             stringify!(WindowAggState),
@@ -49784,8 +53414,28 @@ fn bindgen_test_layout_WindowAggState() {
         )
     );
     assert_eq!(
+        unsafe { &(*(::std::ptr::null::<WindowAggState>())).framehead_slot as *const _ as usize },
+        528usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(WindowAggState),
+            "::",
+            stringify!(framehead_slot)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<WindowAggState>())).frametail_slot as *const _ as usize },
+        536usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(WindowAggState),
+            "::",
+            stringify!(frametail_slot)
+        )
+    );
+    assert_eq!(
         unsafe { &(*(::std::ptr::null::<WindowAggState>())).agg_row_slot as *const _ as usize },
-        360usize,
+        544usize,
         concat!(
             "Offset of field: ",
             stringify!(WindowAggState),
@@ -49795,7 +53445,7 @@ fn bindgen_test_layout_WindowAggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<WindowAggState>())).temp_slot_1 as *const _ as usize },
-        368usize,
+        552usize,
         concat!(
             "Offset of field: ",
             stringify!(WindowAggState),
@@ -49805,7 +53455,7 @@ fn bindgen_test_layout_WindowAggState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<WindowAggState>())).temp_slot_2 as *const _ as usize },
-        376usize,
+        560usize,
         concat!(
             "Offset of field: ",
             stringify!(WindowAggState),
@@ -49818,14 +53468,13 @@ fn bindgen_test_layout_WindowAggState() {
 #[derive(Debug, Copy, Clone)]
 pub struct UniqueState {
     pub ps: PlanState,
-    pub eqfunctions: *mut FmgrInfo,
-    pub tempContext: MemoryContext,
+    pub eqfunction: *mut ExprState,
 }
 #[test]
 fn bindgen_test_layout_UniqueState() {
     assert_eq!(
         ::std::mem::size_of::<UniqueState>(),
-        144usize,
+        152usize,
         concat!("Size of: ", stringify!(UniqueState))
     );
     assert_eq!(
@@ -49844,23 +53493,13 @@ fn bindgen_test_layout_UniqueState() {
         )
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<UniqueState>())).eqfunctions as *const _ as usize },
-        128usize,
+        unsafe { &(*(::std::ptr::null::<UniqueState>())).eqfunction as *const _ as usize },
+        144usize,
         concat!(
             "Offset of field: ",
             stringify!(UniqueState),
             "::",
-            stringify!(eqfunctions)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<UniqueState>())).tempContext as *const _ as usize },
-        136usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(UniqueState),
-            "::",
-            stringify!(tempContext)
+            stringify!(eqfunction)
         )
     );
 }
@@ -49868,8 +53507,9 @@ fn bindgen_test_layout_UniqueState() {
 #[derive(Debug, Copy, Clone)]
 pub struct GatherState {
     pub ps: PlanState,
-    pub initialized: bool_,
-    pub need_to_scan_locally: bool_,
+    pub initialized: bool,
+    pub need_to_scan_locally: bool,
+    pub tuples_needed: int64,
     pub funnel_slot: *mut TupleTableSlot,
     pub pei: *mut ParallelExecutorInfo,
     pub nworkers_launched: ::std::os::raw::c_int,
@@ -49881,7 +53521,7 @@ pub struct GatherState {
 fn bindgen_test_layout_GatherState() {
     assert_eq!(
         ::std::mem::size_of::<GatherState>(),
-        176usize,
+        200usize,
         concat!("Size of: ", stringify!(GatherState))
     );
     assert_eq!(
@@ -49901,7 +53541,7 @@ fn bindgen_test_layout_GatherState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<GatherState>())).initialized as *const _ as usize },
-        128usize,
+        144usize,
         concat!(
             "Offset of field: ",
             stringify!(GatherState),
@@ -49913,7 +53553,7 @@ fn bindgen_test_layout_GatherState() {
         unsafe {
             &(*(::std::ptr::null::<GatherState>())).need_to_scan_locally as *const _ as usize
         },
-        129usize,
+        145usize,
         concat!(
             "Offset of field: ",
             stringify!(GatherState),
@@ -49922,8 +53562,18 @@ fn bindgen_test_layout_GatherState() {
         )
     );
     assert_eq!(
+        unsafe { &(*(::std::ptr::null::<GatherState>())).tuples_needed as *const _ as usize },
+        152usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GatherState),
+            "::",
+            stringify!(tuples_needed)
+        )
+    );
+    assert_eq!(
         unsafe { &(*(::std::ptr::null::<GatherState>())).funnel_slot as *const _ as usize },
-        136usize,
+        160usize,
         concat!(
             "Offset of field: ",
             stringify!(GatherState),
@@ -49933,7 +53583,7 @@ fn bindgen_test_layout_GatherState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<GatherState>())).pei as *const _ as usize },
-        144usize,
+        168usize,
         concat!(
             "Offset of field: ",
             stringify!(GatherState),
@@ -49943,7 +53593,7 @@ fn bindgen_test_layout_GatherState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<GatherState>())).nworkers_launched as *const _ as usize },
-        152usize,
+        176usize,
         concat!(
             "Offset of field: ",
             stringify!(GatherState),
@@ -49953,7 +53603,7 @@ fn bindgen_test_layout_GatherState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<GatherState>())).nreaders as *const _ as usize },
-        156usize,
+        180usize,
         concat!(
             "Offset of field: ",
             stringify!(GatherState),
@@ -49963,7 +53613,7 @@ fn bindgen_test_layout_GatherState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<GatherState>())).nextreader as *const _ as usize },
-        160usize,
+        184usize,
         concat!(
             "Offset of field: ",
             stringify!(GatherState),
@@ -49973,7 +53623,7 @@ fn bindgen_test_layout_GatherState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<GatherState>())).reader as *const _ as usize },
-        168usize,
+        192usize,
         concat!(
             "Offset of field: ",
             stringify!(GatherState),
@@ -49991,9 +53641,10 @@ pub struct GMReaderTupleBuffer {
 #[derive(Debug, Copy, Clone)]
 pub struct GatherMergeState {
     pub ps: PlanState,
-    pub initialized: bool_,
-    pub gm_initialized: bool_,
-    pub need_to_scan_locally: bool_,
+    pub initialized: bool,
+    pub gm_initialized: bool,
+    pub need_to_scan_locally: bool,
+    pub tuples_needed: int64,
     pub tupDesc: TupleDesc,
     pub gm_nkeys: ::std::os::raw::c_int,
     pub gm_sortkeys: SortSupport,
@@ -50009,7 +53660,7 @@ pub struct GatherMergeState {
 fn bindgen_test_layout_GatherMergeState() {
     assert_eq!(
         ::std::mem::size_of::<GatherMergeState>(),
-        208usize,
+        232usize,
         concat!("Size of: ", stringify!(GatherMergeState))
     );
     assert_eq!(
@@ -50029,7 +53680,7 @@ fn bindgen_test_layout_GatherMergeState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<GatherMergeState>())).initialized as *const _ as usize },
-        128usize,
+        144usize,
         concat!(
             "Offset of field: ",
             stringify!(GatherMergeState),
@@ -50039,7 +53690,7 @@ fn bindgen_test_layout_GatherMergeState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<GatherMergeState>())).gm_initialized as *const _ as usize },
-        129usize,
+        145usize,
         concat!(
             "Offset of field: ",
             stringify!(GatherMergeState),
@@ -50051,7 +53702,7 @@ fn bindgen_test_layout_GatherMergeState() {
         unsafe {
             &(*(::std::ptr::null::<GatherMergeState>())).need_to_scan_locally as *const _ as usize
         },
-        130usize,
+        146usize,
         concat!(
             "Offset of field: ",
             stringify!(GatherMergeState),
@@ -50060,8 +53711,18 @@ fn bindgen_test_layout_GatherMergeState() {
         )
     );
     assert_eq!(
+        unsafe { &(*(::std::ptr::null::<GatherMergeState>())).tuples_needed as *const _ as usize },
+        152usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(GatherMergeState),
+            "::",
+            stringify!(tuples_needed)
+        )
+    );
+    assert_eq!(
         unsafe { &(*(::std::ptr::null::<GatherMergeState>())).tupDesc as *const _ as usize },
-        136usize,
+        160usize,
         concat!(
             "Offset of field: ",
             stringify!(GatherMergeState),
@@ -50071,7 +53732,7 @@ fn bindgen_test_layout_GatherMergeState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<GatherMergeState>())).gm_nkeys as *const _ as usize },
-        144usize,
+        168usize,
         concat!(
             "Offset of field: ",
             stringify!(GatherMergeState),
@@ -50081,7 +53742,7 @@ fn bindgen_test_layout_GatherMergeState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<GatherMergeState>())).gm_sortkeys as *const _ as usize },
-        152usize,
+        176usize,
         concat!(
             "Offset of field: ",
             stringify!(GatherMergeState),
@@ -50091,7 +53752,7 @@ fn bindgen_test_layout_GatherMergeState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<GatherMergeState>())).pei as *const _ as usize },
-        160usize,
+        184usize,
         concat!(
             "Offset of field: ",
             stringify!(GatherMergeState),
@@ -50103,7 +53764,7 @@ fn bindgen_test_layout_GatherMergeState() {
         unsafe {
             &(*(::std::ptr::null::<GatherMergeState>())).nworkers_launched as *const _ as usize
         },
-        168usize,
+        192usize,
         concat!(
             "Offset of field: ",
             stringify!(GatherMergeState),
@@ -50113,7 +53774,7 @@ fn bindgen_test_layout_GatherMergeState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<GatherMergeState>())).nreaders as *const _ as usize },
-        172usize,
+        196usize,
         concat!(
             "Offset of field: ",
             stringify!(GatherMergeState),
@@ -50123,7 +53784,7 @@ fn bindgen_test_layout_GatherMergeState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<GatherMergeState>())).gm_slots as *const _ as usize },
-        176usize,
+        200usize,
         concat!(
             "Offset of field: ",
             stringify!(GatherMergeState),
@@ -50133,7 +53794,7 @@ fn bindgen_test_layout_GatherMergeState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<GatherMergeState>())).reader as *const _ as usize },
-        184usize,
+        208usize,
         concat!(
             "Offset of field: ",
             stringify!(GatherMergeState),
@@ -50145,7 +53806,7 @@ fn bindgen_test_layout_GatherMergeState() {
         unsafe {
             &(*(::std::ptr::null::<GatherMergeState>())).gm_tuple_buffers as *const _ as usize
         },
-        192usize,
+        216usize,
         concat!(
             "Offset of field: ",
             stringify!(GatherMergeState),
@@ -50155,7 +53816,7 @@ fn bindgen_test_layout_GatherMergeState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<GatherMergeState>())).gm_heap as *const _ as usize },
-        200usize,
+        224usize,
         concat!(
             "Offset of field: ",
             stringify!(GatherMergeState),
@@ -50166,16 +53827,115 @@ fn bindgen_test_layout_GatherMergeState() {
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
+pub struct HashInstrumentation {
+    pub nbuckets: ::std::os::raw::c_int,
+    pub nbuckets_original: ::std::os::raw::c_int,
+    pub nbatch: ::std::os::raw::c_int,
+    pub nbatch_original: ::std::os::raw::c_int,
+    pub space_peak: usize,
+}
+#[test]
+fn bindgen_test_layout_HashInstrumentation() {
+    assert_eq!(
+        ::std::mem::size_of::<HashInstrumentation>(),
+        24usize,
+        concat!("Size of: ", stringify!(HashInstrumentation))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<HashInstrumentation>(),
+        8usize,
+        concat!("Alignment of ", stringify!(HashInstrumentation))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<HashInstrumentation>())).nbuckets as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(HashInstrumentation),
+            "::",
+            stringify!(nbuckets)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<HashInstrumentation>())).nbuckets_original as *const _ as usize
+        },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(HashInstrumentation),
+            "::",
+            stringify!(nbuckets_original)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<HashInstrumentation>())).nbatch as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(HashInstrumentation),
+            "::",
+            stringify!(nbatch)
+        )
+    );
+    assert_eq!(
+        unsafe {
+            &(*(::std::ptr::null::<HashInstrumentation>())).nbatch_original as *const _ as usize
+        },
+        12usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(HashInstrumentation),
+            "::",
+            stringify!(nbatch_original)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<HashInstrumentation>())).space_peak as *const _ as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(HashInstrumentation),
+            "::",
+            stringify!(space_peak)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug)]
+pub struct SharedHashInfo {
+    pub num_workers: ::std::os::raw::c_int,
+    pub hinstrument: __IncompleteArrayField<HashInstrumentation>,
+    pub __bindgen_align: [u64; 0usize],
+}
+#[test]
+fn bindgen_test_layout_SharedHashInfo() {
+    assert_eq!(
+        ::std::mem::size_of::<SharedHashInfo>(),
+        8usize,
+        concat!("Size of: ", stringify!(SharedHashInfo))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<SharedHashInfo>(),
+        8usize,
+        concat!("Alignment of ", stringify!(SharedHashInfo))
+    );
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct HashState {
     pub ps: PlanState,
     pub hashtable: HashJoinTable,
     pub hashkeys: *mut List,
+    pub shared_info: *mut SharedHashInfo,
+    pub hinstrument: *mut HashInstrumentation,
+    pub parallel_state: *mut ParallelHashJoinState,
 }
 #[test]
 fn bindgen_test_layout_HashState() {
     assert_eq!(
         ::std::mem::size_of::<HashState>(),
-        144usize,
+        184usize,
         concat!("Size of: ", stringify!(HashState))
     );
     assert_eq!(
@@ -50195,7 +53955,7 @@ fn bindgen_test_layout_HashState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<HashState>())).hashtable as *const _ as usize },
-        128usize,
+        144usize,
         concat!(
             "Offset of field: ",
             stringify!(HashState),
@@ -50205,12 +53965,42 @@ fn bindgen_test_layout_HashState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<HashState>())).hashkeys as *const _ as usize },
-        136usize,
+        152usize,
         concat!(
             "Offset of field: ",
             stringify!(HashState),
             "::",
             stringify!(hashkeys)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<HashState>())).shared_info as *const _ as usize },
+        160usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(HashState),
+            "::",
+            stringify!(shared_info)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<HashState>())).hinstrument as *const _ as usize },
+        168usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(HashState),
+            "::",
+            stringify!(hinstrument)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<HashState>())).parallel_state as *const _ as usize },
+        176usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(HashState),
+            "::",
+            stringify!(parallel_state)
         )
     );
 }
@@ -50224,23 +54014,23 @@ pub type SetOpStatePerGroup = *mut SetOpStatePerGroupData;
 #[derive(Debug, Copy, Clone)]
 pub struct SetOpState {
     pub ps: PlanState,
-    pub eqfunctions: *mut FmgrInfo,
+    pub eqfunction: *mut ExprState,
+    pub eqfuncoids: *mut Oid,
     pub hashfunctions: *mut FmgrInfo,
-    pub setop_done: bool_,
+    pub setop_done: bool,
     pub numOutput: ::std::os::raw::c_long,
-    pub tempContext: MemoryContext,
     pub pergroup: SetOpStatePerGroup,
     pub grp_firstTuple: HeapTuple,
     pub hashtable: TupleHashTable,
     pub tableContext: MemoryContext,
-    pub table_filled: bool_,
+    pub table_filled: bool,
     pub hashiter: TupleHashIterator,
 }
 #[test]
 fn bindgen_test_layout_SetOpState() {
     assert_eq!(
         ::std::mem::size_of::<SetOpState>(),
-        216usize,
+        232usize,
         concat!("Size of: ", stringify!(SetOpState))
     );
     assert_eq!(
@@ -50259,18 +54049,28 @@ fn bindgen_test_layout_SetOpState() {
         )
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<SetOpState>())).eqfunctions as *const _ as usize },
-        128usize,
+        unsafe { &(*(::std::ptr::null::<SetOpState>())).eqfunction as *const _ as usize },
+        144usize,
         concat!(
             "Offset of field: ",
             stringify!(SetOpState),
             "::",
-            stringify!(eqfunctions)
+            stringify!(eqfunction)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<SetOpState>())).eqfuncoids as *const _ as usize },
+        152usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(SetOpState),
+            "::",
+            stringify!(eqfuncoids)
         )
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<SetOpState>())).hashfunctions as *const _ as usize },
-        136usize,
+        160usize,
         concat!(
             "Offset of field: ",
             stringify!(SetOpState),
@@ -50280,7 +54080,7 @@ fn bindgen_test_layout_SetOpState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<SetOpState>())).setop_done as *const _ as usize },
-        144usize,
+        168usize,
         concat!(
             "Offset of field: ",
             stringify!(SetOpState),
@@ -50290,7 +54090,7 @@ fn bindgen_test_layout_SetOpState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<SetOpState>())).numOutput as *const _ as usize },
-        152usize,
+        176usize,
         concat!(
             "Offset of field: ",
             stringify!(SetOpState),
@@ -50299,18 +54099,8 @@ fn bindgen_test_layout_SetOpState() {
         )
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<SetOpState>())).tempContext as *const _ as usize },
-        160usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(SetOpState),
-            "::",
-            stringify!(tempContext)
-        )
-    );
-    assert_eq!(
         unsafe { &(*(::std::ptr::null::<SetOpState>())).pergroup as *const _ as usize },
-        168usize,
+        184usize,
         concat!(
             "Offset of field: ",
             stringify!(SetOpState),
@@ -50320,7 +54110,7 @@ fn bindgen_test_layout_SetOpState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<SetOpState>())).grp_firstTuple as *const _ as usize },
-        176usize,
+        192usize,
         concat!(
             "Offset of field: ",
             stringify!(SetOpState),
@@ -50330,7 +54120,7 @@ fn bindgen_test_layout_SetOpState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<SetOpState>())).hashtable as *const _ as usize },
-        184usize,
+        200usize,
         concat!(
             "Offset of field: ",
             stringify!(SetOpState),
@@ -50340,7 +54130,7 @@ fn bindgen_test_layout_SetOpState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<SetOpState>())).tableContext as *const _ as usize },
-        192usize,
+        208usize,
         concat!(
             "Offset of field: ",
             stringify!(SetOpState),
@@ -50350,7 +54140,7 @@ fn bindgen_test_layout_SetOpState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<SetOpState>())).table_filled as *const _ as usize },
-        200usize,
+        216usize,
         concat!(
             "Offset of field: ",
             stringify!(SetOpState),
@@ -50360,7 +54150,7 @@ fn bindgen_test_layout_SetOpState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<SetOpState>())).hashiter as *const _ as usize },
-        204usize,
+        220usize,
         concat!(
             "Offset of field: ",
             stringify!(SetOpState),
@@ -50382,7 +54172,7 @@ pub struct LockRowsState {
 fn bindgen_test_layout_LockRowsState() {
     assert_eq!(
         ::std::mem::size_of::<LockRowsState>(),
-        200usize,
+        216usize,
         concat!("Size of: ", stringify!(LockRowsState))
     );
     assert_eq!(
@@ -50402,7 +54192,7 @@ fn bindgen_test_layout_LockRowsState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<LockRowsState>())).lr_arowMarks as *const _ as usize },
-        128usize,
+        144usize,
         concat!(
             "Offset of field: ",
             stringify!(LockRowsState),
@@ -50412,7 +54202,7 @@ fn bindgen_test_layout_LockRowsState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<LockRowsState>())).lr_epqstate as *const _ as usize },
-        136usize,
+        152usize,
         concat!(
             "Offset of field: ",
             stringify!(LockRowsState),
@@ -50422,7 +54212,7 @@ fn bindgen_test_layout_LockRowsState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<LockRowsState>())).lr_curtuples as *const _ as usize },
-        184usize,
+        200usize,
         concat!(
             "Offset of field: ",
             stringify!(LockRowsState),
@@ -50432,7 +54222,7 @@ fn bindgen_test_layout_LockRowsState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<LockRowsState>())).lr_ntables as *const _ as usize },
-        192usize,
+        208usize,
         concat!(
             "Offset of field: ",
             stringify!(LockRowsState),
@@ -50457,7 +54247,7 @@ pub struct LimitState {
     pub limitCount: *mut ExprState,
     pub offset: int64,
     pub count: int64,
-    pub noCount: bool_,
+    pub noCount: bool,
     pub lstate: LimitStateCond,
     pub position: int64,
     pub subSlot: *mut TupleTableSlot,
@@ -50466,7 +54256,7 @@ pub struct LimitState {
 fn bindgen_test_layout_LimitState() {
     assert_eq!(
         ::std::mem::size_of::<LimitState>(),
-        184usize,
+        200usize,
         concat!("Size of: ", stringify!(LimitState))
     );
     assert_eq!(
@@ -50486,7 +54276,7 @@ fn bindgen_test_layout_LimitState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<LimitState>())).limitOffset as *const _ as usize },
-        128usize,
+        144usize,
         concat!(
             "Offset of field: ",
             stringify!(LimitState),
@@ -50496,7 +54286,7 @@ fn bindgen_test_layout_LimitState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<LimitState>())).limitCount as *const _ as usize },
-        136usize,
+        152usize,
         concat!(
             "Offset of field: ",
             stringify!(LimitState),
@@ -50506,7 +54296,7 @@ fn bindgen_test_layout_LimitState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<LimitState>())).offset as *const _ as usize },
-        144usize,
+        160usize,
         concat!(
             "Offset of field: ",
             stringify!(LimitState),
@@ -50516,7 +54306,7 @@ fn bindgen_test_layout_LimitState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<LimitState>())).count as *const _ as usize },
-        152usize,
+        168usize,
         concat!(
             "Offset of field: ",
             stringify!(LimitState),
@@ -50526,7 +54316,7 @@ fn bindgen_test_layout_LimitState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<LimitState>())).noCount as *const _ as usize },
-        160usize,
+        176usize,
         concat!(
             "Offset of field: ",
             stringify!(LimitState),
@@ -50536,7 +54326,7 @@ fn bindgen_test_layout_LimitState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<LimitState>())).lstate as *const _ as usize },
-        164usize,
+        180usize,
         concat!(
             "Offset of field: ",
             stringify!(LimitState),
@@ -50546,7 +54336,7 @@ fn bindgen_test_layout_LimitState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<LimitState>())).position as *const _ as usize },
-        168usize,
+        184usize,
         concat!(
             "Offset of field: ",
             stringify!(LimitState),
@@ -50556,7 +54346,7 @@ fn bindgen_test_layout_LimitState() {
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<LimitState>())).subSlot as *const _ as usize },
-        176usize,
+        192usize,
         concat!(
             "Offset of field: ",
             stringify!(LimitState),
@@ -50701,10 +54491,10 @@ pub struct AfterTriggersTableData {
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct TransitionCaptureState {
-    pub tcs_delete_old_table: bool_,
-    pub tcs_update_old_table: bool_,
-    pub tcs_update_new_table: bool_,
-    pub tcs_insert_new_table: bool_,
+    pub tcs_delete_old_table: bool,
+    pub tcs_update_old_table: bool,
+    pub tcs_update_new_table: bool,
+    pub tcs_insert_new_table: bool,
     pub tcs_map: *mut TupleConversionMap,
     pub tcs_original_insert_tuple: HeapTuple,
     pub tcs_private: *mut AfterTriggersTableData,
@@ -50821,7 +54611,11 @@ extern "C" {
         refRelOid: Oid,
         constraintOid: Oid,
         indexOid: Oid,
-        isInternal: bool_,
+        funcoid: Oid,
+        parentTriggerOid: Oid,
+        whenClause: *mut Node,
+        isInternal: bool,
+        in_partition: bool,
     ) -> ObjectAddress;
 }
 extern "C" {
@@ -50831,7 +54625,7 @@ extern "C" {
     pub fn get_trigger_oid(
         relid: Oid,
         name: *const ::std::os::raw::c_char,
-        missing_ok: bool_,
+        missing_ok: bool,
     ) -> Oid;
 }
 extern "C" {
@@ -50842,7 +54636,8 @@ extern "C" {
         rel: Relation,
         tgname: *const ::std::os::raw::c_char,
         fires_when: ::std::os::raw::c_char,
-        skip_system: bool_,
+        skip_system: bool,
+        lockmode: LOCKMODE,
     );
 }
 extern "C" {
@@ -50916,7 +54711,8 @@ extern "C" {
         relinfo: *mut ResultRelInfo,
         tupleid: ItemPointer,
         fdw_trigtuple: HeapTuple,
-    ) -> bool_;
+        epqslot: *mut *mut TupleTableSlot,
+    ) -> bool;
 }
 extern "C" {
     pub fn ExecARDeleteTriggers(
@@ -50932,7 +54728,7 @@ extern "C" {
         estate: *mut EState,
         relinfo: *mut ResultRelInfo,
         trigtuple: HeapTuple,
-    ) -> bool_;
+    ) -> bool;
 }
 extern "C" {
     pub fn ExecBSUpdateTriggers(estate: *mut EState, relinfo: *mut ResultRelInfo);
@@ -50992,19 +54788,19 @@ extern "C" {
     pub fn AfterTriggerFireDeferred();
 }
 extern "C" {
-    pub fn AfterTriggerEndXact(isCommit: bool_);
+    pub fn AfterTriggerEndXact(isCommit: bool);
 }
 extern "C" {
     pub fn AfterTriggerBeginSubXact();
 }
 extern "C" {
-    pub fn AfterTriggerEndSubXact(isCommit: bool_);
+    pub fn AfterTriggerEndSubXact(isCommit: bool);
 }
 extern "C" {
     pub fn AfterTriggerSetState(stmt: *mut ConstraintsSetStmt);
 }
 extern "C" {
-    pub fn AfterTriggerPendingOnRel(relid: Oid) -> bool_;
+    pub fn AfterTriggerPendingOnRel(relid: Oid) -> bool;
 }
 extern "C" {
     pub fn RI_FKey_pk_upd_check_required(
@@ -51012,7 +54808,7 @@ extern "C" {
         pk_rel: Relation,
         old_row: HeapTuple,
         new_row: HeapTuple,
-    ) -> bool_;
+    ) -> bool;
 }
 extern "C" {
     pub fn RI_FKey_fk_upd_check_required(
@@ -51020,10 +54816,10 @@ extern "C" {
         fk_rel: Relation,
         old_row: HeapTuple,
         new_row: HeapTuple,
-    ) -> bool_;
+    ) -> bool;
 }
 extern "C" {
-    pub fn RI_Initial_Check(trigger: *mut Trigger, fk_rel: Relation, pk_rel: Relation) -> bool_;
+    pub fn RI_Initial_Check(trigger: *mut Trigger, fk_rel: Relation, pk_rel: Relation) -> bool;
 }
 extern "C" {
     pub fn RI_FKey_trigger_type(tgfoid: Oid) -> ::std::os::raw::c_int;
@@ -51339,7 +55135,7 @@ pub type DestReceiver = _DestReceiver;
 #[derive(Debug, Copy, Clone)]
 pub struct _DestReceiver {
     pub receiveSlot: ::std::option::Option<
-        unsafe extern "C" fn(slot: *mut TupleTableSlot, self_: *mut DestReceiver) -> bool_,
+        unsafe extern "C" fn(slot: *mut TupleTableSlot, self_: *mut DestReceiver) -> bool,
     >,
     pub rStartup: ::std::option::Option<
         unsafe extern "C" fn(
@@ -51449,7 +55245,7 @@ pub struct QueryDesc {
     pub tupDesc: TupleDesc,
     pub estate: *mut EState,
     pub planstate: *mut PlanState,
-    pub already_executed: bool_,
+    pub already_executed: bool,
     pub totaltime: *mut Instrumentation,
 }
 #[test]
@@ -51632,7 +55428,7 @@ pub struct CachedPlanSource {
     pub parserSetup: ParserSetupHook,
     pub parserSetupArg: *mut ::std::os::raw::c_void,
     pub cursor_options: ::std::os::raw::c_int,
-    pub fixed_result: bool_,
+    pub fixed_result: bool,
     pub resultDesc: TupleDesc,
     pub context: MemoryContext,
     pub query_list: *mut List,
@@ -51641,13 +55437,13 @@ pub struct CachedPlanSource {
     pub search_path: *mut OverrideSearchPath,
     pub query_context: MemoryContext,
     pub rewriteRoleId: Oid,
-    pub rewriteRowSecurity: bool_,
-    pub dependsOnRLS: bool_,
+    pub rewriteRowSecurity: bool,
+    pub dependsOnRLS: bool,
     pub gplan: *mut CachedPlan,
-    pub is_oneshot: bool_,
-    pub is_complete: bool_,
-    pub is_saved: bool_,
-    pub is_valid: bool_,
+    pub is_oneshot: bool,
+    pub is_complete: bool,
+    pub is_saved: bool,
+    pub is_valid: bool,
     pub generation: ::std::os::raw::c_int,
     pub next_saved: *mut CachedPlanSource,
     pub generic_cost: f64,
@@ -51978,11 +55774,11 @@ fn bindgen_test_layout_CachedPlanSource() {
 pub struct CachedPlan {
     pub magic: ::std::os::raw::c_int,
     pub stmt_list: *mut List,
-    pub is_oneshot: bool_,
-    pub is_saved: bool_,
-    pub is_valid: bool_,
+    pub is_oneshot: bool,
+    pub is_saved: bool,
+    pub is_valid: bool,
     pub planRoleId: Oid,
-    pub dependsOnRole: bool_,
+    pub dependsOnRole: bool,
     pub saved_xmin: TransactionId,
     pub generation: ::std::os::raw::c_int,
     pub refcount: ::std::os::raw::c_int,
@@ -52141,7 +55937,7 @@ extern "C" {
         parserSetup: ParserSetupHook,
         parserSetupArg: *mut ::std::os::raw::c_void,
         cursor_options: ::std::os::raw::c_int,
-        fixed_result: bool_,
+        fixed_result: bool,
     );
 }
 extern "C" {
@@ -52157,7 +55953,7 @@ extern "C" {
     pub fn CopyCachedPlan(plansource: *mut CachedPlanSource) -> *mut CachedPlanSource;
 }
 extern "C" {
-    pub fn CachedPlanIsValid(plansource: *mut CachedPlanSource) -> bool_;
+    pub fn CachedPlanIsValid(plansource: *mut CachedPlanSource) -> bool;
 }
 extern "C" {
     pub fn CachedPlanGetTargetList(
@@ -52169,12 +55965,12 @@ extern "C" {
     pub fn GetCachedPlan(
         plansource: *mut CachedPlanSource,
         boundParams: ParamListInfo,
-        useResOwner: bool_,
+        useResOwner: bool,
         queryEnv: *mut QueryEnvironment,
     ) -> *mut CachedPlan;
 }
 extern "C" {
-    pub fn ReleaseCachedPlan(plan: *mut CachedPlan, useResOwner: bool_);
+    pub fn ReleaseCachedPlan(plan: *mut CachedPlan, useResOwner: bool);
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -52201,8 +55997,8 @@ pub type ResourceReleasePhase = u32;
 pub type ResourceReleaseCallback = ::std::option::Option<
     unsafe extern "C" fn(
         phase: ResourceReleasePhase,
-        isCommit: bool_,
-        isTopLevel: bool_,
+        isCommit: bool,
+        isTopLevel: bool,
         arg: *mut ::std::os::raw::c_void,
     ),
 >;
@@ -52216,8 +56012,8 @@ extern "C" {
     pub fn ResourceOwnerRelease(
         owner: ResourceOwner,
         phase: ResourceReleasePhase,
-        isCommit: bool_,
-        isTopLevel: bool_,
+        isCommit: bool,
+        isTopLevel: bool,
     );
 }
 extern "C" {
@@ -52260,7 +56056,7 @@ pub type Portal = *mut PortalData;
 pub struct PortalData {
     pub name: *const ::std::os::raw::c_char,
     pub prepStmtName: *const ::std::os::raw::c_char,
-    pub heap: MemoryContext,
+    pub portalContext: MemoryContext,
     pub resowner: ResourceOwner,
     pub cleanup: ::std::option::Option<unsafe extern "C" fn(portal: Portal)>,
     pub createSubid: SubTransactionId,
@@ -52273,20 +56069,21 @@ pub struct PortalData {
     pub queryEnv: *mut QueryEnvironment,
     pub strategy: PortalStrategy,
     pub cursorOptions: ::std::os::raw::c_int,
-    pub run_once: bool_,
+    pub run_once: bool,
     pub status: PortalStatus,
-    pub portalPinned: bool_,
+    pub portalPinned: bool,
+    pub autoHeld: bool,
     pub queryDesc: *mut QueryDesc,
     pub tupDesc: TupleDesc,
     pub formats: *mut int16,
     pub holdStore: *mut Tuplestorestate,
     pub holdContext: MemoryContext,
     pub holdSnapshot: Snapshot,
-    pub atStart: bool_,
-    pub atEnd: bool_,
+    pub atStart: bool,
+    pub atEnd: bool,
     pub portalPos: uint64,
     pub creation_time: TimestampTz,
-    pub visible: bool_,
+    pub visible: bool,
 }
 #[test]
 fn bindgen_test_layout_PortalData() {
@@ -52321,13 +56118,13 @@ fn bindgen_test_layout_PortalData() {
         )
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<PortalData>())).heap as *const _ as usize },
+        unsafe { &(*(::std::ptr::null::<PortalData>())).portalContext as *const _ as usize },
         16usize,
         concat!(
             "Offset of field: ",
             stringify!(PortalData),
             "::",
-            stringify!(heap)
+            stringify!(portalContext)
         )
     );
     assert_eq!(
@@ -52481,6 +56278,16 @@ fn bindgen_test_layout_PortalData() {
         )
     );
     assert_eq!(
+        unsafe { &(*(::std::ptr::null::<PortalData>())).autoHeld as *const _ as usize },
+        113usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(PortalData),
+            "::",
+            stringify!(autoHeld)
+        )
+    );
+    assert_eq!(
         unsafe { &(*(::std::ptr::null::<PortalData>())).queryDesc as *const _ as usize },
         120usize,
         concat!(
@@ -52595,13 +56402,16 @@ extern "C" {
     pub fn EnablePortalManager();
 }
 extern "C" {
-    pub fn PreCommit_Portals(isPrepare: bool_) -> bool_;
+    pub fn PreCommit_Portals(isPrepare: bool) -> bool;
 }
 extern "C" {
     pub fn AtAbort_Portals();
 }
 extern "C" {
     pub fn AtCleanup_Portals();
+}
+extern "C" {
+    pub fn PortalErrorCleanup();
 }
 extern "C" {
     pub fn AtSubCommit_Portals(
@@ -52624,8 +56434,8 @@ extern "C" {
 extern "C" {
     pub fn CreatePortal(
         name: *const ::std::os::raw::c_char,
-        allowDup: bool_,
-        dupSilent: bool_,
+        allowDup: bool,
+        dupSilent: bool,
     ) -> Portal;
 }
 extern "C" {
@@ -52647,7 +56457,7 @@ extern "C" {
     pub fn MarkPortalFailed(portal: Portal);
 }
 extern "C" {
-    pub fn PortalDrop(portal: Portal, isTopCommit: bool_);
+    pub fn PortalDrop(portal: Portal, isTopCommit: bool);
 }
 extern "C" {
     pub fn GetPortalByName(name: *const ::std::os::raw::c_char) -> Portal;
@@ -52672,7 +56482,10 @@ extern "C" {
     pub fn PortalHashTableDeleteAll();
 }
 extern "C" {
-    pub fn ThereAreNoReadyPortals() -> bool_;
+    pub fn ThereAreNoReadyPortals() -> bool;
+}
+extern "C" {
+    pub fn HoldPinnedPortals();
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -52794,12 +56607,15 @@ extern "C" {
     pub fn SPI_connect() -> ::std::os::raw::c_int;
 }
 extern "C" {
+    pub fn SPI_connect_ext(options: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+}
+extern "C" {
     pub fn SPI_finish() -> ::std::os::raw::c_int;
 }
 extern "C" {
     pub fn SPI_execute(
         src: *const ::std::os::raw::c_char,
-        read_only: bool_,
+        read_only: bool,
         tcount: ::std::os::raw::c_long,
     ) -> ::std::os::raw::c_int;
 }
@@ -52808,7 +56624,7 @@ extern "C" {
         plan: SPIPlanPtr,
         Values: *mut Datum,
         Nulls: *const ::std::os::raw::c_char,
-        read_only: bool_,
+        read_only: bool,
         tcount: ::std::os::raw::c_long,
     ) -> ::std::os::raw::c_int;
 }
@@ -52816,7 +56632,7 @@ extern "C" {
     pub fn SPI_execute_plan_with_paramlist(
         plan: SPIPlanPtr,
         params: ParamListInfo,
-        read_only: bool_,
+        read_only: bool,
         tcount: ::std::os::raw::c_long,
     ) -> ::std::os::raw::c_int;
 }
@@ -52841,8 +56657,8 @@ extern "C" {
         Nulls: *const ::std::os::raw::c_char,
         snapshot: Snapshot,
         crosscheck_snapshot: Snapshot,
-        read_only: bool_,
-        fire_triggers: bool_,
+        read_only: bool,
+        fire_triggers: bool,
         tcount: ::std::os::raw::c_long,
     ) -> ::std::os::raw::c_int;
 }
@@ -52853,7 +56669,7 @@ extern "C" {
         argtypes: *mut Oid,
         Values: *mut Datum,
         Nulls: *const ::std::os::raw::c_char,
-        read_only: bool_,
+        read_only: bool,
         tcount: ::std::os::raw::c_long,
     ) -> ::std::os::raw::c_int;
 }
@@ -52896,10 +56712,10 @@ extern "C" {
     pub fn SPI_getargcount(plan: SPIPlanPtr) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    pub fn SPI_is_cursor_plan(plan: SPIPlanPtr) -> bool_;
+    pub fn SPI_is_cursor_plan(plan: SPIPlanPtr) -> bool;
 }
 extern "C" {
-    pub fn SPI_plan_is_valid(plan: SPIPlanPtr) -> bool_;
+    pub fn SPI_plan_is_valid(plan: SPIPlanPtr) -> bool;
 }
 extern "C" {
     pub fn SPI_result_code_string(code: ::std::os::raw::c_int) -> *const ::std::os::raw::c_char;
@@ -52950,7 +56766,7 @@ extern "C" {
         tuple: HeapTuple,
         tupdesc: TupleDesc,
         fnumber: ::std::os::raw::c_int,
-        isnull: *mut bool_,
+        isnull: *mut bool,
     ) -> Datum;
 }
 extern "C" {
@@ -52981,8 +56797,7 @@ extern "C" {
     pub fn SPI_pfree(pointer: *mut ::std::os::raw::c_void);
 }
 extern "C" {
-    pub fn SPI_datumTransfer(value: Datum, typByVal: bool_, typLen: ::std::os::raw::c_int)
-        -> Datum;
+    pub fn SPI_datumTransfer(value: Datum, typByVal: bool, typLen: ::std::os::raw::c_int) -> Datum;
 }
 extern "C" {
     pub fn SPI_freetuple(pointer: HeapTuple);
@@ -52996,7 +56811,7 @@ extern "C" {
         plan: SPIPlanPtr,
         Values: *mut Datum,
         Nulls: *const ::std::os::raw::c_char,
-        read_only: bool_,
+        read_only: bool,
     ) -> Portal;
 }
 extern "C" {
@@ -53007,7 +56822,7 @@ extern "C" {
         argtypes: *mut Oid,
         Values: *mut Datum,
         Nulls: *const ::std::os::raw::c_char,
-        read_only: bool_,
+        read_only: bool,
         cursorOptions: ::std::os::raw::c_int,
     ) -> Portal;
 }
@@ -53016,17 +56831,17 @@ extern "C" {
         name: *const ::std::os::raw::c_char,
         plan: SPIPlanPtr,
         params: ParamListInfo,
-        read_only: bool_,
+        read_only: bool,
     ) -> Portal;
 }
 extern "C" {
     pub fn SPI_cursor_find(name: *const ::std::os::raw::c_char) -> Portal;
 }
 extern "C" {
-    pub fn SPI_cursor_fetch(portal: Portal, forward: bool_, count: ::std::os::raw::c_long);
+    pub fn SPI_cursor_fetch(portal: Portal, forward: bool, count: ::std::os::raw::c_long);
 }
 extern "C" {
-    pub fn SPI_cursor_move(portal: Portal, forward: bool_, count: ::std::os::raw::c_long);
+    pub fn SPI_cursor_move(portal: Portal, forward: bool, count: ::std::os::raw::c_long);
 }
 extern "C" {
     pub fn SPI_scroll_cursor_fetch(
@@ -53055,10 +56870,25 @@ extern "C" {
     pub fn SPI_register_trigger_data(tdata: *mut TriggerData) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    pub fn AtEOXact_SPI(isCommit: bool_);
+    pub fn SPI_start_transaction();
 }
 extern "C" {
-    pub fn AtEOSubXact_SPI(isCommit: bool_, mySubid: SubTransactionId);
+    pub fn SPI_commit();
+}
+extern "C" {
+    pub fn SPI_rollback();
+}
+extern "C" {
+    pub fn SPICleanup();
+}
+extern "C" {
+    pub fn AtEOXact_SPI(isCommit: bool);
+}
+extern "C" {
+    pub fn AtEOSubXact_SPI(isCommit: bool, mySubid: SubTransactionId);
+}
+extern "C" {
+    pub fn SPI_inside_nonatomic_context() -> bool;
 }
 pub type __builtin_va_list = [__va_list_tag; 1usize];
 #[repr(C)]
@@ -53139,7 +56969,22 @@ pub struct FdwRoutine {
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
-pub struct PartitionDispatchData {
+pub struct JitContext {
+    pub _address: u8,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct JitInstrumentation {
+    pub _address: u8,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct SharedJitInstrumentation {
+    pub _address: u8,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct PartitionTupleRouting {
     pub _address: u8,
 }
 #[repr(C)]

@@ -6,73 +6,163 @@ pub mod macros;
 use bindings::*;
 use std::ffi::{ CString, CStr };
 use std::os::raw::c_char;
+use std::fmt;
 
-pub fn PG_GETARG_DATUM(fcinfo: FunctionCallInfo, n: usize) -> Datum {
-    let val = unsafe { (&*fcinfo).arg[n] };
-    val
+///
+/// Result and Error definitions
+/// 
+
+pub type PgxrResult<T> = std::result::Result<T, PgxrError>;
+
+#[derive(Debug)]
+pub struct PgxrError {
+  repr: ErrorRepr,
 }
 
-pub fn PG_GETARG_ISIZE(fcinfo: FunctionCallInfo, n: usize) -> isize {
-    let val = unsafe { (&*fcinfo).arg[n] };
-    val as isize
+#[derive(Debug)]
+enum ErrorRepr {
+  IntenalError(ErrorKind, String),
 }
 
-pub fn PG_GETARG_USIZE(fcinfo: FunctionCallInfo, n: usize) -> usize {
-    let val = unsafe { (&*fcinfo).arg[n] };
-    val as usize
+/// An enum of all error kinds.
+#[derive(PartialEq, Eq, Copy, Clone, Debug)]
+pub enum ErrorKind {
+    /// The param index is out of the boundary.
+    IndexOutOfBound,
+    /// Operation failed because of a type mismatch.
+    TypeError,
 }
 
-pub fn PG_GETARG_I8(fcinfo: FunctionCallInfo, n: usize) -> i8 {
-    let val = unsafe { (&*fcinfo).arg[n] };
-    val as i8
+impl PgxrError {
+    pub fn new(kind: ErrorKind, msg: String) -> PgxrError {
+        PgxrError {
+            repr: ErrorRepr::IntenalError(kind, msg),
+        }
+    }
+
+  pub fn kind(&self) -> ErrorKind {
+    match self.repr {
+      ErrorRepr::IntenalError(kind, ref _msg) => kind,
+    }
+  }
 }
 
-pub fn PG_GETARG_I16(fcinfo: FunctionCallInfo, n: usize) -> i16 {
-    let val = unsafe { (&*fcinfo).arg[n] };
-    val as i16
+impl fmt::Display for PgxrError {
+  fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+    match self.repr {
+      ErrorRepr::IntenalError(_kind, ref err_str) => f.pad(err_str),
+    }
+  }
 }
 
-pub fn PG_GETARG_I32(fcinfo: FunctionCallInfo, n: usize) -> i32 {
-    let val = unsafe { (&*fcinfo).arg[n] };
-    val as i32
+impl std::error::Error for PgxrError {
+  fn description(&self) -> &str {
+    match self.repr {
+      ErrorRepr::IntenalError(_kind, ref msg) => msg.as_str(),
+    }
+  }
+
+  fn cause(&self) -> Option<&std::error::Error> {
+    match self.repr {
+      ErrorRepr::IntenalError(_kind, ref _msg) => None,
+    }
+  }
 }
 
-pub fn PG_GETARG_I64(fcinfo: FunctionCallInfo, n: usize) -> i64 {
-    let val = unsafe { (&*fcinfo).arg[n] };
-    val as i64
+///
+/// Helper macros
+/// 
+
+macro_rules! CHECK_PARAM_INDEX {
+    ( $fcinfo:expr, $n:expr ) => {
+        unsafe {
+            if $n >= (&*$fcinfo).nargs as usize {
+                return Err(PgxrError::new(ErrorKind::IndexOutOfBound, format!("Index out of boundary, total {}, n is {}", (&*$fcinfo).nargs, $n)));
+            }
+        }
+    };
 }
 
-pub fn PG_GETARG_U8(fcinfo: FunctionCallInfo, n: usize) -> u8 {
+///
+/// Get Argument functions
+/// 
+
+pub fn PG_GETARG_DATUM(fcinfo: FunctionCallInfo, n: usize) -> PgxrResult<Datum> {
+    CHECK_PARAM_INDEX!(fcinfo, n);
     let val = unsafe { (&*fcinfo).arg[n] };
-    val as u8
+    Ok(val)
 }
 
-pub fn PG_GETARG_U16(fcinfo: FunctionCallInfo, n: usize) -> u16 {
+pub fn PG_GETARG_ISIZE(fcinfo: FunctionCallInfo, n: usize) -> PgxrResult<isize> {
+    CHECK_PARAM_INDEX!(fcinfo, n);
     let val = unsafe { (&*fcinfo).arg[n] };
-    val as u16
+    Ok(val as isize)
 }
 
-pub fn PG_GETARG_U32(fcinfo: FunctionCallInfo, n: usize) -> u32 {
+pub fn PG_GETARG_USIZE(fcinfo: FunctionCallInfo, n: usize) -> PgxrResult<usize> {
+    CHECK_PARAM_INDEX!(fcinfo, n);
     let val = unsafe { (&*fcinfo).arg[n] };
-    val as u32
+    Ok(val as usize)
 }
 
-pub fn PG_GETARG_U64(fcinfo: FunctionCallInfo, n: usize) -> u64 {
+pub fn PG_GETARG_I8(fcinfo: FunctionCallInfo, n: usize) -> PgxrResult<i8> {
+    CHECK_PARAM_INDEX!(fcinfo, n);
     let val = unsafe { (&*fcinfo).arg[n] };
-    val as u64
+    Ok(val as i8)
 }
 
-// pub fn PG_GETARG_CSTRING(fcinfo: FunctionCallInfo, n: usize) -> CString {
-//     let c = unsafe { (&*fcinfo).arg[n] as *mut c_char };
-//     let cs = unsafe { CStr::from_ptr(c).into_c_string() };
-//     cs
-// }
+pub fn PG_GETARG_I16(fcinfo: FunctionCallInfo, n: usize) -> PgxrResult<i16> {
+    CHECK_PARAM_INDEX!(fcinfo, n);
+    let val = unsafe { (&*fcinfo).arg[n] };
+    Ok(val as i16)
+}
 
-pub fn PG_GETARG_STRING(fcinfo: FunctionCallInfo, n: usize) -> String {
+pub fn PG_GETARG_I32(fcinfo: FunctionCallInfo, n: usize) -> PgxrResult<i32> {
+    CHECK_PARAM_INDEX!(fcinfo, n);
+    let val = unsafe { (&*fcinfo).arg[n] };
+    Ok(val as i32)
+}
+
+pub fn PG_GETARG_I64(fcinfo: FunctionCallInfo, n: usize) -> PgxrResult<i64> {
+    CHECK_PARAM_INDEX!(fcinfo, n);
+    let val = unsafe { (&*fcinfo).arg[n] };
+    Ok(val as i64)
+}
+
+pub fn PG_GETARG_U8(fcinfo: FunctionCallInfo, n: usize) -> PgxrResult<u8> {
+    CHECK_PARAM_INDEX!(fcinfo, n);
+    let val = unsafe { (&*fcinfo).arg[n] };
+    Ok(val as u8)
+}
+
+pub fn PG_GETARG_U16(fcinfo: FunctionCallInfo, n: usize) -> PgxrResult<u16> {
+    CHECK_PARAM_INDEX!(fcinfo, n);
+    let val = unsafe { (&*fcinfo).arg[n] };
+    Ok(val as u16)
+}
+
+pub fn PG_GETARG_U32(fcinfo: FunctionCallInfo, n: usize) -> PgxrResult<u32> {
+    CHECK_PARAM_INDEX!(fcinfo, n);
+    let val = unsafe { (&*fcinfo).arg[n] };
+    Ok(val as u32)
+}
+
+pub fn PG_GETARG_U64(fcinfo: FunctionCallInfo, n: usize) -> PgxrResult<u64> {
+    CHECK_PARAM_INDEX!(fcinfo, n);
+    let val = unsafe { (&*fcinfo).arg[n] };
+    Ok(val as u64)
+}
+
+pub fn PG_GETARG_STRING(fcinfo: FunctionCallInfo, n: usize) -> PgxrResult<String> {
+    CHECK_PARAM_INDEX!(fcinfo, n);
     let c = unsafe { (&*fcinfo).arg[n] as *mut c_char };
     let s = unsafe { CStr::from_ptr(c).to_string_lossy().into_owned() };
-    s
+    Ok(s)
 }
+
+///
+/// Return result functions
+/// 
 
 pub fn PG_RETURN_CSTRING(result: CString) -> Datum {
     result.into_raw() as Datum

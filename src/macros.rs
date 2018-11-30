@@ -7,7 +7,7 @@ macro_rules! PG_MODULE_MAGIC {
         {
             &Pg_magic_struct{
                 len: 28,
-                version: 1000,
+                version: 1100,
                 funcmaxargs: 100,
                 indexmaxkeys: 32,
                 namedatalen: 64,
