@@ -37,7 +37,7 @@ macro_rules! PG_FUNCTION_INFO_V1 {
 
 /// While returning String
 #[macro_export]
-macro_rules! try_getarg_s {
+macro_rules! try_return_string {
     ( $expr:expr ) => (match $expr {
         $crate::result::Result::Ok(val) => val,
         $crate::result::Result::Err(err) => {
@@ -48,33 +48,11 @@ macro_rules! try_getarg_s {
 
 /// While returning integer
 #[macro_export]
-macro_rules! try_getarg_i {
+macro_rules! try_return_int {
     ( $expr:expr ) => (match $expr {
         $crate::result::Result::Ok(val) => val,
         $crate::result::Result::Err(err) => {
             return PG_RETURN_I32(-1)
-        }
-    });
-}
-
-/// While returning unsigned integer
-#[macro_export]
-macro_rules! try_getarg_u {
-    ( $expr:expr ) => (match $expr {
-        $crate::result::Result::Ok(val) => val,
-        $crate::result::Result::Err(err) => {
-            return PG_RETURN_U32(0)
-        }
-    });
-}
-
-/// While returning float
-#[macro_export]
-macro_rules! try_getarg_f {
-    ( $expr:expr ) => (match $expr {
-        $crate::result::Result::Ok(val) => val,
-        $crate::result::Result::Err(err) => {
-            return PG_RETURN_F64(0)
         }
     });
 }
