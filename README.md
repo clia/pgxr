@@ -67,7 +67,7 @@ bindgen wrapper.h -o src/bindings.rs -- -I /usr/include/postgresql/10/server
 
 ## Other platforms
 
-This repo is for The included `bindings.rs` is for latest PostgreSQL version, current 11, on the Linux X86-64 arch.
+This repo is for latest PostgreSQL version, current 11, on the Linux X86-64 arch.
  on the Linux platform on X86-64 arch.
 
 There are individual repos for each platform, listed below:
