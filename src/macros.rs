@@ -30,3 +30,51 @@ macro_rules! PG_FUNCTION_INFO_V1 {
         }
     };
 }
+
+///
+/// Some macros for PG_GETARG_* error handling
+/// 
+
+/// While returning String
+#[macro_export]
+macro_rules! try_getarg_s {
+    ( $expr:expr ) => (match $expr {
+        $crate::result::Result::Ok(val) => val,
+        $crate::result::Result::Err(err) => {
+            return PG_RETURN_STRING(format!("ERROR: {}", err.description()))
+        }
+    });
+}
+
+/// While returning integer
+#[macro_export]
+macro_rules! try_getarg_i {
+    ( $expr:expr ) => (match $expr {
+        $crate::result::Result::Ok(val) => val,
+        $crate::result::Result::Err(err) => {
+            return PG_RETURN_I32(-1)
+        }
+    });
+}
+
+/// While returning unsigned integer
+#[macro_export]
+macro_rules! try_getarg_u {
+    ( $expr:expr ) => (match $expr {
+        $crate::result::Result::Ok(val) => val,
+        $crate::result::Result::Err(err) => {
+            return PG_RETURN_U32(0)
+        }
+    });
+}
+
+/// While returning float
+#[macro_export]
+macro_rules! try_getarg_f {
+    ( $expr:expr ) => (match $expr {
+        $crate::result::Result::Ok(val) => val,
+        $crate::result::Result::Err(err) => {
+            return PG_RETURN_F64(0)
+        }
+    });
+}
