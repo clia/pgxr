@@ -35,10 +35,10 @@ cargo build --release
 
 Then run `pg_config`
 
-Find `PKGLIBDIR`, such as `/usr/lib/postgresql/10/lib`
+Find `PKGLIBDIR`, such as `/usr/lib/postgresql/11/lib`
 
 ```bash
-sudo cp target/release/libpgxr_example_one.so /usr/lib/postgresql/10/lib
+sudo cp target/release/libpgxr_example_one.so /usr/lib/postgresql/11/lib
 ```
 
 ```bash
@@ -62,7 +62,7 @@ The included `bindings.rs` is for latest PostgreSQL version, current 11, on the 
 You can `bindgen` your platform's `bindings.rs`, using:
 
 ```bash
-bindgen wrapper.h -o src/bindings.rs -- -I /usr/include/postgresql/10/server
+bindgen wrapper.h -o src/bindings.rs -- -I /usr/include/postgresql/11/server
 ```
 
 ## Other platforms
