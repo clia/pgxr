@@ -8,4 +8,4 @@ name = "pgxr"
 crate-type = ["rlib"]
 
 [build-dependencies]
-bindgen = "0.43.0"
+bindgen = "0.44.0"

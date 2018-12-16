@@ -1,0 +1,11 @@
+[package]
+name = "pgxr_example_add_one"
+version = "0.1.0"
+authors = ["clia <clia@163.com>"]
+
+[lib]
+name = "pgxr_example_add_one"
+crate-type = ["cdylib"]
+
+[dependencies.pgxr]
+path = "../../"
