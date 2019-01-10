@@ -1902,6 +1902,9 @@ pub const SPI_OK_REL_REGISTER: u32 = 15;
 pub const SPI_OK_REL_UNREGISTER: u32 = 16;
 pub const SPI_OK_TD_REGISTER: u32 = 17;
 pub const SPI_OPT_NONATOMIC: u32 = 1;
+pub const FORMAT_TYPE_TYPEMOD_GIVEN: u32 = 1;
+pub const FORMAT_TYPE_ALLOW_INVALID: u32 = 2;
+pub const FORMAT_TYPE_FORCE_QUALIFY: u32 = 4;
 pub type Oid = ::std::os::raw::c_uint;
 pub type pg_int64 = ::std::os::raw::c_long;
 pub type __u_char = ::std::os::raw::c_uchar;
@@ -10081,11 +10084,11 @@ extern "C" {
     #[link_name = "\u{1}signgam"]
     pub static mut signgam: ::std::os::raw::c_int;
 }
-//pub const FP_NAN: _bindgen_ty_8 = 0;
-//pub const FP_INFINITE: _bindgen_ty_8 = 1;
-//pub const FP_ZERO: _bindgen_ty_8 = 2;
-//pub const FP_SUBNORMAL: _bindgen_ty_8 = 3;
-//pub const FP_NORMAL: _bindgen_ty_8 = 4;
+// pub const FP_NAN: _bindgen_ty_8 = 0;
+// pub const FP_INFINITE: _bindgen_ty_8 = 1;
+// pub const FP_ZERO: _bindgen_ty_8 = 2;
+// pub const FP_SUBNORMAL: _bindgen_ty_8 = 3;
+// pub const FP_NORMAL: _bindgen_ty_8 = 4;
 pub type _bindgen_ty_8 = u32;
 extern "C" {
     pub fn strlcat(
@@ -56889,6 +56892,7918 @@ extern "C" {
 }
 extern "C" {
     pub fn SPI_inside_nonatomic_context() -> bool;
+}
+extern "C" {
+    pub fn byteaout(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn charout(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn namein(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn nameout(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int2in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int2out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int2vectorin(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int2vectorout(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int4in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int4out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regprocin(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regprocout(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn textin(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn textout(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tidin(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tidout(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn xidin(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn xidout(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cidin(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cidout(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn oidvectorin(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn oidvectorout(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn boollt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn boolgt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn booleq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn chareq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn nameeq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int2eq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int2lt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int4eq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int4lt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn texteq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn xideq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cideq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn charne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn charle(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn chargt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn charge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn chartoi4(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn i4tochar(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn nameregexeq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn boolne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_ddl_command_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_ddl_command_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_ddl_command_recv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pgsql_version(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_ddl_command_send(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn eqsel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn neqsel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn scalarltsel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn scalargtsel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn eqjoinsel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn neqjoinsel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn scalarltjoinsel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn scalargtjoinsel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn unknownin(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn unknownout(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_fac(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn box_above_eq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn box_below_eq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn point_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn point_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn lseg_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn lseg_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn path_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn path_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn box_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn box_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn box_overlap(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn box_ge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn box_gt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn box_eq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn box_lt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn box_le(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn point_above(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn point_left(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn point_right(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn point_below(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn point_eq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn on_pb(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn on_ppath(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn box_center(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn areasel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn areajoinsel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int4mul(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int4ne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int2ne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int2gt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int4gt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int2le(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int4le(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int4ge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int2ge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int2mul(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int2div(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int4div(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int2mod(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int4mod(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn textne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int24eq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int42eq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int24lt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int42lt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int24gt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int42gt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int24ne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int42ne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int24le(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int42le(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int24ge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int42ge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int24mul(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int42mul(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int24div(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int42div(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int2pl(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int4pl(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int24pl(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int42pl(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int2mi(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int4mi(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int24mi(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int42mi(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn oideq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn oidne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn box_same(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn box_contain(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn box_left(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn box_overleft(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn box_overright(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn box_right(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn box_contained(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn box_contain_pt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_node_tree_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_node_tree_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_node_tree_recv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_node_tree_send(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float4in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float4out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float4mul(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float4div(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float4pl(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float4mi(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float4um(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float4abs(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float4_accum(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float4larger(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float4smaller(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int4um(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int2um(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float8in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float8out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float8mul(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float8div(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float8pl(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float8mi(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float8um(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float8abs(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float8_accum(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float8larger(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float8smaller(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn lseg_center(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn path_center(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn poly_center(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dround(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dtrunc(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dsqrt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dcbrt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dpow(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dexp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dlog1(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn i2tod(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn i2tof(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dtoi2(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ftoi2(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn line_distance(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn abstimein(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn abstimeout(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn reltimein(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn reltimeout(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timepl(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timemi(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tintervalin(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tintervalout(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn intinterval(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tintervalrel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timenow(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn abstimeeq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn abstimene(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn abstimelt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn abstimegt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn abstimele(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn abstimege(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn reltimeeq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn reltimene(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn reltimelt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn reltimegt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn reltimele(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn reltimege(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tintervalsame(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tintervalct(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tintervalov(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tintervalleneq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tintervallenne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tintervallenlt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tintervallengt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tintervallenle(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tintervallenge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tintervalstart(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tintervalend(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timeofday(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn abstime_finite(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float8_combine(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn inter_sl(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn inter_lb(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float48mul(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float48div(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float48pl(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float48mi(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float84mul(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float84div(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float84pl(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float84mi(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float4eq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float4ne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float4lt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float4le(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float4gt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float4ge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float8eq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float8ne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float8lt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float8le(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float8gt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float8ge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float48eq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float48ne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float48lt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float48le(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float48gt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float48ge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float84eq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float84ne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float84lt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float84le(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float84gt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float84ge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ftod(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dtof(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn i2toi4(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn i4toi2(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_jit_available(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn i4tod(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dtoi4(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn i4tof(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ftoi4(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn width_bucket_float8(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn json_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn json_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn json_recv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn json_send(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn index_am_handler_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn index_am_handler_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn hashmacaddr8(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn hash_aclitem(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bthandler(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn hashhandler(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gisthandler(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ginhandler(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn spghandler(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn brinhandler(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn scalarlesel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn scalargesel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn amvalidate(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn poly_same(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn poly_contain(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn poly_left(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn poly_overleft(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn poly_overright(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn poly_right(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn poly_contained(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn poly_overlap(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn poly_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn poly_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn btint2cmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn btint4cmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn btfloat4cmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn btfloat8cmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn btoidcmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn btabstimecmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn btcharcmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn btnamecmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bttextcmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn lseg_distance(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn lseg_interpt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dist_ps(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dist_pb(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dist_sb(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn close_ps(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn close_pb(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn close_sb(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn on_ps(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn path_distance(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dist_ppath(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn on_sb(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn inter_sb(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn text_to_array_null(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cash_cmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn array_append(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn array_prepend(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn btreltimecmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bttintervalcmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn btarraycmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn array_cat(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn array_to_text_null(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn scalarlejoinsel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn array_ne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn array_lt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn array_gt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn array_le(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn text_to_array(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn array_to_text(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn array_ge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn scalargejoinsel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn hashmacaddr(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn hashtext(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn rtrim1(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn btoidvectorcmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn name_text(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn text_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn name_bpchar(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bpchar_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn hashinet(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn hashint4extended(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn hash_numeric(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn macaddr_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn macaddr_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_num_nulls(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_num_nonnulls(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn hashint2extended(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn hashint8extended(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn hashfloat4extended(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn hashfloat8extended(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn hashoidextended(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn hashcharextended(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn hashnameextended(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn hashtextextended(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn hashint2(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn hashint4(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn hashfloat4(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn hashfloat8(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn hashoid(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn hashchar(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn hashname(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn hashvarlena(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn hashoidvector(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn text_larger(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn text_smaller(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8um(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8pl(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8mi(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8mul(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8div(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8eq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8ne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8lt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8gt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8le(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8ge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int84eq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int84ne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int84lt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int84gt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int84le(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int84ge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int84(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int48(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn i8tod(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dtoi8(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn array_larger(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn array_smaller(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn inet_abbrev(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cidr_abbrev(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn inet_set_masklen(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn oidvectorne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn hash_array(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cidr_set_masklen(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_indexam_has_property(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_index_has_property(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_index_column_has_property(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn i8tof(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ftoi8(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn namelt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn namele(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn namegt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn namege(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn namene(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bpchar(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn varchar(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn mktinterval(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn oidvectorlt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn oidvectorle(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn oidvectoreq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn oidvectorge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn oidvectorgt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn network_network(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn network_netmask(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn network_masklen(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn network_broadcast(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn network_host(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn current_user(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn network_family(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int82(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn be_lo_create(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn oidlt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn oidle(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn byteaoctetlen(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn byteaGetByte(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn byteaSetByte(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn byteaGetBit(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn byteaSetBit(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dist_pl(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dist_lb(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dist_sl(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dist_cpoly(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn poly_distance(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn network_show(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn text_lt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn text_le(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn text_gt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn text_ge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn array_eq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn session_user(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn array_dims(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn array_ndims(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn byteaoverlay(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn array_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn array_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn byteaoverlay_no_len(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn macaddr_trunc(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int28(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn smgrin(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn smgrout(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn smgreq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn smgrne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn be_lo_import(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn be_lo_export(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int4inc(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn be_lo_import_with_oid(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int4larger(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int4smaller(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int2larger(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int2smaller(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn hashvarlenaextended(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn hashoidvectorextended(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn hash_aclitem_extended(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn hashmacaddrextended(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn hashinetextended(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn hash_numeric_extended(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn hashmacaddr8extended(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn hash_array_extended(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tintervaleq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tintervalne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tintervallt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tintervalgt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tintervalle(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tintervalge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_client_encoding(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn current_query(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn macaddr_eq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn macaddr_lt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn macaddr_le(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn macaddr_gt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn macaddr_ge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn macaddr_ne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn macaddr_cmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int82pl(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int82mi(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int82mul(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int82div(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int28pl(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn btint8cmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cash_mul_flt4(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cash_div_flt4(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn flt4_mul_cash(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn textpos(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn textlike(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn textnlike(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int48eq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int48ne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int48lt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int48gt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int48le(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int48ge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn namelike(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn namenlike(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn char_bpchar(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn current_database(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int4_mul_cash(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int2_mul_cash(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cash_mul_int4(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cash_div_int4(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cash_mul_int2(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cash_div_int2(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn lower(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn upper(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn initcap(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn lpad(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn rpad(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ltrim(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn rtrim(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn text_substr(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn translate(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ltrim1(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn text_substr_no_len(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn btrim(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn btrim1(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cash_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cash_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cash_eq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cash_ne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cash_lt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cash_le(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cash_gt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cash_ge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cash_pl(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cash_mi(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cash_mul_flt8(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cash_div_flt8(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cashlarger(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cashsmaller(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn inet_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn inet_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn flt8_mul_cash(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn network_eq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn network_lt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn network_le(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn network_gt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn network_ge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn network_ne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn network_cmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn network_sub(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn network_subeq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn network_sup(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn network_supeq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cash_words(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn generate_series_timestamp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn generate_series_timestamptz(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int28mi(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int28mul(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn text_char(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8mod(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn char_text(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int28div(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn hashint8(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn be_lo_open(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn be_lo_close(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn be_loread(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn be_lowrite(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn be_lo_lseek(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn be_lo_creat(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn be_lo_tell(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn on_pl(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn on_sl(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn close_pl(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn close_sl(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn close_lb(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn be_lo_unlink(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn hashbpcharextended(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn path_inter(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn box_area(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn box_width(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn box_height(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn box_distance(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn path_area(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn box_intersect(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn box_diagonal(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn path_n_lt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn path_n_gt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn path_n_eq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn path_n_le(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn path_n_ge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn path_length(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn point_ne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn point_vert(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn point_horiz(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn point_distance(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn point_slope(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn lseg_construct(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn lseg_intersect(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn lseg_parallel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn lseg_perp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn lseg_vertical(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn lseg_horizontal(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn lseg_eq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn be_lo_truncate(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamptz_izone(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gist_point_compress(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn aclitemin(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn aclitemout(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn aclinsert(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn aclremove(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn aclcontains(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn getdatabaseencoding(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bpcharin(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bpcharout(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn varcharin(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn varcharout(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bpchareq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bpcharlt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bpcharle(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bpchargt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bpcharge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bpcharne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn aclitem_eq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bpchar_larger(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bpchar_smaller(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_prepared_xact(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn generate_series_step_int4(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn generate_series_int4(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn generate_series_step_int8(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn generate_series_int8(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bpcharcmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn text_regclass(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn hashbpchar(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn format_type(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn date_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn date_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn date_eq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn date_lt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn date_le(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn date_gt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn date_ge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn date_ne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn date_cmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn time_lt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn time_le(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn time_gt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn time_ge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn time_ne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn time_cmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn date_larger(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn date_smaller(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn date_mi(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn date_pli(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn date_mii(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn time_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn time_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn time_eq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn circle_add_pt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn circle_sub_pt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn circle_mul_pt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn circle_div_pt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamptz_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamptz_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_eq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_ne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_lt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_le(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_ge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_gt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float8_timestamptz(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamptz_zone(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn interval_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn interval_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn interval_eq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn interval_ne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn interval_lt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn interval_le(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn interval_ge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn interval_gt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn interval_um(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn interval_pl(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn interval_mi(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamptz_part(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn interval_part(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn abstime_timestamptz(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn date_timestamptz(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn interval_justify_hours(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn reltime_interval(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamptz_date(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn abstime_date(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamptz_abstime(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn xid_age(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_mi(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamptz_pl_interval(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamptz_mi_interval(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn generate_subscripts(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn generate_subscripts_nodir(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn array_fill(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn interval_reltime(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_smaller(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_larger(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn interval_smaller(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn interval_larger(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamptz_age(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn interval_scale(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamptz_trunc(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn interval_trunc(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8inc(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8abs(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8larger(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8smaller(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn texticregexeq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn texticregexne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn nameicregexeq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn nameicregexne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn boolin(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn boolout(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn byteain(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn charin(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn charlt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn unique_key_recheck(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int4abs(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn nameregexne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int2abs(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn textregexeq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn textregexne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn textlen(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn textcat(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn PG_char_to_encoding(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tidne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cidr_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn parse_ident(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_column_size(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn overlaps_timetz(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn datetime_timestamp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timetz_part(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int84pl(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int84mi(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int84mul(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int84div(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int48pl(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int48mi(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int48mul(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int48div(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn quote_ident(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn quote_literal(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn array_fill_with_lower_bounds(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn i8tooid(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn oidtoi8(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn quote_nullable(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn suppress_redundant_updates_trigger(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tideq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn currtid_byreloid(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn currtid_byrelname(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn interval_justify_days(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn datetimetz_timestamptz(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn now(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn positionsel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn positionjoinsel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn contsel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn contjoinsel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn overlaps_timestamp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn overlaps_time(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_cmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn interval_cmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_time(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bpcharlen(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn interval_div(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dlog10(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn oidvectortypes(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timetz_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timetz_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timetz_eq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timetz_ne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timetz_lt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timetz_le(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timetz_ge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timetz_gt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timetz_cmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn network_hostmask(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn makeaclitem(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn time_interval(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_lock_status(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn date_finite(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn textoctetlen(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bpcharoctetlen(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn time_larger(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn time_smaller(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timetz_larger(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timetz_smaller(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn time_part(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_get_constraintdef(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamptz_timetz(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_finite(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn interval_finite(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_backend_start(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_backend_client_addr(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_backend_client_port(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn current_schema(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn current_schemas(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn textoverlay(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn textoverlay_no_len(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn line_parallel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn line_perp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn line_vertical(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn line_horizontal(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn circle_center(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn interval_time(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn points_box(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn box_add(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn box_sub(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn box_mul(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn box_div(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cidr_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn poly_contain_pt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pt_contained_poly(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn path_isclosed(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn path_isopen(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn path_npoints(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn path_close(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn path_open(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn path_add(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn path_add_pt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn path_sub_pt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn path_mul_pt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn path_div_pt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn construct_point(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn point_add(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn point_sub(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn point_mul(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn point_div(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn poly_npoints(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn poly_box(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn poly_path(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn box_poly(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn path_poly(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn circle_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn circle_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn circle_same(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn circle_contain(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn circle_left(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn circle_overleft(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn circle_overright(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn circle_right(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn circle_contained(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn circle_overlap(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn circle_below(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn circle_above(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn circle_eq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn circle_ne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn circle_lt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn circle_gt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn circle_le(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn circle_ge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn circle_area(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn circle_diameter(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn circle_radius(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn circle_distance(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cr_circle(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn poly_circle(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn circle_poly(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dist_pc(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn circle_contain_pt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pt_contained_circle(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn box_circle(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn circle_box(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn lseg_ne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn lseg_lt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn lseg_le(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn lseg_gt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn lseg_ge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn lseg_length(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn close_ls(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn close_lseg(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn line_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn line_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn line_eq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn line_construct_pp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn line_interpt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn line_intersect(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bit_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bit_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_get_ruledef(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn nextval_oid(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn currval_oid(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn setval_oid(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn varbit_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn varbit_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn biteq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bitne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bitge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bitgt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bitle(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bitlt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bitcmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn PG_encoding_to_char(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn drandom(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn setseed(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dasin(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dacos(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn datan(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn datan2(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dsin(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dcos(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dtan(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dcot(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn degrees(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn radians(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dpi(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn interval_mul(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_typeof(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ascii(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn chr(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn repeat(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn similar_escape(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn mul_d_interval(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn texticlike(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn texticnlike(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn nameiclike(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn nameicnlike(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn like_escape(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn oidgt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn oidge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_get_viewdef_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_get_viewdef(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_get_userbyid(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_get_indexdef(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn RI_FKey_check_ins(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn RI_FKey_check_upd(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn RI_FKey_cascade_del(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn RI_FKey_cascade_upd(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn RI_FKey_restrict_del(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn RI_FKey_restrict_upd(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn RI_FKey_setnull_del(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn RI_FKey_setnull_upd(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn RI_FKey_setdefault_del(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn RI_FKey_setdefault_upd(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn RI_FKey_noaction_del(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn RI_FKey_noaction_upd(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_get_triggerdef(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_get_serial_sequence(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bit_and(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bit_or(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bitxor(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bitnot(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bitshiftleft(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bitshiftright(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bitcat(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bitsubstr(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bitlength(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bitoctetlength(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bitfromint4(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bittoint4(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bit(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_get_keywords(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn varbit(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn time_hash(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn aclexplode(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn time_mi_time(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn boolle(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn boolge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn btboolcmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timetz_hash(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn interval_hash(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bitposition(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bitsubstr_no_len(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_abs(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_sign(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_round(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_trunc(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_ceil(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_floor(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn length_in_encoding(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_convert_from(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn inet_to_cidr(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_get_expr(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_convert_to(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_eq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_ne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_gt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_ge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_lt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_le(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_add(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_sub(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_mul(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_div(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_mod(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_sqrt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_exp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_ln(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_log(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_power(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int4_numeric(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float4_numeric(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float8_numeric(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_int4(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_float4(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_float8(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn time_pl_interval(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn time_mi_interval(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timetz_pl_interval(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timetz_mi_interval(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_inc(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn setval3_oid(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_smaller(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_larger(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn interval_to_char(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_cmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamptz_to_char(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_uminus(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_to_char(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int4_to_char(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8_to_char(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float4_to_char(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float8_to_char(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_to_number(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn to_timestamp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_int8(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn to_date(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8_numeric(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int2_numeric(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_int2(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn oidin(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn oidout(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_convert(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn iclikesel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn icnlikesel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn iclikejoinsel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn icnlikejoinsel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regexeqsel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn likesel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn icregexeqsel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regexnesel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn nlikesel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn icregexnesel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regexeqjoinsel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn likejoinsel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn icregexeqjoinsel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regexnejoinsel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn nlikejoinsel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn icregexnejoinsel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float8_avg(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float8_var_samp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float8_stddev_samp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_accum(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int2_accum(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int4_accum(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8_accum(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_avg(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_var_samp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_stddev_samp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int2_sum(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int4_sum(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8_sum(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn interval_accum(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn interval_avg(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn to_ascii_default(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn to_ascii_enc(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn to_ascii_encname(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int28eq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int28ne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int28lt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int28gt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int28le(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int28ge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int82eq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int82ne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int82lt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int82gt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int82le(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int82ge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int2and(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int2or(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int2xor(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int2not(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int2shl(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int2shr(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int4and(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int4or(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int4xor(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int4not(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int4shl(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int4shr(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8and(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8or(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8xor(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8not(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8shl(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8shr(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8up(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int2up(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int4up(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float4up(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float8up(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_uplus(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_table_privilege_name_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_table_privilege_name_id(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_table_privilege_id_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_table_privilege_id_id(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_table_privilege_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_table_privilege_id(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_numscans(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_tuples_returned(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_tuples_fetched(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_tuples_inserted(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_tuples_updated(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_tuples_deleted(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_blocks_fetched(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_blocks_hit(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_backend_idset(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_backend_pid(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_backend_dbid(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_backend_userid(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_backend_activity(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_db_numbackends(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_db_xact_commit(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_db_xact_rollback(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_db_blocks_fetched(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_db_blocks_hit(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn binary_encode(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn binary_decode(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn byteaeq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bytealt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn byteale(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn byteagt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn byteage(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn byteane(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn byteacmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_scale(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int2_avg_accum(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int4_avg_accum(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8_avg(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn oidlarger(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn oidsmaller(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamptz_scale(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn time_scale(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timetz_scale(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_tuples_hot_updated(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_div_trunc(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bytealike(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn byteanlike(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn like_escape_bytea(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn byteacat(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bytea_substr(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bytea_substr_no_len(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn byteapos(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn byteatrim(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamptz_time(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_trunc(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_part(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_activity(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn abstime_timestamp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn date_timestamp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_backend_pid(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamptz_timestamp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_timestamptz(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_date(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_abstime(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_pl_interval(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_mi_interval(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_conf_load_time(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timetz_zone(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timetz_izone(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_hash(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timetz_time(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn time_timetz(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_to_char(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn aggregate_dummy(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_age(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_zone(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_izone(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn date_pl_interval(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn date_mi_interval(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn textregexsubstr(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bitfromint8(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bittoint8(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn show_config_by_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn set_config_by_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_table_is_visible(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_type_is_visible(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_function_is_visible(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_operator_is_visible(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_opclass_is_visible(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn show_all_settings(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn replace_text(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn split_text(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn to_hex32(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn to_hex64(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn array_lower(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn array_upper(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_conversion_is_visible(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_backend_activity_start(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_terminate_backend(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_get_functiondef(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn text_pattern_lt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn text_pattern_le(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_get_function_arguments(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn text_pattern_ge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn text_pattern_gt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_get_function_result(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bttext_pattern_cmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_database_size_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn width_bucket_numeric(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_cancel_backend(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_start_backup(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stop_backup(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bpchar_pattern_lt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bpchar_pattern_le(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn array_length(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bpchar_pattern_ge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bpchar_pattern_gt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gist_point_consistent(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn btbpchar_pattern_cmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_sequence_privilege_name_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_sequence_privilege_name_id(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_sequence_privilege_id_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_sequence_privilege_id_id(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_sequence_privilege_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_sequence_privilege_id(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn btint48cmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn btint84cmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn btint24cmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn btint42cmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn btint28cmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn btint82cmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn btfloat48cmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn btfloat84cmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn inet_client_addr(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn inet_client_port(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn inet_server_addr(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn inet_server_port(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regprocedurein(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regprocedureout(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regoperin(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regoperout(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regoperatorin(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regoperatorout(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regclassin(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regclassout(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regtypein(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regtypeout(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_clear_snapshot(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_get_function_identity_arguments(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn fmgr_internal_validator(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn fmgr_c_validator(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn fmgr_sql_validator(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_database_privilege_name_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_database_privilege_name_id(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_database_privilege_id_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_database_privilege_id_id(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_database_privilege_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_database_privilege_id(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_function_privilege_name_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_function_privilege_name_id(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_function_privilege_id_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_function_privilege_id_id(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_function_privilege_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_function_privilege_id(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_language_privilege_name_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_language_privilege_name_id(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_language_privilege_id_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_language_privilege_id_id(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_language_privilege_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_language_privilege_id(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_schema_privilege_name_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_schema_privilege_name_id(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_schema_privilege_id_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_schema_privilege_id_id(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_schema_privilege_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_schema_privilege_id(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_reset(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn textregexreplace_noopt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn textregexreplace(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_total_relation_size(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_size_pretty(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_options_to_table(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn record_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn record_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cstring_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cstring_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn any_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn any_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn anyarray_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn anyarray_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn void_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn void_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn trigger_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn trigger_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn language_handler_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn language_handler_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn internal_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn internal_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn opaque_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn opaque_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dceil(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dfloor(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dsign(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn md5_text(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn anyelement_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn anyelement_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn postgresql_fdw_validator(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_encoding_max_length_sql(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn md5_bytea(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_tablespace_size_oid(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_tablespace_size_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_database_size_oid(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn array_unnest(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_relation_size(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn array_agg_transfn(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn array_agg_finalfn(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn date_lt_timestamp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn date_le_timestamp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn date_eq_timestamp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn date_gt_timestamp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn date_ge_timestamp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn date_ne_timestamp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn date_cmp_timestamp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn date_lt_timestamptz(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn date_le_timestamptz(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn date_eq_timestamptz(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn date_gt_timestamptz(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn date_ge_timestamptz(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn date_ne_timestamptz(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn date_cmp_timestamptz(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_lt_date(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_le_date(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_eq_date(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_gt_date(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_ge_date(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_ne_date(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_cmp_date(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamptz_lt_date(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamptz_le_date(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamptz_eq_date(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamptz_gt_date(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamptz_ge_date(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamptz_ne_date(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamptz_cmp_date(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_tablespace_privilege_name_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_tablespace_privilege_name_id(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_tablespace_privilege_id_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_tablespace_privilege_id_id(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_tablespace_privilege_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_tablespace_privilege_id(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn shell_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn shell_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn array_recv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn array_send(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn record_recv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn record_send(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int2recv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int2send(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int4recv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int4send(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8recv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8send(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int2vectorrecv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int2vectorsend(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bytearecv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn byteasend(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn textrecv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn textsend(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn unknownrecv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn unknownsend(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn oidrecv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn oidsend(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn oidvectorrecv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn oidvectorsend(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn namerecv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn namesend(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float4recv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float4send(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float8recv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float8send(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn point_recv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn point_send(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bpcharrecv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bpcharsend(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn varcharrecv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn varcharsend(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn charrecv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn charsend(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn boolrecv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn boolsend(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tidrecv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tidsend(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn xidrecv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn xidsend(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cidrecv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cidsend(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regprocrecv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regprocsend(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regprocedurerecv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regproceduresend(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regoperrecv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regopersend(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regoperatorrecv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regoperatorsend(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regclassrecv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regclasssend(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regtyperecv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regtypesend(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bit_recv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bit_send(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn varbit_recv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn varbit_send(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_recv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_send(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn abstimerecv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn abstimesend(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn reltimerecv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn reltimesend(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tintervalrecv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tintervalsend(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn date_recv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn date_send(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn time_recv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn time_send(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timetz_recv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timetz_send(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_recv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_send(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamptz_recv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamptz_send(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn interval_recv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn interval_send(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn lseg_recv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn lseg_send(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn path_recv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn path_send(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn box_recv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn box_send(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn poly_recv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn poly_send(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn line_recv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn line_send(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn circle_recv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn circle_send(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cash_recv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cash_send(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn macaddr_recv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn macaddr_send(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn inet_recv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn inet_send(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cidr_recv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cidr_send(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cstring_recv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cstring_send(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn anyarray_recv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn anyarray_send(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_get_ruledef_ext(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_get_viewdef_name_ext(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_get_viewdef_ext(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_get_indexdef_ext(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_get_constraintdef_ext(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_get_expr_ext(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_prepared_statement(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_cursor(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float8_var_pop(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float8_stddev_pop(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_var_pop(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn booland_statefunc(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn boolor_statefunc(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_lt_timestamptz(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_le_timestamptz(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_eq_timestamptz(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_gt_timestamptz(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_ge_timestamptz(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_ne_timestamptz(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_cmp_timestamptz(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamptz_lt_timestamp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamptz_le_timestamp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamptz_eq_timestamp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamptz_gt_timestamp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamptz_ge_timestamp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamptz_ne_timestamp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamptz_cmp_timestamp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_tablespace_databases(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int4_bool(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bool_int4(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn lastval(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_postmaster_start_time(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_blocking_pids(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn box_below(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn box_overbelow(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn box_overabove(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn box_above(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn poly_below(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn poly_overbelow(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn poly_overabove(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn poly_above(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gist_box_consistent(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_float8(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gist_box_penalty(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gist_box_picksplit(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gist_box_union(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gist_box_same(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gist_poly_consistent(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gist_poly_compress(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn circle_overbelow(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn circle_overabove(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gist_circle_consistent(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gist_circle_compress(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_stddev_pop(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn domain_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn domain_recv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_timezone_abbrevs(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn xmlexists(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_reload_conf(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_rotate_logfile_v2(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_file_1arg(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_read_file_off_len(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_ls_dir_1arg(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_sleep(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn inetnot(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn inetand(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn inetor(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn inetpl(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn inetmi_int8(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn inetmi(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn statement_timestamp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn clock_timestamp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gin_cmp_prefix(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_has_role_name_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_has_role_name_id(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_has_role_id_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_has_role_id_id(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_has_role_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_has_role_id(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn interval_justify_interval(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_get_triggerdef_ext(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dasind(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dacosd(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn datand(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn datan2d(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dsind(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dcosd(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dtand(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dcotd(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stop_backup_v2(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_avg_serialize(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_avg_deserialize(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ginarrayextract(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ginarrayconsistent(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8_avg_accum(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn arrayoverlap(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn arraycontains(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn arraycontained(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_db_tuples_returned(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_db_tuples_fetched(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_db_tuples_inserted(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_db_tuples_updated(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_db_tuples_deleted(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regexp_matches_no_flags(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regexp_matches(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regexp_split_to_table_no_flags(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regexp_split_to_table(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regexp_split_to_array_no_flags(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regexp_split_to_array(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_bgwriter_timed_checkpoints(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_bgwriter_requested_checkpoints(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_bgwriter_buf_written_checkpoints(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_bgwriter_buf_written_clean(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_bgwriter_maxwritten_clean(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ginqueryarrayextract(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_buf_written_backend(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn anynonarray_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn anynonarray_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_last_vacuum_time(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_last_autovacuum_time(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_last_analyze_time(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_last_autoanalyze_time(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8_avg_combine(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8_avg_serialize(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8_avg_deserialize(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_backend_wait_event_type(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tidgt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tidlt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tidge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tidle(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bttidcmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tidlarger(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tidsmaller(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8inc_any(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8inc_float8_float8(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float8_regr_accum(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float8_regr_sxx(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float8_regr_syy(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float8_regr_sxy(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float8_regr_avgx(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float8_regr_avgy(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float8_regr_r2(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float8_regr_slope(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float8_regr_intercept(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float8_covar_pop(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float8_covar_samp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float8_corr(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_db_blk_read_time(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_db_blk_write_time(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_switch_wal(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_current_wal_lsn(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_walfile_name_offset(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_walfile_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_current_wal_insert_lsn(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_backend_wait_event(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_my_temp_schema(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_is_other_temp_schema(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_timezone_names(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_backend_xact_start(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_avg_accum(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_buf_alloc(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_live_tuples(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_dead_tuples(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_advisory_lock_int8(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_advisory_lock_shared_int8(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_try_advisory_lock_int8(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_try_advisory_lock_shared_int8(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_advisory_unlock_int8(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_advisory_unlock_shared_int8(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_advisory_lock_int4(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_advisory_lock_shared_int4(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_try_advisory_lock_int4(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_try_advisory_lock_shared_int4(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_advisory_unlock_int4(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_advisory_unlock_shared_int4(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_advisory_unlock_all(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn xml_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn xml_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn xmlcomment(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn texttoxml(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn xmlvalidate(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn xml_recv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn xml_send(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn xmlconcat2(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn varbittypmodin(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn intervaltypmodin(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn intervaltypmodout(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamptypmodin(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamptypmodout(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamptztypmodin(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamptztypmodout(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timetypmodin(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timetypmodout(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timetztypmodin(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timetztypmodout(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bpchartypmodin(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bpchartypmodout(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn varchartypmodin(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn varchartypmodout(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numerictypmodin(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numerictypmodout(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bittypmodin(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bittypmodout(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn varbittypmodout(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn xmltotext(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn table_to_xml(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn query_to_xml(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cursor_to_xml(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn table_to_xmlschema(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn query_to_xmlschema(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cursor_to_xmlschema(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn table_to_xml_and_xmlschema(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn query_to_xml_and_xmlschema(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn xpath(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn schema_to_xml(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn schema_to_xmlschema(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn schema_to_xml_and_xmlschema(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn database_to_xml(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn database_to_xmlschema(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn database_to_xml_and_xmlschema(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn txid_snapshot_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn txid_snapshot_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn txid_snapshot_recv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn txid_snapshot_send(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn txid_current(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn txid_current_snapshot(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn txid_snapshot_xmin(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn txid_snapshot_xmax(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn txid_snapshot_xip(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn txid_visible_in_snapshot(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn uuid_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn uuid_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn uuid_lt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn uuid_le(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn uuid_eq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn uuid_ge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn uuid_gt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn uuid_ne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn uuid_cmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn uuid_recv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn uuid_send(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn uuid_hash(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn booltext(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_function_calls(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_function_total_time(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_function_self_time(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn record_eq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn record_ne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn record_lt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn record_gt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn record_le(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn record_ge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn btrecordcmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_table_size(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_indexes_size(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_relation_filenode(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_foreign_data_wrapper_privilege_name_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_foreign_data_wrapper_privilege_name_id(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_foreign_data_wrapper_privilege_id_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_foreign_data_wrapper_privilege_id_id(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_foreign_data_wrapper_privilege_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_foreign_data_wrapper_privilege_id(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_server_privilege_name_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_server_privilege_name_id(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_server_privilege_id_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_server_privilege_id_id(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_server_privilege_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_server_privilege_id(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_column_privilege_name_name_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_column_privilege_name_name_attnum(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_column_privilege_name_id_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_column_privilege_name_id_attnum(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_column_privilege_id_name_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_column_privilege_id_name_attnum(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_column_privilege_id_id_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_column_privilege_id_id_attnum(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_column_privilege_name_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_column_privilege_name_attnum(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_column_privilege_id_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_column_privilege_id_attnum(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_any_column_privilege_name_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_any_column_privilege_name_id(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_any_column_privilege_id_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_any_column_privilege_id_id(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_any_column_privilege_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_any_column_privilege_id(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bitoverlay(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bitoverlay_no_len(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bitgetbit(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bitsetbit(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_relation_filepath(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_listening_channels(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_notify(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_xact_numscans(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_xact_tuples_returned(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_xact_tuples_fetched(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_xact_tuples_inserted(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_xact_tuples_updated(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_xact_tuples_deleted(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_xact_tuples_hot_updated(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_xact_blocks_fetched(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_xact_blocks_hit(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_xact_function_calls(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_xact_function_total_time(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_xact_function_self_time(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn xpath_exists(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn xml_is_well_formed(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn xml_is_well_formed_document(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn xml_is_well_formed_content(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_vacuum_count(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_autovacuum_count(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_analyze_count(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_autoanalyze_count(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn text_concat(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn text_concat_ws(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn text_left(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn text_right(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn text_reverse(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_buf_fsync_backend(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gist_point_distance(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_db_conflict_tablespace(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_db_conflict_lock(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_db_conflict_snapshot(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_db_conflict_bufferpin(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_db_conflict_startup_deadlock(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_db_conflict_all(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_wal_replay_pause(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_wal_replay_resume(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_is_wal_replay_paused(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_db_stat_reset_time(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_bgwriter_stat_reset_time(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ginarrayextract_2args(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gin_extract_tsvector_2args(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_sequence_parameters(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_available_extensions(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_available_extension_versions(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_extension_update_paths(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_extension_config_dump(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gin_extract_tsquery_5args(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gin_tsquery_consistent_6args(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_advisory_xact_lock_int8(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_advisory_xact_lock_shared_int8(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_try_advisory_xact_lock_int8(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_try_advisory_xact_lock_shared_int8(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_advisory_xact_lock_int4(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_advisory_xact_lock_shared_int4(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_try_advisory_xact_lock_int4(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_try_advisory_xact_lock_shared_int4(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn varchar_transform(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_create_restore_point(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_wal_senders(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn window_row_number(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn window_rank(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn window_dense_rank(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn window_percent_rank(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn window_cume_dist(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn window_ntile(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn window_lag(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn window_lag_with_offset(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn window_lag_with_offset_and_default(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn window_lead(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn window_lead_with_offset(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn window_lead_with_offset_and_default(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn window_first_value(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn window_last_value(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn window_nth_value(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn fdw_handler_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn fdw_handler_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn void_recv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn void_send(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn btint2sortsupport(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn btint4sortsupport(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn btint8sortsupport(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn btfloat4sortsupport(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn btfloat8sortsupport(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn btoidsortsupport(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn btnamesortsupport(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn date_sortsupport(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_sortsupport(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_type_privilege_name_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_type_privilege_name_id(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_type_privilege_id_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_type_privilege_id_id(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_type_privilege_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn has_type_privilege_id(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn macaddr_not(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn macaddr_and(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn macaddr_or(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_db_temp_files(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_db_temp_bytes(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_db_deadlocks(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn array_to_json(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn array_to_json_pretty(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn row_to_json(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn row_to_json_pretty(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_transform(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn varbit_transform(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_get_viewdef_wrap(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_checkpoint_write_time(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_checkpoint_sync_time(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_collation_for(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_trigger_depth(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_wal_lsn_diff(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_size_pretty_numeric(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn array_remove(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn array_replace(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn rangesel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn be_lo_lseek64(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn be_lo_tell64(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn be_lo_truncate64(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn json_agg_transfn(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn json_agg_finalfn(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn to_json(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_mod_since_analyze(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_sum(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn array_cardinality(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn json_object_agg_transfn(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn record_image_eq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn record_image_ne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn record_image_lt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn record_image_gt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn record_image_le(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn record_image_ge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn btrecordimagecmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_archiver(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn json_object_agg_finalfn(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn json_build_array(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn json_build_array_noargs(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn json_build_object(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn json_build_object_noargs(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn json_object(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn json_object_two_arg(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn json_to_record(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn json_to_recordset(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_array_length(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_each(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_populate_record(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_typeof(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_object_field_text(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_array_element(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_array_element_text(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_extract_path(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn width_bucket_array(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_array_elements(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_lsn_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_lsn_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_lsn_lt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_lsn_le(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_lsn_eq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_lsn_ge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_lsn_gt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_lsn_ne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_lsn_mi(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_lsn_recv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_lsn_send(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_lsn_cmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_lsn_hash(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bttextsortsupport(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn generate_series_step_numeric(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn generate_series_numeric(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn json_strip_nulls(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_strip_nulls(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_object(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_object_two_arg(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_agg_transfn(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_agg_finalfn(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_object_agg_transfn(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_object_agg_finalfn(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_build_array(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_build_array_noargs(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_build_object(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_build_object_noargs(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dist_ppoly(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn array_position(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn array_position_start(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn array_positions(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gist_circle_distance(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_scale(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gist_point_fetch(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_sortsupport(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gist_poly_distance(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dist_cpoint(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dist_polyp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_read_file_v2(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn show_config_by_name_missing_ok(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_read_binary_file(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_notification_queue_usage(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_ls_dir(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn row_security_active(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn row_security_active_name(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn uuid_sortsupport(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_concat(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_delete(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_delete_idx(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_delete_path(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_set(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_pretty(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_file(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn xidneq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsm_handler_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsm_handler_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsm_bernoulli_handler(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsm_system_handler(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_wal_receiver(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_progress_info(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsvector_filter(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsvector_setweight_by_filter(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsvector_delete_str(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsvector_unnest(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsvector_delete_arr(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int4_avg_combine(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn interval_combine(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsvector_to_array(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn array_to_tsvector(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bpchar_sortsupport(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn show_all_file_settings(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_current_wal_flush_lsn(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bytea_sortsupport(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bttext_pattern_sortsupport(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn btbpchar_pattern_sortsupport(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_size_bytes(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_serialize(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_deserialize(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_avg_combine(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_poly_combine(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_poly_serialize(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_poly_deserialize(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_combine(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn float8_regr_combine(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_delete_array(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cash_mul_int8(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cash_div_int8(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn txid_current_if_assigned(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_get_partkeydef(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_ls_logdir(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_ls_waldir(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_ndistinct_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_ndistinct_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_ndistinct_recv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_ndistinct_send(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn macaddr_sortsupport(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn txid_status(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_safe_snapshot_blocking_pids(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_isolation_test_session_is_blocked(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_identify_object_as_address(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn brin_minmax_opcinfo(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn brin_minmax_add_value(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn brin_minmax_consistent(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn brin_minmax_union(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8_avg_accum_inv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_poly_sum(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_poly_avg(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_poly_var_pop(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_poly_var_samp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_poly_stddev_pop(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_poly_stddev_samp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regexp_match_no_flags(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regexp_match(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8_mul_cash(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_config(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_hba_file_rules(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_statistics_obj_is_visible(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_dependencies_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_dependencies_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_dependencies_recv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_dependencies_send(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_get_partition_constraintdef(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn time_hash_extended(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timetz_hash_extended(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_hash_extended(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn uuid_hash_extended(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_lsn_hash_extended(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn hashenumextended(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_get_statisticsobjdef(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_hash_extended(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn hash_range_extended(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn interval_hash_extended(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn sha224_bytea(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn sha256_bytea(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn sha384_bytea(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn sha512_bytea(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn prefixsel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn prefixjoinsel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_control_system(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_control_checkpoint(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_control_recovery(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_control_init(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_import_system_collations(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn macaddr8_recv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn macaddr8_send(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_collation_actual_version(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_numeric(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_int2(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_int4(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_int8(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_float4(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_filenode_relation(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn be_lo_from_bytea(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn be_lo_get(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn be_lo_get_fragment(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn be_lo_put(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn make_timestamp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn make_timestamptz(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn make_timestamptz_at_timezone(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn make_interval(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_array_elements_text(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn spg_range_quad_config(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn spg_range_quad_choose(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn spg_range_quad_picksplit(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn spg_range_quad_inner_consistent(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn spg_range_quad_leaf_consistent(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_populate_recordset(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn to_regoperator(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_object_field(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn to_regprocedure(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gin_compare_jsonb(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gin_extract_jsonb(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gin_extract_jsonb_query(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gin_consistent_jsonb(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gin_extract_jsonb_path(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gin_extract_jsonb_query_path(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gin_consistent_jsonb_path(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gin_triconsistent_jsonb(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gin_triconsistent_jsonb_path(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_to_record(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_to_recordset(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn to_regoper(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn to_regtype(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn to_regproc(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn to_regclass(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bool_accum(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bool_accum_inv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bool_alltrue(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bool_anytrue(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn anyenum_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn anyenum_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn enum_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn enum_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn enum_eq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn enum_ne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn enum_lt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn enum_gt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn enum_le(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn enum_ge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn enum_cmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn hashenum(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn enum_smaller(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn enum_larger(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn enum_first(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn enum_last(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn enum_range_bounds(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn enum_range_all(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn enum_recv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn enum_send(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn string_agg_transfn(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn string_agg_finalfn(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_describe_object(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn text_format(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn text_format_nv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bytea_string_agg_transfn(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn bytea_string_agg_finalfn(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8dec(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8dec_any(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_accum_inv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn interval_accum_inv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn network_overlap(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn inet_gist_consistent(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn inet_gist_union(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn inet_gist_compress(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_bool(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn inet_gist_penalty(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn inet_gist_picksplit(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn inet_gist_same(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn networksel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn networkjoinsel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn network_larger(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn network_smaller(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_event_trigger_dropped_objects(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int2_accum_inv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int4_accum_inv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8_accum_inv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int2_avg_accum_inv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int4_avg_accum_inv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int2int4_sum(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn inet_gist_fetch(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_logical_emit_message_text(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_logical_emit_message_bytea(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_insert(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_xact_commit_timestamp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn binary_upgrade_set_next_pg_type_oid(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_last_committed_xact(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn binary_upgrade_set_next_array_pg_type_oid(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn binary_upgrade_set_next_toast_pg_type_oid(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn binary_upgrade_set_next_heap_pg_class_oid(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn binary_upgrade_set_next_index_pg_class_oid(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn binary_upgrade_set_next_toast_pg_class_oid(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn binary_upgrade_set_next_pg_enum_oid(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn binary_upgrade_set_next_pg_authid_oid(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn binary_upgrade_create_empty_extension(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn event_trigger_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn event_trigger_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsvectorin(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsvectorout(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsqueryin(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsqueryout(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsvector_lt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsvector_le(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsvector_eq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsvector_ne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsvector_ge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsvector_gt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsvector_cmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsvector_strip(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsvector_setweight(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsvector_concat(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ts_match_vq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ts_match_qv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsvectorsend(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsvectorrecv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsquerysend(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsqueryrecv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gtsvectorin(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gtsvectorout(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gtsvector_compress(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gtsvector_decompress(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gtsvector_picksplit(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gtsvector_union(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gtsvector_same(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gtsvector_penalty(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gtsvector_consistent(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gin_extract_tsvector(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gin_extract_tsquery(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gin_tsquery_consistent(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsquery_lt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsquery_le(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsquery_eq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsquery_ne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsquery_ge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsquery_gt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsquery_cmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsquery_and(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsquery_or(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsquery_not(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsquery_numnode(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsquerytree(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsquery_rewrite(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsquery_rewrite_query(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsmatchsel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsmatchjoinsel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ts_typanalyze(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ts_stat1(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ts_stat2(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsq_mcontains(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsq_mcontained(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gtsquery_compress(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn text_starts_with(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gtsquery_picksplit(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gtsquery_union(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gtsquery_same(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gtsquery_penalty(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gtsquery_consistent(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ts_rank_wttf(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ts_rank_wtt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ts_rank_ttf(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ts_rank_tt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ts_rankcd_wttf(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ts_rankcd_wtt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ts_rankcd_ttf(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ts_rankcd_tt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsvector_length(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ts_token_type_byid(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ts_token_type_byname(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ts_parse_byid(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ts_parse_byname(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn prsd_start(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn prsd_nexttoken(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn prsd_end(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn prsd_headline(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn prsd_lextype(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ts_lexize(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gin_cmp_tslexeme(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dsimple_init(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dsimple_lexize(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dsynonym_init(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dsynonym_lexize(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dispell_init(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn dispell_lexize(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regconfigin(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regconfigout(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regconfigrecv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regconfigsend(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn thesaurus_init(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn thesaurus_lexize(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ts_headline_byid_opt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ts_headline_byid(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn to_tsvector_byid(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn to_tsquery_byid(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn plainto_tsquery_byid(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn to_tsvector(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn to_tsquery(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn plainto_tsquery(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsvector_update_trigger_byid(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsvector_update_trigger_bycolumn(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ts_headline_opt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ts_headline(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_ts_parser_is_visible(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_ts_dict_is_visible(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_ts_config_is_visible(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn get_current_ts_config(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ts_match_tt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ts_match_tq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_ts_template_is_visible(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regdictionaryin(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regdictionaryout(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regdictionaryrecv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regdictionarysend(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_reset_shared(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_reset_single_table_counters(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_reset_single_function_counters(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_tablespace_location(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_create_physical_replication_slot(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_drop_replication_slot(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_get_replication_slots(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_logical_slot_get_changes(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_logical_slot_get_binary_changes(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_logical_slot_peek_changes(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_logical_slot_peek_binary_changes(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_create_logical_replication_slot(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn to_jsonb(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_snapshot_timestamp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gin_clean_pending_list(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gtsvector_consistent_oldsig(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gin_extract_tsquery_oldsig(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gin_tsquery_consistent_oldsig(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gtsquery_consistent_oldsig(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn inet_spg_config(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn inet_spg_choose(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn inet_spg_picksplit(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn inet_spg_inner_consistent(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn inet_spg_leaf_consistent(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_current_logfile(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_current_logfile_1arg(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_send(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_recv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_get_function_arg_default(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_export_snapshot(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_is_in_recovery(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int4_cash(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8_cash(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_is_in_backup(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_backup_start_time(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_collation_is_visible(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn array_typanalyze(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn arraycontsel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn arraycontjoinsel(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_get_multixact_members(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_last_wal_receive_lsn(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_last_wal_replay_lsn(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cash_div_cash(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn cash_numeric(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numeric_cash(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_read_file_all(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_read_binary_file_off_len(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_read_binary_file_all(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_opfamily_is_visible(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_last_xact_replay_timestamp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn anyrange_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn anyrange_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn range_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn range_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn range_recv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn range_send(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_identify_object(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn range_constructor2(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn range_constructor3(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_relation_is_updatable(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_column_is_updatable(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn make_date(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn make_time(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn range_lower(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn range_upper(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn range_empty(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn range_lower_inc(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn range_upper_inc(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn range_lower_inf(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn range_upper_inf(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn range_eq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn range_ne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn range_overlaps(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn range_contains_elem(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn range_contains(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn elem_contained_by_range(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn range_contained_by(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn range_adjacent(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn range_before(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn range_after(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn range_overleft(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn range_overright(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn range_union(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn range_intersect(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn range_minus(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn range_cmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn range_lt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn range_le(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn range_ge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn range_gt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn range_gist_consistent(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn range_gist_union(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_replication_slot_advance(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn range_gist_penalty(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn range_gist_picksplit(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn range_gist_same(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn hash_range(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int4range_canonical(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn daterange_canonical(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn range_typanalyze(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_transform(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn interval_transform(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ginarraytriconsistent(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn gin_tsquery_triconsistent(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int4range_subdiff(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8range_subdiff(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn numrange_subdiff(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn daterange_subdiff(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn int8range_canonical(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsrange_subdiff(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tstzrange_subdiff(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_object_keys(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_each_text(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn mxid_age(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_extract_path_text(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn acldefault_sql(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn time_transform(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn json_object_field(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn json_object_field_text(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn json_array_element(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn json_array_element_text(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn json_extract_path(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn brin_summarize_new_values(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn json_extract_path_text(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_get_object_address(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn json_array_elements(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn json_array_length(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn json_object_keys(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn json_each(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn json_each_text(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn json_populate_record(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn json_populate_recordset(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn json_typeof(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn json_array_elements_text(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ordered_set_transition(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ordered_set_transition_multi(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn percentile_disc_final(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn percentile_cont_float8_final(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn percentile_cont_interval_final(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn percentile_disc_multi_final(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn percentile_cont_float8_multi_final(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn percentile_cont_interval_multi_final(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn mode_final(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn hypothetical_rank_final(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn hypothetical_percent_rank_final(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn hypothetical_cume_dist_final(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn hypothetical_dense_rank_final(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_izone_transform(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn timestamp_zone_transform(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn brin_summarize_range(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn brin_desummarize_range(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn spg_quad_config(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn spg_quad_choose(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn spg_quad_picksplit(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn spg_quad_inner_consistent(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn spg_quad_leaf_consistent(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn spg_kd_config(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn spg_kd_choose(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn spg_kd_picksplit(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn spg_kd_inner_consistent(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn spg_text_config(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn spg_text_choose(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn spg_text_picksplit(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn spg_text_inner_consistent(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn spg_text_leaf_consistent(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_sequence_last_value(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_ne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_lt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_gt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_le(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_ge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_eq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_cmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_hash(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_contains(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_exists(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_exists_any(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_exists_all(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_contained(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn array_agg_array_transfn(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn array_agg_array_finalfn(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn range_merge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn inet_merge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn boxes_bound_box(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn inet_same_family(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn binary_upgrade_set_record_init_privs(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regnamespacein(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regnamespaceout(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn to_regnamespace(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regnamespacerecv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regnamespacesend(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn point_box(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regroleout(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn to_regrole(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regrolerecv(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regrolesend(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn regrolein(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_rotate_logfile(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_read_file(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn binary_upgrade_set_missing_value(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn brin_inclusion_opcinfo(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn brin_inclusion_add_value(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn brin_inclusion_consistent(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn brin_inclusion_union(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn macaddr8_in(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn macaddr8_out(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn macaddr8_trunc(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn macaddr8_eq(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn macaddr8_lt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn macaddr8_le(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn macaddr8_gt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn macaddr8_ge(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn macaddr8_ne(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn macaddr8_cmp(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn macaddr8_not(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn macaddr8_and(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn macaddr8_or(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn macaddrtomacaddr8(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn macaddr8tomacaddr(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn macaddr8_set7bit(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn in_range_int8_int8(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn in_range_int4_int8(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn in_range_int4_int4(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn in_range_int4_int2(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn in_range_int2_int8(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn in_range_int2_int4(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn in_range_int2_int2(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn in_range_date_interval(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn in_range_timestamp_interval(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn in_range_timestamptz_interval(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn in_range_interval_interval(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn in_range_time_interval(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn in_range_timetz_interval(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn in_range_float8_float8(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn in_range_float4_float8(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn in_range_numeric_numeric(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ts_headline_jsonb_byid_opt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ts_headline_jsonb_byid(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ts_headline_jsonb_opt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ts_headline_jsonb(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ts_headline_json_byid_opt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ts_headline_json_byid(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ts_headline_json_opt(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn ts_headline_json(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_string_to_tsvector(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn json_string_to_tsvector(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_string_to_tsvector_byid(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn json_string_to_tsvector_byid(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_to_tsvector(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn jsonb_to_tsvector_byid(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn json_to_tsvector(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn json_to_tsvector_byid(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_event_trigger_table_rewrite_oid(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_event_trigger_table_rewrite_reason(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_event_trigger_ddl_commands(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn phraseto_tsquery(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsquery_phrase(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn tsquery_phrase_distance(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn phraseto_tsquery_byid(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn websearch_to_tsquery_byid(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn websearch_to_tsquery(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn spg_bbox_quad_config(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn spg_poly_quad_compress(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn spg_box_quad_config(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn spg_box_quad_choose(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn spg_box_quad_picksplit(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn spg_box_quad_inner_consistent(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn spg_box_quad_leaf_consistent(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn satisfies_hash_partition(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_replication_origin_create(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_replication_origin_drop(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_replication_origin_oid(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_replication_origin_session_setup(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_replication_origin_session_reset(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_replication_origin_session_is_setup(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_replication_origin_session_progress(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_replication_origin_xact_setup(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_replication_origin_xact_reset(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_replication_origin_advance(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_replication_origin_progress(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_show_replication_origin_status(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_stat_get_subscription(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_get_publication_tables(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_get_replica_identity_index(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn pg_relation_is_publishable(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn parse_bool(value: *const ::std::os::raw::c_char, result: *mut bool) -> bool;
+}
+extern "C" {
+    pub fn parse_bool_with_len(
+        value: *const ::std::os::raw::c_char,
+        len: usize,
+        result: *mut bool,
+    ) -> bool;
+}
+extern "C" {
+    pub fn domain_check(
+        value: Datum,
+        isnull: bool,
+        domainType: Oid,
+        extra: *mut *mut ::std::os::raw::c_void,
+        mcxt: MemoryContext,
+    );
+}
+extern "C" {
+    pub fn errdatatype(datatypeOid: Oid) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn errdomainconstraint(
+        datatypeOid: Oid,
+        conname: *const ::std::os::raw::c_char,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn hex_encode(
+        src: *const ::std::os::raw::c_char,
+        len: ::std::os::raw::c_uint,
+        dst: *mut ::std::os::raw::c_char,
+    ) -> ::std::os::raw::c_uint;
+}
+extern "C" {
+    pub fn hex_decode(
+        src: *const ::std::os::raw::c_char,
+        len: ::std::os::raw::c_uint,
+        dst: *mut ::std::os::raw::c_char,
+    ) -> ::std::os::raw::c_uint;
+}
+extern "C" {
+    pub fn buildint2vector(int2s: *const int16, n: ::std::os::raw::c_int) -> *mut int2vector;
+}
+extern "C" {
+    pub fn namecpy(n1: Name, n2: Name) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn namestrcpy(name: Name, str: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn namestrcmp(name: Name, str: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn pg_atoi(
+        s: *const ::std::os::raw::c_char,
+        size: ::std::os::raw::c_int,
+        c: ::std::os::raw::c_int,
+    ) -> int32;
+}
+extern "C" {
+    pub fn pg_itoa(i: int16, a: *mut ::std::os::raw::c_char);
+}
+extern "C" {
+    pub fn pg_ltoa(l: int32, a: *mut ::std::os::raw::c_char);
+}
+extern "C" {
+    pub fn pg_lltoa(ll: int64, a: *mut ::std::os::raw::c_char);
+}
+extern "C" {
+    pub fn pg_ltostr_zeropad(
+        str: *mut ::std::os::raw::c_char,
+        value: int32,
+        minwidth: int32,
+    ) -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn pg_ltostr(str: *mut ::std::os::raw::c_char, value: int32)
+        -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn pg_strtouint64(
+        str: *const ::std::os::raw::c_char,
+        endptr: *mut *mut ::std::os::raw::c_char,
+        base: ::std::os::raw::c_int,
+    ) -> uint64;
+}
+extern "C" {
+    #[link_name = "\u{1}extra_float_digits"]
+    pub static mut extra_float_digits: ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn get_float8_infinity() -> f64;
+}
+extern "C" {
+    pub fn get_float4_infinity() -> f32;
+}
+extern "C" {
+    pub fn get_float8_nan() -> f64;
+}
+extern "C" {
+    pub fn get_float4_nan() -> f32;
+}
+extern "C" {
+    pub fn is_infinite(val: f64) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn float8in_internal(
+        num: *mut ::std::os::raw::c_char,
+        endptr_p: *mut *mut ::std::os::raw::c_char,
+        type_name: *const ::std::os::raw::c_char,
+        orig_string: *const ::std::os::raw::c_char,
+    ) -> f64;
+}
+extern "C" {
+    pub fn float8out_internal(num: f64) -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn float4_cmp_internal(a: float4, b: float4) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn float8_cmp_internal(a: float8, b: float8) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn buildoidvector(oids: *const Oid, n: ::std::os::raw::c_int) -> *mut oidvector;
+}
+extern "C" {
+    pub fn oidparse(node: *mut Node) -> Oid;
+}
+extern "C" {
+    pub fn oid_cmp(
+        p1: *const ::std::os::raw::c_void,
+        p2: *const ::std::os::raw::c_void,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn regexp_fixed_prefix(
+        text_re: *mut text,
+        case_insensitive: bool,
+        collation: Oid,
+        exact: *mut bool,
+    ) -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    #[link_name = "\u{1}quote_all_identifiers"]
+    pub static mut quote_all_identifiers: bool;
+}
+extern "C" {
+    pub fn quote_identifier(ident: *const ::std::os::raw::c_char) -> *const ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn quote_qualified_identifier(
+        qualifier: *const ::std::os::raw::c_char,
+        ident: *const ::std::os::raw::c_char,
+    ) -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn generate_operator_clause(
+        buf: fmStringInfo,
+        leftop: *const ::std::os::raw::c_char,
+        leftoptype: Oid,
+        opoid: Oid,
+        rightop: *const ::std::os::raw::c_char,
+        rightoptype: Oid,
+    );
+}
+extern "C" {
+    pub fn bpchartruelen(
+        s: *mut ::std::os::raw::c_char,
+        len: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn cstring_to_text(s: *const ::std::os::raw::c_char) -> *mut text;
+}
+extern "C" {
+    pub fn cstring_to_text_with_len(
+        s: *const ::std::os::raw::c_char,
+        len: ::std::os::raw::c_int,
+    ) -> *mut text;
+}
+extern "C" {
+    pub fn text_to_cstring(t: *const text) -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn text_to_cstring_buffer(
+        src: *const text,
+        dst: *mut ::std::os::raw::c_char,
+        dst_len: usize,
+    );
+}
+extern "C" {
+    pub fn xidComparator(
+        arg1: *const ::std::os::raw::c_void,
+        arg2: *const ::std::os::raw::c_void,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn inet_cidr_ntop(
+        af: ::std::os::raw::c_int,
+        src: *const ::std::os::raw::c_void,
+        bits: ::std::os::raw::c_int,
+        dst: *mut ::std::os::raw::c_char,
+        size: usize,
+    ) -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn inet_net_pton(
+        af: ::std::os::raw::c_int,
+        src: *const ::std::os::raw::c_char,
+        dst: *mut ::std::os::raw::c_void,
+        size: usize,
+    ) -> ::std::os::raw::c_int;
+}
+extern "C" {
+    pub fn convert_network_to_scalar(value: Datum, typid: Oid, failure: *mut bool) -> f64;
+}
+extern "C" {
+    pub fn network_scan_first(in_: Datum) -> Datum;
+}
+extern "C" {
+    pub fn network_scan_last(in_: Datum) -> Datum;
+}
+extern "C" {
+    pub fn clean_ipv6_addr(addr_family: ::std::os::raw::c_int, addr: *mut ::std::os::raw::c_char);
+}
+extern "C" {
+    pub fn numeric_float8_no_overflow(fcinfo: FunctionCallInfo) -> Datum;
+}
+extern "C" {
+    pub fn format_type_extended(
+        type_oid: Oid,
+        typemod: int32,
+        flags: bits16,
+    ) -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn format_type_be(type_oid: Oid) -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn format_type_be_qualified(type_oid: Oid) -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn format_type_with_typemod(type_oid: Oid, typemod: int32) -> *mut ::std::os::raw::c_char;
+}
+extern "C" {
+    pub fn type_maximum_size(type_oid: Oid, typemod: int32) -> int32;
+}
+extern "C" {
+    pub fn quote_literal_cstr(rawstr: *const ::std::os::raw::c_char)
+        -> *mut ::std::os::raw::c_char;
 }
 pub type __builtin_va_list = [__va_list_tag; 1usize];
 #[repr(C)]

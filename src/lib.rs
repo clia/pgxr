@@ -160,9 +160,23 @@ pub fn PG_GETARG_STRING(fcinfo: FunctionCallInfo, n: usize) -> PgxrResult<String
     Ok(s)
 }
 
+pub fn PG_GETARG_TEXT(fcinfo: FunctionCallInfo, n: usize) -> PgxrResult<String> {
+    CHECK_PARAM_INDEX!(fcinfo, n);
+    let t = unsafe { (&*fcinfo).arg[n] as *mut text };
+    let c = unsafe { text_to_cstring(t) };
+    let s = unsafe { CStr::from_ptr(c).to_string_lossy().into_owned() };
+    Ok(s)
+}
+
 ///
 /// Return result functions
 /// 
+
+pub fn PG_RETURN_TEXT(result: String) -> Datum {
+    let cs = CString::new(result).expect("CString::new failed");
+    let t = unsafe{ cstring_to_text(cs.into_raw()) };
+    t as Datum
+}
 
 pub fn PG_RETURN_CSTRING(result: CString) -> Datum {
     result.into_raw() as Datum
