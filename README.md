@@ -77,6 +77,8 @@ There are individual repos for each platform, listed below:
 - [pgxr_lin_x64_94](https://github.com/clia/pgxr_lin_x64_94) - PostgreSQL 9.4 on Linux on X86-64
 - [pgxr_lin_x64_95](https://github.com/clia/pgxr_lin_x64_95) - PostgreSQL 9.5 on Linux on X86-64
 - [pgxr_lin_x64_96](https://github.com/clia/pgxr_lin_x64_96) - PostgreSQL 9.6 on Linux on X86-64
+- [pgxr_mac_x64_10](https://github.com/clia/pgxr_mac_x64_10) - PostgreSQL 10 on macOS on X86-64
+- [pgxr_mac_x64_11](https://github.com/clia/pgxr_mac_x64_11) - PostgreSQL 11 on macOS on X86-64
 
 You can simply change the crate path in your `Cargo.toml` (No change the crate name `pgxr`) to develop for your target platform.
 
