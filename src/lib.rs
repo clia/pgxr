@@ -184,10 +184,10 @@ pub fn PG_RETURN_TEXT(result: String) -> Datum {
   let len = cs.as_bytes_with_nul().len();
   let pal = unsafe { palloc(4 + len) as *mut text };
   // let arr = ((len * 4) as u32).to_ne_bytes();
-  let v4 = pal as *mut varattrib_4b;
+  let v4b = pal as *mut varattrib_4b;
   unsafe {
     //(*((*v4.as_mut_ptr()).va_4byte.as_ref())).va_header = len as u32;
-    (*v4).va_4byte.as_mut().va_header = len as u32;
+    (*v4b).va_4byte.as_mut().va_header = (4 + len) as u32;
     // (*pal).vl_len_[0] = arr[0] as i8;
     // (*pal).vl_len_[1] = arr[1] as i8;
     // (*pal).vl_len_[2] = arr[2] as i8;
