@@ -181,7 +181,7 @@ pub fn PG_GETARG_TEXT(fcinfo: FunctionCallInfo, n: usize) -> PgxrResult<String> 
 
 pub fn PG_RETURN_TEXT(result: String) -> Datum {
   let cs = CString::new(result).expect("CString::new failed");
-  let len = cs.as_bytes_with_nul().len();
+  let len = cs.as_bytes().len();
   let pal = unsafe { palloc(4 + len) as *mut text };
   // let arr = ((len * 4) as u32).to_ne_bytes();
   let v4b = pal as *mut varattrib_4b;
