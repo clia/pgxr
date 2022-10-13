@@ -1,4 +1,7 @@
 # pgxr
+
+**Obsoleted**: This project is not maintained now, please refer to the new [pgx project](https://github.com/tcdi/pgx).
+
 Write PostgreSQL extension functions (as stored procedures) using Rust.
 
 ![](https://benchmarksgame-team.pages.debian.net/benchmarksgame/download/fast-programs-different-programming-languages.svg)
